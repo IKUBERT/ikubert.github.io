@@ -1,5 +1,26 @@
+---
+layout: default
+title: Contacto
+---
+
+<header>
+    <h1>Contacto Profesional.</h1>
+    <p class="hero-p">Optimización de procesos y auditorías de ciberseguridad.</p>
+</header>
+
+<div class="section">
+    <form id="contact-form" style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;">
+        <input type="text" name="nombre" placeholder="Nombre completo" required style="padding: 15px; border: 1px solid #ddd; font-family: 'Inter';">
+        <input type="email" name="email" placeholder="Correo corporativo" required style="padding: 15px; border: 1px solid #ddd; font-family: 'Inter';">
+        <textarea name="mensaje" placeholder="Describa su requerimiento" rows="5" required style="padding: 15px; border: 1px solid #ddd; font-family: 'Inter';"></textarea>
+        
+        <button type="submit" id="submit-btn" style="background: #1a1a1a; color: #fff; padding: 20px; border: none; cursor: pointer; letter-spacing: 2px; font-weight: 700;">ENVIAR CONSULTA</button>
+        
+        <p id="response-msg" style="display:none; text-align: center; color: #2ecc71; font-weight: 700; padding: 20px; border: 1px solid #2ecc71;">¡Mensaje enviado con éxito!</p>
+    </form>
+</div>
+
 <script>
-  // URL de la Versión 2
   const scriptURL = 'https://script.google.com/macros/s/AKfycbwxChghvF_M6bCwR6crtV-YnjN3A_iWmjl6WeddZnsNv3zN926Hd8CkZcSIhhLiXlPxhA/exec'
   const form = document.getElementById('contact-form')
   const btn = document.getElementById('submit-btn')
@@ -10,24 +31,19 @@
     btn.disabled = true
     btn.innerText = 'ENVIANDO...'
     
-    // Capturamos los datos del formulario
     fetch(scriptURL, { 
         method: 'POST', 
         body: new FormData(form),
-        mode: 'no-cors' // Agregamos esto para evitar bloqueos de seguridad del navegador
+        mode: 'no-cors' 
     })
     .then(() => {
-        // Con 'no-cors' no podemos leer la respuesta "Success", 
-        // así que asumimos que llegó si no hay error.
         btn.style.display = 'none'
         msg.style.display = 'block'
-        msg.innerText = '¡Mensaje enviado con éxito!'
-        form.reset() // Limpia el formulario
+        form.reset()
     })
     .catch(error => {
         btn.disabled = false
         btn.innerText = 'ERROR AL ENVIAR'
-        alert('Hubo un error técnico: ' + error.message)
         console.error('Error!', error.message)
     })
   })
