@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de | IKUBERT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Mismo estilo base para consistencia */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #1a1a1a; }
+        nav { padding: 40px 10%; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; color: #1a1a1a; }
+        .menu a { text-decoration: none; color: #1a1a1a; margin-left: 20px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
+        header { padding: 80px 10%; background: #fff; }
+        .content-profile { padding: 0 10% 100px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+        h1 { font-size: 42px; margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+        .profile-text p { margin-bottom: 20px; font-size: 17px; color: #444; font-weight: 300; }
+        .profile-stats { background: #f9f9f9; padding: 40px; border-radius: 4px; }
+        .stat-item { margin-bottom: 25px; }
+        .stat-item h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #888; }
+        .stat-item p { font-size: 16px; font-weight: 700; }
+        footer { padding: 60px 10%; font-size: 11px; color: #999; text-align: center; text-transform: uppercase; letter-spacing: 1px; }
+        @media (max-width: 768px) { .content-profile { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">IKUBERT</a>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="acerca.html">Acerca de</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+    </nav>
+    <header><h1>Acerca de la Consultora</h1></header>
+    <div class="content-profile">
+        <div class="profile-text">
+            <p><strong>IKUBERT</strong> es una firma de consultoría técnica fundada en Santiago de Chile, enfocada en la convergencia entre la gestión de negocios y la seguridad tecnológica.</p>
+            <p>Nuestra visión es proporcionar a las empresas una estructura operativa sólida y segura. Creemos que la eficiencia administrativa y la robustez en ciberseguridad son los dos pilares fundamentales para la escalabilidad en la era digital.</p>
+            <p>Liderada por Lukas B. Ahubert Lennon, IKUBERT combina el rigor de la ingeniería con una visión comercial estratégica para resolver problemas complejos de gestión organizacional.</p>
+        </div>
+        <div class="profile-stats">
+            <div class="stat-item">
+                <h4>Liderazgo</h4>
+                <p>Lukas B. Ahubert Lennon</p>
+            </div>
+            <div class="stat-item">
+                <h4>Especialización</h4>
+                <p>Ingeniería Civil Industrial & Ciberseguridad</p>
+            </div>
+            <div class="stat-item">
+                <h4>Ubicación</h4>
+                <p>Las Condes, Santiago de Chile</p>
+            </div>
+        </div>
+    </div>
+    <footer>&copy; 2026 IKUBERT | www.ikubert.com</footer>
+</body>
+</html>
