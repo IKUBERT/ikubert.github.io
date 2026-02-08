@@ -1,5 +1,42 @@
 ---
-layout: none
-title: Prueba
+layout: default
+title: Contacto
 ---
-<h1>Hola Mundo</h1>
+<header>
+    <h1>Contacto Profesional.</h1>
+    <p class="hero-p">Optimización de procesos y auditoría técnica.</p>
+</header>
+
+<div class="section">
+    <form id="contact-form" style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;">
+        <input type="text" name="nombre" placeholder="Nombre completo" required style="padding: 15px; border: 1px solid #ddd;">
+        <input type="email" name="email" placeholder="Correo corporativo" required style="padding: 15px; border: 1px solid #ddd;">
+        <textarea name="mensaje" placeholder="Mensaje" rows="5" required style="padding: 15px; border: 1px solid #ddd;"></textarea>
+        <button type="submit" id="submit-btn" style="background: #1a1a1a; color: #fff; padding: 20px; border: none; cursor: pointer; font-weight: 700;">ENVIAR</button>
+        <p id="response-msg" style="display:none; text-align: center; color: #2ecc71; font-weight: 700;">¡Mensaje enviado con éxito!</p>
+    </form>
+</div>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwxChghvF_M6bCwR6crtV-YnjN3A_iWmjl6WeddZnsNv3zN926Hd8CkZcSIhhLiXlPxhA/exec'
+  const form = document.getElementById('contact-form')
+  const btn = document.getElementById('submit-btn')
+  const msg = document.getElementById('response-msg')
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    btn.disabled = true
+    btn.innerText = 'ENVIANDO...'
+    fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors' })
+    .then(() => {
+        btn.style.display = 'none'
+        msg.style.display = 'block'
+        form.reset()
+    })
+    .catch(error => {
+        btn.disabled = false
+        btn.innerText = 'ERROR'
+        console.error('Error!', error.message)
+    })
+  })
+</script>
