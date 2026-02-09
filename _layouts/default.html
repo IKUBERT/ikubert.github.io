@@ -17,36 +17,8 @@
     <meta property="og:description" content="Convergencia de ingeniería y ciberseguridad para optimizar y blindar la operación de su empresa.">
     <meta property="og:image" content="https://www.ikubert.com/src/Logotipo%20IKUBERT%20nombre%20abajo.png">
 
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="{{ site.baseurl }}/style.css?v=1.1">
-    
-    <style>
-        /* Ajuste Sticky Footer */
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        body {
-            display: flex;
-            flex-direction: column;
-        }
-        main {
-            flex: 1 0 auto;
-            width: 100%;
-        }
-        footer {
-            flex-shrink: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ site.baseurl }}/style.css?v=1.2">
 </head>
 <body>
     {% include navbar.html %}
@@ -55,35 +27,26 @@
         {{ content }}
     </main>
 
-    <footer style="background-color: #1a1a1a; color: #ffffff; padding: 40px 5%; border-top: 1px solid #333; width: 100%; box-sizing: border-box;">
-        <div class="footer-container" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; flex-wrap: wrap; gap: 30px;">
-            
-            <div class="footer-col" style="flex: 1; text-align: left; min-width: 200px;">
-                <p style="font-size: 0.75rem; opacity: 0.5; letter-spacing: 1.5px; margin: 0; text-transform: uppercase;">Santiago, Chile</p>
-                <p style="font-size: 0.65rem; opacity: 0.3; margin-top: 5px;">&copy; 2026 IKUBERT</p>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col left">
+                <p class="loc">SANTIAGO, CHILE</p>
+                <p class="copy">&copy; 2026 IKUBERT</p>
             </div>
 
-            <div class="footer-col" style="flex: 1; text-align: center; min-width: 150px;">
-                <img src="/src/Logotipo%20IKUBERT%20nombre%20abajo.png" alt="IKUBERT - Consultoría en Ingeniería Civil Industrial y Ciberseguridad" style="height: 60px; width: auto; filter: brightness(0) invert(1);">
+            <div class="footer-col center">
+                <img src="/src/Logotipo%20IKUBERT%20nombre%20abajo.png" alt="IKUBERT">
             </div>
 
-            <div class="footer-col" style="flex: 1; text-align: right; min-width: 200px; display: flex; flex-direction: column; gap: 10px;">
-                <a href="mailto:contact@ikubert.com" style="color: #ffffff; text-decoration: none; font-size: 0.9rem; font-weight: 300;">contact@ikubert.com</a>
-                <div style="display: flex; justify-content: flex-end;">
-                    <a href="https://www.linkedin.com/company/ikubert" target="_blank" style="opacity: 0.8;">
-                        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn IKUBERT" style="width: 18px; height: 18px; filter: grayscale(1) brightness(2);">
+            <div class="footer-col right">
+                <a href="mailto:contact@ikubert.com">contact@ikubert.com</a>
+                <div class="social">
+                    <a href="https://www.linkedin.com/company/ikubert" target="_blank">
+                        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn IKUBERT">
                     </a>
                 </div>
             </div>
         </div>
     </footer>
-
-    <style>
-        @media (max-width: 768px) {
-            .footer-container { flex-direction: column !important; text-align: center !important; gap: 30px !important; }
-            .footer-col { text-align: center !important; align-items: center !important; width: 100% !important; }
-            .footer-col div { justify-content: center !important; }
-        }
-    </style>
 </body>
 </html>
