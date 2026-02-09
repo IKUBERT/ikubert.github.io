@@ -1,34 +1,69 @@
-<!-- Footer Simetrico Blindado para Moviles -->
-<footer style="background-color: #1a1a1a; color: #ffffff; padding: 40px 5%; border-top: 1px solid #333; width: 100%; box-sizing: border-box;">
-    <div class="footer-container" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; flex-wrap: wrap; gap: 30px;">
-        
-        <!-- Columna Izquierda: Ubicacion -->
-        <div class="footer-col" style="flex: 1; text-align: left; min-width: 200px;">
-            <p style="font-size: 0.75rem; opacity: 0.5; letter-spacing: 1.5px; margin: 0; text-transform: uppercase;">Santiago, Chile</p>
-            <p style="font-size: 0.65rem; opacity: 0.3; margin-top: 5px;">&copy; 2026 I-KUBERT</p>
-        </div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | IKUBERT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ site.baseurl }}/style.css">
+    
+    <!-- Estilos globales para evitar el espacio blanco lateral -->
+    <style>
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        main {
+            width: 100%;
+            min-height: 60vh; /* Asegura que el footer no flote al medio si hay poco contenido */
+        }
+    </style>
+</head>
+<body>
+    {% include navbar.html %}
+    
+    <!-- Esta es la linea vital que faltaba: Inyecta el contenido de tus paginas -->
+    <main>
+        {{ content }}
+    </main>
 
-        <!-- Columna Central: Logo -->
-        <div class="footer-col" style="flex: 1; text-align: center; min-width: 150px;">
-            <img src="/src/Logotipo IKUBERT nombre abajo.png" alt="I-KUBERT" style="height: 60px; width: auto; filter: brightness(0) invert(1);">
-        </div>
+    // Footer Simetrico Blindado para Moviles -->
+    <footer style="background-color: #1a1a1a; color: #ffffff; padding: 40px 5%; border-top: 1px solid #333; width: 100%; box-sizing: border-box;">
+        <div class="footer-container" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; flex-wrap: wrap; gap: 30px;">
+            
+            <!-- Columna Izquierda: Ubicacion -->
+            <div class="footer-col" style="flex: 1; text-align: left; min-width: 200px;">
+                <p style="font-size: 0.75rem; opacity: 0.5; letter-spacing: 1.5px; margin: 0; text-transform: uppercase;">Santiago, Chile</p>
+                <p style="font-size: 0.65rem; opacity: 0.3; margin-top: 5px;">&copy; 2026 I-KUBERT</p>
+            </div>
 
-        <!-- Columna Derecha: Contacto -->
-        <div class="footer-col" style="flex: 1; text-align: right; min-width: 200px; display: flex; flex-direction: column; gap: 10px;">
-            <a href="mailto:contact@ikubert.com" style="color: #ffffff; text-decoration: none; font-size: 0.9rem; font-weight: 300;">contact@ikubert.com</a>
-            <div style="display: flex; justify-content: flex-end;">
-                <a href="https://www.linkedin.com/company/ikubert" target="_blank" style="opacity: 0.8;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 18px; height: 18px; filter: grayscale(1) brightness(2);">
-                </a>
+            <!-- Columna Central: Logo -->
+            <div class="footer-col" style="flex: 1; text-align: center; min-width: 150px;">
+                <img src="/src/Logotipo IKUBERT nombre abajo.png" alt="I-KUBERT" style="height: 60px; width: auto; filter: brightness(0) invert(1);">
+            </div>
+
+            <!-- Columna Derecha: Contacto -->
+            <div class="footer-col" style="flex: 1; text-align: right; min-width: 200px; display: flex; flex-direction: column; gap: 10px;">
+                <a href="mailto:contact@ikubert.com" style="color: #ffffff; text-decoration: none; font-size: 0.9rem; font-weight: 300;">contact@ikubert.com</a>
+                <div style="display: flex; justify-content: flex-end;">
+                    <a href="https://www.linkedin.com/company/ikubert" target="_blank" style="opacity: 0.8;">
+                        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 18px; height: 18px; filter: grayscale(1) brightness(2);">
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
-<style>
-    @media (max-width: 768px) {
-        .footer-container { flex-direction: column !important; text-align: center !important; gap: 30px !important; }
-        .footer-col { text-align: center !important; align-items: center !important; width: 100% !important; }
-        .footer-col div { justify-content: center !important; }
-    }
-</style>
+    <style>
+        @media (max-width: 768px) {
+            .footer-container { flex-direction: column !important; text-align: center !important; gap: 30px !important; }
+            .footer-col { text-align: center !important; align-items: center !important; width: 100% !important; }
+            .footer-col div { justify-content: center !important; }
+        }
+    </style>
+</body>
+</html>
+
