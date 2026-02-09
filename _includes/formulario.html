@@ -1,40 +1,47 @@
-<form name="google-sheet">
-    <label style="display: block; margin-bottom: 5px; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Nombre / Empresa:</label>
-    <input type="text" name="nombre" required style="width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;">
-
-    <label style="display: block; margin-bottom: 5px; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Email Corporativo:</label>
-    <input type="email" name="email" required style="width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;">
-
-    <label style="display: block; margin-bottom: 5px; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Desafío Técnico / Mensaje:</label>
-    <textarea name="mensaje" required style="width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 4px; min-height: 120px; box-sizing: border-box;"></textarea>
-
-    <button type="submit" id="submit-btn" style="background: #1a1a1a; color: #fff; padding: 15px 30px; border: none; text-transform: uppercase; font-weight: 700; letter-spacing: 2px; cursor: pointer; width: 100%; transition: 0.3s;">
-        Enviar Consulta
-    </button>
-</form>
+<div style="background: #fdfdfd; padding: 30px; border: 1px solid #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-radius: 8px; width: 100%; box-sizing: border-box;">
+    <form id="contact-form" name="google-sheet" style="display: flex; flex-direction: column; gap: 20px;">
+        <!-- Campos sincronizados con Google Apps Script -->
+        <input type="text" name="nombre" placeholder="Nombre completo o Empresa" required style="padding: 14px; border: 1px solid #ddd; border-radius: 4px; width: 100%; box-sizing: border-box; font-family: 'Inter', sans-serif;">
+        
+        <input type="email" name="email" placeholder="ejemplo@empresa.cl" required style="padding: 14px; border: 1px solid #ddd; border-radius: 4px; width: 100%; box-sizing: border-box; font-family: 'Inter', sans-serif;">
+        
+        <textarea name="mensaje" placeholder="Detalle su requerimiento técnico o desafío" rows="5" required style="padding: 14px; border: 1px solid #ddd; border-radius: 4px; width: 100%; box-sizing: border-box; font-family: 'Inter', sans-serif; resize: none;"></textarea>
+        
+        <button type="submit" id="submit-btn" style="background: #1a1a1a; color: #fff; padding: 18px; border: none; cursor: pointer; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s;">
+            ENVIAR REQUERIMIENTO
+        </button>
+        
+        <!-- Mensaje de éxito dinámico -->
+        <div id="response-msg" style="display:none; text-align: center; color: #27ae60; font-weight: 700; border: 2px solid #27ae60; padding: 15px; background: #f0fff4;">
+            Solicitud enviada correctamente. Nos contactaremos a la brevedad.
+        </div>
+    </form>
+</div>
 
 <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbwsnV8CnvjTeIEW4rKL1Y1oq2chwdP3-J7uNVDIiG7o7t8Vjv6sXXFYBs7FfWB1RLKI2w/exec';
-  const form = document.forms['google-sheet'];
-  const btn = document.getElementById('submit-btn');
+  <!-- Configuración de conexión con Google Apps Script V3 -->
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwsnV8CnvjTeIEW4rKL1Y1oq2chwdP3-J7uNVDIiG7o7t8Vjv6sXXFYBs7FfWB1RLKI2w/exec'
+  const form = document.getElementById('contact-form')
+  const btn = document.getElementById('submit-btn')
+  const msg = document.getElementById('response-msg')
 
   form.addEventListener('submit', e => {
-    e.preventDefault();
-    btn.disabled = true;
-    btn.innerText = "Procesando...";
-
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => {
-          alert("¡Mensaje recibido! Nos pondremos en contacto a la brevedad.");
-          form.reset();
-          btn.disabled = false;
-          btn.innerText = "Enviar Consulta";
-      })
-      .catch(error => {
-          console.error('Error!', error.message);
-          alert("Hubo un error. Por favor escribe a contact@ikubert.com");
-          btn.disabled = false;
-          btn.innerText = "Reintentar";
-      });
-  });
+    e.preventDefault()
+    btn.disabled = true; 
+    btn.innerText = 'PROCESANDO...';
+    
+    <!-- Envío de datos por POST -->
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+    .then(response => { 
+        btn.style.display = 'none'; 
+        msg.style.display = 'block'; 
+        form.reset(); 
+    })
+    .catch(error => { 
+        btn.disabled = false; 
+        btn.innerText = 'ERROR AL ENVIAR'; 
+        console.error('Error!', error.message); 
+        alert("Hubo un problema técnico al conectar con el servidor. Por favor, escribe directamente a contact@ikubert.com");
+    })
+  })
 </script>
