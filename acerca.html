@@ -40,8 +40,6 @@ title: Acerca de | IKUBERT
             font-size: 0.8rem !important;
             min-width: 120px !important;
         }
-        
-        /* NUEVO: Lógica de Scroll Lateral para Equipo en Móvil */
         .team-grid-scroll {
             display: flex !important;
             overflow-x: auto !important;
@@ -51,10 +49,10 @@ title: Acerca de | IKUBERT
             -webkit-overflow-scrolling: touch;
         }
         .team-grid-scroll::-webkit-scrollbar {
-            display: none; /* Esconde la barra de scroll */
+            display: none;
         }
         .team-grid-scroll > div {
-            flex: 0 0 80% !important; /* Cada tarjeta ocupa el 80% del ancho */
+            flex: 0 0 80% !important;
             scroll-snap-align: center;
         }
     }
@@ -64,7 +62,7 @@ title: Acerca de | IKUBERT
     position: relative; 
     text-align: left; 
     padding: 100px 8%; 
-    background: url('/src/Oficina de Ikubert.png') no-repeat center center/cover; 
+    background: url('/src/oficina-ikubert-arquitectura.webp') no-repeat center center/cover; 
     color: #ffffff;
     min-height: 550px;
     display: flex;
@@ -73,15 +71,7 @@ title: Acerca de | IKUBERT
     width: 100%;
     box-sizing: border-box;">
 
-    <div style="
-        position: absolute; 
-        top: 0; 
-        left: 0; 
-        width: 100%; 
-        height: 100%; 
-        background: linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0) 100%);
-        z-index: 1;">
-    </div>
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0) 100%); z-index: 1;"></div>
     
     <div style="position: relative; z-index: 2; max-width: 700px; width: 100%;">
         <h1 class="hero-title-acerca" style="font-size: 3.5rem; letter-spacing: -2px; margin-bottom: 10px; font-weight: 800; text-transform: uppercase; line-height: 1.1;">
@@ -134,9 +124,7 @@ title: Acerca de | IKUBERT
 
 <div class="section-acerca" style="background: #ffffff; padding: 80px 20px; text-align: center; border-top: 1px solid #eee;">
     <h2 style="letter-spacing: 5px; text-transform: uppercase; margin-bottom: 60px; font-size: 1.3rem;">Equipo</h2>
-    
     <div class="team-grid team-grid-scroll" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; max-width: 1100px; margin: 0 auto;">
-        
         <div style="display: flex; flex-direction: column; align-items: center;">
             <div style="width: 180px; height: 180px; border-radius: 50%; overflow: hidden; border: 4px solid #1a1a1a; margin-bottom: 20px;">
                 <img src="/src/Foto Lukas Ahubert.jpeg" alt="Lukas B. Ahubert" style="width: 100%; height: 100%; object-fit: cover;">
@@ -145,7 +133,6 @@ title: Acerca de | IKUBERT
             <p style="font-size: 0.85rem; color: #777; margin: 10px 0 20px; text-transform: uppercase;">Gerente General</p>
             <a href="https://www.linkedin.com/in/lukas-ahubert/" target="_blank" style="text-decoration: none; background: #0077b5; color: white; padding: 10px 25px; border-radius: 25px; font-size: 0.75rem; font-weight: 700;">LINKEDIN</a>
         </div>
-
         <div style="display: flex; flex-direction: column; align-items: center;">
             <div style="width: 180px; height: 180px; border-radius: 50%; overflow: hidden; border: 4px solid #1a1a1a; margin-bottom: 20px;">
                 <img src="/src/Foto Natalia Acuña.jpeg" alt="Natalia Acuña" style="width: 100%; height: 100%; object-fit: cover;">
@@ -154,10 +141,9 @@ title: Acerca de | IKUBERT
             <p style="font-size: 0.85rem; color: #777; margin: 10px 0 20px; text-transform: uppercase;">Gerente Comercial</p>
             <a href="https://www.linkedin.com/in/natalia-acu%C3%B1a/" target="_blank" style="text-decoration: none; background: #0077b5; color: white; padding: 10px 25px; border-radius: 25px; font-size: 0.75rem; font-weight: 700;">LINKEDIN</a>
         </div>
-
         <div style="display: flex; flex-direction: column; align-items: center;">
             <div style="width: 180px; height: 180px; border-radius: 50%; overflow: hidden; border: 4px solid #1a1a1a; margin-bottom: 20px;">
-                <img src="/src/logo.png" alt="Libuse Ahubert" style="width: 100%; height: 100%; object-fit: cover;">
+                <img src="/src/logo-ikubert.svg" alt="Libuse Ahubert" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <h4 style="margin: 0; font-size: 1.1rem;">Libuse Ahubert</h4>
             <p style="font-size: 0.85rem; color: #777; margin: 10px 0 20px; text-transform: uppercase;">Gerente de Marketing</p>
