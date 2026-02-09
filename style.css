@@ -15,7 +15,6 @@ body {
     min-height: 100vh;
 }
 
-/* El MAIN ya no centra todo a la fuerza, permitiendo que las secciones ocupen su ancho */
 main {
     flex: 1 0 auto;
     width: 100%;
@@ -27,16 +26,15 @@ header, .section, .section-acerca {
     margin: 0 auto;
 }
 
-/* Grilla de Servicios: Lado a Lado en escritorio */
+/* Grilla de Servicios: 3 columnas de lado a lado en escritorio */
 .grid { 
     display: grid; 
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas fijas en escritorio */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 40px; 
     margin-top: 50px;
     padding: 0 10%;
 }
 
-/* Ajuste del Hero para que no se corte la foto */
 header {
     padding: 120px 10%;
     background-size: cover !important;
@@ -71,7 +69,7 @@ nav {
     border-bottom: 1px solid #f0f0f0; 
 }
 
-/* FOOTER CORREGIDO: Lado a Lado */
+/* FOOTER CORREGIDO: Lado a Lado, Letras Blancas y Logo Grande */
 .main-footer {
     background-color: #1a1a1a;
     color: #ffffff;
@@ -84,7 +82,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -96,16 +94,38 @@ nav {
     display: flex; 
     flex-direction: column; 
     align-items: flex-end; 
-    gap: 5px; 
+    gap: 8px; 
 }
 
-.footer-logo-img { height: 50px; filter: brightness(0) invert(1); }
-.linkedin-mini { width: 18px; filter: grayscale(1) brightness(2); }
+/* Ajuste: Logo más grande */
+.footer-logo-img { 
+    height: 85px; /* Aumentado para que destaque */
+    width: auto; 
+    filter: brightness(0) invert(1); 
+}
+
+/* Ajuste: Correo en blanco, sin azul */
+.footer-mail { 
+    color: #ffffff !important; /* Forzamos el blanco */
+    text-decoration: none; 
+    font-size: 0.95rem; 
+    font-weight: 300; 
+    letter-spacing: 1px;
+}
+
+.linkedin-mini { 
+    width: 20px; 
+    filter: grayscale(1) brightness(2); 
+    opacity: 0.8;
+}
+
+.loc { font-size: 0.75rem; opacity: 0.6; letter-spacing: 2px; text-transform: uppercase; margin: 0; }
+.copy { font-size: 0.65rem; opacity: 0.4; margin-top: 5px; }
 
 /* RESPONSIVO MÓVIL */
 @media (max-width: 768px) {
     .grid { 
-        grid-template-columns: 1fr; /* Una sola columna en móvil */
+        grid-template-columns: 1fr; 
         padding: 0 5%;
     }
     
@@ -114,11 +134,13 @@ nav {
     .footer-inner { 
         flex-direction: column; 
         text-align: center; 
-        gap: 30px; 
+        gap: 40px; 
     }
     
     .footer-col.left, .footer-col.right { 
         text-align: center; 
         align-items: center; 
     }
+
+    .footer-logo-img { height: 65px; }
 }
