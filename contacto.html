@@ -3,12 +3,12 @@ layout: default
 title: Contacto | I-KUBERT
 ---
 
-<!-- Header Hero: Imagen con degradado para proteger el texto -->
+<!-- Header Hero: Imagen de Ciberseguridad y Redes -->
 <header style="
     position: relative; 
     text-align: center; 
     padding: 120px 20px; 
-    background: url('/src/Oficina de Ikubert.png') no-repeat center center/cover; 
+    background: url('https:<!--images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1600') no-repeat center center/cover; 
     color: #ffffff; 
     min-height: 400px; 
     display: flex; 
@@ -16,8 +16,8 @@ title: Contacto | I-KUBERT
     justify-content: center; 
     align-items: center;">
     
-    <!-- Capa de oscuridad para legibilidad -->
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6);"></div>
+    <!-- Filtro azul profundo para diferenciar de Acerca de -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 25, 41, 0.7);"></div>
     
     <div style="position: relative; z-index: 2;">
         <h1 style="font-size: 3rem; text-transform: uppercase; letter-spacing: 5px; margin-bottom: 20px; font-weight: 800;">Canales de Consulta</h1>
@@ -31,7 +31,7 @@ title: Contacto | I-KUBERT
 <div class="section" style="max-width: 1100px; margin: 80px auto; padding: 0 20px;">
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 60px; align-items: start;">
         
-        <!-- Columna Info Estrategica -->
+        <!-- Columna Info -->
         <div>
             <h3 style="text-transform: uppercase; letter-spacing: 2px; border-bottom: 2px solid #1a1a1a; display: inline-block; padding-bottom: 5px; margin-bottom: 25px;">Ubicación Estratégica</h3>
             <p style="font-size: 1.1rem; line-height: 1.6;">Sede Principal: <strong>Las Condes, Santiago, Chile.</strong></p>
@@ -45,22 +45,22 @@ title: Contacto | I-KUBERT
             </ul>
         </div>
 
-        <!-- Columna Formulario con Script de Google Apps Script -->
+        <!-- Columna Formulario -->
         <div style="background: #fdfdfd; padding: 40px; border: 1px solid #eee; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-radius: 8px;">
             <form id="contact-form" style="display: flex; flex-direction: column; gap: 20px;">
                 <div style="display: flex; flex-direction: column; gap: 8px;">
                     <label style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Nombre / Empresa</label>
-                    <input type="text" name="nombre" placeholder="Ej: Lukas Ahubert" required style="padding: 14px; border: 1px solid #ddd; border-radius: 4px; font-family: 'Inter', sans-serif;">
+                    <input type="text" name="nombre" placeholder="Nombre completo o Razón Social" required style="padding: 14px; border: 1px solid #ddd; border-radius: 4px; font-family: 'Inter', sans-serif;">
                 </div>
 
                 <div style="display: flex; flex-direction: column; gap: 8px;">
                     <label style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Correo Corporativo</label>
-                    <input type="email" name="email" placeholder="contacto@empresa.com" required style="padding: 14px; border: 1px solid #ddd; border-radius: 4px; font-family: 'Inter', sans-serif;">
+                    <input type="email" name="email" placeholder="ejemplo@empresa.cl" required style="padding: 14px; border: 1px solid #ddd; border-radius: 4px; font-family: 'Inter', sans-serif;">
                 </div>
 
                 <div style="display: flex; flex-direction: column; gap: 8px;">
                     <label style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Desafío Técnico</label>
-                    <textarea name="mensaje" placeholder="Describa brevemente su requerimiento..." rows="5" required style="padding: 14px; border: 1px solid #ddd; border-radius: 4px; font-family: 'Inter', sans-serif; resize: none;"></textarea>
+                    <textarea name="mensaje" placeholder="Describa el servicio o requerimiento de su interés" rows="5" required style="padding: 14px; border: 1px solid #ddd; border-radius: 4px; font-family: 'Inter', sans-serif; resize: none;"></textarea>
                 </div>
                 
                 <button type="submit" id="submit-btn" style="background: #1a1a1a; color: #fff; padding: 18px; border: none; cursor: pointer; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; transition: background 0.3s; margin-top: 10px;">ENVIAR REQUERIMIENTO</button>
