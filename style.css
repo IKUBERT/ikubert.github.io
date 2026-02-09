@@ -20,7 +20,7 @@ main {
     width: 100%;
 }
 
-/* Grilla de Servicios: 3 columnas de lado a lado en escritorio */
+/* Grilla de Servicios Escritorio */
 .grid { 
     display: grid; 
     grid-template-columns: repeat(3, 1fr); 
@@ -36,11 +36,11 @@ header {
     width: 100%;
 }
 
-/* --- FOOTER IKUBERT --- */
+/* --- FOOTER DELGADO IKUBERT --- */
 .main-footer {
     background-color: #1a1a1a !important;
     color: #ffffff !important;
-    padding: 60px 0;
+    padding: 25px 0; /* REDUCIDO: Antes era 60px. Ahora es mucho más delgado */
     width: 100%;
     flex-shrink: 0;
 }
@@ -62,39 +62,35 @@ header {
     display: flex; 
     flex-direction: column; 
     align-items: flex-end; 
-    gap: 8px; 
+    gap: 4px; /* Espacio mínimo entre correo y LinkedIn */
 }
 
-/* LOGO: Tamaño recuperado para gran presencia */
+/* Logo con tamaño ajustado para no ensanchar el footer */
 .footer-logo-img { 
-    height: 90px !important; 
+    height: 70px !important; /* Ajustado para mantener delgadez con presencia */
     width: auto; 
     filter: brightness(0) invert(1); 
 }
 
-/* CORREO: Blanco absoluto (sin azul de link) */
+/* Correo Blanco Inmaculado */
 .footer-mail {
     color: #ffffff !important; 
     text-decoration: none !important;
-    font-size: 0.9rem; 
+    font-size: 0.85rem; 
     font-weight: 300;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
-.footer-mail:hover {
-    color: #cccccc !important;
-}
-
-/* LINKEDIN: Tamaño pequeño y discreto */
+/* LinkedIn Mini */
 .linkedin-mini { 
-    width: 20px !important;
-    height: 20px !important; 
+    width: 18px !important;
+    height: 18px !important; 
     filter: grayscale(1) brightness(2); 
     opacity: 0.8;
 }
 
-.loc { font-size: 0.75rem; opacity: 0.6; letter-spacing: 2px; text-transform: uppercase; margin: 0; }
-.copy { font-size: 0.65rem; opacity: 0.4; margin-top: 5px; }
+.loc { font-size: 0.7rem; opacity: 0.6; letter-spacing: 1.5px; text-transform: uppercase; margin: 0; }
+.copy { font-size: 0.6rem; opacity: 0.4; margin-top: 2px; }
 
 /* RESPONSIVO MÓVIL */
 @media (max-width: 768px) {
@@ -103,7 +99,7 @@ header {
     .footer-inner { 
         flex-direction: column; 
         text-align: center; 
-        gap: 40px; 
+        gap: 25px; 
     }
     
     .footer-col.left, .footer-col.right { 
@@ -111,5 +107,5 @@ header {
         align-items: center; 
     }
 
-    .footer-logo-img { height: 70px !important; }
+    .footer-logo-img { height: 60px !important; }
 }
