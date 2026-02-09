@@ -1,11 +1,16 @@
 /* style.css - IKUBERT */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
 
+/* Configuracion Base para Sticky Footer */
 html, body {
     height: 100%;
 }
 
-.sticky-wrapper { 
+body { 
     font-family: 'Inter', sans-serif; 
     line-height: 1.6; 
     color: #1a1a1a; 
@@ -15,25 +20,20 @@ html, body {
     min-height: 100vh;
 }
 
-/* El MAIN crece pero sus hijos se mantienen en el centro */
-.content-wrapper {
+/* El MAIN es el contenedor elastico que empuja al footer */
+main {
     flex: 1 0 auto;
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; 
-}
-
-/* Limitador de ancho: Para que no se vea "muuu anchoo" */
-header, nav, section, .section, .content-profile, .form-container {
-    width: 100%;
-    max-width: 1200px; /* Ancho máximo contenido */
-    margin: 0 auto;
-    padding: 0 10%; /* Mantiene el aire lateral de tus capturas */
+    align-items: center; /* Centra el contenido horizontalmente */
 }
 
 /* Navegación */
 nav { 
+    width: 100%;
+    max-width: 1400px;
+    padding: 30px 8%; 
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
@@ -42,8 +42,6 @@ nav {
     background: #fff; 
     z-index: 1000; 
     border-bottom: 1px solid #f0f0f0; 
-    padding-top: 30px;
-    padding-bottom: 30px;
 }
 
 .logo-container { display: flex; align-items: center; text-decoration: none; }
@@ -51,50 +49,82 @@ nav {
 .logo-text { font-size: 22px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #1a1a1a; }
 .menu a { text-decoration: none; color: #1a1a1a; margin-left: 25px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
 
-/* Secciones y Hero */
-header { padding-top: 120px; padding-bottom: 120px; background: #f9f9f9; text-align: left; }
+/* Secciones Generales */
+header, .section, .section-acerca {
+    width: 100%;
+    max-width: 1400px;
+}
+
 h1 { font-size: 52px; margin-bottom: 25px; font-weight: 700; letter-spacing: -1px; }
 .hero-p { font-size: 22px; color: #666; max-width: 700px; font-weight: 300; }
 
-.section { padding-top: 80px; padding-bottom: 80px; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-top: 50px; }
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 40px; 
+    margin-top: 50px; 
+}
+
 .card { padding: 30px 0; border-top: 1px solid #1a1a1a; }
 .card h3 { font-size: 16px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px; }
 
-/* Footer sólido y corto */
-.main-footer {
+/* Footer IKUBERT - Negro y Proporcional */
+footer {
     background-color: #1a1a1a;
     color: #ffffff;
-    padding: 40px 0;
+    padding: 40px 8%;
     width: 100%;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Evita que el footer se aplaste */
 }
 
-.footer-inner {
+.footer-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 10%;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .footer-col { flex: 1; }
-.footer-col.left { text-align: left; }
-.footer-col.center { text-align: center; }
-.footer-col.right { text-align: right; display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
+.footer-col img { height: 60px; width: auto; filter: brightness(0) invert(1); }
+.footer-col a { color: #ffffff; text-decoration: none; font-size: 0.9rem; font-weight: 300; }
 
-.footer-col img { height: 50px; width: auto; filter: brightness(0) invert(1); }
-.loc { font-size: 0.7rem; opacity: 0.6; letter-spacing: 1.5px; margin: 0; }
-.copy { font-size: 0.6rem; opacity: 0.4; margin-top: 2px; }
-.footer-col a { color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 300; }
-.social img { width: 16px; height: 16px; filter: grayscale(1) brightness(2); }
+/* Estilos para el Tab System de Acerca */
+.tab-btn {
+    transition: all 0.3s ease;
+    outline: none;
+}
 
-/* Móvil Responsivo */
+.tab-content {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* RESPONSIVO MÓVIL */
 @media (max-width: 768px) {
-    header, .section, .content-profile { padding-left: 8%; padding-right: 8%; }
-    h1 { font-size: 34px; }
-    .footer-inner { flex-direction: column; text-align: center; gap: 30px; }
-    .footer-col.right { align-items: center; }
-    .footer-col.left { text-align: center; }
+    nav { padding: 20px 5%; }
+    .logo-text { font-size: 18px; }
+    .menu { display: none; } /* Ocultar menu en movil si no hay hamburguesa */
+    
+    h1 { font-size: 32px !important; }
+
+    .footer-container { 
+        flex-direction: column !important; 
+        text-align: center !important; 
+    }
+    
+    .footer-col { 
+        text-align: center !important; 
+        width: 100% !important; 
+    }
+    
+    .footer-col div { 
+        justify-content: center !important; 
+    }
 }
