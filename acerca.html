@@ -3,99 +3,111 @@ layout: default
 title: Acerca de | I-KUBERT
 ---
 
-<!-- Estructura de pagina: Header Hero con imagen de oficina -->
-<header style="position: relative; text-align: center; padding: 120px 20px; background: url('/src/Oficina de Ikubert.png') no-repeat center center/cover; color: #ffffff; min-height: 400px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.65);"></div>
-    <div style="position: relative; z-index: 2;">
-        <h1 style="font-size: 3rem; letter-spacing: -1px; margin-bottom: 20px; font-weight: 800;">Arquitectura Estratégica</h1>
-        <p style="max-width: 800px; margin: 0 auto; font-size: 1.3rem; opacity: 0.9; line-height: 1.6; font-weight: 300;">La Convergencia de Tres Ingenierías: Civil Industrial, Administración de Empresas y Ciberseguridad.</p>
+<!-- Estructura de pagina: Header Hero con Caja de Cristal (Glassmorphism) para legibilidad total -->
+<header style="position: relative; text-align: center; padding: 140px 20px; background: url('/src/Oficina de Ikubert.png') no-repeat center center/cover; color: #ffffff; min-height: 450px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    
+    <!-- Filtro oscuro de base para profundidad -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5);"></div>
+    
+    <!-- Contenedor de Texto con desenfoque de fondo para anular ruido visual de la imagen -->
+    <div style="position: relative; z-index: 2; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 50px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); max-width: 900px; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
+        <h1 style="font-size: 3rem; letter-spacing: -1px; margin-bottom: 20px; font-weight: 800; text-transform: uppercase;">Arquitectura Estratégica</h1>
+        <div style="width: 60px; height: 4px; background: #ffffff; margin: 0 auto 25px;"></div>
+        <p style="font-size: 1.35rem; opacity: 1; line-height: 1.6; font-weight: 300; margin: 0;">
+            La Convergencia de Tres Ingenierías: <br>
+            <strong>Civil Industrial, Administración de Empresas y Ciberseguridad.</strong>
+        </p>
     </div>
 </header>
 
-<div class="section" style="max-width: 1000px; margin: 0 auto; padding: 60px 20px;">
-    <!-- Seccion Quienes Somos -->
-    <h2 style="border-bottom: 3px solid #1a1a1a; display: inline-block; padding-bottom: 10px; margin-bottom: 30px;">Quiénes Somos</h2>
-    <p style="font-size: 1.1rem; line-height: 1.8; color: #333;">En <strong>I-KUBERT</strong>, redefinimos la consultoría corporativa mediante una visión 360° que integra la precisión de la Ingeniería Civil Industrial, la agilidad estratégica de la Ingeniería en Administración de Empresas y el blindaje técnico de la Ingeniería en Ciberseguridad.</p>
+<div class="section" style="max-width: 1000px; margin: 0 auto; padding: 80px 20px;">
+    <!-- Seccion Quienes Somos: Propuesta de valor 360 grados -->
+    <h2 style="border-bottom: 3px solid #1a1a1a; display: inline-block; padding-bottom: 10px; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px;">Quiénes Somos</h2>
+    <p style="font-size: 1.15rem; line-height: 1.9; color: #333; font-weight: 300;">
+        En <strong>I-KUBERT</strong>, redefinimos la consultoría corporativa mediante una visión 360° que integra la precisión de la Ingeniería Civil Industrial, la agilidad estratégica de la Ingeniería en Administración de Empresas y el blindaje técnico de la Ingeniería en Ciberseguridad.
+    </p>
 
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px;">
-        <!-- Pilares de servicio -->
-        <div style="padding: 25px; background: #f8f9fa; border-top: 5px solid #1a1a1a;">
-            <h4 style="margin-top: 0;">1. Diagnóstico y Reingeniería de Procesos</h4>
-            <p style="font-size: 0.95rem; color: #555;">Abordamos la causa raíz de las ineficiencias mediante metodologías industriales para maximizar la eficiencia operativa.</p>
+        <!-- Pilar 1: Procesos -->
+        <div style="padding: 30px; background: #f8f9fa; border-top: 5px solid #1a1a1a; box-shadow: 0 5px 15px rgba(0,0,0,0.03);">
+            <h4 style="margin-top: 0; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">1. Diagnóstico y Reingeniería</h4>
+            <p style="font-size: 0.95rem; color: #555; line-height: 1.6;">Abordamos la causa raíz de las ineficiencias mediante metodologías industriales para maximizar la eficiencia operativa.</p>
         </div>
-        <div style="padding: 25px; background: #f8f9fa; border-top: 5px solid #1a1a1a;">
-            <h4 style="margin-top: 0;">2. Inteligencia de Negocios y Evaluación</h4>
-            <p style="font-size: 0.95rem; color: #555;">Transformamos conceptos en realidades rentables integrando marketing, finanzas y planificación tributaria.</p>
+        <!-- Pilar 2: Estrategia -->
+        <div style="padding: 30px; background: #f8f9fa; border-top: 5px solid #1a1a1a; box-shadow: 0 5px 15px rgba(0,0,0,0.03);">
+            <h4 style="margin-top: 0; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">2. Inteligencia de Negocios</h4>
+            <p style="font-size: 0.95rem; color: #555; line-height: 1.6;">Transformamos conceptos en realidades rentables integrando marketing, finanzas y planificación tributaria.</p>
         </div>
-        <div style="padding: 25px; background: #f8f9fa; border-top: 5px solid #1a1a1a;">
-            <h4 style="margin-top: 0;">3. Blindaje de Activos y Resiliencia Digital</h4>
-            <p style="font-size: 0.95rem; color: #555;">Protegemos la continuidad del negocio mediante protocolos de ciberseguridad avanzada y resiliencia digital.</p>
+        <!-- Pilar 3: Ciberseguridad -->
+        <div style="padding: 30px; background: #f8f9fa; border-top: 5px solid #1a1a1a; box-shadow: 0 5px 15px rgba(0,0,0,0.03);">
+            <h4 style="margin-top: 0; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">3. Blindaje y Resiliencia</h4>
+            <p style="font-size: 0.95rem; color: #555; line-height: 1.6;">Protegemos la continuidad del negocio mediante protocolos de ciberseguridad avanzada y resiliencia digital.</p>
         </div>
     </div> 
 </div>
 
-<!-- Sistema de Pestañas Misión/Visión Profesional -->
-<div class="section" style="max-width: 900px; margin: 0 auto; padding: 20px 20px 60px;">
+<!-- Sistema de Pestanas Mision y Vision: Diseño Premium -->
+<div class="section" style="max-width: 900px; margin: 0 auto; padding: 20px 20px 80px;">
     <div style="display: flex; justify-content: center; margin-bottom: -1px;">
-        <button onclick="openTab('mision')" id="btn-mision" style="background: #fff; border: 1px solid #ddd; border-bottom: none; padding: 15px 40px; font-size: 1.1rem; font-weight: 700; cursor: pointer; text-transform: uppercase; color: #1a1a1a; min-width: 200px; z-index: 2;">Misión</button>
-        <button onclick="openTab('vision')" id="btn-vision" style="background: #f4f4f4; border: 1px solid #ddd; padding: 15px 40px; font-size: 1.1rem; font-weight: 700; cursor: pointer; text-transform: uppercase; color: #999; min-width: 200px;">Visión 2027</button>
+        <button onclick="openTab('mision')" id="btn-mision" style="background: #fff; border: 1px solid #ddd; border-bottom: none; padding: 18px 45px; font-size: 1rem; font-weight: 700; cursor: pointer; text-transform: uppercase; color: #1a1a1a; min-width: 220px; z-index: 2; letter-spacing: 2px;">Misión</button>
+        <button onclick="openTab('vision')" id="btn-vision" style="background: #f4f4f4; border: 1px solid #ddd; padding: 18px 45px; font-size: 1rem; font-weight: 700; cursor: pointer; text-transform: uppercase; color: #999; min-width: 220px; letter-spacing: 2px;">Visión 2027</button>
     </div>
-    <div style="background: #fff; border: 1px solid #ddd; padding: 40px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+    <div style="background: #fff; border: 1px solid #ddd; padding: 50px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
         <div id="mision" class="tab-content" style="display: block; animation: fadeIn 0.5s;">
-            <p style="font-size: 1.1rem; line-height: 1.8; color: #333; margin: 0;">"Transformar la complejidad organizacional en sistemas de alto rendimiento mediante la integración de la Ingeniería Civil Industrial, la Administración de Empresas y la Ciberseguridad."</p>
+            <p style="font-size: 1.2rem; line-height: 2; color: #333; margin: 0; font-weight: 300;">"Transformar la complejidad organizacional en sistemas de alto rendimiento mediante la integración de la Ingeniería Civil Industrial, la Administración de Empresas y la Ciberseguridad."</p>
         </div>
         <div id="vision" class="tab-content" style="display: none; animation: fadeIn 0.5s;">
-            <p style="font-size: 1.1rem; line-height: 1.8; color: #333; margin: 0;">"Consolidarnos como la consultora boutique referente en Chile para la alta dirección."</p>
+            <p style="font-size: 1.2rem; line-height: 2; color: #333; margin: 0; font-weight: 300;">"Consolidarnos como la consultora boutique referente en Chile para la alta dirección."</p>
         </div>
     </div>
 </div>
 
-<!-- El Compromiso I-KUBERT -->
-<div class="section" style="max-width: 1000px; margin: 0 auto; padding: 0 20px 80px;">
-    <div style="background: #f8f9fa; padding: 35px; border-left: 6px solid #1a1a1a;">
-        <h3 style="margin-top: 0; text-transform: uppercase; font-size: 1.1rem;">El Compromiso I-KUBERT: Resultados Medibles</h3>
-        <p style="font-size: 1rem; line-height: 1.8; color: #333; margin-bottom: 0;">Nuestra metodología no se limita al diseño de soluciones; nos enfocamos en la optimización del corazón operativo de las organizaciones. Implementamos marcos de gestión basados en <strong>KPIs y OKRs</strong> de alto impacto.</p>
+<!-- El Compromiso I-KUBERT: Bloque de impacto -->
+<div class="section" style="max-width: 1000px; margin: 0 auto; padding: 0 20px 100px;">
+    <div style="background: #1a1a1a; padding: 45px; border-left: 10px solid #ffffff; box-shadow: 0 15px 35px rgba(0,0,0,0.2);">
+        <h3 style="margin-top: 0; text-transform: uppercase; font-size: 1.2rem; letter-spacing: 2px; color: #fff;">El Compromiso I-KUBERT: Resultados Medibles</h3>
+        <p style="font-size: 1.1rem; line-height: 1.8; color: #ccc; margin-bottom: 0; font-weight: 300;">Nuestra metodología no se limita al diseño de soluciones; nos enfocamos en la optimización del corazón operativo de las organizaciones. Implementamos marcos de gestión basados en <strong>KPIs y OKRs</strong> de alto impacto.</p>
     </div>
 </div>
 
-<!-- Equipo Gerencial Completo -->
-<div class="section" style="background: #ffffff; padding: 80px 20px; text-align: center; border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
-    <h2 style="letter-spacing: 3px; text-transform: uppercase; margin-bottom: 50px;">Equipo Gerencial</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1100px; margin: 0 auto;">
+<!-- Equipo Gerencial: Perfiles con fotos de 200px -->
+<div class="section" style="background: #ffffff; padding: 100px 20px; text-align: center; border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
+    <h2 style="letter-spacing: 5px; text-transform: uppercase; margin-bottom: 60px; font-size: 1.5rem;">Equipo Gerencial</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 50px; max-width: 1150px; margin: 0 auto;">
         
-        <!-- Perfil Lukas -->
+        <!-- Perfil Lukas Ahubert -->
         <div style="display: flex; flex-direction: column; align-items: center;">
-            <div style="width: 180px; height: 180px; border-radius: 50%; background: #f0f0f0; margin-bottom: 20px; overflow: hidden; border: 4px solid #1a1a1a;">
+            <div style="width: 200px; height: 200px; border-radius: 50%; background: #f0f0f0; margin-bottom: 25px; overflow: hidden; border: 5px solid #1a1a1a; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
                 <img src="/src/Foto Lukas Ahubert.jpeg" alt="Lukas B. Ahubert" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
-            <h4 style="margin: 0; font-size: 1.2rem;">Lukas B. Ahubert Lennon</h4>
-            <p style="font-size: 0.9rem; color: #666; margin: 8px 0 20px;">Gerente General</p>
-            <a href="https:<!--www.linkedin.com/in/lukas-ahubert/" target="_blank" style="text-decoration: none; background: #0077b5; color: white; padding: 10px 30px; border-radius: 25px; font-size: 0.85rem; font-weight: 700;">LINKEDIN</a>
+            <h4 style="margin: 0; font-size: 1.3rem; letter-spacing: -0.5px;">Lukas B. Ahubert Lennon</h4>
+            <p style="font-size: 0.95rem; color: #777; margin: 10px 0 25px; text-transform: uppercase; letter-spacing: 1px;">Gerente General</p>
+            <a href="https:<!--www.linkedin.com/in/lukas-ahubert/" target="_blank" style="text-decoration: none; background: #0077b5; color: white; padding: 12px 35px; border-radius: 30px; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px;">LINKEDIN</a>
         </div>
 
-        <!-- Perfil Natalia -->
+        <!-- Perfil Natalia Acuña -->
         <div style="display: flex; flex-direction: column; align-items: center;">
-            <div style="width: 180px; height: 180px; border-radius: 50%; background: #f0f0f0; margin-bottom: 20px; overflow: hidden; border: 4px solid #1a1a1a;">
+            <div style="width: 200px; height: 200px; border-radius: 50%; background: #f0f0f0; margin-bottom: 25px; overflow: hidden; border: 5px solid #1a1a1a; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
                 <img src="/src/Foto Natalia Acuña.jpeg" alt="Natalia Acuña" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
-            <h4 style="margin: 0; font-size: 1.2rem;">Natalia Acuña</h4>
-            <p style="font-size: 0.9rem; color: #666; margin: 8px 0 20px;">Gerente Comercial</p>
-            <a href="https:<!--www.linkedin.com/in/natalia-acu%C3%B1a/" target="_blank" style="text-decoration: none; background: #0077b5; color: white; padding: 10px 30px; border-radius: 25px; font-size: 0.85rem; font-weight: 700;">LINKEDIN</a>
+            <h4 style="margin: 0; font-size: 1.3rem; letter-spacing: -0.5px;">Natalia Acuña</h4>
+            <p style="font-size: 0.95rem; color: #777; margin: 10px 0 25px; text-transform: uppercase; letter-spacing: 1px;">Gerente Comercial</p>
+            <a href="https:<!--www.linkedin.com/in/natalia-acu%C3%B1a/" target="_blank" style="text-decoration: none; background: #0077b5; color: white; padding: 12px 35px; border-radius: 30px; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px;">LINKEDIN</a>
         </div>
 
-        <!-- Perfil Libuse -->
+        <!-- Perfil Libuse Ahubert -->
         <div style="display: flex; flex-direction: column; align-items: center;">
-            <div style="width: 180px; height: 180px; border-radius: 50%; background: #f0f0f0; margin-bottom: 20px; overflow: hidden; border: 4px solid #1a1a1a;">
-                <img src="/src/libuse.jpg" alt="Libuse Ahubert" style="width: 100%; height: 100%; object-fit: cover;">
+            <div style="width: 200px; height: 200px; border-radius: 50%; background: #f0f0f0; margin-bottom: 25px; overflow: hidden; border: 5px solid #1a1a1a; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+                <img src="/src/logo.png" alt="Libuse Ahubert" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
-            <h4 style="margin: 0; font-size: 1.2rem;">Libuse Ahubert</h4>
-            <p style="font-size: 0.9rem; color: #666; margin: 8px 0 20px;">Gerente de Marketing</p>
-            <a href="https:<!--www.linkedin.com/in/libuse-ahubert-lennon-980b43213" target="_blank" style="text-decoration: none; background: #0077b5; color: white; padding: 10px 30px; border-radius: 25px; font-size: 0.85rem; font-weight: 700;">LINKEDIN</a>
+            <h4 style="margin: 0; font-size: 1.3rem; letter-spacing: -0.5px;">Libuse Ahubert</h4>
+            <p style="font-size: 0.95rem; color: #777; margin: 10px 0 25px; text-transform: uppercase; letter-spacing: 1px;">Gerente de Marketing</p>
+            <a href="https:<!--www.linkedin.com/in/libuse-ahubert-lennon-980b43213" target="_blank" style="text-decoration: none; background: #0077b5; color: white; padding: 12px 35px; border-radius: 30px; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px;">LINKEDIN</a>
         </div>
     </div> 
 </div>
 
-<!-- Script de Pestañas -->
+<!-- Logica de Pestañas Interactivas -->
 <script>
 function openTab(tabName) {
   var i, x;
@@ -116,6 +128,7 @@ function openTab(tabName) {
 }
 </script>
 
+<!-- Estilos de animacion de entrada -->
 <style>
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 </style>
