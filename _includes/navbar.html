@@ -1,11 +1,28 @@
-<nav>
-    <a href="{{ site.baseurl }}/" class="logo-container">
-        <img src="{{ site.baseurl }}/src/logo.png" alt="IKUBERT Logo" class="nav-logo">
-        <span class="logo-text">IKUBERT</span>
-    </a>
-    <div class="menu">
-        <a href="{{ site.baseurl }}/">Home</a>
-        <a href="{{ site.baseurl }}/acerca">Acerca de</a>
-        <a href="{{ site.baseurl }}/contacto">Contacto</a>
+<header style="
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px 5%; 
+    background: #ffffff; 
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;">
+
+    <nav>
+        <ul style="list-style: none; display: flex; gap: 30px; margin: 0; padding: 0;">
+            <li><a href="/" style="text-decoration: none; color: #1a1a1a; font-weight: 600; font-size: 0.9rem; text-transform: uppercase;">Inicio</a></li>
+            <li><a href="/acerca" style="text-decoration: none; color: #1a1a1a; font-weight: 600; font-size: 0.9rem; text-transform: uppercase;">Acerca</a></li>
+            <li><a href="/contacto" style="text-decoration: none; color: #1a1a1a; font-weight: 600; font-size: 0.9rem; text-transform: uppercase;">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <div class="header-logo">
+        <a href="/">
+            <img src="/src/Logotipo IKUBERT Nombre lateral derecho.png" 
+                 alt="I-KUBERT" 
+                 style="height: 50px; width: auto; display: block;">
+        </a>
     </div>
-</nav>
+
+</header>
