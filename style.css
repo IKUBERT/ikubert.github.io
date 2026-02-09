@@ -5,7 +5,7 @@ html, body {
     height: 100%;
 }
 
-body { 
+.sticky-wrapper { 
     font-family: 'Inter', sans-serif; 
     line-height: 1.6; 
     color: #1a1a1a; 
@@ -15,21 +15,21 @@ body {
     min-height: 100vh;
 }
 
-/* El MAIN crece para empujar el footer, pero no deforma el contenido */
-main {
+/* El MAIN crece pero sus hijos se mantienen en el centro */
+.content-wrapper {
     flex: 1 0 auto;
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra el contenido internamente */
+    align-items: center; 
 }
 
-/* Estructura de Secciones: Mantiene el ancho elegante */
-header, nav, .section, .content-profile {
+/* Limitador de ancho: Para que no se vea "muuu anchoo" */
+header, nav, section, .section, .content-profile, .form-container {
     width: 100%;
-    max-width: 1400px; /* Evita que se vea "muy ancho" en pantallas grandes */
-    padding-left: 10%;
-    padding-right: 10%;
+    max-width: 1200px; /* Ancho máximo contenido */
+    margin: 0 auto;
+    padding: 0 10%; /* Mantiene el aire lateral de tus capturas */
 }
 
 /* Navegación */
@@ -51,50 +51,50 @@ nav {
 .logo-text { font-size: 22px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #1a1a1a; }
 .menu a { text-decoration: none; color: #1a1a1a; margin-left: 25px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
 
-/* Header y Cards */
-header { padding-top: 120px; padding-bottom: 120px; background: #f9f9f9; align-self: center; }
+/* Secciones y Hero */
+header { padding-top: 120px; padding-bottom: 120px; background: #f9f9f9; text-align: left; }
 h1 { font-size: 52px; margin-bottom: 25px; font-weight: 700; letter-spacing: -1px; }
 .hero-p { font-size: 22px; color: #666; max-width: 700px; font-weight: 300; }
 
-.section { padding-top: 100px; padding-bottom: 100px; }
+.section { padding-top: 80px; padding-bottom: 80px; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-top: 50px; }
 .card { padding: 30px 0; border-top: 1px solid #1a1a1a; }
 .card h3 { font-size: 16px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px; }
 
-/* FOOTER REDISEÑADO: Negro, corto y con 3 columnas */
-footer {
+/* Footer sólido y corto */
+.main-footer {
     background-color: #1a1a1a;
     color: #ffffff;
-    padding: 40px 10%;
+    padding: 40px 0;
     width: 100%;
     flex-shrink: 0;
 }
 
-.footer-container {
+.footer-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    width: 100%;
+    padding: 0 10%;
 }
 
 .footer-col { flex: 1; }
 .footer-col.left { text-align: left; }
 .footer-col.center { text-align: center; }
-.footer-col.right { text-align: right; display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+.footer-col.right { text-align: right; display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
 
 .footer-col img { height: 50px; width: auto; filter: brightness(0) invert(1); }
-.loc { font-size: 0.75rem; opacity: 0.6; letter-spacing: 1.5px; }
-.copy { font-size: 0.65rem; opacity: 0.4; margin-top: 5px; }
-.footer-col a { color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 300; }
-.social img { width: 18px; height: 18px; filter: grayscale(1) brightness(2); }
+.loc { font-size: 0.7rem; opacity: 0.6; letter-spacing: 1.5px; margin: 0; }
+.copy { font-size: 0.6rem; opacity: 0.4; margin-top: 2px; }
+.footer-col a { color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 300; }
+.social img { width: 16px; height: 16px; filter: grayscale(1) brightness(2); }
 
-/* Móvil */
+/* Móvil Responsivo */
 @media (max-width: 768px) {
-    header, .section, .content-profile { padding-left: 5%; padding-right: 5%; }
-    h1 { font-size: 36px; }
-    .footer-container { flex-direction: column; text-align: center; gap: 30px; }
+    header, .section, .content-profile { padding-left: 8%; padding-right: 8%; }
+    h1 { font-size: 34px; }
+    .footer-inner { flex-direction: column; text-align: center; gap: 30px; }
     .footer-col.right { align-items: center; }
     .footer-col.left { text-align: center; }
 }
