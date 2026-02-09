@@ -20,7 +20,7 @@ main {
     width: 100%;
 }
 
-/* --- NAVEGACIÓN OPTIMIZADA --- */
+/* --- NAVEGACIÓN --- */
 .site-nav {
     display: flex; 
     justify-content: space-between; 
@@ -28,7 +28,6 @@ main {
     padding: 15px 5%; 
     background-color: #ffffff; 
     width: 100%;
-    box-sizing: border-box;
     border-bottom: 1px solid #eee;
     flex-wrap: wrap;
 }
@@ -38,12 +37,28 @@ main {
     width: auto;
 }
 
+.nav-links {
+    display: flex; 
+    gap: 20px; 
+    flex-wrap: wrap; 
+    justify-content: flex-end;
+}
+
+.nav-links a {
+    text-decoration: none; 
+    color: #1a1a1a; 
+    font-weight: 700; 
+    font-size: 0.8rem; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+}
+
 /* Grilla de Servicios Escritorio */
 .grid { 
     display: grid; 
     grid-template-columns: repeat(3, 1fr); 
     gap: 40px; 
-    margin-top: 50px; 
+    margin-top: 50px;
     padding: 0 10%;
 }
 
@@ -83,7 +98,6 @@ header {
     gap: 4px;
 }
 
-/* Logo SVG Footer */
 .footer-logo-img { 
     height: 70px !important; 
     width: auto; 
