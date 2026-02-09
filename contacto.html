@@ -2,16 +2,42 @@
 layout: default
 title: Contacto | I-KUBERT
 ---
+
 <header>
-    <h1>Inicie una Consultoría Estratégica.</h1>
-    <p class="hero-p">Analicemos cómo fortalecer la eficiencia y seguridad de su organización.</p>
+    <h1>Canales de Consulta.</h1>
+    <p class="hero-p">Gestión de Proyectos, Auditorías de Ciberseguridad y Consultoría Industrial.</p>
 </header>
 
 <div class="section">
-    <p style="text-align: center; margin-bottom: 30px;">Oficina Central: <strong>Las Condes, Santiago, Chile.</strong></p>
-    
-    <div style="max-width: 600px; margin: 0 auto;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 50px;">
+        
+        <div>
+            <h3>Ubicación Estratégica</h3>
+            <p>Sede Principal: <strong>Las Condes, Santiago, Chile.</strong></p>
+            <p>Atención a nivel nacional y proyectos internacionales.</p>
+            
+            <h3 style="margin-top: 30px;">Áreas de Expertise</h3>
+            <ul style="line-height: 1.8;">
+                <li>Optimización de Procesos (Civil Industrial)</li>
+                <li>Seguridad de la Información (Ciberseguridad)</li>
+                <li>Planificación Estratégica (Administración)</li>
+            </ul>
         </div>
+
+        <div>
+            <form id="contact-form" style="display: flex; flex-direction: column; gap: 15px;">
+                <input type="text" name="nombre" placeholder="Nombre completo / Empresa" required style="padding: 12px; border: 1px solid #ddd;">
+                <input type="email" name="email" placeholder="Correo corporativo" required style="padding: 12px; border: 1px solid #ddd;">
+                <textarea name="mensaje" placeholder="Detalle su requerimiento o desafío técnico" rows="6" required style="padding: 12px; border: 1px solid #ddd;"></textarea>
+                
+                <button type="submit" id="submit-btn" style="background: #1a1a1a; color: #fff; padding: 15px; border: none; cursor: pointer; font-weight: 700; letter-spacing: 1px;">ENVIAR REQUERIMIENTO</button>
+                
+                <p id="response-msg" style="display:none; text-align: center; color: #2ecc71; font-weight: 700; border: 1px solid #2ecc71; padding: 10px;">
+                    Solicitud enviada. Un consultor se pondrá en contacto con usted.
+                </p>
+            </form>
+        </div>
+    </div>
 </div>
 
 <script>
@@ -23,8 +49,13 @@ title: Contacto | I-KUBERT
   form.addEventListener('submit', e => {
     e.preventDefault()
     btn.disabled = true
-    btn.innerText = 'ENVIANDO...'
-    fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors' })
+    btn.innerText = 'PROCESANDO...'
+    
+    fetch(scriptURL, { 
+        method: 'POST', 
+        body: new FormData(form),
+        mode: 'no-cors' 
+    })
     .then(() => {
         btn.style.display = 'none'
         msg.style.display = 'block'
@@ -32,7 +63,7 @@ title: Contacto | I-KUBERT
     })
     .catch(error => {
         btn.disabled = false
-        btn.innerText = 'ERROR'
+        btn.innerText = 'ERROR DE CONEXIÓN'
         console.error('Error!', error.message)
     })
   })
