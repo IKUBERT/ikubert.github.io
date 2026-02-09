@@ -3,49 +3,100 @@ layout: default
 title: Home | I-KUBERT
 ---
 
-<section style="
+<!-- Estilos de Control de Responsividad y Desbordamiento -->
+<style>
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Ajustes específicos para móviles */
+    @media (max-width: 768px) {
+        .hero-home {
+            padding: 80px 20px !important;
+            min-height: 500px !important;
+        }
+        .hero-title-home {
+            font-size: 2.2rem !important; /* Evita que el título rompa el borde */
+            letter-spacing: 2px !important;
+        }
+        .hero-subtitle-home {
+            font-size: 1.1rem !important;
+        }
+        .section-home {
+            padding: 50px 20px !important;
+        }
+        .feature-grid {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 30px !important;
+        }
+        .feature-card {
+            width: 100% !important;
+            margin: 0 !important;
+        }
+    }
+</style>
+
+<!-- Hero Principal: Impacto Inmediato -->
+<header class="hero-home" style="
     position: relative; 
-    height: 85vh; 
-    background: url('/src/Fotopaginahomeoficina.png') no-repeat center center/cover; 
-    display: flex; 
-    align-items: center; 
+    text-align: center; 
+    padding: 160px 20px; 
+    background: url('/src/Oficina de Ikubert.png') no-repeat center center/cover; 
+    color: #ffffff;
+    min-height: 650px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    text-align: center;
-    color: white;">
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;">
+
+    <!-- Filtro de profundidad profesional -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.65); z-index: 1;"></div>
     
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.55);"></div>
-
-    <div style="position: relative; z-index: 2; padding: 20px;">
-        <h1 style="font-size: 3.8rem; font-weight: 800; letter-spacing: -2px; margin-bottom: 20px; line-height: 1.1;">
-            Consultoría de <br> Transformación Innovadora
+    <div style="position: relative; z-index: 2; max-width: 900px;">
+        <h1 class="hero-title-home" style="font-size: 4rem; letter-spacing: 8px; margin-bottom: 20px; font-weight: 800; text-transform: uppercase; line-height: 1.1;">
+            I-KUBERT
         </h1>
-        <p style="font-size: 1.3rem; max-width: 700px; margin: 0 auto; opacity: 0.9; font-weight: 300;">
-            Arquitectura estratégica mediante la convergencia de Ingeniería Civil Industrial, Ciberseguridad y Administración.
+        <p class="hero-subtitle-home" style="font-size: 1.5rem; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; opacity: 0.9;">
+            Consultoría Estratégica & Ciberseguridad
         </p>
-        <a href="/contacto" style="display: inline-block; margin-top: 35px; padding: 18px 45px; background: #fff; color: #1a1a1a; text-decoration: none; font-weight: 700; border-radius: 4px; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; transition: 0.3s;">
-            Iniciar Consultoría Estratégica 360°
-        </a>
+        <div style="width: 50px; height: 3px; background: #ffffff; margin: 30px auto;"></div>
+        <a href="/acerca" style="display: inline-block; padding: 15px 40px; border: 1px solid #fff; color: #fff; text-decoration: none; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s; font-size: 0.9rem;">Explorar Visión</a>
     </div>
-</section>
+</header>
 
-<section style="background: #ffffff; padding: 80px 20px;">
-    <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px;">
+<!-- Seccion de Pilares: Grid Adaptable -->
+<div class="section-home" style="max-width: 1200px; margin: 0 auto; padding: 100px 20px; box-sizing: border-box;">
+    <div class="feature-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px;">
         
-        <div style="border-left: 4px solid #1a1a1a; padding-left: 25px;">
-            <h3 style="text-transform: uppercase; font-size: 1.1rem; margin-bottom: 15px;">Eficiencia Operativa</h3>
-            <p style="color: #555; line-height: 1.6;">Optimizamos el corazón operativo de su organización mediante reingeniería de procesos y marcos de gestión de alto impacto (KPIs/OKRs).</p>
+        <!-- Pilar 1 -->
+        <div class="feature-card" style="text-align: center; padding: 20px;">
+            <h3 style="text-transform: uppercase; letter-spacing: 2px; font-size: 1.1rem; margin-bottom: 20px; border-bottom: 2px solid #1a1a1a; display: inline-block; padding-bottom: 10px;">Ingeniería Industrial</h3>
+            <p style="color: #666; line-height: 1.8; font-weight: 300;">Optimización de procesos críticos y reingeniería organizacional para máxima eficiencia.</p>
         </div>
 
-        <div style="border-left: 4px solid #1a1a1a; padding-left: 25px;">
-            <h3 style="text-transform: uppercase; font-size: 1.1rem; margin-bottom: 15px;">Resiliencia en Ciberseguridad</h3>
-            <p style="color: #555; line-height: 1.6;">Blindamos sus activos críticos y garantizamos la continuidad del negocio frente a las amenazas del entorno digital moderno.</p>
+        <!-- Pilar 2 -->
+        <div class="feature-card" style="text-align: center; padding: 20px;">
+            <h3 style="text-transform: uppercase; letter-spacing: 2px; font-size: 1.1rem; margin-bottom: 20px; border-bottom: 2px solid #1a1a1a; display: inline-block; padding-bottom: 10px;">Administración</h3>
+            <p style="color: #666; line-height: 1.8; font-weight: 300;">Gestión estratégica de negocios con enfoque en rentabilidad y escalabilidad global.</p>
+        </div>
+
+        <!-- Pilar 3 -->
+        <div class="feature-card" style="text-align: center; padding: 20px;">
+            <h3 style="text-transform: uppercase; letter-spacing: 2px; font-size: 1.1rem; margin-bottom: 20px; border-bottom: 2px solid #1a1a1a; display: inline-block; padding-bottom: 10px;">Ciberseguridad</h3>
+            <p style="color: #666; line-height: 1.8; font-weight: 300;">Protección de activos digitales y auditorías técnicas para la continuidad del negocio.</p>
         </div>
 
     </div>
-</section>
+</div>
 
-<section style="background: #f9f9f9; padding: 60px 20px; text-align: center;">
-    <p style="font-style: italic; color: #666; max-width: 800px; margin: 0 auto;">
-        "Transformamos la complejidad operativa en sistemas de alto rendimiento bajo estándares de ingeniería de vanguardia."
-    </p>
-</section>
+<!-- Llamado a la Acción (CTA) Final -->
+<div style="background: #f9f9f9; padding: 80px 20px; text-align: center;">
+    <h2 style="text-transform: uppercase; letter-spacing: 3px; font-size: 1.5rem; margin-bottom: 30px;">¿Listo para blindar su empresa?</h2>
+    <a href="/contacto" style="background: #1a1a1a; color: #fff; padding: 20px 50px; text-decoration: none; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; border-radius: 4px;">Contactar un Consultor</a>
+</div>
