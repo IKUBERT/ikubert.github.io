@@ -1,9 +1,7 @@
 /* style.css - IKUBERT */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html, body {
-    height: 100%;
-}
+html, body { height: 100%; }
 
 body { 
     font-family: 'Inter', sans-serif; 
@@ -15,12 +13,9 @@ body {
     min-height: 100vh;
 }
 
-main {
-    flex: 1 0 auto;
-    width: 100%;
-}
+main { flex: 1 0 auto; width: 100%; }
 
-/* --- NAVEGACIÓN --- */
+/* NAVEGACIÓN */
 .site-nav {
     display: flex; 
     justify-content: space-between; 
@@ -32,93 +27,32 @@ main {
     flex-wrap: wrap;
 }
 
-.site-logo img {
-    height: 45px;
-    width: auto;
-}
-
-.nav-links {
-    display: flex; 
-    gap: 20px; 
-    flex-wrap: wrap; 
-    justify-content: flex-end;
-}
-
-.nav-links a {
-    text-decoration: none; 
-    color: #1a1a1a; 
-    font-weight: 700; 
-    font-size: 0.8rem; 
-    text-transform: uppercase; 
-    letter-spacing: 1px;
-}
+.site-logo img { height: 45px; width: auto; }
+.nav-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: flex-end; }
+.nav-links a { text-decoration: none; color: #1a1a1a; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
 
 /* Grilla de Servicios Escritorio */
 .grid { 
     display: grid; 
     grid-template-columns: repeat(3, 1fr); 
     gap: 40px; 
-    margin-top: 50px;
+    margin-top: 50px; 
     padding: 0 10%;
 }
 
-header {
-    padding: 120px 10%;
-    background-size: cover !important;
-    background-position: center !important;
-    width: 100%;
-}
+header { padding: 120px 10%; background-size: cover !important; background-position: center !important; width: 100%; }
 
-/* --- FOOTER DELGADO IKUBERT --- */
-.main-footer {
-    background-color: #1a1a1a !important;
-    color: #ffffff !important;
-    padding: 25px 0;
-    width: 100%;
-    flex-shrink: 0;
-}
-
-.footer-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 8%;
-}
-
+/* FOOTER DELGADO */
+.main-footer { background-color: #1a1a1a !important; color: #ffffff !important; padding: 25px 0; width: 100%; flex-shrink: 0; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 8%; }
 .footer-col { flex: 1; }
 .footer-col.left { text-align: left; }
 .footer-col.center { text-align: center; }
-.footer-col.right { 
-    text-align: right; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: flex-end; 
-    gap: 4px;
-}
+.footer-col.right { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
 
-.footer-logo-img { 
-    height: 70px !important; 
-    width: auto; 
-    filter: brightness(0) invert(1); 
-}
-
-.footer-mail {
-    color: #ffffff !important; 
-    text-decoration: none !important;
-    font-size: 0.85rem; 
-    font-weight: 300;
-    letter-spacing: 0.5px;
-}
-
-.linkedin-mini { 
-    width: 18px !important;
-    height: 18px !important; 
-    filter: grayscale(1) brightness(2); 
-    opacity: 0.8;
-}
-
+.footer-logo-img { height: 70px !important; width: auto; filter: brightness(0) invert(1); }
+.footer-mail { color: #ffffff !important; text-decoration: none !important; font-size: 0.85rem; font-weight: 300; }
+.linkedin-mini { width: 18px !important; height: 18px !important; filter: grayscale(1) brightness(2); opacity: 0.8; }
 .loc { font-size: 0.7rem; opacity: 0.6; letter-spacing: 1.5px; text-transform: uppercase; margin: 0; }
 .copy { font-size: 0.6rem; opacity: 0.4; margin-top: 2px; }
 
