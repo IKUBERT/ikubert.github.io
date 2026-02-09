@@ -2,76 +2,25 @@
 layout: default
 title: Home | IKUBERT
 ---
-
 <style>
-    html, body {
-        overflow-x: hidden;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
+    html, body { overflow-x: hidden; width: 100%; margin: 0; padding: 0; box-sizing: border-box; }
     @media (max-width: 768px) {
-        .hero-home {
-            padding: 80px 20px !important;
-            min-height: 500px !important;
-        }
-        .hero-title-home {
-            font-size: 2.5rem !important;
-            letter-spacing: 4px !important;
-        }
-        .hero-subtitle-home {
-            font-size: 1rem !important;
-            letter-spacing: 1px !important;
-        }
-        .section-home {
-            padding: 50px 20px !important;
-        }
-        .feature-grid {
-            display: flex !important;
-            flex-direction: column !important;
-            gap: 30px !important;
-        }
-        .cta-title {
-            font-size: 1.2rem !important;
-            letter-spacing: 1px !important;
-        }
-        .cta-button {
-            width: 100% !important;
-            max-width: 300px;
-            padding: 15px 10px !important;
-            font-size: 0.8rem !important;
-        }
+        .hero-home { padding: 80px 20px !important; min-height: 500px !important; }
+        .hero-title-home { font-size: 2.5rem !important; letter-spacing: 4px !important; }
+        .hero-subtitle-home { font-size: 1rem !important; letter-spacing: 1px !important; }
+        .section-home { padding: 50px 20px !important; }
+        .feature-grid { display: flex !important; flex-direction: column !important; gap: 30px !important; }
+        .cta-button { width: 100% !important; max-width: 300px; }
     }
 </style>
 
-<header class="hero-home" style="
-    position: relative; 
-    text-align: center; 
-    padding: 160px 20px; 
-    background: url('/src/oficina-home-ikubert.webp') no-repeat center center/cover; 
-    color: #ffffff;
-    min-height: 650px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;">
-
+<header class="hero-home" style="position: relative; text-align: center; padding: 160px 20px; background: url('/src/oficina-home-ikubert.webp') no-repeat center center/cover; color: #ffffff; min-height: 650px; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;">
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.65); z-index: 1;"></div>
-    
     <div style="position: relative; z-index: 2; width: 100%; max-width: 900px;">
-        <h1 class="hero-title-home" style="font-size: 4.5rem; letter-spacing: 10px; margin-bottom: 20px; font-weight: 800; text-transform: uppercase; line-height: 1; margin-top: 0;">
-            IKUBERT
-        </h1>
-        <p class="hero-subtitle-home" style="font-size: 1.5rem; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; opacity: 0.9;">
-            Consultoría Estratégica & Ciberseguridad
-        </p>
+        <h1 class="hero-title-home" style="font-size: 4.5rem; letter-spacing: 10px; margin-bottom: 20px; font-weight: 800; text-transform: uppercase;">IKUBERT</h1>
+        <p class="hero-subtitle-home" style="font-size: 1.5rem; font-weight: 300; letter-spacing: 3px; text-transform: uppercase;">Consultoría Estratégica & Ciberseguridad</p>
         <div style="width: 50px; height: 3px; background: #ffffff; margin: 30px auto;"></div>
-        <a href="/acerca" style="display: inline-block; padding: 15px 40px; border: 1px solid #fff; color: #fff; text-decoration: none; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s; font-size: 0.9rem;">Explorar Visión</a>
+        <a href="/acerca" style="display: inline-block; padding: 15px 40px; border: 1px solid #fff; color: #fff; text-decoration: none; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem;">Explorar Visión</a>
     </div>
 </header>
 
@@ -79,26 +28,20 @@ title: Home | IKUBERT
     <div class="feature-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px;">
         <div class="feature-card" style="text-align: center; padding: 20px;">
             <h3 style="text-transform: uppercase; letter-spacing: 2px; font-size: 1.1rem; margin-bottom: 20px; border-bottom: 2px solid #1a1a1a; display: inline-block; padding-bottom: 10px;">Ingeniería Industrial</h3>
-            <p style="color: #666; line-height: 1.8; font-weight: 300;">Optimización de procesos críticos y reingeniería organizacional para máxima eficiencia.</p>
+            <p style="color: #666; font-weight: 300;">Optimización de procesos críticos y reingeniería organizacional para máxima eficiencia.</p>
         </div>
         <div class="feature-card" style="text-align: center; padding: 20px;">
             <h3 style="text-transform: uppercase; letter-spacing: 2px; font-size: 1.1rem; margin-bottom: 20px; border-bottom: 2px solid #1a1a1a; display: inline-block; padding-bottom: 10px;">Ciberseguridad</h3>
-            <p style="color: #666; line-height: 1.8; font-weight: 300;">Protección de activos digitales y auditorías técnicas para la continuidad del negocio.</p>
+            <p style="color: #666; font-weight: 300;">Protección de activos digitales y auditorías técnicas para la continuidad del negocio.</p>
         </div>
         <div class="feature-card" style="text-align: center; padding: 20px;">
             <h3 style="text-transform: uppercase; letter-spacing: 2px; font-size: 1.1rem; margin-bottom: 20px; border-bottom: 2px solid #1a1a1a; display: inline-block; padding-bottom: 10px;">Administración</h3>
-            <p style="color: #666; line-height: 1.8; font-weight: 300;">Gestión estratégica de negocios con enfoque en rentabilidad y scalabilidad global.</p>
+            <p style="color: #666; font-weight: 300;">Gestión estratégica de negocios con enfoque en rentabilidad y escalabilidad global.</p>
         </div>
     </div>
 </div>
 
-<div style="background: #f9f9f9; padding: 80px 20px; text-align: center; width: 100%; box-sizing: border-box;">
-    <h2 class="cta-title" style="text-transform: uppercase; letter-spacing: 3px; font-size: 1.6rem; margin-bottom: 35px; line-height: 1.4;">
-        ¿Listo para blindar su empresa?
-    </h2>
-    <div style="display: flex; justify-content: center; width: 100%;">
-        <a href="/contacto" class="cta-button" style="background: #1a1a1a; color: #fff; padding: 20px 45px; text-decoration: none; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; border-radius: 4px; display: inline-block; box-sizing: border-box; transition: 0.3s; line-height: 1.2;">
-            Contactar un Consultor
-        </a>
-    </div>
+<div style="background: #f9f9f9; padding: 80px 20px; text-align: center; width: 100%;">
+    <h2 class="cta-title" style="text-transform: uppercase; letter-spacing: 3px; font-size: 1.6rem; margin-bottom: 35px;">¿Listo para blindar su empresa?</h2>
+    <a href="/contacto" class="cta-button" style="background: #1a1a1a; color: #fff; padding: 20px 45px; text-decoration: none; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; border-radius: 4px; display: inline-block;">Contactar un Consultor</a>
 </div>
