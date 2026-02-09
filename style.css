@@ -20,6 +20,24 @@ main {
     width: 100%;
 }
 
+/* --- NAVEGACIÓN OPTIMIZADA --- */
+.site-nav {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 15px 5%; 
+    background-color: #ffffff; 
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eee;
+    flex-wrap: wrap;
+}
+
+.site-logo img {
+    height: 45px;
+    width: auto;
+}
+
 /* Grilla de Servicios Escritorio */
 .grid { 
     display: grid; 
@@ -40,7 +58,7 @@ header {
 .main-footer {
     background-color: #1a1a1a !important;
     color: #ffffff !important;
-    padding: 25px 0; /* REDUCIDO: Antes era 60px. Ahora es mucho más delgado */
+    padding: 25px 0;
     width: 100%;
     flex-shrink: 0;
 }
@@ -62,17 +80,16 @@ header {
     display: flex; 
     flex-direction: column; 
     align-items: flex-end; 
-    gap: 4px; /* Espacio mínimo entre correo y LinkedIn */
+    gap: 4px;
 }
 
-/* Logo con tamaño ajustado para no ensanchar el footer */
+/* Logo SVG Footer */
 .footer-logo-img { 
-    height: 70px !important; /* Ajustado para mantener delgadez con presencia */
+    height: 70px !important; 
     width: auto; 
     filter: brightness(0) invert(1); 
 }
 
-/* Correo Blanco Inmaculado */
 .footer-mail {
     color: #ffffff !important; 
     text-decoration: none !important;
@@ -81,7 +98,6 @@ header {
     letter-spacing: 0.5px;
 }
 
-/* LinkedIn Mini */
 .linkedin-mini { 
     width: 18px !important;
     height: 18px !important; 
@@ -95,17 +111,13 @@ header {
 /* RESPONSIVO MÓVIL */
 @media (max-width: 768px) {
     .grid { grid-template-columns: 1fr; padding: 0 5%; }
-    
-    .footer-inner { 
-        flex-direction: column; 
-        text-align: center; 
-        gap: 25px; 
-    }
-    
-    .footer-col.left, .footer-col.right { 
-        text-align: center; 
-        align-items: center; 
-    }
-
+    .footer-inner { flex-direction: column; text-align: center; gap: 25px; }
+    .footer-col.left, .footer-col.right { text-align: center; align-items: center; }
     .footer-logo-img { height: 60px !important; }
+}
+
+@media (max-width: 600px) {
+    .site-nav { padding: 10px 15px !important; justify-content: center !important; gap: 10px; }
+    .nav-links { justify-content: center !important; gap: 15px !important; width: 100%; margin-top: 10px; }
+    .nav-links a { font-size: 0.7rem !important; }
 }
