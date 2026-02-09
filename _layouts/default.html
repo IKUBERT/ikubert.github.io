@@ -14,32 +14,27 @@
         {{ content }}
     </main>
 
-    <!-- Estructura de Footer Corporativo -->
-    <footer style="background-color: #1a1a1a; color: #ffffff; padding: 60px 20px; text-align: center; border-top: 5px solid #333;">
-        
-        <!-- Contenedor del Logotipo Principal  -->
-        <div style="margin-bottom: 30px;">
-            <img src="/src/Logotipo IKUBERT nombre abajo.png" alt="I-KUBERT" style="height: 100px; width: auto; filter: brightness(0) invert(1);">
-        </div>
+     <!-- Footer Optimizado: Layout Horizontal  -->
+    <footer style="background-color: #1a1a1a; color: #ffffff; padding: 40px 5%; border-top: 1px solid #333;">
+        <div style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; flex-wrap: wrap; gap: 20px;">
+            
+            <!-- Lado Izquierdo: Logotipo  -->
+            <div style="flex: 1; min-width: 200px;">
+                <img src="/src/Logotipo IKUBERT nombre abajo.png" alt="I-KUBERT" style="height: 60px; width: auto; filter: brightness(0) invert(1);">
+                <p style="font-size: 0.7rem; opacity: 0.4; margin-top: 10px; letter-spacing: 1px;">&copy; 2026 I-KUBERT | Santiago, Chile</p>
+            </div>
 
-        <!-- Informacion de Contacto y Ubicacion  -->
-        <div style="margin-bottom: 25px;">
-            <p style="margin: 5px 0; font-weight: 300; letter-spacing: 1px;">
-                <a href="mailto:contact@ikubert.com" style="color: #ffffff; text-decoration: none; border-bottom: 1px solid #444; padding-bottom: 2px;">contact@ikubert.com</a>
-            </p>
-            <p style="margin: 5px 0; font-size: 0.85rem; opacity: 0.6; letter-spacing: 2px; text-transform: uppercase;">Santiago, Chile</p>
-        </div>
-
-         <!-- Icono de LinkedIn con enlace a la empresa  -->
-        <div style="margin-bottom: 40px;">
-            <a href="https://www.linkedin.com/company/ikubert" target="_blank" style="display: inline-block; transition: transform 0.3s ease;">
-                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn I-KUBERT" style="width: 24px; height: 24px; filter: grayscale(1) brightness(2);">
-            </a>
-        </div>
-
-         <!-- Copyright final  -->
-        <div style="border-top: 1px solid #333; padding-top: 25px; max-width: 600px; margin: 0 auto;">
-            <p style="font-size: 0.75rem; opacity: 0.4; letter-spacing: 1px;">&copy; 2026 I-KUBERT. Todos los derechos reservados.</p>
+            <!-- Lado Derecho: Contacto y Social  -->
+            <div style="text-align: right; flex: 1; min-width: 250px;">
+                <p style="margin: 0 0 10px 0; font-weight: 300; letter-spacing: 0.5px;">
+                    <a href="mailto:contact@ikubert.com" style="color: #ffffff; text-decoration: none; border-bottom: 1px solid #444; padding-bottom: 2px; font-size: 0.95rem;">contact@ikubert.com</a>
+                </p>
+            
+                <!-- Enlace LinkedIn  -->
+                <a href="https://www.linkedin.com/company/ikubert" target="_blank" style="display: inline-block; vertical-align: middle;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 20px; height: 20px; filter: grayscale(1) brightness(2); opacity: 0.8;">
+                </a>
+            </div>
         </div>
     </footer>
 
