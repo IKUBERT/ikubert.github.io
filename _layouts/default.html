@@ -4,33 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if page.title %}{{ page.title }}{% else %}IKUBERT{% endif %}</title>
-    
     <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/src/logo-ikubert.svg">
-
-    <meta name="description" content="IKUBERT: Consultoría estratégica avanzada en Ingeniería Civil Industrial y Ciberseguridad.">
-    <meta property="og:image" content="https://www.ikubert.com/src/logo-ikubert-abajo.svg">
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ site.baseurl }}/style.css?v=2.0">
+    <link rel="stylesheet" href="{{ site.baseurl }}/style.css?v=2.1">
 </head>
 <body class="sticky-wrapper">
     {% include navbar.html %}
-    
     <main class="content-wrapper">
         {{ content }}
     </main>
-
     <footer class="main-footer">
         <div class="footer-inner">
             <div class="footer-col left">
                 <p class="loc">SANTIAGO, CHILE</p>
                 <p class="copy">&copy; 2026 IKUBERT</p>
             </div>
-
             <div class="footer-col center">
                 <img src="/src/logo-ikubert-abajo.svg" alt="IKUBERT" class="footer-logo-img">
             </div>
-
             <div class="footer-col right">
                 <a href="mailto:contact@ikubert.com" class="footer-mail">contact@ikubert.com</a>
                 <div class="social-wrapper">
