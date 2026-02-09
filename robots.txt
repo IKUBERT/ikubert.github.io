@@ -6,10 +6,11 @@ Allow: /src/Logotipo%20IKUBERT%20Nombre%20lateral%20derecho.png
 Allow: /src/Logotipo%20IKUBERT%20nombre%20abajo.png
 Allow: /src/logo.png
 Allow: /src/Fotopaginahomeoficina.png
+Allow: /src/Oficina%20de%20Ikubert.png
 
 # --- BLOQUEAR PRIVACIDAD (FOTOS DE PERSONAS Y OFICINA) ---
 Disallow: /src/Foto%20Lukas%20Ahubert.jpeg
 Disallow: /src/Foto%20Natalia%20Acuña.jpeg
-Disallow: /src/Oficina%20de%20Ikubert.png
+Disallow: /src/Foto%20Libuse%20Ahubert.jpeg
 
 Sitemap: https://www.ikubert.com/sitemap.xml
