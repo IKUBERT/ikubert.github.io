@@ -4,15 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>{% if page.title %}{{ page.title }} | IKUBERT{% else %}IKUBERT | Consultoría en Ingeniería y Ciberseguridad{% endif %}</title>
+    <title>
+      {% if page.url == "/" %}
+        IKUBERT | Ingeniería y Gestión
+      {% elsif page.title %}
+        {{ page.title }} | IKUBERT
+      {% else %}
+        IKUBERT
+      {% endif %}
+    </title>
+
     <meta name="description" content="IKUBERT: Consultoría estratégica que integra Ingeniería Industrial, Ciberseguridad y Gestión de Negocios en Santiago, Chile.">
 
     <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/src/logo-ikubert.svg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     
-   <!-- CONTROL DE VERSIÓN CSS -->
     <link rel="stylesheet" href="{{ site.baseurl }}/style.css?v=1.0">
-    
     
     <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 </head>
