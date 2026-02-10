@@ -11,6 +11,7 @@ title: Home | IKUBERT
         .hero-subtitle-home { font-size: 1rem !important; letter-spacing: 1px !important; }
         .feature-grid { display: flex !important; flex-direction: column !important; gap: 30px !important; }
         .cta-button { width: 100% !important; max-width: 300px; }
+        .cta-title { font-size: 1.4rem !important; }
     }
 </style>
 
@@ -20,7 +21,7 @@ title: Home | IKUBERT
         <h1 class="hero-title-home" style="font-size: 4.5rem; letter-spacing: 10px; margin-bottom: 20px; font-weight: 800; text-transform: uppercase; line-height: 1;">IKUBERT</h1>
         <p class="hero-subtitle-home" style="font-size: 1.5rem; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; opacity: 0.9;">Consultoría Estratégica & Ciberseguridad</p>
         <div style="width: 50px; height: 3px; background: #ffffff; margin: 30px auto;"></div>
-        <a href="/acerca" style="display: inline-block; padding: 15px 40px; border: 1px solid #fff; color: #fff; text-decoration: none; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s; font-size: 0.9rem;">Explorar Visión</a>
+        <a href="{{ site.baseurl }}/acerca" style="display: inline-block; padding: 15px 40px; border: 1px solid #fff; color: #fff; text-decoration: none; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s; font-size: 0.9rem;">Explorar Visión</a>
     </div>
 </header>
 
@@ -41,9 +42,18 @@ title: Home | IKUBERT
     </div>
 </div>
 
-<div style="background: #f9f9f9; padding: 80px 20px; text-align: center; width: 100%; box-sizing: border-box;">
-    <h2 class="cta-title" style="text-transform: uppercase; letter-spacing: 3px; font-size: 1.6rem; margin-bottom: 35px;">¿Listo para transformar y potenciar la estructura de sus procesos con una visión técnica y segura?</h2>
-    <div style="display: flex; justify-content: center; width: 100%;">
-        <a href="/contacto" class="cta-button" style="background: #1a1a1a; color: #fff; padding: 20px 45px; text-decoration: none; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; border-radius: 4px; display: inline-block; transition: 0.3s;">Contactar un Consultor</a>
+<div style="background: #f9f9f9; padding: 100px 20px; text-align: center; width: 100%; box-sizing: border-box; border-top: 1px solid #eee;">
+    <div style="max-width: 900px; margin: 0 auto;">
+        <h2 class="cta-title" style="text-transform: uppercase; letter-spacing: 3px; font-size: 1.8rem; font-weight: 800; margin-bottom: 15px; color: #1a1a1a; line-height: 1.2;">
+            ¿Listo para potenciar su estructura con agilidad técnica?
+        </h2>
+        <p style="font-size: 1.1rem; color: #666; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 40px; font-weight: 300;">
+            Evolución estratégica hacia modelos de alto desempeño y mejora continua.
+        </p>
+        <div style="display: flex; justify-content: center; width: 100%;">
+            <a href="{{ site.baseurl }}/contacto" class="cta-button" style="background: #1a1a1a; color: #fff; padding: 20px 45px; text-decoration: none; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; display: inline-block; transition: 0.3s; border-radius: 2px;">
+                Contactar un Consultor
+            </a>
+        </div>
     </div>
 </div>
