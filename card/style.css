@@ -1,0 +1,147 @@
+/* card/style.css - IKUBERT */
+:root {
+    --bg-dark: #0a0a0a;
+    --card-bg: #1a1a1a;
+    --accent: #ffffff;
+    --text-gray: #a0a0a0;
+    --wa-green: #25D366;
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-dark);
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+}
+
+/* Contenedor con Perspectiva 3D */
+.card-container {
+    width: 340px;
+    height: 520px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+/* Clase que se activa con el click/tap en JS */
+.card-container.is-flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+/* FRENTE */
+.card-front {
+    background: linear-gradient(145deg, #1a1a1a, #000000);
+}
+
+.logo-main {
+    width: 220px;
+    filter: brightness(0) invert(1);
+    margin-bottom: 30px;
+}
+
+.hint {
+    font-size: 0.7rem;
+    color: var(--text-gray);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    opacity: 0.6;
+}
+
+/* REVERSO */
+.card-back {
+    background: #ffffff;
+    color: #000;
+    transform: rotateY(180deg);
+    padding: 40px 20px;
+    justify-content: flex-start;
+}
+
+.card-back h1 {
+    font-size: 1.4rem;
+    margin: 20px 0 5px 0;
+    font-weight: 700;
+}
+
+.card-back h2 {
+    font-size: 0.85rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+/* Botones de Acción */
+.contact-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    text-decoration: none;
+    color: #000;
+    border: 1px solid #ddd;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:active { transform: scale(0.98); background: #f0f0f0; }
+
+.btn-whatsapp {
+    background-color: #000;
+    color: #fff;
+    border: none;
+}
+
+.btn-save {
+    width: 100%;
+    background: #007aff;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0,122,255,0.3);
+}
