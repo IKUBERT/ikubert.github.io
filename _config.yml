@@ -1,5 +1,9 @@
-title: I-KUBERT
-description: Consultoría en Ingeniería y Gestión
+title: IKUBERT
+description: "Consultoría estratégica en Santiago de Chile. Especialistas en Ingeniería Industrial, Gestión de Negocios y Ciberseguridad para la optimización de procesos y alto desempeño."
 theme: jekyll-theme-minimal
 baseurl: ""
-url: "https://ikubert.github.io"
+# Cambia esto por tu dominio real
+url: "https://www.ikubert.com" 
+
+plugins:
+  - jekyll-sitemap
