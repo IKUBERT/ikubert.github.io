@@ -1,0 +1,60 @@
+:root {
+    --bg-dark: #121212;
+    --card-white: #ffffff;
+    --accent-blue: #0077b5;
+    --wsp-green: #25D366;
+}
+
+body {
+    margin: 0; background: var(--bg-dark);
+    display: flex; justify-content: center; align-items: center;
+    height: 100vh; font-family: 'Inter', sans-serif;
+}
+
+.card-container {
+    width: 350px; height: 550px; perspective: 1000px;
+}
+
+.card-inner {
+    position: relative; width: 100%; height: 100%;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d; cursor: pointer;
+}
+
+.card-container.is-flipped .card-inner { transform: rotateY(180deg); }
+
+.card-front, .card-back {
+    position: absolute; width: 100%; height: 100%;
+    backface-visibility: hidden; border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    display: flex; flex-direction: column; align-items: center;
+}
+
+.card-front { background: var(--card-white); justify-content: center; }
+.card-back { background: var(--card-white); transform: rotateY(180deg); padding: 40px 20px; box-sizing: border-box; }
+
+.logo-frente { width: 220px; margin-bottom: 20px; }
+.hint { font-size: 0.8rem; color: #999; text-transform: uppercase; letter-spacing: 1px; }
+
+.header-back h1 { font-size: 1.5rem; margin: 0; color: #1a1a1a; }
+.header-back h2 { font-size: 0.9rem; color: #666; margin: 5px 0 30px; text-transform: uppercase; }
+
+.contact-data { text-align: left; width: 100%; margin-bottom: 30px; font-size: 0.95rem; }
+
+.action-grid { display: grid; grid-template-columns: 1fr; gap: 10px; width: 100%; margin-bottom: 25px; }
+
+.btn {
+    text-decoration: none; padding: 12px; border-radius: 10px;
+    font-size: 0.9rem; font-weight: 700; text-align: center;
+    transition: opacity 0.2s; color: white;
+}
+
+.btn-wsp { background: var(--wsp-green); }
+.btn-mail { background: #333; }
+.btn-ln { background: var(--accent-blue); }
+
+.btn-save {
+    width: 100%; background: #000; color: #fff;
+    border: none; padding: 15px; border-radius: 10px;
+    font-weight: 700; text-transform: uppercase; cursor: pointer;
+}
