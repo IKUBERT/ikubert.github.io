@@ -112,7 +112,6 @@ layout: null
         .btn-wsp { background: var(--wsp); color: white; }
         .btn-mail { background: #1e293b; color: white; }
         .btn-ln { background: #0077b5; color: white; }
-        .btn-save { background: white; color: var(--text-main); border: 2px solid #f1f5f9; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
 
         .btn:active { transform: scale(0.96); opacity: 0.9; }
 
@@ -151,7 +150,7 @@ layout: null
                     <a id="btn-wsp" href="#" class="btn btn-wsp" target="_blank" onclick="event.stopPropagation()">WhatsApp</a>
                     <a id="btn-mail" href="#" class="btn btn-mail" onclick="event.stopPropagation()">Enviar Correo</a>
                     <a id="btn-ln" href="#" target="_blank" class="btn btn-ln" onclick="event.stopPropagation()">LinkedIn</a>
-                    </div>
+                </div>
             </div>
 
         </div>
@@ -184,47 +183,6 @@ layout: null
             } else {
                 document.getElementById('btn-ln').style.display = 'none';
             }
-
-            // 3. Generación de vCard y botón de descarga indestructible
-            function createVCardDownload() {
-                const nameParts = data.n.split(" ");
-                const lastName = nameParts.length > 1 ? nameParts.slice(1).join(" ") : "";
-                const firstName = nameParts[0];
-
-                const vcard = [
-                    "BEGIN:VCARD",
-                    "VERSION:3.0",
-                    `N:${lastName};${firstName};;;`,
-                    `FN:${data.n}`,
-                    "ORG:IKUBERT",
-                    `TITLE:${data.c}`,
-                    `TEL;TYPE=CELL:+${data.t}`,
-                    `EMAIL:${data.m}`,
-                    "URL:https://www.ikubert.com",
-                    `ADR;TYPE=WORK:;;;${data.d};;;Chile`,
-                    `NOTE:LinkedIn: ${data.l}`,
-                    "END:VCARD"
-                ].join("\n");
-
-                const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
-                const vcardUrl = window.URL.createObjectURL(blob);
-                
-                // Creamos el link que envuelve al botón
-                const downloadAnchor = document.createElement('a');
-                downloadAnchor.href = vcardUrl;
-                downloadAnchor.download = `contacto_${data.n.replace(/\s+/g, '_')}.vcf`;
-                downloadAnchor.style.textDecoration = 'none';
-                downloadAnchor.onclick = (e) => e.stopPropagation();
-
-                const btnElement = document.createElement('button');
-                btnElement.className = 'btn btn-save';
-                btnElement.innerText = 'GUARDAR CONTACTO';
-                
-                downloadAnchor.appendChild(btnElement);
-                document.getElementById('actions-container').appendChild(downloadAnchor);
-            }
-
-            createVCardDownload();
         }
     </script>
 </body>
