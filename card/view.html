@@ -6,7 +6,7 @@ layout: null
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>IKUBERT | Digital Card</title>
+    <title>IKUBERT | Digital Profile</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -14,7 +14,7 @@ layout: null
             --card-bg: #ffffff;
             --text-main: #1a1c20;
             --text-sec: #64748b;
-            --accent: #0077b5;
+            --accent: #0055ff;
             --wsp: #22c55e;
             --border: #e2e8f0;
         }
@@ -31,10 +31,9 @@ layout: null
             overflow: hidden;
         }
 
-        /* PERSPECTIVA Y CONTENEDOR */
         .scene {
             width: 320px;
-            height: 520px;
+            height: 540px;
             perspective: 1200px;
         }
 
@@ -59,16 +58,16 @@ layout: null
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
             display: flex;
             flex-direction: column;
+            overflow: hidden;
         }
 
-        /* FRENTE */
         .card-front {
             justify-content: center;
             align-items: center;
             border: 1px solid rgba(255,255,255,0.1);
         }
 
-        .logo-frente { width: 180px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1)); }
+        .logo-frente { width: 190px; }
 
         .hint {
             position: absolute;
@@ -80,54 +79,50 @@ layout: null
             animation: pulse 2s infinite;
         }
 
-        /* REVERSO */
         .card-back {
             transform: rotateY(180deg);
-            padding: 32px 24px;
+            padding: 35px 24px;
         }
 
-        .header { margin-bottom: 24px; }
+        .header { margin-bottom: 24px; border-left: 4px solid var(--accent); padding-left: 15px; }
         .header h1 { font-size: 1.4rem; font-weight: 800; color: var(--text-main); line-height: 1.2; }
         .header h2 { font-size: 0.8rem; font-weight: 600; color: var(--accent); text-transform: uppercase; margin-top: 4px; letter-spacing: 0.5px; }
 
-        .info-group { margin-bottom: 28px; }
+        .info-group { margin-bottom: 25px; }
         .info-item { display: flex; align-items: center; margin-bottom: 12px; font-size: 0.85rem; color: var(--text-main); font-weight: 500; }
-        .info-item svg { width: 16px; margin-right: 12px; color: var(--text-sec); }
-        .info-dir { font-size: 0.75rem; color: var(--text-sec); padding-left: 28px; margin-top: -8px; line-height: 1.4; }
+        .info-item svg { width: 18px; margin-right: 12px; color: var(--text-sec); flex-shrink: 0; }
+        .info-dir { font-size: 0.75rem; color: var(--text-sec); padding-left: 30px; margin-top: -8px; line-height: 1.4; }
 
-        /* ACCIONES */
         .actions { display: grid; gap: 10px; margin-top: auto; }
         
         .btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 12px;
+            padding: 13px;
             border-radius: 12px;
             text-decoration: none;
             font-size: 0.9rem;
-            font-weight: 600;
+            font-weight: 700;
             transition: all 0.2s;
             border: none;
+            cursor: pointer;
         }
 
         .btn-wsp { background: var(--wsp); color: white; }
         .btn-mail { background: #1e293b; color: white; }
-        .btn-ln { background: var(--accent); color: white; }
-        .btn-save { background: transparent; color: var(--text-main); border: 1.5px solid var(--text-main); margin-top: 5px; }
+        .btn-ln { background: #0077b5; color: white; }
+        .btn-save { background: white; color: var(--text-main); border: 2px solid #f1f5f9; margin-top: 5px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
 
         .btn:active { transform: scale(0.96); opacity: 0.9; }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
-        }
+        @keyframes pulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
     </style>
 </head>
 <body>
 
     <div class="scene">
-        <div class="card" id="card" onclick="this.classList.toggle('is-flipped')">
+        <div class="card" onclick="this.classList.toggle('is-flipped')">
             
             <div class="card-face card-front">
                 <img src="/src/logotipo-ikubert-lateral.svg" class="logo-frente">
@@ -153,10 +148,10 @@ layout: null
                 </div>
 
                 <div class="actions">
-                    <a id="btn-wsp" href="#" class="btn btn-wsp" onclick="event.stopPropagation()">WhatsApp</a>
+                    <a id="btn-wsp" href="#" class="btn btn-wsp" target="_blank" onclick="event.stopPropagation()">WhatsApp</a>
                     <a id="btn-mail" href="#" class="btn btn-mail" onclick="event.stopPropagation()">Enviar Correo</a>
                     <a id="btn-ln" href="#" target="_blank" class="btn btn-ln" onclick="event.stopPropagation()">LinkedIn</a>
-                    <button class="btn btn-save" onclick="saveVCard(event)">Guardar Contacto</button>
+                    <button class="btn btn-save" onclick="saveVCard(event)">GUARDAR EN CONTACTOS</button>
                 </div>
             </div>
 
@@ -167,31 +162,61 @@ layout: null
         const hash = window.location.hash.substring(1);
         if (hash) {
             const d = decodeURIComponent(hash).split('|');
+            // Mapeo: 0:Nombre, 1:Cargo, 2:Dir, 3:Tel, 4:Mail, 5:LinkedIn
             const data = { n: d[0], c: d[1], d: d[2], t: d[3], m: d[4], l: d[5] };
 
             document.getElementById('p-name').innerText = data.n;
             document.getElementById('p-title').innerText = data.c;
-            document.getElementById('p-dir').innerText = data.d || '';
             document.getElementById('txt-mail').innerText = data.m;
-            document.getElementById('txt-tel').innerText = data.t;
-
-            if(!data.d) document.getElementById('p-dir').style.display = 'none';
-            if(!data.m) document.getElementById('row-mail').style.display = 'none';
-            if(!data.t) document.getElementById('row-tel').style.display = 'none';
+            document.getElementById('txt-tel').innerText = "+" + data.t;
             
+            if(data.d) {
+                document.getElementById('p-dir').innerText = data.d;
+            } else {
+                document.getElementById('p-dir').style.display = 'none';
+            }
+
             document.getElementById('btn-wsp').href = `https://wa.me/${data.t}`;
             document.getElementById('btn-mail').href = `mailto:${data.m}`;
-            document.getElementById('btn-ln').href = data.l || '#';
-            if(!data.l) document.getElementById('btn-ln').style.display = 'none';
+            
+            if(data.l && data.l.includes('http')) {
+                document.getElementById('btn-ln').href = data.l;
+            } else {
+                document.getElementById('btn-ln').style.display = 'none';
+            }
 
             window.saveVCard = function(e) {
                 e.stopPropagation();
-                const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:${data.n}\nORG:IKUBERT\nTITLE:${data.c}\nTEL:${data.t}\nEMAIL:${data.m}\nADR:;;${data.d};;;;\nEND:VCARD`;
-                const blob = new Blob([vcard], { type: "text/vcard" });
+                
+                const nameParts = data.n.split(" ");
+                const lastName = nameParts.length > 1 ? nameParts.slice(1).join(" ") : "";
+                const firstName = nameParts[0];
+
+                // El formato exacto que confirmaste que funciona
+                const vcard = [
+                    "BEGIN:VCARD",
+                    "VERSION:3.0",
+                    `N:${lastName};${firstName};;;`,
+                    `FN:${data.n}`,
+                    "ORG:IKUBERT",
+                    `TITLE:${data.c}`,
+                    `TEL;TYPE=CELL:+${data.t}`,
+                    `EMAIL:${data.m}`,
+                    "URL:https://www.ikubert.com",
+                    `ADR;TYPE=WORK:;;;${data.d};;;Chile`,
+                    `NOTE:Perfil LinkedIn -> ${data.l}`,
+                    "END:VCARD"
+                ].join("\n");
+
+                const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
+                const url = window.URL.createObjectURL(blob);
                 const a = document.createElement('a');
-                a.href = window.URL.createObjectURL(blob);
-                a.download = `${data.n.replace(/\s+/g, '_')}.vcf`;
+                a.href = url;
+                a.download = `card_online_${data.n.replace(/\s+/g, '_').lower()}.vcf`;
+                document.body.appendChild(a);
                 a.click();
+                document.body.removeChild(a);
+                window.URL.revokeObjectURL(url);
             };
         }
     </script>
