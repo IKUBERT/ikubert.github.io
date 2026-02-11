@@ -16,7 +16,6 @@ layout: null
             --text-sec: #64748b;
             --accent: #0055ff;
             --wsp: #22c55e;
-            --border: #e2e8f0;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -107,12 +106,13 @@ layout: null
             transition: all 0.2s;
             border: none;
             cursor: pointer;
+            width: 100%;
         }
 
         .btn-wsp { background: var(--wsp); color: white; }
         .btn-mail { background: #1e293b; color: white; }
         .btn-ln { background: #0077b5; color: white; }
-        .btn-save { background: white; color: var(--text-main); border: 2px solid #f1f5f9; margin-top: 5px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .btn-save { background: white; color: var(--text-main); border: 2px solid #f1f5f9; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
 
         .btn:active { transform: scale(0.96); opacity: 0.9; }
 
@@ -122,7 +122,7 @@ layout: null
 <body>
 
     <div class="scene">
-        <div class="card" onclick="this.classList.toggle('is-flipped')">
+        <div class="card" id="card" onclick="this.classList.toggle('is-flipped')">
             
             <div class="card-face card-front">
                 <img src="/src/logotipo-ikubert-lateral.svg" class="logo-frente">
@@ -147,12 +147,11 @@ layout: null
                     <div id="p-dir" class="info-dir"></div>
                 </div>
 
-                <div class="actions">
+                <div class="actions" id="actions-container">
                     <a id="btn-wsp" href="#" class="btn btn-wsp" target="_blank" onclick="event.stopPropagation()">WhatsApp</a>
                     <a id="btn-mail" href="#" class="btn btn-mail" onclick="event.stopPropagation()">Enviar Correo</a>
                     <a id="btn-ln" href="#" target="_blank" class="btn btn-ln" onclick="event.stopPropagation()">LinkedIn</a>
-                    <button class="btn btn-save" onclick="saveVCard(event)">GUARDAR EN CONTACTOS</button>
-                </div>
+                    </div>
             </div>
 
         </div>
@@ -162,9 +161,9 @@ layout: null
         const hash = window.location.hash.substring(1);
         if (hash) {
             const d = decodeURIComponent(hash).split('|');
-            // Mapeo: 0:Nombre, 1:Cargo, 2:Dir, 3:Tel, 4:Mail, 5:LinkedIn
             const data = { n: d[0], c: d[1], d: d[2], t: d[3], m: d[4], l: d[5] };
 
+            // 1. Llenado de Textos
             document.getElementById('p-name').innerText = data.n;
             document.getElementById('p-title').innerText = data.c;
             document.getElementById('txt-mail').innerText = data.m;
@@ -176,6 +175,7 @@ layout: null
                 document.getElementById('p-dir').style.display = 'none';
             }
 
+            // 2. Configuración de enlaces directos
             document.getElementById('btn-wsp').href = `https://wa.me/${data.t}`;
             document.getElementById('btn-mail').href = `mailto:${data.m}`;
             
@@ -185,14 +185,12 @@ layout: null
                 document.getElementById('btn-ln').style.display = 'none';
             }
 
-            window.saveVCard = function(e) {
-                e.stopPropagation();
-                
+            // 3. Generación de vCard y botón de descarga indestructible
+            function createVCardDownload() {
                 const nameParts = data.n.split(" ");
                 const lastName = nameParts.length > 1 ? nameParts.slice(1).join(" ") : "";
                 const firstName = nameParts[0];
 
-                // El formato exacto que confirmaste que funciona
                 const vcard = [
                     "BEGIN:VCARD",
                     "VERSION:3.0",
@@ -204,20 +202,29 @@ layout: null
                     `EMAIL:${data.m}`,
                     "URL:https://www.ikubert.com",
                     `ADR;TYPE=WORK:;;;${data.d};;;Chile`,
-                    `NOTE:Perfil LinkedIn -> ${data.l}`,
+                    `NOTE:LinkedIn: ${data.l}`,
                     "END:VCARD"
                 ].join("\n");
 
                 const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
-                const url = window.URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = `card_online_${data.n.replace(/\s+/g, '_').lower()}.vcf`;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                window.URL.revokeObjectURL(url);
-            };
+                const vcardUrl = window.URL.createObjectURL(blob);
+                
+                // Creamos el link que envuelve al botón
+                const downloadAnchor = document.createElement('a');
+                downloadAnchor.href = vcardUrl;
+                downloadAnchor.download = `contacto_${data.n.replace(/\s+/g, '_')}.vcf`;
+                downloadAnchor.style.textDecoration = 'none';
+                downloadAnchor.onclick = (e) => e.stopPropagation();
+
+                const btnElement = document.createElement('button');
+                btnElement.className = 'btn btn-save';
+                btnElement.innerText = 'GUARDAR CONTACTO';
+                
+                downloadAnchor.appendChild(btnElement);
+                document.getElementById('actions-container').appendChild(downloadAnchor);
+            }
+
+            createVCardDownload();
         }
     </script>
 </body>
