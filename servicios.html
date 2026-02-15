@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios | IKUBERT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --primary: #0055ff;
+            --dark: #1a1c20;
+            --text-sec: #64748b;
+            --white: #ffffff;
+            --accent-soft: #eef2ff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg); 
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container { padding: 40px 20px; max-width: 600px; margin: auto; }
+
+        header { text-align: center; margin-bottom: 40px; }
+        header h1 { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.5px; }
+        header p { color: var(--text-sec); font-size: 0.95rem; margin-top: 10px; }
+
+        /* Estructura de Líneas */
+        .linea-servicio {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .linea-header { display: flex; align-items: center; margin-bottom: 15px; }
+        .icon { font-size: 1.5rem; margin-right: 12px; }
+        .linea-header h2 { font-size: 1.1rem; font-weight: 700; color: var(--dark); }
+
+        .linea-desc { font-size: 0.85rem; color: var(--text-sec); margin-bottom: 20px; }
+
+        /* Servicio Estrella */
+        .servicio-estrella {
+            background: var(--accent-soft);
+            border-left: 4px solid var(--primary);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .estrella-titulo { 
+            display: block; 
+            font-weight: 700; 
+            color: var(--primary); 
+            font-size: 0.9rem; 
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .estrella-nombre { font-size: 1rem; font-weight: 800; color: var(--dark); }
+
+        /* Lista complementaria */
+        .otros-servicios { list-style: none; padding-left: 5px; }
+        .otros-servicios li { 
+            font-size: 0.85rem; 
+            color: var(--dark); 
+            margin-bottom: 8px; 
+            display: flex;
+            align-items: center;
+        }
+        .otros-servicios li::before {
+            content: "✓";
+            color: var(--primary);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        /* Botón de Acción */
+        .cta-container { text-align: center; margin-top: 20px; }
+        .btn-cta {
+            background: var(--primary);
+            color: var(--white);
+            padding: 18px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            width: 100%;
+            transition: transform 0.2s;
+        }
+        .btn-cta:active { transform: scale(0.98); }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Nuestras Líneas de Servicio</h1>
+            <p>Soluciones de ingeniería estratégica para la rentabilidad y seguridad de su PYME.</p>
+        </header>
+
+        <div class="linea-servicio">
+            <div class="linea-header">
+                <span class="icon">🔐</span>
+                <h2>Gestión de Riesgo y Seguridad Digital</h2>
+            </div>
+            <p class="linea-desc">Protegemos el activo más valioso de su empresa frente a amenazas externas e internas.</p>
+            
+            <div class="servicio-estrella">
+                <span class="estrella-titulo">Servicio Destacado</span>
+                <span class="estrella-nombre">Diagnóstico de Exposición Digital – 7 días</span>
+            </div>
+
+            <ul class="otros-servicios">
+                <li>Auditoría técnica de vulnerabilidades</li>
+                <li>Capacitación en prevención de fraudes</li>
+            </ul>
+        </div>
+
+        <div class="linea-servicio">
+            <div class="linea-header">
+                <span class="icon">📊</span>
+                <h2>Optimización y Rentabilidad Operativa</h2>
+            </div>
+            <p class="linea-desc">Eficiencia aplicada a sus procesos para maximizar el margen de utilidad real.</p>
+            
+            <div class="servicio-estrella">
+                <span class="estrella-titulo">Servicio Destacado</span>
+                <span class="estrella-nombre">Reducción de Costos Operativos – 30 días</span>
+            </div>
+
+            <ul class="otros-servicios">
+                <li>Digitalización y control de inventarios</li>
+                <li>Análisis profundo de costos y márgenes</li>
+            </ul>
+        </div>
+
+        <div class="linea-servicio">
+            <div class="linea-header">
+                <span class="icon">📈</span>
+                <h2>Estrategia y Estructura Empresarial</h2>
+            </div>
+            <p class="linea-desc">Visión integral para construir una organización sólida, legal y escalable.</p>
+            
+            <div class="servicio-estrella">
+                <span class="estrella-titulo">Servicio Destacado</span>
+                <span class="estrella-nombre">Radiografía Empresarial Integral – 10 días</span>
+            </div>
+
+            <ul class="otros-servicios">
+                <li>Asesoría en estructura societaria</li>
+                <li>Planificación tributaria básica</li>
+            </ul>
+        </div>
+
+        <div class="cta-container">
+            <a href="https://wa.me/56989374989" class="btn-cta">Agendar Consultoría Inicial</a>
+        </div>
+    </div>
+
+</body>
+</html>
