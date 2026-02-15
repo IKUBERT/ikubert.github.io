@@ -1,246 +1,180 @@
 ---
-layout: null
+layout: default
+title: Servicios | IKUBERT
 ---
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Servicios | IKUBERT</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #0f1115;
-            --card-bg: #ffffff;
-            --text-main: #1a1c20;
-            --text-sec: #64748b;
-            --accent: #0055ff;
-            --wsp: #22c55e;
-        }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+<style>
+    /* Optimizaciones específicas para la página de servicios */
+    .service-line-card {
+        background: #fff;
+        border: 1px solid #eee;
+        padding: 40px 30px;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
 
-        body { 
-            background-color: var(--bg);
-            font-family: 'Inter', sans-serif;
-            display: flex;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 20px 0;
-        }
+    .service-line-card:hover {
+        border-color: #1a1a1a;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
 
-        .container {
-            width: 340px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+    .line-icon {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        display: block;
+    }
 
-        header {
-            padding: 20px 10px;
-            text-align: left;
-        }
+    .line-title {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+        font-weight: 800;
+        border-left: 3px solid #1a1a1a;
+        padding-left: 15px;
+    }
 
-        header h1 {
-            color: white;
-            font-size: 1.6rem;
-            font-weight: 800;
-            line-height: 1.2;
-        }
+    .line-desc {
+        color: #666;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 25px;
+        font-weight: 300;
+    }
 
-        header p {
-            color: var(--text-sec);
-            font-size: 0.85rem;
-            margin-top: 8px;
-        }
+    /* Caja de Servicio Estrella */
+    .star-service {
+        background: #f9f9f9;
+        padding: 20px;
+        border-radius: 2px;
+        margin-bottom: 25px;
+        border: 1px dashed #ccc;
+    }
 
-        /* Card de Línea de Servicio */
-        .service-card {
-            background: var(--card-bg);
-            border-radius: 28px;
-            padding: 30px 24px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
+    .star-tag {
+        font-size: 0.65rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #1a1a1a;
+        display: block;
+        margin-bottom: 5px;
+    }
 
-        .line-header {
-            margin-bottom: 20px;
-            border-left: 4px solid var(--accent);
-            padding-left: 15px;
-        }
+    .star-name {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: #000;
+    }
 
-        .line-header h2 {
-            font-size: 1.1rem;
-            font-weight: 800;
-            color: var(--text-main);
-            line-height: 1.3;
-        }
+    /* Servicios Complementarios */
+    .comp-title {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #999;
+    }
 
-        .line-desc {
-            font-size: 0.8rem;
-            color: var(--text-sec);
-            margin-bottom: 20px;
-            font-weight: 400;
-        }
+    .comp-list {
+        list-style: none;
+        padding: 0;
+        margin-top: auto;
+    }
 
-        /* Servicio Estrella */
-        .highlight-box {
-            background: #f8fafc;
-            border: 1.5px solid #e2e8f0;
-            padding: 15px;
-            border-radius: 16px;
-            margin-bottom: 20px;
-        }
+    .comp-item {
+        font-size: 0.85rem;
+        color: #1a1a1a;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+    }
 
-        .highlight-tag {
-            font-size: 0.65rem;
-            font-weight: 800;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: block;
-            margin-bottom: 4px;
-        }
+    .comp-item::before {
+        content: "→";
+        margin-right: 10px;
+        font-weight: 800;
+    }
 
-        .highlight-name {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--text-main);
-        }
+    @media (max-width: 768px) {
+        .hero-servicios { padding: 80px 20px !important; min-height: 400px !important; }
+        .grid-servicios { padding: 40px 20px !important; gap: 30px !important; }
+    }
+</style>
 
-        /* Servicios Complementarios */
-        .complementary-title {
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--text-sec);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 12px;
-            display: block;
-        }
-
-        .complementary-list {
-            list-style: none;
-        }
-
-        .complementary-item {
-            display: flex;
-            align-items: center;
-            font-size: 0.85rem;
-            color: var(--text-main);
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
-
-        .complementary-item svg {
-            width: 16px;
-            margin-right: 10px;
-            color: var(--accent);
-            flex-shrink: 0;
-        }
-
-        /* Botón de Acción */
-        .btn-wsp {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px;
-            border-radius: 16px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 700;
-            background: var(--wsp);
-            color: white;
-            margin-top: 10px;
-            transition: transform 0.2s;
-        }
-
-        .btn-wsp:active { transform: scale(0.96); }
-
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <header>
-            <h1>Nuestras Líneas de Servicio</h1>
-            <p>Ingeniería estratégica para PYMES</p>
-        </header>
-
-        <div class="service-card">
-            <div class="line-header">
-                <h2>Gestión de Riesgo y Seguridad Digital</h2>
-            </div>
-            <p class="line-desc">Protegemos la integridad de su operación frente a amenazas digitales.</p>
-            
-            <div class="highlight-box">
-                <span class="highlight-tag">Servicio Estrella</span>
-                <div class="highlight-name">Diagnóstico de Exposición – 7 días</div>
-            </div>
-
-            <span class="complementary-title">Servicios Complementarios</span>
-            <div class="complementary-list">
-                <div class="complementary-item">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                    Auditoría de vulnerabilidades
-                </div>
-                <div class="complementary-item">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                    Capacitación Ingeniería Social
-                </div>
-            </div>
-        </div>
-
-        <div class="service-card">
-            <div class="line-header">
-                <h2>Optimización y Rentabilidad</h2>
-            </div>
-            <p class="line-desc">Maximizamos la eficiencia para mejorar sus márgenes de utilidad.</p>
-            
-            <div class="highlight-box">
-                <span class="highlight-tag">Servicio Estrella</span>
-                <div class="highlight-name">Reducción de Costos – 30 días</div>
-            </div>
-
-            <span class="complementary-title">Servicios Complementarios</span>
-            <div class="complementary-list">
-                <div class="complementary-item">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                    Análisis de costos y márgenes
-                </div>
-                <div class="complementary-item">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                    Digitalización de inventarios
-                </div>
-            </div>
-        </div>
-
-        <div class="service-card">
-            <div class="line-header">
-                <h2>Estrategia y Estructura</h2>
-            </div>
-            <p class="line-desc">Cimentamos la base legal y estratégica de su crecimiento.</p>
-            
-            <div class="highlight-box">
-                <span class="highlight-tag">Servicio Estrella</span>
-                <div class="highlight-name">Radiografía Empresarial – 10 días</div>
-            </div>
-
-            <span class="complementary-title">Servicios Complementarios</span>
-            <div class="complementary-list">
-                <div class="complementary-item">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                    Estructura societaria
-                </div>
-                <div class="complementary-item">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-                    Planificación tributaria
-                </div>
-            </div>
-        </div>
-
-        <a href="https://wa.me/56989374989" class="btn-wsp">Consultar por servicios</a>
-        
+<header class="hero-servicios" style="position: relative; text-align: center; padding: 120px 20px; background: url('{{ site.baseurl }}/src/oficina-home-ikubert.webp') no-repeat center center/cover; color: #ffffff; min-height: 450px; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.75); z-index: 1;"></div>
+    <div style="position: relative; z-index: 2; max-width: 800px;">
+        <h1 style="font-size: 3rem; letter-spacing: 8px; margin-bottom: 20px; font-weight: 800; text-transform: uppercase;">Servicios</h1>
+        <p style="font-size: 1.2rem; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8;">Líneas Estratégicas para el Alto Desempeño</p>
+        <div style="width: 40px; height: 2px; background: #ffffff; margin: 25px auto;"></div>
     </div>
+</header>
 
-</body>
-</html>
+<main class="section-home" style="max-width: 1200px; margin: 0 auto; padding: 80px 20px;">
+    <div class="grid grid-servicios" style="margin-top: 0; padding: 0;">
+        
+        <div class="service-line-card">
+            <span class="line-icon">🔐</span>
+            <h2 class="line-title">Riesgo y Seguridad</h2>
+            <p class="line-desc">Protección de activos críticos y blindaje de la continuidad operativa.</p>
+            
+            <div class="star-service">
+                <span class="star-tag">Servicio Destacado</span>
+                <div class="star-name">Diagnóstico de Exposición Digital (7 días)</div>
+            </div>
+
+            <h4 class="comp-title">Complementarios</h4>
+            <ul class="comp-list">
+                <li class="comp-item">Auditoría técnica específica</li>
+                <li class="comp-item">Capacitación en prevención</li>
+            </ul>
+        </div>
+
+        <div class="service-line-card">
+            <span class="line-icon">📊</span>
+            <h2 class="line-title">Optimización</h2>
+            <p class="line-desc">Eficiencia operativa orientada a la maximización de márgenes.</p>
+            
+            <div class="star-service">
+                <span class="star-tag">Servicio Destacado</span>
+                <div class="star-name">Reducción de Costos Operativos (30 días)</div>
+            </div>
+
+            <h4 class="comp-title">Complementarios</h4>
+            <ul class="comp-list">
+                <li class="comp-item">Digitalización de inventarios</li>
+                <li class="comp-item">Análisis de márgenes reales</li>
+            </ul>
+        </div>
+
+        <div class="service-line-card">
+            <span class="line-icon">📈</span>
+            <h2 class="line-title">Estrategia</h2>
+            <p class="line-desc">Arquitectura societaria y planificación de crecimiento escalable.</p>
+            
+            <div class="star-service">
+                <span class="star-tag">Servicio Destacado</span>
+                <div class="star-name">Radiografía Empresarial Integral (10 días)</div>
+            </div>
+
+            <h4 class="comp-title">Complementarios</h4>
+            <ul class="comp-list">
+                <li class="comp-item">Asesoría estructura societaria</li>
+                <li class="comp-item">Planificación tributaria básica</li>
+            </ul>
+        </div>
+
+    </div>
+</main>
+
+<div style="background: #f9f9f9; padding: 80px 20px; text-align: center; border-top: 1px solid #eee;">
+    <h2 style="text-transform: uppercase; letter-spacing: 3px; font-size: 1.5rem; font-weight: 800; margin-bottom: 30px;">¿Necesita una solución a medida?</h2>
+    <a href="{{ site.baseurl }}/contacto" style="background: #1a1a1a; color: #fff; padding: 18px 40px; text-decoration: none; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; display: inline-block;">
+        Consultar con un Ingeniero
+    </a>
+</div>
