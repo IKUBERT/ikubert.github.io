@@ -82,28 +82,28 @@ layout: null
 
         .card-back {
             transform: rotateY(180deg);
-            padding: 30px 24px;
+            padding: 35px 24px;
         }
 
-        .header { margin-bottom: 20px; border-left: 4px solid var(--accent); padding-left: 15px; }
+        .header { margin-bottom: 24px; border-left: 4px solid var(--accent); padding-left: 15px; }
         .header h1 { font-size: 1.4rem; font-weight: 800; color: var(--text-main); line-height: 1.2; }
         .header h2 { font-size: 0.8rem; font-weight: 600; color: var(--accent); text-transform: uppercase; margin-top: 4px; letter-spacing: 0.5px; }
 
-        .info-group { margin-bottom: 20px; }
-        .info-item { display: flex; align-items: center; margin-bottom: 10px; font-size: 0.85rem; color: var(--text-main); font-weight: 500; }
+        .info-group { margin-bottom: 25px; }
+        .info-item { display: flex; align-items: center; margin-bottom: 12px; font-size: 0.85rem; color: var(--text-main); font-weight: 500; }
         .info-item svg { width: 18px; margin-right: 12px; color: var(--text-sec); flex-shrink: 0; }
         .info-dir { font-size: 0.75rem; color: var(--text-sec); padding-left: 30px; margin-top: -8px; line-height: 1.4; }
 
-        .actions { display: grid; gap: 8px; margin-top: auto; }
+        .actions { display: grid; gap: 10px; margin-top: auto; }
         
         .btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 12px;
+            padding: 14px;
             border-radius: 12px;
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.95rem;
             font-weight: 700;
             transition: all 0.2s;
             border: none;
@@ -112,12 +112,12 @@ layout: null
         }
 
         .btn-wsp { background: var(--wsp); color: white; }
-        .btn-save { background: var(--accent); color: white; }
         .btn-mail { background: #1e293b; color: white; }
         .btn-ln { background: #0077b5; color: white; }
 
         .btn:active { transform: scale(0.96); opacity: 0.9; }
 
+        /* BOTÓN EXTERNO VISITAR WEB */
         .btn-web-ext {
             margin-top: 30px;
             color: #ffffff;
@@ -136,7 +136,12 @@ layout: null
             opacity: 0.6;
         }
 
-        .btn-web-ext:hover { opacity: 1; background: rgba(255,255,255,0.05); border-color: var(--accent); }
+        .btn-web-ext:hover {
+            opacity: 1;
+            background: rgba(255,255,255,0.05);
+            border-color: var(--accent);
+        }
+
         .btn-web-ext svg { width: 14px; height: 14px; }
 
         @keyframes pulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
@@ -146,6 +151,7 @@ layout: null
 
     <div class="scene">
         <div class="card" id="card" onclick="this.classList.toggle('is-flipped')">
+            
             <div class="card-face card-front">
                 <img src="/src/logotipo-ikubert-lateral.svg" class="logo-frente">
                 <div class="hint">Tap para conectar</div>
@@ -170,12 +176,12 @@ layout: null
                 </div>
 
                 <div class="actions">
-                    <button class="btn btn-save" onclick="downloadVCard(event)">Guardar Contacto</button>
                     <a id="btn-wsp" href="#" class="btn btn-wsp" target="_blank" onclick="event.stopPropagation()">WhatsApp</a>
                     <a id="btn-mail" href="#" class="btn btn-mail" onclick="event.stopPropagation()">Enviar Correo</a>
                     <a id="btn-ln" href="#" target="_blank" class="btn btn-ln" onclick="event.stopPropagation()">LinkedIn</a>
                 </div>
             </div>
+
         </div>
     </div>
 
@@ -187,55 +193,30 @@ layout: null
     </a>
 
     <script>
-        let personData = {};
-
         const hash = window.location.hash.substring(1);
         if (hash) {
             const d = decodeURIComponent(hash).split('|');
-            personData = { n: d[0], c: d[1], d: d[2], t: d[3], m: d[4], l: d[5] };
+            const data = { n: d[0], c: d[1], d: d[2], t: d[3], m: d[4], l: d[5] };
 
-            document.getElementById('p-name').innerText = personData.n;
-            document.getElementById('p-title').innerText = personData.c;
-            document.getElementById('txt-mail').innerText = personData.m;
-            document.getElementById('txt-tel').innerText = "+" + personData.t;
+            document.getElementById('p-name').innerText = data.n;
+            document.getElementById('p-title').innerText = data.c;
+            document.getElementById('txt-mail').innerText = data.m;
+            document.getElementById('txt-tel').innerText = "+" + data.t;
             
-            if(personData.d) {
-                document.getElementById('p-dir').innerText = personData.d;
+            if(data.d) {
+                document.getElementById('p-dir').innerText = data.d;
             } else {
                 document.getElementById('p-dir').style.display = 'none';
             }
 
-            document.getElementById('btn-wsp').href = `https://wa.me/${personData.t}`;
-            document.getElementById('btn-mail').href = `mailto:${personData.m}`;
+            document.getElementById('btn-wsp').href = `https://wa.me/${data.t}`;
+            document.getElementById('btn-mail').href = `mailto:${data.m}`;
             
-            if(personData.l && personData.l.includes('http')) {
-                document.getElementById('btn-ln').href = personData.l;
+            if(data.l && data.l.includes('http')) {
+                document.getElementById('btn-ln').href = data.l;
             } else {
                 document.getElementById('btn-ln').style.display = 'none';
             }
-        }
-
-        function downloadVCard(event) {
-            event.stopPropagation();
-            
-            // vCard 2.1 (Máxima compatibilidad para evitar errores de E/S)
-            // IMPORTANTE: Sin saltos de línea \r para evitar que Base64 se rompa
-            const vcard = "BEGIN:VCARD\n" +
-                          "VERSION:2.1\n" +
-                          "N:;" + personData.n + ";;;\n" +
-                          "FN:" + personData.n + "\n" +
-                          "ORG:IKUBERT\n" +
-                          "TITLE:" + personData.c + "\n" +
-                          "TEL;CELL;VOICE:+" + personData.t + "\n" +
-                          "EMAIL;PREF;INTERNET:" + personData.m + "\n" +
-                          "URL:https://ikubert.com\n" +
-                          "END:VCARD";
-
-            // Convertimos a Base64
-            const b64 = btoa(unescape(encodeURIComponent(vcard)));
-            
-            // Usamos text/vcard pero codificado en el link (No crea archivo temporal en RAM)
-            window.location.href = "data:text/vcard;base64," + b64;
         }
     </script>
 </body>
