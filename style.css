@@ -1,7 +1,12 @@
-/* style.css - IKUBERT */
+/* style.css - IKUBERT (Mando Único con Menú Hamburguesa) */
+
+/* 1. RESET Y ESTRUCTURA BASE */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html, body { height: 100%; }
+html, body { 
+    height: 100%; 
+    overflow-x: hidden; /* Vital para que el menú lateral no cree scroll horizontal */
+}
 
 body { 
     font-family: 'Inter', sans-serif; 
@@ -15,7 +20,7 @@ body {
 
 main { flex: 1 0 auto; width: 100%; }
 
-/* ALINEACIÓN MAESTRA (Sincronización al 5%) */
+/* 2. ALINEACIÓN MAESTRA (Sincronización al 5%) */
 .site-nav, 
 .footer-inner {
     padding-left: 5% !important;
@@ -27,12 +32,15 @@ main { flex: 1 0 auto; width: 100%; }
     box-sizing: border-box;
 }
 
-/* NAVEGACIÓN ESCRITORIO */
+/* 3. NAVEGACIÓN ESCRITORIO */
 .site-nav {
     padding-top: 22px;
     padding-bottom: 22px;
     background-color: #ffffff;
     border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .site-nav .site-logo img {
@@ -54,12 +62,15 @@ main { flex: 1 0 auto; width: 100%; }
     font-size: 1.05rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    transition: opacity 0.2s;
+    transition: opacity 0.2s ease;
 }
 
 .nav-links a:hover { opacity: 0.7; }
 
-/* FOOTER ESCRITORIO */
+/* Control del Menú Hamburguesa (Escondido en PC) */
+.nav-checkbox, .nav-toggler { display: none; }
+
+/* 4. FOOTER ESCRITORIO */
 .main-footer { 
     background-color: #1a1a1a !important; 
     color: #ffffff !important; 
@@ -70,7 +81,13 @@ main { flex: 1 0 auto; width: 100%; }
 
 .footer-col { flex: 1; }
 .footer-col.center { text-align: center; }
-.footer-col.right { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+.footer-col.right { 
+    text-align: right; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-end; 
+    gap: 4px; 
+}
 
 .footer-logo-img { 
     height: 55px !important;
@@ -85,53 +102,74 @@ main { flex: 1 0 auto; width: 100%; }
 .loc { font-size: 0.65rem; color: #fff; opacity: 0.6; text-transform: uppercase; letter-spacing: 1px; }
 .copy { font-size: 0.55rem; color: #fff; opacity: 0.4; }
 
+/* 5. LANDING FRAMEWORK RESPONSIVO */
+.landing-container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.landing-container .hero-l h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.1; letter-spacing: -1px; }
+.landing-container .check-item::before { content: "✓"; color: #0055ff; margin-right: 12px; font-weight: 800; }
+.landing-container .btn-main { background: #0055ff; color: #fff !important; padding: 20px 45px; text-decoration: none; font-weight: 700; text-transform: uppercase; display: inline-block; }
+
 /* ==========================================================================
-   SISTEMA RESPONSIVO (Móvil y Tablets)
+   6. SISTEMA RESPONSIVO (El cambio para el Teléfono)
    ========================================================================== */
 
-/* TABLETS (Menos de 1024px) */
-@media (max-width: 1024px) {
-    .nav-links { gap: 20px; }
-    .nav-links a { font-size: 0.9rem; }
-}
-
-/* SMARTPHONES (Menos de 768px) */
 @media (max-width: 768px) {
-    /* Nav vertical para que no se amontone */
-    .site-nav {
+    /* Mostrar botón hamburguesa */
+    .nav-toggler {
+        display: flex;
         flex-direction: column;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        gap: 15px;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 1100;
     }
-    
-    .site-nav .site-logo img { height: 50px !important; } /* Logo más pequeño en móvil */
 
+    .nav-toggler span {
+        width: 25px;
+        height: 2px;
+        background-color: #1a1a1a;
+        transition: 0.3s ease;
+    }
+
+    /* Transformar Nav-Links en menú desplegable lateral */
     .nav-links {
-        justify-content: center;
-        width: 100%;
-        gap: 15px;
-        flex-wrap: wrap; /* Si son muchos links, saltan de línea */
-    }
-
-    .nav-links a { font-size: 0.85rem; letter-spacing: 1px; }
-
-    /* Footer vertical */
-    .footer-inner {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Escondido a la derecha */
+        width: 75%;
+        height: 100vh;
+        background-color: #ffffff;
         flex-direction: column;
-        gap: 25px;
-        text-align: center;
+        justify-content: center;
+        align-items: center;
+        gap: 35px;
+        transition: 0.4s cubic-bezier(0.77,0.2,0.05,1.0);
+        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        z-index: 1050;
     }
 
-    .footer-col.right { align-items: center; text-align: center; }
-    
-    .footer-logo-img { height: 45px !important; } /* Logo footer más discreto en móvil */
-    .main-footer { padding: 30px 0 !important; } /* Más espacio para tocar con el dedo */
-}
+    /* Mostrar menú al hacer click */
+    .nav-checkbox:checked ~ .nav-links {
+        right: 0;
+    }
 
-/* LANDING FRAMEWORK RESPONSIVO */
-.landing-container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
-@media (max-width: 600px) {
+    /* Animación hamburguesa a X */
+    .nav-checkbox:checked ~ .nav-toggler span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .nav-checkbox:checked ~ .nav-toggler span:nth-child(2) { opacity: 0; }
+    .nav-checkbox:checked ~ .nav-toggler span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* Ajustes generales móvil */
+    .site-nav { 
+        padding: 15px 5% !important; 
+        flex-direction: row !important; 
+    }
+    .site-nav .site-logo img { height: 45px !important; }
+    .nav-links a { font-size: 1.2rem; }
+
+    .footer-inner { flex-direction: column; gap: 25px; text-align: center; }
+    .footer-col.right { align-items: center; text-align: center; }
+    .footer-logo-img { height: 45px !important; }
+    .main-footer { padding: 30px 0 !important; }
+
     .landing-container { padding: 40px 15px; }
     .landing-container .hero-l h1 { font-size: 2.1rem; }
+}
 }
