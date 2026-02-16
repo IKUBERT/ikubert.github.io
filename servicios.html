@@ -4,6 +4,7 @@ title: Servicios | IKUBERT
 ---
 
 <style>
+    /* Estilos Globales de la Página */
     .service-line-card {
         background: #fff;
         border: 1px solid #eee;
@@ -49,10 +50,11 @@ title: Servicios | IKUBERT
         min-height: 60px;
     }
 
+    /* Caja de Impacto - Servicio Estrella */
     .star-service-box {
         background: #f4f7ff;
-        padding: 20px;
         border-left: 4px solid #0055ff;
+        padding: 20px;
         margin-bottom: 25px;
     }
 
@@ -78,6 +80,7 @@ title: Servicios | IKUBERT
         font-style: italic;
     }
 
+    /* Listado de Beneficios */
     .benefit-list {
         list-style: none;
         padding: 0;
@@ -99,6 +102,7 @@ title: Servicios | IKUBERT
         font-weight: 900;
     }
 
+    /* Botones de Acción */
     .btn-action {
         background: #1a1a1a;
         color: #fff;
@@ -126,20 +130,38 @@ title: Servicios | IKUBERT
         border: 1px solid #eee;
     }
 
+    /* FIX MÓVIL: Evitar que los elementos se corten */
     @media (max-width: 768px) {
-        .hero-servicios { padding: 80px 20px !important; }
-        .hero-servicios h1 { font-size: 2.8rem !important; }
+        .hero-servicios { padding: 60px 15px !important; }
+        .hero-servicios h1 { font-size: 2.5rem !important; letter-spacing: 6px !important; }
+        .hero-servicios p { font-size: 0.9rem !important; letter-spacing: 1px !important; }
+        
+        .cta-box-hero { 
+            padding: 25px 20px !important; 
+            width: 100% !important; 
+            box-sizing: border-box;
+        }
+        .cta-box-hero p { font-size: 0.95rem !important; margin-bottom: 20px !important; line-height: 1.4 !important; }
+        
+        .btn-hero { 
+            display: block !important; 
+            width: 100% !important; 
+            padding: 18px 10px !important; 
+            font-size: 0.8rem !important; 
+        }
+
+        .grid-servicios { gap: 30px !important; padding: 0 15px !important; }
     }
 </style>
 
-<header class="hero-servicios" style="text-align: center; padding: 120px 20px; background: #fff; border-bottom: 1px solid #eee; width: 100%;">
+<header class="hero-servicios" style="text-align: center; padding: 120px 20px; background: #fff; border-bottom: 1px solid #eee; width: 100%; box-sizing: border-box;">
     <div style="max-width: 900px; margin: 0 auto;">
-        <h1 style="font-size: 4rem; letter-spacing: 12px; font-weight: 800; text-transform: uppercase; line-height: 1; margin: 0;">Servicios</h1>
+        <h1 style="font-size: 4rem; letter-spacing: 12px; font-weight: 800; text-transform: uppercase; line-height: 1.1; margin: 0;">Servicios</h1>
         <p style="font-size: 1.15rem; color: #1a1a1a; letter-spacing: 2px; text-transform: uppercase; margin: 25px 0 45px; font-weight: 600;">Identificamos riesgos y oportunidades antes de que afecten su negocio</p>
         
-        <div style="background: #f9f9f9; padding: 35px; display: inline-block; border: 1px solid #eee;">
-            <p style="font-size: 1rem; font-weight: 600; margin-bottom: 20px; color: #000;">Diagnóstico, Optimización y Estructura para empresas que quieren crecer sin riesgo.</p>
-            <a href="{{ site.baseurl }}/contacto" style="background: #0055ff; color: #fff; padding: 15px 30px; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem;">Solicitar Diagnóstico Inicial</a>
+        <div class="cta-box-hero" style="background: #f9f9f9; padding: 35px; display: inline-block; border: 1px solid #eee; max-width: 100%; box-sizing: border-box;">
+            <p style="font-size: 1rem; font-weight: 600; margin-bottom: 25px; color: #000; line-height: 1.5;">Diagnóstico, Optimización y Estructura para empresas que quieren crecer sin riesgo.</p>
+            <a href="{{ site.baseurl }}/contacto" class="btn-hero" style="background: #0055ff; color: #fff; padding: 18px 35px; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; display: inline-block; border-radius: 2px;">Solicitar Diagnóstico Inicial</a>
         </div>
     </div>
 </header>
@@ -155,7 +177,7 @@ title: Servicios | IKUBERT
             <div class="star-service-box">
                 <span class="star-name">Diagnóstico de Exposición Digital – 7 días</span>
                 <span class="star-promise">Entrega de informe ejecutivo en 7 días</span>
-                <p class="method-proof">Metodología estructurada con plan de acción priorizado para PYMEs.</p>
+                <p class="method-proof">Metodología estructurada con plan de acción priorizado para empresas.</p>
             </div>
 
             <ul class="benefit-list">
@@ -168,7 +190,7 @@ title: Servicios | IKUBERT
         </div>
 
         <div class="service-line-card">
-            <div style="height: 29px;"></div>
+            <div style="height: 29px;" class="mobile-hide"></div>
             <h2 class="line-title">Rentabilidad</h2>
             <p class="line-desc">Eliminamos fugas de capital mediante la optimización de procesos y control de costos operativos.</p>
             
@@ -187,7 +209,7 @@ title: Servicios | IKUBERT
         </div>
 
         <div class="service-line-card">
-            <div style="height: 29px;"></div>
+            <div style="height: 29px;" class="mobile-hide"></div>
             <h2 class="line-title">Estructura</h2>
             <p class="line-desc">Ordenamos su base legal y societaria para permitir un crecimiento escalable y protegido.</p>
             
@@ -209,7 +231,7 @@ title: Servicios | IKUBERT
 
     <div style="text-align: center; margin-top: 60px; padding: 20px; border-top: 1px solid #f0f0f0;">
         <p style="font-size: 0.85rem; color: #999; text-transform: uppercase; letter-spacing: 2px; font-weight: 400;">
-            Enfoque interdisciplinario: <span style="color:#666; font-weight:600;">gestión, ingeniería y ciberseguridad</span> aplicadas a PYMEs de alto desempeño.
+            Enfoque interdisciplinario: <span style="color:#666; font-weight:600;">gestión, ingeniería y ciberseguridad</span> aplicadas a empresas de alto desempeño.
         </p>
     </div>
 </main>
