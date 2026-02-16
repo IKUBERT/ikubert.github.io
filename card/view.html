@@ -218,36 +218,39 @@ layout: null
         function downloadVCard(event) {
             event.stopPropagation();
             
-            // Nombre del archivo limpio
-            const fileName = (personData.n || 'contacto').replace(/\s+/g, '_');
-
-            // Formato vCard 3.0 con saltos de línea CRLF (\r\n) para máxima compatibilidad
-            const vCardData = [
+            // vCard 2.1 es el formato más compatible para evitar errores de E/S
+            const vcard = [
                 'BEGIN:VCARD',
-                'VERSION:3.0',
-                'REV:' + new Date().toISOString(),
+                'VERSION:2.1',
+                'N:' + personData.n + ';;;;',
                 'FN:' + personData.n,
-                'N:;' + personData.n + ';;;',
                 'ORG:IKUBERT',
                 'TITLE:' + personData.c,
-                'TEL;TYPE=CELL,VOICE:+' + personData.t,
-                'EMAIL;TYPE=PREF,INTERNET:' + personData.m,
+                'TEL;CELL;VOICE:+' + personData.t,
+                'EMAIL;PREF;INTERNET:' + personData.m,
                 'URL:https://ikubert.com',
                 'END:VCARD'
-            ].join('\r\n');
+            ].join('\n');
 
-            // Conversión a Base64 para saltar errores de E/S en navegadores móviles
-            const base64VCard = btoa(unescape(encodeURIComponent(vCardData)));
-            const dataUri = 'data:application/vcard;base64,' + base64VCard;
+            // Codificación Base64 para saltar las restricciones del sistema de archivos
+            const b64Data = btoa(unescape(encodeURIComponent(vcard)));
+            
+            // Usamos application/vcard para forzar al navegador a tratarlo como descarga
+            const dataUri = 'data:application/vcard;base64,' + b64Data;
 
             const link = document.createElement('a');
             link.href = dataUri;
-            link.setAttribute('download', fileName + '.vcf');
+            link.setAttribute('download', 'contacto.vcf');
             
-            // Inyección temporal necesaria para iOS Safari
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
+
+            // UX: Cambio temporal de texto para guiar al usuario
+            const btn = event.target;
+            const originalText = btn.innerText;
+            btn.innerText = "¡Abriendo descargas!";
+            setTimeout(() => { btn.innerText = originalText; }, 3000);
         }
     </script>
 </body>
