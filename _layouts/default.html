@@ -18,7 +18,7 @@
 
     <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/src/logo-ikubert.svg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ site.baseurl }}/style.css?v=16.0">
+    <link rel="stylesheet" href="{{ site.baseurl }}/style.css?v=18.0">
     <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 </head>
 <body class="sticky-wrapper">
@@ -69,32 +69,10 @@
         .nav-links { display: flex; gap: 30px; }
         .nav-links a { text-decoration: none; color: #1a1a1a; font-weight: 700; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 1.5px; }
 
-        /* Reglas del Footer dentro del Layout para asegurar el cambio */
-        .main-footer { background-color: #1a1a1a; padding: 40px 8% !important; }
-        .footer-inner { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto; }
-        
-        /* El tamaño de 75px (el +15% que pediste) */
-        .footer-logo-img { 
-            height: 75px !important; 
-            width: auto !important; 
-            filter: brightness(0) invert(1); 
-            opacity: 0.95; 
-            display: block; 
-            margin: 0 auto;
-        }
-
-        .footer-col { flex: 1; }
-        .footer-col.right { text-align: right; }
-        .footer-mail { color: #fff; text-decoration: none; font-size: 0.85rem; }
-        .loc { font-size: 0.65rem; color: #fff; opacity: 0.6; letter-spacing: 1px; }
-        .copy { font-size: 0.55rem; color: #fff; opacity: 0.4; }
-
         @media (max-width: 768px) {
             .site-nav { flex-direction: column; gap: 15px; padding: 20px 5%; }
             .nav-links { gap: 15px; justify-content: center; }
-            .footer-inner { flex-direction: column; gap: 25px; text-align: center; }
-            .footer-col.right { text-align: center !important; }
-            .footer-logo-img { height: 55px !important; }
+            .nav-links a { font-size: 0.85rem; }
         }
     </style>
 </body>
