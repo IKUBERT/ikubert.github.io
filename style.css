@@ -50,15 +50,15 @@ header { padding: 120px 10%; background-size: cover !important; background-posit
 .footer-col.center { text-align: center; }
 .footer-col.right { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
 
-/* Ajuste de Autoridad: 65px de altura para el logo inferior */
-.footer-logo-img { 
+/* Selector reforzado para asegurar los 65px de altura */
+.main-footer .footer-logo-img { 
     height: 65px !important; 
     width: auto !important; 
-    filter: brightness(0) invert(1); 
-    opacity: 0.95;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
+    filter: brightness(0) invert(1) !important; 
+    opacity: 0.95 !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 0 auto !important;
 }
 
 .footer-mail { color: #ffffff !important; text-decoration: none !important; font-size: 0.85rem; font-weight: 300; }
@@ -116,7 +116,7 @@ header { padding: 120px 10%; background-size: cover !important; background-posit
     .footer-col.left, .footer-col.right { text-align: center; align-items: center; }
     
     /* Logo footer más equilibrado en móvil */
-    .footer-logo-img { height: 50px !important; }
+    .main-footer .footer-logo-img { height: 50px !important; }
 
     .landing-container { padding: 40px 15px; }
     .landing-container .hero-l h1 { font-size: 2.2rem; }
