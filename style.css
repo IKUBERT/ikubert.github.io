@@ -1,12 +1,12 @@
-/* style.css - IKUBERT (Solución Definitiva Footer 3 Columnas Móvil) */
+/* style.css - IKUBERT (Sincronización Total v2.0) */
 
-/* 1. RESET Y ESTRUCTURA */
+/* 1. BASE */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { height: 100%; overflow-x: hidden; }
 body { font-family: 'Inter', sans-serif; display: flex; flex-direction: column; min-height: 100vh; }
 main { flex: 1 0 auto; width: 100%; }
 
-/* 2. ALINEACIÓN MAESTRA (5%) */
+/* 2. ALINEACIÓN MAESTRA (Sincronización al 5%) */
 .site-nav, .footer-inner {
     padding-left: 5% !important;
     padding-right: 5% !important;
@@ -16,7 +16,7 @@ main { flex: 1 0 auto; width: 100%; }
     width: 100% !important;
 }
 
-/* 3. NAVEGACIÓN PC */
+/* 3. NAVEGACIÓN PC (NO TOCAR) */
 .site-nav {
     padding-top: 22px;
     padding-bottom: 22px;
@@ -31,7 +31,7 @@ main { flex: 1 0 auto; width: 100%; }
 .nav-links a { text-decoration: none; color: #1a1a1a; font-weight: 700; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 1.5px; }
 .nav-checkbox, .nav-toggler { display: none; }
 
-/* 4. FOOTER PC (No se toca) */
+/* 4. FOOTER PC (NO TOCAR) */
 .main-footer { background-color: #1a1a1a !important; padding: 15px 0 !important; width: 100%; }
 .footer-col { flex: 1; }
 .footer-col.center { text-align: center; }
@@ -47,10 +47,10 @@ main { flex: 1 0 auto; width: 100%; }
 .landing-container .hero-l h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.1; letter-spacing: -1px; }
 
 /* ==========================================================================
-   6. MÓVIL: LOGO IZQUIERDA | HAMBURGUESA DERECHA & FOOTER 3 COLUMNAS
+   6. SOLO TELÉFONO (@media) - NO AFECTA AL PC
    ========================================================================== */
 @media (max-width: 768px) {
-    /* Navbar móvil */
+    /* NAVBAR MÓVIL: Logo Izq | Hamburguesa Der */
     .site-nav { 
         flex-direction: row !important; 
         flex-wrap: nowrap !important;
@@ -58,44 +58,29 @@ main { flex: 1 0 auto; width: 100%; }
         padding: 10px 5% !important; 
         height: 70px !important;
     }
-    .nav-toggler { display: flex !important; flex-direction: column; gap: 5px; z-index: 3000; }
+    .nav-toggler { display: flex !important; flex-direction: column; gap: 5px; z-index: 3000; cursor: pointer; }
     .nav-toggler span { width: 25px; height: 2px; background-color: #1a1a1a; }
     .nav-links { position: fixed; top: 0; right: -100%; width: 75%; height: 100vh; background: #fff; flex-direction: column !important; justify-content: center !important; align-items: center !important; gap: 35px !important; transition: 0.4s ease-in-out; z-index: 2500; display: flex !important; }
     .nav-checkbox:checked ~ .nav-links { right: 0 !important; }
     .site-nav .site-logo img { height: 38px !important; }
 
-    /* --- SOLUCIÓN FOOTER MÓVIL 3 COLUMNAS --- */
+    /* FOOTER MÓVIL: Santiago Izq | Logo Centro | Correo Der */
     .footer-inner { 
         flex-direction: row !important; 
-        flex-wrap: nowrap !important; /* Prohíbe que los elementos se bajen */
+        flex-wrap: nowrap !important;
         justify-content: space-between !important; 
         align-items: center !important;
-        padding: 0 5% !important;
     }
-
-    .footer-col { 
-        flex: 1 !important; 
-        min-width: 0 !important; /* Permite que las columnas se achiquen */
-    }
-
-    /* Izquierda: Santiago Chile */
+    .footer-col { flex: 1 !important; }
     .footer-col.left { text-align: left !important; }
-    .loc { font-size: 0.45rem !important; white-space: nowrap; } /* Muy pequeño para que quepa */
-    .copy { display: none; } /* Escondemos el copyright en móvil para ganar espacio */
-
-    /* Centro: Logo */
     .footer-col.center { text-align: center !important; }
-    .footer-logo-img { height: 28px !important; width: auto !important; }
+    .footer-col.right { text-align: right !important; align-items: flex-end !important; display: flex !important; flex-direction: column !important; }
 
-    /* Derecha: Mail y LinkedIn */
-    .footer-col.right { 
-        text-align: right !important; 
-        align-items: flex-end !important; 
-        display: flex !important;
-        flex-direction: column !important;
-    }
-    .footer-mail { font-size: 0.55rem !important; white-space: nowrap; }
-    .footer-social-icon { width: 14px !important; height: 14px !important; margin-top: 2px; }
-
-    .main-footer { padding: 10px 0 !important; }
+    /* Achicamos todo para que quepa en una sola línea de celular */
+    .footer-logo-img { height: 26px !important; width: auto !important; }
+    .loc { font-size: 0.42rem !important; white-space: nowrap; }
+    .copy { display: none !important; } /* Ocultamos copyright en móvil para ganar espacio */
+    .footer-mail { font-size: 0.52rem !important; white-space: nowrap; }
+    .footer-social-icon { width: 12px !important; height: 12px !important; }
+    .main-footer { padding: 12px 0 !important; }
 }
