@@ -1,4 +1,4 @@
-/* style.css - IKUBERT (Versión Final con Correo Corregido) */
+/* style.css - IKUBERT (Versión Final Blindada) */
 
 /* 1. RESET Y ESTRUCTURA */
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -31,24 +31,15 @@ main { flex: 1 0 auto; width: 100%; }
 .nav-links a { text-decoration: none; color: #1a1a1a; font-weight: 700; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 1.5px; }
 .nav-checkbox, .nav-toggler { display: none; }
 
-/* 4. FOOTER - CORRECCIÓN DE COLORES */
+/* 4. FOOTER */
 .main-footer { background-color: #1a1a1a !important; padding: 15px 0 !important; width: 100%; }
 .footer-col { flex: 1; }
 .footer-col.center { text-align: center; }
 .footer-col.right { text-align: right; display: flex; flex-direction: column; align-items: flex-end; }
-
 .footer-logo-img { height: 55px; filter: brightness(0) invert(1); opacity: 0.95; }
-
-/* AQUÍ ESTÁ LA CORRECCIÓN DEL CORREO */
-.footer-mail { 
-    color: #ffffff !important; 
-    text-decoration: none !important; 
-    font-size: 0.85rem; 
-    opacity: 0.9;
-}
+.footer-mail { color: #ffffff !important; text-decoration: none !important; font-size: 0.85rem; opacity: 0.9; }
 .footer-mail:hover { opacity: 1; }
-
-.footer-social-icon { width: 18px; filter: brightness(0) invert(1); opacity: 0.7; }
+.footer-social-icon { width: 18px !important; height: 18px !important; filter: brightness(0) invert(1) !important; opacity: 0.7 !important; display: inline-block !important; }
 .loc { font-size: 0.65rem; color: #fff; opacity: 0.6; text-transform: uppercase; letter-spacing: 1px; }
 .copy { font-size: 0.55rem; color: #fff; opacity: 0.4; }
 
@@ -57,20 +48,32 @@ main { flex: 1 0 auto; width: 100%; }
 .landing-container .hero-l h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.1; letter-spacing: -1px; }
 
 /* ==========================================================================
-   6. MÓVIL: LOGO IZQUIERDA | HAMBURGUESA DERECHA
+   6. MÓVIL: LOGO IZQUIERDA | HAMBURGUESA DERECHA (CORREGIDO)
    ========================================================================== */
 @media (max-width: 768px) {
+    /* Forzamos fila horizontal y extremos */
     .site-nav { 
+        display: flex !important;
         flex-direction: row !important; 
+        flex-wrap: nowrap !important;
         justify-content: space-between !important; 
         padding: 15px 5% !important; 
+        height: 70px !important;
+    }
+
+    /* Aseguramos que el logo no empuje a la hamburguesa */
+    .site-logo {
+        flex: 0 1 auto !important;
     }
 
     .nav-toggler {
         display: flex !important;
-        flex-direction: column;
-        gap: 5px;
-        z-index: 3000;
+        flex-direction: column !important;
+        justify-content: center !important;
+        gap: 5px !important;
+        z-index: 3000 !important;
+        flex: 0 0 auto !important;
+        cursor: pointer;
     }
 
     .nav-toggler span { width: 25px; height: 2px; background-color: #1a1a1a; transition: 0.3s; }
@@ -82,28 +85,26 @@ main { flex: 1 0 auto; width: 100%; }
         width: 75%;
         height: 100vh;
         background: #fff;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 35px;
-        transition: 0.4s ease-in-out;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 35px !important;
+        transition: 0.4s ease-in-out !important;
         box-shadow: -10px 0 30px rgba(0,0,0,0.1);
         z-index: 2500;
+        display: flex !important;
     }
 
-    .nav-checkbox:checked ~ .nav-links { right: 0; }
+    .nav-checkbox:checked ~ .nav-links { right: 0 !important; }
     
     .nav-checkbox:checked ~ .nav-toggler span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
     .nav-checkbox:checked ~ .nav-toggler span:nth-child(2) { opacity: 0; }
     .nav-checkbox:checked ~ .nav-toggler span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-    .site-nav .site-logo img { height: 42px !important; }
+    .site-nav .site-logo img { height: 40px !important; width: auto !important; }
 
-    .footer-inner { flex-direction: column !important; gap: 20px; text-align: center; }
+    /* Footer Móvil */
+    .footer-inner { flex-direction: column !important; gap: 20px !important; text-align: center !important; }
     .footer-col.right { align-items: center !important; text-align: center !important; }
-    .main-footer { padding: 30px 0 !important; }
-}
-    .footer-inner { flex-direction: column !important; gap: 20px; text-align: center; }
-    .footer-col.right { align-items: center; text-align: center; }
     .main-footer { padding: 30px 0 !important; }
 }
