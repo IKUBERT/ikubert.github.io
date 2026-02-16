@@ -1,9 +1,17 @@
-/* style.css - IKUBERT (Alineación Pro en Móvil) */
+/* style.css - IKUBERT FINAL */
 
 /* 1. RESET Y ESTRUCTURA BASE */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { height: 100%; overflow-x: hidden; }
-body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #1a1a1a; background-color: #fff; display: flex; flex-direction: column; min-height: 100vh; }
+body { 
+    font-family: 'Inter', sans-serif; 
+    line-height: 1.6; 
+    color: #1a1a1a; 
+    background-color: #fff; 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; 
+}
 main { flex: 1 0 auto; width: 100%; }
 
 /* 2. ALINEACIÓN MAESTRA (Sincronización al 5%) */
@@ -45,7 +53,9 @@ main { flex: 1 0 auto; width: 100%; }
     letter-spacing: 1.5px;
     transition: opacity 0.2s ease;
 }
+.nav-links a:hover { opacity: 0.7; }
 
+/* Control del Menú Hamburguesa (Oculto en PC) */
 .nav-checkbox, .nav-toggler { display: none; }
 
 /* 4. FOOTER ESCRITORIO */
@@ -54,10 +64,18 @@ main { flex: 1 0 auto; width: 100%; }
 .footer-col.center { text-align: center; }
 .footer-col.right { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
 .footer-logo-img { height: 55px !important; filter: brightness(0) invert(1); opacity: 0.95; }
+.footer-mail { color: #ffffff !important; text-decoration: none; font-size: 0.85rem; }
 .loc { font-size: 0.65rem; color: #fff; opacity: 0.6; text-transform: uppercase; letter-spacing: 1px; }
+.copy { font-size: 0.55rem; color: #fff; opacity: 0.4; }
+
+/* 5. LANDING FRAMEWORK (IKUBERT) */
+.landing-container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+.landing-container .hero-l h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.1; letter-spacing: -1px; }
+.landing-container .check-item::before { content: "✓"; color: #0055ff; margin-right: 12px; font-weight: 800; }
+.landing-container .btn-main { background: #0055ff; color: #fff !important; padding: 20px 45px; text-decoration: none; font-weight: 700; text-transform: uppercase; display: inline-block; }
 
 /* ==========================================================================
-   5. SISTEMA RESPONSIVO (Móvil: Logo Izq | Hamburguesa Der)
+   6. SISTEMA RESPONSIVO (Móvil: Logo Izq | Hamburguesa Der)
    ========================================================================== */
 
 @media (max-width: 768px) {
@@ -69,13 +87,14 @@ main { flex: 1 0 auto; width: 100%; }
         align-items: center !important;
     }
 
-    /* Mostrar botón hamburguesa */
+    /* Mostrar botón hamburguesa a la derecha */
     .nav-toggler {
-        display: flex;
+        display: flex !important;
         flex-direction: column;
         gap: 5px;
         cursor: pointer;
         z-index: 1100;
+        order: 2; /* Lo posiciona después del logo */
     }
 
     .nav-toggler span {
@@ -89,7 +108,7 @@ main { flex: 1 0 auto; width: 100%; }
     .nav-links {
         position: fixed;
         top: 0;
-        right: -100%; /* Escondido */
+        right: -100%; 
         width: 75%;
         height: 100vh;
         background-color: #ffffff;
@@ -109,10 +128,17 @@ main { flex: 1 0 auto; width: 100%; }
     .nav-checkbox:checked ~ .nav-toggler span:nth-child(2) { opacity: 0; }
     .nav-checkbox:checked ~ .nav-toggler span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
+    /* Ajuste de elementos internos */
+    .site-nav .site-logo { order: 1; } /* Logo a la izquierda */
     .site-nav .site-logo img { height: 45px !important; }
     .nav-links a { font-size: 1.2rem; }
 
     /* Footer móvil */
     .footer-inner { flex-direction: column; gap: 25px; text-align: center; }
     .footer-col.right { align-items: center; text-align: center; }
+    .main-footer { padding: 30px 0 !important; }
+
+    .landing-container { padding: 40px 15px; }
+    .landing-container .hero-l h1 { font-size: 2.1rem; }
+}
 }
