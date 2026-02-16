@@ -238,7 +238,7 @@ layout: null
 
             // Conversión a Base64 para saltar errores de E/S en navegadores móviles
             const base64VCard = btoa(unescape(encodeURIComponent(vCardData)));
-            const dataUri = 'data:text/vcard;base64,' + base64VCard;
+            const dataUri = 'data:application/vcard;base64,' + base64VCard;
 
             const link = document.createElement('a');
             link.href = dataUri;
