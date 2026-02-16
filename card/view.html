@@ -169,7 +169,7 @@ layout: null
                     <div id="p-dir" class="info-dir"></div>
                 </div>
 
-                <div class="actions" id="actions-container">
+                <div class="actions">
                     <button class="btn btn-save" onclick="downloadVCard(event)">Guardar Contacto</button>
                     <a id="btn-wsp" href="#" class="btn btn-wsp" target="_blank" onclick="event.stopPropagation()">WhatsApp</a>
                     <a id="btn-mail" href="#" class="btn btn-mail" onclick="event.stopPropagation()">Enviar Correo</a>
@@ -218,46 +218,24 @@ layout: null
         function downloadVCard(event) {
             event.stopPropagation();
             
-            const fileName = (personData.n || 'contacto').replace(/\s+/g, '_') + '.vcf';
+            // vCard 2.1 (Máxima compatibilidad para evitar errores de E/S)
+            // IMPORTANTE: Sin saltos de línea \r para evitar que Base64 se rompa
+            const vcard = "BEGIN:VCARD\n" +
+                          "VERSION:2.1\n" +
+                          "N:;" + personData.n + ";;;\n" +
+                          "FN:" + personData.n + "\n" +
+                          "ORG:IKUBERT\n" +
+                          "TITLE:" + personData.c + "\n" +
+                          "TEL;CELL;VOICE:+" + personData.t + "\n" +
+                          "EMAIL;PREF;INTERNET:" + personData.m + "\n" +
+                          "URL:https://ikubert.com\n" +
+                          "END:VCARD";
 
-            // Formato vCard 3.0 con saltos de línea CRLF obligatorios (\r\n)
-            const vCardData = [
-                'BEGIN:VCARD',
-                'VERSION:3.0',
-                'FN:' + personData.n,
-                'N:;' + personData.n + ';;;',
-                'ORG:IKUBERT',
-                'TITLE:' + personData.c,
-                'TEL;TYPE=CELL,VOICE:+' + personData.t,
-                'EMAIL;TYPE=PREF,INTERNET:' + personData.m,
-                'URL:https://ikubert.com',
-                'END:VCARD'
-            ].join('\r\n');
-
-            // 1. Usamos Blob con MIME type "text/x-vcard" (Ignora Termux)
-            const blob = new Blob([vCardData], { type: 'text/x-vcard;charset=utf-8' });
-            const url = window.URL.createObjectURL(blob);
+            // Convertimos a Base64
+            const b64 = btoa(unescape(encodeURIComponent(vcard)));
             
-            // 2. Crear link de descarga
-            const link = document.createElement('a');
-            link.href = url;
-            link.setAttribute('download', fileName);
-            
-            // 3. Inyectar y disparar
-            document.body.appendChild(link);
-            link.click();
-            
-            // 4. Limpiar para evitar errores de E/S
-            setTimeout(() => {
-                document.body.removeChild(link);
-                window.URL.revokeObjectURL(url);
-            }, 250);
-
-            // UX: Feedback en el botón
-            const btn = event.target;
-            const originalText = btn.innerText;
-            btn.innerText = "¡Abriendo descargas!";
-            setTimeout(() => { btn.innerText = originalText; }, 3000);
+            // Usamos text/vcard pero codificado en el link (No crea archivo temporal en RAM)
+            window.location.href = "data:text/vcard;base64," + b64;
         }
     </script>
 </body>
