@@ -3,180 +3,6 @@ layout: default
 title: Servicios | IKUBERT
 ---
 
-<style>
-    /* Estructura de Conversión Estratégica IKUBERT */
-    .service-line-card {
-        background: #fff;
-        border: 1px solid #eee;
-        padding: 45px 30px;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        transition: 0.3s;
-        position: relative;
-    }
-
-    .service-line-card:hover {
-        border-color: #1a1a1a;
-        box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-    }
-
-    /* Destaque para el Producto de Entrada (Riesgo) */
-    .featured-card {
-        border: 2px solid #1a1a1a;
-        transform: scale(1.02);
-        z-index: 2;
-    }
-
-    .priority-tag {
-        background: #1a1a1a;
-        color: #fff;
-        font-size: 0.6rem;
-        padding: 5px 12px;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        display: inline-block;
-        margin-bottom: 15px;
-    }
-
-    .segment-filter {
-        font-size: 0.75rem;
-        color: #666;
-        font-weight: 600;
-        margin-bottom: 15px;
-        display: block;
-    }
-
-    .line-title {
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-size: 1.2rem;
-        font-weight: 800;
-        margin-bottom: 15px;
-        color: #000;
-    }
-
-    .line-desc {
-        color: #444;
-        font-size: 0.95rem;
-        line-height: 1.6;
-        margin-bottom: 25px;
-        min-height: 65px;
-    }
-
-    /* Cajas Metodológicas */
-    .star-service-box {
-        background: #f4f7ff;
-        border-left: 4px solid #0055ff;
-        padding: 20px;
-        margin-bottom: 25px;
-    }
-
-    .star-name {
-        font-size: 1rem;
-        font-weight: 800;
-        color: #000;
-        display: block;
-        margin-bottom: 5px;
-    }
-
-    .star-promise {
-        font-size: 0.85rem;
-        color: #0055ff;
-        font-weight: 600;
-    }
-
-    .method-proof {
-        font-size: 0.75rem;
-        margin-top: 10px;
-        color: #666;
-        line-height: 1.4;
-        font-style: italic;
-    }
-
-    .benefit-list {
-        list-style: none;
-        padding: 0;
-        margin-bottom: 30px;
-    }
-
-    .benefit-item {
-        font-size: 0.85rem;
-        color: #555;
-        margin-bottom: 12px;
-        display: flex;
-        align-items: flex-start;
-    }
-
-    .benefit-item::before {
-        content: "•";
-        margin-right: 12px;
-        color: #1a1a1a;
-        font-weight: 900;
-    }
-
-    /* Botones de Acción */
-    .btn-action {
-        background: #1a1a1a;
-        color: #fff;
-        text-decoration: none;
-        padding: 16px;
-        text-align: center;
-        font-size: 0.8rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        transition: 0.3s;
-        border: 1px solid #1a1a1a;
-    }
-
-    .btn-action:hover {
-        background: #fff;
-        color: #1a1a1a;
-    }
-
-    .btn-secondary {
-        background: #fff;
-        color: #1a1a1a; /* Restaurado a color de marca */
-        margin-top: 10px;
-        padding: 12px;
-        text-align: center;
-        text-decoration: none;
-        font-size: 0.7rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        border: 1px solid #eee;
-        transition: 0.3s;
-    }
-
-    .btn-secondary:hover {
-        border-color: #1a1a1a;
-        background: #f9f9f9;
-    }
-
-    @media (max-width: 768px) {
-        .featured-card { transform: scale(1); border: 1px solid #eee; }
-        .hero-servicios { padding: 60px 15px !important; }
-        .hero-servicios h1 { font-size: 2.5rem !important; }
-        .grid-servicios { gap: 40px !important; }
-        .mobile-hide { display: none; }
-        
-        .cta-box-hero { 
-            padding: 25px 20px !important; 
-            width: 100% !important; 
-            box-sizing: border-box;
-        }
-        
-        .btn-hero { 
-            display: block !important; 
-            width: 100% !important; 
-            padding: 18px 10px !important; 
-        }
-    }
-</style>
-
 <header class="hero-servicios" style="text-align: center; padding: 120px 20px; background: #fff; border-bottom: 1px solid #eee; width: 100%; box-sizing: border-box;">
     <div style="max-width: 900px; margin: 0 auto;">
         <h1 style="font-size: 4rem; letter-spacing: 12px; font-weight: 800; text-transform: uppercase; line-height: 1.1; margin: 0;">Servicios</h1>
@@ -184,7 +10,7 @@ title: Servicios | IKUBERT
         
         <div class="cta-box-hero" style="background: #f9f9f9; padding: 35px; display: inline-block; border: 1px solid #eee; max-width: 100%; box-sizing: border-box;">
             <p style="font-size: 1rem; font-weight: 600; margin-bottom: 25px; color: #000; line-height: 1.5;">Diagnóstico, Optimización y Estructura para empresas que quieren crecer sin riesgo.</p>
-            <a href="{{ site.baseurl }}/contacto" class="btn-hero" style="background: #0055ff; color: #fff; padding: 18px 35px; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; display: inline-block;">Solicitar Diagnóstico de Riesgo</a>
+            <a href="{{ site.baseurl }}/contacto" class="btn-hero" style="background: #0055ff; color: #fff; padding: 18px 35px; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; display: inline-block; border-radius: 2px;">Solicitar Diagnóstico de Riesgo</a>
         </div>
     </div>
 </header>
@@ -194,20 +20,19 @@ title: Servicios | IKUBERT
         
         <div class="service-line-card featured-card">
             <span class="priority-tag">Programa Inicial Recomendado</span>
-            <span class="segment-filter">Ideal para organizaciones de 5+ colaboradores</span>
+            <span class="segment-filter" style="color: #0055ff; font-weight: 700; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 10px; display: block;">Framework IKU-Risk™</span>
             <h2 class="line-title">Seguridad Digital</h2>
             <p class="line-desc">Identificamos vulnerabilidades críticas que pueden comprometer su información, reputación o continuidad operativa.</p>
             
             <div class="star-service-box">
-                <span class="star-name">Diagnóstico Inicial de Riesgo Digital – 10 días</span>
+                <span class="star-name">Diagnóstico Inicial de Riesgo – 10 días</span>
                 <span class="star-promise">Evaluación técnica priorizada</span>
-                <p class="method-proof">Entrega de informe ejecutivo con plan de acción a 30 días.</p>
             </div>
 
             <ul class="benefit-list">
                 <li class="benefit-item">Evaluación de accesos críticos</li>
                 <li class="benefit-item">Revisión de exposición externa</li>
-                <li class="benefit-item">Matriz priorizada de riesgo digital</li>
+                <li class="benefit-item">Matriz ejecutiva de riesgo</li>
             </ul>
             
             <a href="{{ site.baseurl }}/contacto" class="btn-action">Solicitar Diagnóstico</a>
@@ -215,39 +40,41 @@ title: Servicios | IKUBERT
         </div>
 
         <div class="service-line-card">
-            <div style="height: 48px;" class="mobile-hide"></div>
+            <div style="height: 25px;" class="mobile-hide"></div>
+            <span class="segment-filter" style="color: #ff9800; font-weight: 700; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 10px; display: block;">Framework IKU-Opt™</span>
             <h2 class="line-title">Rentabilidad</h2>
-            <p class="line-desc">Identificamos y corregimos fugas operativas que erosionan el margen y el flujo de caja.</p>
+            <p class="line-desc">Identificamos y corregimos fugas operativas que erosionan el margen y el flujo de caja real.</p>
             
-            <div class="star-service-box">
-                <span class="star-name">Programa de Optimización Operativa – 30 días</span>
+            <div class="star-service-box" style="border-left-color: #ff9800;">
+                <span class="star-name">Optimización Operativa – 30 días</span>
                 <span class="star-promise">Eficiencia aplicada a ciclos reales</span>
             </div>
 
             <ul class="benefit-list">
-                <li class="benefit-item">Optimización y trazabilidad de inventarios</li>
+                <li class="benefit-item">Trazabilidad de inventarios</li>
                 <li class="benefit-item">Análisis de costos y márgenes</li>
-                <li class="benefit-item">Identificación de fugas operativas</li>
+                <li class="benefit-item">Eliminación de ineficiencias</li>
             </ul>
 
-            <a href="{{ site.baseurl }}/contacto" class="btn-action">Evaluar Optimización</a>
-            <a href="{{ site.baseurl }}/servicios/optimizacion-operativa" class="btn-secondary">Ver metodología de procesos</a>
+            <a href="{{ site.baseurl }}/contacto" class="btn-action">Solicitar Diagnóstico de Eficiencia</a>
+            <a href="{{ site.baseurl }}/servicios/optimizacion-operativa" class="btn-secondary">Ver metodología</a>
         </div>
 
         <div class="service-line-card">
-            <div style="height: 48px;" class="mobile-hide"></div>
+            <div style="height: 25px;" class="mobile-hide"></div>
+            <span class="segment-filter" style="color: #1a1a1a; font-weight: 700; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 10px; display: block;">Framework IKU-Struct™</span>
             <h2 class="line-title">Estructura</h2>
-            <p class="line-desc">Análisis estructural para el crecimiento sostenible y protección patrimonial de la empresa.</p>
+            <p class="line-desc">Arquitectura empresarial estratégica para el crecimiento sostenible y blindaje patrimonial.</p>
             
-            <div class="star-service-box">
+            <div class="star-service-box" style="border-left-color: #1a1a1a;">
                 <span class="star-name">Radiografía Empresarial – 20 días</span>
-                <span class="star-promise">Diseño de arquitectura societaria y patrimonial</span>
+                <span class="star-promise">Diseño de arquitectura societaria</span>
             </div>
 
             <ul class="benefit-list">
-                <li class="benefit-item">Diseño de estructuras holding y protección</li>
-                <li class="benefit-item">Evaluación tributaria estratégica</li>
-                <li class="benefit-item">Arquitectura organizacional escalable</li>
+                <li class="benefit-item">Estructuras Holding y protección</li>
+                <li class="benefit-item">Evaluación de escalabilidad</li>
+                <li class="benefit-item">Mapa organizacional sugerido</li>
             </ul>
 
             <a href="{{ site.baseurl }}/contacto" class="btn-action">Solicitar Radiografía</a>
@@ -266,10 +93,39 @@ title: Servicios | IKUBERT
 <div style="background: #1a1a1a; padding: 100px 20px; text-align: center; color: #fff;">
     <h2 style="text-transform: uppercase; letter-spacing: 5px; font-size: 1.5rem; font-weight: 800; margin-bottom: 20px;">No deje su estructura al azar</h2>
     <p style="color: #999; margin-bottom: 5px; font-weight: 300;">Hablemos sobre cómo blindar y potenciar su negocio.</p>
-    <p style="color: #666; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 30px;">Conversación inicial sin compromiso – 30 minutos</p>
+    <p style="color: #666; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 30px;">Sesión ejecutiva de evaluación inicial – 30 minutos</p>
     <p style="color: #444; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 40px; font-weight: 700;">Enfoque diagnóstico, no comercial.</p>
     
     <a href="https://wa.me/56989374989" style="background: #22c55e; color: #fff; padding: 20px 50px; text-decoration: none; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; display: inline-block;">
         Hablar con un Consultor Ahora
     </a>
 </div>
+
+<style>
+    /* Estilos locales mínimos para layout de tarjetas */
+    .service-line-card { background: #fff; border: 1px solid #eee; padding: 45px 30px; display: flex; flex-direction: column; height: 100%; transition: 0.3s; position: relative; }
+    .service-line-card:hover { border-color: #1a1a1a; box-shadow: 0 15px 40px rgba(0,0,0,0.08); }
+    .featured-card { border: 2px solid #1a1a1a; transform: scale(1.02); z-index: 2; }
+    .priority-tag { background: #1a1a1a; color: #fff; font-size: 0.6rem; padding: 5px 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; display: inline-block; margin-bottom: 15px; }
+    .line-title { text-transform: uppercase; letter-spacing: 2px; font-size: 1.2rem; font-weight: 800; margin-bottom: 15px; color: #000; }
+    .line-desc { color: #444; font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px; min-height: 65px; }
+    .star-service-box { background: #f4f7ff; border-left: 4px solid #0055ff; padding: 20px; margin-bottom: 25px; }
+    .star-name { font-size: 1rem; font-weight: 800; color: #000; display: block; margin-bottom: 5px; }
+    .star-promise { font-size: 0.85rem; color: #0055ff; font-weight: 600; }
+    .benefit-list { list-style: none; padding: 0; margin-bottom: 30px; }
+    .benefit-item { font-size: 0.85rem; color: #555; margin-bottom: 12px; display: flex; align-items: flex-start; }
+    .benefit-item::before { content: "•"; margin-right: 12px; color: #1a1a1a; font-weight: 900; }
+    .btn-action { background: #1a1a1a; color: #fff; text-decoration: none; padding: 16px; text-align: center; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; border: 1px solid #1a1a1a; }
+    .btn-action:hover { background: #fff; color: #1a1a1a; }
+    .btn-secondary { background: #fff; color: #1a1a1a; margin-top: 10px; padding: 12px; text-align: center; text-decoration: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; border: 1px solid #eee; transition: 0.3s; }
+    .btn-secondary:hover { border-color: #1a1a1a; background: #f9f9f9; }
+
+    @media (max-width: 768px) {
+        .featured-card { transform: scale(1); border: 1px solid #eee; }
+        .hero-servicios h1 { font-size: 2.5rem !important; }
+        .grid-servicios { gap: 40px !important; }
+        .mobile-hide { display: none; }
+        .cta-box-hero { padding: 25px 20px !important; width: 100% !important; }
+        .btn-hero { display: block !important; width: 100% !important; }
+    }
+</style>
