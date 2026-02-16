@@ -4,7 +4,6 @@ title: Servicios | IKUBERT
 ---
 
 <style>
-    /* Estilos Globales de la Página */
     .service-line-card {
         background: #fff;
         border: 1px solid #eee;
@@ -19,6 +18,13 @@ title: Servicios | IKUBERT
     .service-line-card:hover {
         border-color: #1a1a1a;
         box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    }
+
+    /* Destaque visual para el Producto de Entrada */
+    .featured-card {
+        border: 2px solid #1a1a1a;
+        transform: scale(1.02);
+        z-index: 2;
     }
 
     .priority-tag {
@@ -50,7 +56,6 @@ title: Servicios | IKUBERT
         min-height: 60px;
     }
 
-    /* Caja de Impacto - Servicio Estrella */
     .star-service-box {
         background: #f4f7ff;
         border-left: 4px solid #0055ff;
@@ -72,15 +77,6 @@ title: Servicios | IKUBERT
         font-weight: 600;
     }
 
-    .method-proof {
-        font-size: 0.8rem;
-        margin-top: 10px;
-        color: #555;
-        line-height: 1.4;
-        font-style: italic;
-    }
-
-    /* Listado de Beneficios */
     .benefit-list {
         list-style: none;
         padding: 0;
@@ -90,24 +86,23 @@ title: Servicios | IKUBERT
     .benefit-item {
         font-size: 0.85rem;
         color: #666;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
     }
 
     .benefit-item::before {
-        content: "→";
-        margin-right: 10px;
-        color: #0055ff;
+        content: "•";
+        margin-right: 12px;
+        color: #1a1a1a;
         font-weight: 900;
     }
 
-    /* Botones de Acción */
     .btn-action {
         background: #1a1a1a;
         color: #fff;
         text-decoration: none;
-        padding: 15px;
+        padding: 16px;
         text-align: center;
         font-size: 0.8rem;
         font-weight: 700;
@@ -122,123 +117,93 @@ title: Servicios | IKUBERT
         color: #1a1a1a;
     }
 
-    .btn-secondary {
-        background: #fff;
-        color: #1a1a1a;
-        margin-top: 10px;
-        font-size: 0.7rem;
-        border: 1px solid #eee;
-    }
-
-    /* FIX MÓVIL */
     @media (max-width: 768px) {
-        .hero-servicios { padding: 60px 15px !important; }
-        .hero-servicios h1 { font-size: 2.5rem !important; letter-spacing: 6px !important; }
-        .hero-servicios p { font-size: 0.9rem !important; letter-spacing: 1px !important; }
-        
-        .cta-box-hero { 
-            padding: 25px 20px !important; 
-            width: 100% !important; 
-            box-sizing: border-box;
-        }
-        .cta-box-hero p { font-size: 0.95rem !important; margin-bottom: 20px !important; line-height: 1.4 !important; }
-        
-        .btn-hero { 
-            display: block !important; 
-            width: 100% !important; 
-            padding: 18px 10px !important; 
-            font-size: 0.8rem !important; 
-        }
-
-        .grid-servicios { gap: 30px !important; padding: 0 15px !important; }
+        .featured-card { transform: scale(1); border: 1px solid #eee; }
+        .hero-servicios h1 { font-size: 2.8rem !important; }
+        .grid-servicios { gap: 40px !important; }
     }
 </style>
 
-<header class="hero-servicios" style="text-align: center; padding: 120px 20px; background: #fff; border-bottom: 1px solid #eee; width: 100%; box-sizing: border-box;">
+<header class="hero-servicios" style="text-align: center; padding: 100px 20px; background: #fff; border-bottom: 1px solid #eee; width: 100%; box-sizing: border-box;">
     <div style="max-width: 900px; margin: 0 auto;">
         <h1 style="font-size: 4rem; letter-spacing: 12px; font-weight: 800; text-transform: uppercase; line-height: 1.1; margin: 0;">Servicios</h1>
-        <p style="font-size: 1.15rem; color: #1a1a1a; letter-spacing: 2px; text-transform: uppercase; margin: 25px 0 45px; font-weight: 600;">Identificamos riesgos y oportunidades antes de que afecten su negocio</p>
+        <p style="font-size: 1.15rem; color: #1a1a1a; letter-spacing: 2px; text-transform: uppercase; margin: 25px 0 45px; font-weight: 600;">Modelo de intervención en tres niveles: Riesgo, Rentabilidad y Estructura</p>
         
         <div class="cta-box-hero" style="background: #f9f9f9; padding: 35px; display: inline-block; border: 1px solid #eee; max-width: 100%; box-sizing: border-box;">
-            <p style="font-size: 1rem; font-weight: 600; margin-bottom: 25px; color: #000; line-height: 1.5;">Diagnóstico, Optimización y Estructura para empresas que quieren crecer sin riesgo.</p>
-            <a href="{{ site.baseurl }}/contacto" class="btn-hero" style="background: #0055ff; color: #fff; padding: 18px 35px; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; display: inline-block; border-radius: 2px;">Solicitar Diagnóstico Inicial</a>
+            <p style="font-size: 1rem; font-weight: 600; margin-bottom: 25px; color: #000; line-height: 1.5;">Identificamos riesgos y oportunidades antes de que afecten su negocio.</p>
+            <a href="{{ site.baseurl }}/contacto" style="background: #0055ff; color: #fff; padding: 18px 35px; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; display: inline-block;">Solicitar Diagnóstico de Riesgo</a>
         </div>
     </div>
 </header>
 
 <main class="section-home" style="max-width: 1200px; margin: 0 auto; padding: 80px 20px;">
-    <div class="grid grid-servicios" style="margin-top: 0; padding: 0;">
+    <div class="grid grid-servicios" style="margin-top: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
         
-        <div class="service-line-card">
-            <span class="priority-tag">Programa Inicial Recomendado</span>
+        <div class="service-line-card featured-card">
+            <span class="priority-tag">Servicio Prioritario</span>
             <h2 class="line-title">Seguridad Digital</h2>
-            <p class="line-desc">Detectamos riesgos digitales antes de que se conviertan en pérdidas financieras o interrupciones operativas.</p>
+            <p class="line-desc">Identifique vulnerabilidades críticas antes de que generen pérdidas financieras.</p>
             
             <div class="star-service-box">
-                <span class="star-name">Diagnóstico de Exposición Digital – 14 días</span>
-                <span class="star-promise">Entrega de informe ejecutivo en 14 días</span>
-                <p class="method-proof">Metodología estructurada con plan de acción priorizado para empresas.</p>
+                <span class="star-name">Diagnóstico Inicial de Riesgo – 10 días</span>
+                <span class="star-promise">Incluye Plan de Acción priorizado a 30 días</span>
             </div>
 
             <ul class="benefit-list">
-                <li class="benefit-item">Auditoría de puntos ciegos técnicos</li>
-                <li class="benefit-item">Protocolos de prevención de fraude</li>
+                <li class="benefit-item">Evaluación de accesos críticos</li>
+                <li class="benefit-item">Revisión de exposición externa</li>
+                <li class="benefit-item">Clasificación de riesgos técnicos</li>
             </ul>
             
             <a href="{{ site.baseurl }}/contacto" class="btn-action">Solicitar Diagnóstico</a>
-            <a href="#" class="btn-action btn-secondary">Ver detalles del método</a>
         </div>
 
         <div class="service-line-card">
-            <div style="height: 29px;" class="mobile-hide"></div>
+            <div style="height: 29px;"></div>
             <h2 class="line-title">Rentabilidad</h2>
-            <p class="line-desc">Eliminamos fugas de capital mediante la optimización de procesos y control de costos operativos.</p>
+            <p class="line-desc">Eliminamos fugas operativas mediante la optimización de procesos y márgenes.</p>
             
             <div class="star-service-box">
-                <span class="star-name">Programa de Reducción de Costos Operativos – 40 días</span>
-                <span class="star-promise">Resultados medibles en el primer ciclo</span>
+                <span class="star-name">Programa de Optimización Operativa – 30 días</span>
+                <span class="star-promise">Foco en eficiencia y recuperación de flujo</span>
             </div>
 
             <ul class="benefit-list">
-                <li class="benefit-item">Digitalización de control de stock</li>
-                <li class="benefit-item">Optimización de márgenes brutos</li>
+                <li class="benefit-item">Digitalización de inventarios</li>
+                <li class="benefit-item">Análisis de costos y márgenes</li>
+                <li class="benefit-item">Identificación de fugas operativas</li>
             </ul>
 
-            <a href="{{ site.baseurl }}/contacto" class="btn-action">Evaluar Mis Costos</a>
-            <a href="#" class="btn-action btn-secondary">Ver alcance industrial</a>
+            <a href="{{ site.baseurl }}/contacto" class="btn-action">Evaluar Optimización</a>
         </div>
 
         <div class="service-line-card">
-            <div style="height: 29px;" class="mobile-hide"></div>
+            <div style="height: 29px;"></div>
             <h2 class="line-title">Estructura</h2>
-            <p class="line-desc">Ordenamos su base legal y societaria para permitir un crecimiento escalable y protegido.</p>
+            <p class="line-desc">Análisis estructural para crecimiento sólido y blindaje patrimonial.</p>
             
             <div class="star-service-box">
-                <span class="star-name">Radiografía Empresarial Integral – 20 días</span>
-                <span class="star-promise">Análisis de arquitectura societaria</span>
+                <span class="star-name">Radiografía Empresarial – 20 días</span>
+                <span class="star-promise">Diseño de arquitectura corporativa</span>
             </div>
 
             <ul class="benefit-list">
-                <li class="benefit-item">Diseño de holding y patrimonios</li>
-                <li class="benefit-item">Eficiencia en carga tributaria</li>
+                <li class="benefit-item">Arquitectura societaria (Holding)</li>
+                <li class="benefit-item">Evaluación tributaria básica</li>
+                <li class="benefit-item">Diseño de estructura escalable</li>
             </ul>
 
             <a href="{{ site.baseurl }}/contacto" class="btn-action">Solicitar Radiografía</a>
-            <a href="#" class="btn-action btn-secondary">Ver detalles legales</a>
         </div>
 
-    </div>
-
-    <div style="text-align: center; margin-top: 60px; padding: 20px; border-top: 1px solid #f0f0f0;">
-        <p style="font-size: 0.85rem; color: #999; text-transform: uppercase; letter-spacing: 2px; font-weight: 400;">
-            Enfoque interdisciplinario: <span style="color:#666; font-weight:600;">gestión, ingeniería y ciberseguridad</span> aplicadas a empresas de alto desempeño.
-        </p>
     </div>
 </main>
 
 <div style="background: #1a1a1a; padding: 100px 20px; text-align: center; color: #fff;">
     <h2 style="text-transform: uppercase; letter-spacing: 5px; font-size: 1.5rem; font-weight: 800; margin-bottom: 20px;">No deje su estructura al azar</h2>
-    <p style="color: #999; margin-bottom: 40px; font-weight: 300;">Hablemos sobre cómo blindar y potenciar su negocio este mes.</p>
+    <p style="color: #999; margin-bottom: 10px; font-weight: 300;">Hablemos sobre cómo blindar y potenciar su negocio.</p>
+    <p style="color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 40px;">Conversación inicial sin compromiso – 30 minutos</p>
+    
     <a href="https://wa.me/56989374989" style="background: #22c55e; color: #fff; padding: 20px 50px; text-decoration: none; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; display: inline-block;">
         Hablar con un Consultor Ahora
     </a>
