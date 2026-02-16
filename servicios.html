@@ -4,205 +4,208 @@ title: Servicios | IKUBERT
 ---
 
 <style>
-    /* Estilos específicos para la página de servicios */
     .service-line-card {
         background: #fff;
         border: 1px solid #eee;
-        padding: 50px 35px;
-        transition: all 0.3s ease;
+        padding: 45px 30px;
         display: flex;
         flex-direction: column;
         height: 100%;
-        border-radius: 0; /* Recto para máxima sobriedad */
+        transition: 0.3s;
+        position: relative;
     }
 
     .service-line-card:hover {
         border-color: #1a1a1a;
-        box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.08);
     }
 
-    .line-icon {
-        font-size: 2.5rem;
-        margin-bottom: 25px;
-        display: block;
+    .priority-tag {
+        background: #1a1a1a;
+        color: #fff;
+        font-size: 0.6rem;
+        padding: 5px 12px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: inline-block;
+        margin-bottom: 15px;
     }
 
     .line-title {
         text-transform: uppercase;
-        letter-spacing: 3px;
-        font-size: 1.2rem;
-        margin-bottom: 20px;
-        font-weight: 800;
-        border-left: 4px solid #1a1a1a;
-        padding-left: 15px;
-        color: #1a1a1a;
-    }
-
-    .line-desc {
-        color: #666;
-        font-size: 0.95rem;
-        line-height: 1.8;
-        margin-bottom: 35px;
-        font-weight: 300;
-    }
-
-    /* Caja de Servicio Estrella (Sutil) */
-    .star-service {
-        background: #fcfcfc;
-        padding: 20px;
-        margin-bottom: 30px;
-        border: 1px solid #f0f0f0;
-    }
-
-    .star-tag {
-        font-size: 0.6rem;
-        font-weight: 800;
-        text-transform: uppercase;
         letter-spacing: 2px;
-        color: #999;
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    .star-name {
-        font-size: 1.05rem;
-        font-weight: 700;
+        font-size: 1.2rem;
+        font-weight: 800;
+        margin-bottom: 15px;
         color: #000;
     }
 
-    /* Servicios Complementarios */
-    .comp-title {
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-weight: 800;
-        margin-bottom: 20px;
-        color: #ccc;
+    .line-desc {
+        color: #444;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 25px;
+        min-height: 60px;
     }
 
-    .comp-list {
+    .star-service-box {
+        background: #f4f7ff;
+        padding: 20px;
+        border-left: 4px solid #0055ff;
+        margin-bottom: 25px;
+    }
+
+    .star-name {
+        font-size: 1rem;
+        font-weight: 800;
+        color: #000;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .star-promise {
+        font-size: 0.85rem;
+        color: #0055ff;
+        font-weight: 600;
+    }
+
+    .benefit-list {
         list-style: none;
         padding: 0;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
     }
 
-    .comp-item {
-        font-size: 0.9rem;
-        color: #1a1a1a;
-        margin-bottom: 15px;
+    .benefit-item {
+        font-size: 0.85rem;
+        color: #666;
+        margin-bottom: 10px;
         display: flex;
         align-items: center;
-        font-weight: 400;
     }
 
-    .comp-item::before {
+    .benefit-item::before {
         content: "→";
-        margin-right: 12px;
-        font-weight: 800;
-        color: #1a1a1a;
+        margin-right: 10px;
+        color: #0055ff;
+        font-weight: 900;
     }
 
-    /* Botón Detalle */
-    .btn-detail {
-        margin-top: auto;
-        padding: 15px 0;
-        border: 1px solid #1a1a1a;
-        color: #1a1a1a;
-        text-decoration: none;
-        font-size: 0.8rem;
-        font-weight: 700;
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        transition: 0.3s;
-    }
-
-    .btn-detail:hover {
+    .btn-action {
         background: #1a1a1a;
         color: #fff;
+        text-decoration: none;
+        padding: 15px;
+        text-align: center;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: 0.3s;
+        border: 1px solid #1a1a1a;
+    }
+
+    .btn-action:hover {
+        background: #fff;
+        color: #1a1a1a;
+    }
+
+    .btn-secondary {
+        background: #fff;
+        color: #1a1a1a;
+        margin-top: 10px;
+        font-size: 0.7rem;
+        border: 1px solid #eee;
     }
 
     @media (max-width: 768px) {
-        .hero-servicios { padding: 60px 20px !important; min-height: 300px !important; }
-        .hero-servicios h1 { font-size: 2.5rem !important; }
-        .grid-servicios { padding: 40px 20px !important; }
+        .hero-servicios { padding: 80px 20px !important; }
+        .hero-servicios h1 { font-size: 2.8rem !important; }
     }
 </style>
 
-<header class="hero-servicios" style="text-align: center; padding: 120px 20px; background: #ffffff; color: #1a1a1a; border-bottom: 1px solid #eee; width: 100%;">
+<header class="hero-servicios" style="text-align: center; padding: 120px 20px; background: #fff; border-bottom: 1px solid #eee; width: 100%;">
     <div style="max-width: 900px; margin: 0 auto;">
-        <h1 style="font-size: 4rem; letter-spacing: 15px; margin-bottom: 20px; font-weight: 800; text-transform: uppercase; line-height: 1;">Servicios</h1>
-        <p style="font-size: 1.2rem; font-weight: 300; letter-spacing: 5px; text-transform: uppercase; color: #666;">Arquitectura Estratégica & Desempeño</p>
-        <div style="width: 50px; height: 4px; background: #1a1a1a; margin: 40px auto;"></div>
+        <h1 style="font-size: 4rem; letter-spacing: 12px; font-weight: 800; text-transform: uppercase; line-height: 1; margin: 0;">Servicios</h1>
+        <p style="font-size: 1.1rem; color: #666; letter-spacing: 3px; text-transform: uppercase; margin: 20px 0 40px;">Soluciones para proteger y fortalecer su empresa</p>
+        
+        <div style="background: #f9f9f9; padding: 30px; display: inline-block; border: 1px solid #eee;">
+            <p style="font-size: 1rem; font-weight: 600; margin-bottom: 20px; color: #000;">¿Conoce el nivel de exposición real de su empresa hoy?</p>
+            <a href="{{ site.baseurl }}/contacto" style="background: #0055ff; color: #fff; padding: 15px 30px; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem;">Solicitar Diagnóstico Inicial</a>
+        </div>
     </div>
 </header>
 
-<main class="section-home" style="max-width: 1200px; margin: 0 auto; padding: 100px 20px;">
+<main class="section-home" style="max-width: 1200px; margin: 0 auto; padding: 80px 20px;">
     <div class="grid grid-servicios" style="margin-top: 0; padding: 0;">
         
         <div class="service-line-card">
-            <span class="line-icon">🔐</span>
-            <h2 class="line-title">Riesgo & Seguridad</h2>
-            <p class="line-desc">Blindaje técnico y auditorías estructurales para garantizar la resiliencia de activos críticos.</p>
+            <span class="priority-tag">Programa Inicial Recomendado</span>
+            <h2 class="line-title">Seguridad Digital</h2>
+            <p class="line-desc">Detectamos riesgos digitales antes de que se conviertan en pérdidas financieras o interrupciones operativas.</p>
             
-            <div class="star-service">
-                <span class="star-tag">Core Service</span>
-                <div class="star-name">Diagnóstico de Exposición Digital</div>
+            <div class="star-service-box">
+                <span class="star-name">Diagnóstico de Exposición Digital – 7 días</span>
+                <span class="star-promise">Entrega de informe en 7 días</span>
+                <p style="font-size:0.8rem; margin-top:8px; color:#444;">
+                    Primera evaluación recomendada para toda PYME con más de 5 empleados.
+                </p>
             </div>
 
-            <h4 class="comp-title">Especialidades</h4>
-            <ul class="comp-list">
-                <li class="comp-item">Auditoría de Vulnerabilidades</li>
-                <li class="comp-item">Capacitación Ingeniería Social</li>
+            <ul class="benefit-list">
+                <li class="benefit-item">Auditoría de puntos ciegos</li>
+                <li class="benefit-item">Plan de prevención de estafas</li>
             </ul>
             
-            <a href="#" class="btn-detail">Explorar Línea</a>
+            <a href="{{ site.baseurl }}/contacto" class="btn-action">Solicitar Diagnóstico</a>
+            <a href="#" class="btn-action btn-secondary">Ver metodología técnica</a>
         </div>
 
         <div class="service-line-card">
-            <span class="line-icon">📊</span>
-            <h2 class="line-title">Optimización</h2>
-            <p class="line-desc">Reingeniería de procesos orientada a la eficiencia operativa y maximización de rentabilidad.</p>
+            <div style="height: 29px;"></div>
+            <h2 class="line-title">Rentabilidad</h2>
+            <p class="line-desc">Eliminamos fugas de capital mediante la optimización de procesos y control de costos operativos.</p>
             
-            <div class="star-service">
-                <span class="star-tag">Core Service</span>
-                <div class="star-name">Reducción de Costos Operativos</div>
+            <div class="star-service-box">
+                <span class="star-name">Reducción de Costos</span>
+                <span class="star-promise">Plan de ejecución en 30 días</span>
             </div>
 
-            <h4 class="comp-title">Especialidades</h4>
-            <ul class="comp-list">
-                <li class="comp-item">Digitalización de Inventarios</li>
-                <li class="comp-item">Análisis de Márgenes Reales</li>
+            <ul class="benefit-list">
+                <li class="benefit-item">Control digital de inventarios</li>
+                <li class="benefit-item">Análisis de márgenes por producto</li>
             </ul>
 
-            <a href="#" class="btn-detail">Explorar Línea</a>
+            <a href="{{ site.baseurl }}/contacto" class="btn-action">Evaluar Mis Costos</a>
+            <a href="#" class="btn-action btn-secondary">Ver casos de optimización</a>
         </div>
 
         <div class="service-line-card">
-            <span class="line-icon">📈</span>
-            <h2 class="line-title">Estrategia</h2>
-            <p class="line-desc">Cimentación de estructuras societarias y modelos de negocio de alto impacto.</p>
+            <div style="height: 29px;"></div>
+            <h2 class="line-title">Estructura</h2>
+            <p class="line-desc">Ordenamos su base legal y estratégica para permitir un crecimiento escalable y seguro.</p>
             
-            <div class="star-service">
-                <span class="star-tag">Core Service</span>
-                <div class="star-name">Radiografía Empresarial Integral</div>
+            <div class="star-service-box">
+                <span class="star-name">Radiografía Empresarial</span>
+                <span class="star-promise">Análisis integral en 10 días</span>
             </div>
 
-            <h4 class="comp-title">Especialidades</h4>
-            <ul class="comp-list">
-                <li class="comp-item">Estructura Societaria</li>
-                <li class="comp-item">Planificación Tributaria</li>
+            <ul class="benefit-list">
+                <li class="benefit-item">Asesoría de holding / societaria</li>
+                <li class="benefit-item">Plan de eficiencia tributaria</li>
             </ul>
 
-            <a href="#" class="btn-detail">Explorar Línea</a>
+            <a href="{{ site.baseurl }}/contacto" class="btn-action">Solicitar Radiografía</a>
+            <a href="#" class="btn-action btn-secondary">Ver alcance estratégico</a>
         </div>
 
     </div>
 </main>
 
 <div style="background: #1a1a1a; padding: 100px 20px; text-align: center; color: #fff;">
-    <h2 style="text-transform: uppercase; letter-spacing: 5px; font-size: 1.8rem; font-weight: 800; margin-bottom: 40px;">Consolidación Estratégica</h2>
-    <a href="{{ site.baseurl }}/contacto" style="background: #fff; color: #1a1a1a; padding: 20px 50px; text-decoration: none; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; display: inline-block;">
-        Contactar un Consultor
+    <h2 style="text-transform: uppercase; letter-spacing: 5px; font-size: 1.5rem; font-weight: 800; margin-bottom: 20px;">No deje su estructura al azar</h2>
+    <p style="color: #999; margin-bottom: 40px; font-weight: 300;">Hablemos sobre cómo blindar y potenciar su negocio este mes.</p>
+    <a href="https://wa.me/56989374989" style="background: #22c55e; color: #fff; padding: 20px 50px; text-decoration: none; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; display: inline-block;">
+        Hablar con un Consultor Ahora
     </a>
 </div>
