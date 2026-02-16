@@ -1,4 +1,4 @@
-/* style.css - IKUBERT (Versión Final Blindada) */
+/* style.css - IKUBERT (Versión Final Blindada con Footer Móvil en Fila) */
 
 /* 1. RESET Y ESTRUCTURA */
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -31,7 +31,7 @@ main { flex: 1 0 auto; width: 100%; }
 .nav-links a { text-decoration: none; color: #1a1a1a; font-weight: 700; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 1.5px; }
 .nav-checkbox, .nav-toggler { display: none; }
 
-/* 4. FOOTER */
+/* 4. FOOTER PC */
 .main-footer { background-color: #1a1a1a !important; padding: 15px 0 !important; width: 100%; }
 .footer-col { flex: 1; }
 .footer-col.center { text-align: center; }
@@ -51,7 +51,7 @@ main { flex: 1 0 auto; width: 100%; }
    6. MÓVIL: LOGO IZQUIERDA | HAMBURGUESA DERECHA (CORREGIDO)
    ========================================================================== */
 @media (max-width: 768px) {
-    /* Forzamos fila horizontal y extremos */
+    /* Navbar móvil */
     .site-nav { 
         display: flex !important;
         flex-direction: row !important; 
@@ -61,11 +61,7 @@ main { flex: 1 0 auto; width: 100%; }
         height: 70px !important;
     }
 
-    /* Aseguramos que el logo no empuje a la hamburguesa */
-    .site-logo {
-        flex: 0 1 auto !important;
-    }
-
+    .site-logo { flex: 0 1 auto !important; }
     .nav-toggler {
         display: flex !important;
         flex-direction: column !important;
@@ -75,7 +71,6 @@ main { flex: 1 0 auto; width: 100%; }
         flex: 0 0 auto !important;
         cursor: pointer;
     }
-
     .nav-toggler span { width: 25px; height: 2px; background-color: #1a1a1a; transition: 0.3s; }
 
     .nav-links {
@@ -96,15 +91,36 @@ main { flex: 1 0 auto; width: 100%; }
     }
 
     .nav-checkbox:checked ~ .nav-links { right: 0 !important; }
-    
     .nav-checkbox:checked ~ .nav-toggler span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
     .nav-checkbox:checked ~ .nav-toggler span:nth-child(2) { opacity: 0; }
     .nav-checkbox:checked ~ .nav-toggler span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
     .site-nav .site-logo img { height: 40px !important; width: auto !important; }
 
-    /* Footer Móvil */
-    .footer-inner { flex-direction: column !important; gap: 20px !important; text-align: center !important; }
-    .footer-col.right { align-items: center !important; text-align: center !important; }
-    .main-footer { padding: 30px 0 !important; }
+    /* --- CAMBIO SOLICITADO: FOOTER MÓVIL EN FILA --- */
+    .footer-inner { 
+        flex-direction: row !important; /* Fuerza fila en lugar de columna */
+        justify-content: space-between !important; 
+        align-items: center !important;
+        padding: 0 5% !important;
+        gap: 0 !important;
+    }
+
+    .footer-col.left { text-align: left !important; flex: 1; }
+    .footer-col.center { text-align: center !important; flex: 1; }
+    .footer-col.right { 
+        text-align: right !important; 
+        align-items: flex-end !important; 
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Reducción de tamaños para que quepa todo en una sola fila de móvil */
+    .footer-logo-img { height: 32px !important; }
+    .loc { font-size: 0.45rem !important; }
+    .copy { font-size: 0.4rem !important; }
+    .footer-mail { font-size: 0.6rem !important; }
+    .footer-social-icon { width: 14px !important; height: 14px !important; }
+    .main-footer { padding: 15px 0 !important; }
 }
