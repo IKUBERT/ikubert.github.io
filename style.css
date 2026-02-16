@@ -1,20 +1,12 @@
-/* style.css - IKUBERT (Versión Final Blindada) */
+/* style.css - IKUBERT FINAL */
 
-/* 1. RESET Y ESTRUCTURA BASE */
+/* 1. RESET Y ESTRUCTURA */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { height: 100%; overflow-x: hidden; }
-body { 
-    font-family: 'Inter', sans-serif; 
-    line-height: 1.6; 
-    color: #1a1a1a; 
-    background-color: #fff; 
-    display: flex; 
-    flex-direction: column; 
-    min-height: 100vh; 
-}
+body { font-family: 'Inter', sans-serif; display: flex; flex-direction: column; min-height: 100vh; }
 main { flex: 1 0 auto; width: 100%; }
 
-/* 2. ALINEACIÓN MAESTRA (Sincronización al 5%) */
+/* 2. ALINEACIÓN MAESTRA (5%) */
 .site-nav, .footer-inner {
     padding-left: 5% !important;
     padding-right: 5% !important;
@@ -22,10 +14,9 @@ main { flex: 1 0 auto; width: 100%; }
     justify-content: space-between !important;
     align-items: center !important;
     width: 100% !important;
-    box-sizing: border-box !important;
 }
 
-/* 3. NAVEGACIÓN ESCRITORIO (Intacta) */
+/* 3. NAVEGACIÓN PC */
 .site-nav {
     padding-top: 22px;
     padding-bottom: 22px;
@@ -35,100 +26,66 @@ main { flex: 1 0 auto; width: 100%; }
     top: 0;
     z-index: 2000;
 }
-
-.site-nav .site-logo img {
-    height: 62px !important;
-    width: auto;
-    display: block;
-}
-
+.site-nav .site-logo img { height: 62px; width: auto; display: block; }
 .nav-links { display: flex; gap: 30px; }
-.nav-links a {
-    text-decoration: none;
-    color: #1a1a1a;
-    font-weight: 700;
-    font-size: 1.05rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-}
-
+.nav-links a { text-decoration: none; color: #1a1a1a; font-weight: 700; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 1.5px; }
 .nav-checkbox, .nav-toggler { display: none; }
 
 /* 4. FOOTER */
-.main-footer { background-color: #1a1a1a !important; padding: 15px 0 !important; width: 100%; }
+.main-footer { background-color: #1a1a1a; padding: 15px 0 !important; width: 100%; }
 .footer-col { flex: 1; }
 .footer-col.center { text-align: center; }
-.footer-col.right { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
-.footer-logo-img { height: 55px !important; filter: brightness(0) invert(1); opacity: 0.95; }
-.footer-mail { color: #ffffff !important; text-decoration: none; font-size: 0.85rem; }
-.footer-social-icon { width: 18px !important; height: 18px !important; filter: brightness(0) invert(1) !important; opacity: 0.7 !important; display: inline-block !important; }
-.loc { font-size: 0.65rem; color: #fff; opacity: 0.6; text-transform: uppercase; letter-spacing: 1px; }
+.footer-col.right { text-align: right; display: flex; flex-direction: column; align-items: flex-end; }
+.footer-logo-img { height: 55px; filter: brightness(0) invert(1); opacity: 0.95; }
+.footer-social-icon { width: 18px; filter: brightness(0) invert(1); opacity: 0.7; }
+.loc { font-size: 0.65rem; color: #fff; opacity: 0.6; text-transform: uppercase; }
 .copy { font-size: 0.55rem; color: #fff; opacity: 0.4; }
 
-/* 5. LANDING FRAMEWORK */
-.landing-container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
-.landing-container .hero-l h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.1; letter-spacing: -1px; }
-
 /* ==========================================================================
-   6. SISTEMA RESPONSIVO (LOGO IZQUIERDA - HAMBURGUESA DERECHA)
+   5. MÓVIL: LOGO IZQUIERDA | HAMBURGUESA DERECHA
    ========================================================================== */
-
 @media (max-width: 768px) {
     .site-nav { 
-        display: flex !important;
-        flex-flow: row nowrap !important; /* FUERZA FILA ÚNICA */
-        justify-content: space-between !important;
-        align-items: center !important;
-        padding: 10px 5% !important; 
-        height: 75px !important;
+        flex-direction: row !important; /* Forzamos fila */
+        justify-content: space-between !important; 
+        padding: 15px 5% !important; 
     }
 
-    /* Anclamos el logo a la izquierda */
-    .site-logo {
-        display: flex !important;
-        align-items: center !important;
-        flex: 0 0 auto !important;
-    }
-    .site-nav .site-logo img { height: 42px !important; width: auto !important; }
-
-    /* Anclamos la hamburguesa a la derecha */
     .nav-toggler {
         display: flex !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-        gap: 5px !important;
-        z-index: 3000 !important;
-        cursor: pointer !important;
-        flex: 0 0 auto !important;
+        flex-direction: column;
+        gap: 5px;
+        z-index: 3000;
     }
 
     .nav-toggler span { width: 25px; height: 2px; background-color: #1a1a1a; transition: 0.3s; }
 
-    /* El menú desplegable (Se sale del flujo para no molestar) */
     .nav-links {
         position: fixed;
         top: 0;
         right: -100%; 
-        width: 80%;
+        width: 75%;
         height: 100vh;
         background: #fff;
-        flex-direction: column !important;
-        justify-content: center !important;
-        align-items: center !important;
-        gap: 35px !important;
-        transition: 0.4s ease-in-out !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 35px;
+        transition: 0.4s ease-in-out;
         box-shadow: -10px 0 30px rgba(0,0,0,0.1);
         z-index: 2500;
     }
 
-    .nav-checkbox:checked ~ .nav-links { right: 0 !important; }
-
-    /* Animación X */
+    .nav-checkbox:checked ~ .nav-links { right: 0; }
+    
+    /* Animación de las barras a X */
     .nav-checkbox:checked ~ .nav-toggler span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
     .nav-checkbox:checked ~ .nav-toggler span:nth-child(2) { opacity: 0; }
     .nav-checkbox:checked ~ .nav-toggler span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-    /* Footer Móvil */
-    .footer-inner { flex-direction: column !important; gap: 20px !important; text-align: center !important; }
-    .footer-col.right { align-items: center !important; text-align: center !important; }
+    .site-nav .site-logo img { height: 42px !important; }
+
+    .footer-inner { flex-direction: column !important; gap: 20px; text-align: center; }
+    .footer-col.right { align-items: center; text-align: center; }
+    .main-footer { padding: 30px 0 !important; }
 }
