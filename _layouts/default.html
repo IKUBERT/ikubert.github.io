@@ -41,14 +41,16 @@
         {{ content }}
     </main>
 
-    <footer class="main-footer" style="display: flex; justify-content: space-between; align-items: center; padding: 14px 8% !important; background-color: #1a1a1a; width: 100%; box-sizing: border-box;">
+    <footer class="main-footer" style="display: flex; justify-content: space-between; align-items: center; padding: 25px 8% !important; background-color: #1a1a1a; width: 100%; box-sizing: border-box;">
         <div class="footer-col left" style="flex: 1;">
             <p class="loc" style="font-size: 0.65rem; color: #fff; opacity: 0.6; text-transform: uppercase; margin: 0; letter-spacing: 1px;">SANTIAGO, CHILE</p>
             <p class="copy" style="font-size: 0.55rem; color: #fff; opacity: 0.4; margin: 0;">&copy; 2026 IKUBERT</p>
         </div>
+        
         <div class="footer-col center" style="flex: 1; text-align: center; display: flex; justify-content: center; align-items: center;">
-            <img src="{{ site.baseurl }}/src/logo-ikubert.abajo.svg" alt="IKUBERT" style="width: 190px !important; height: auto !important; filter: brightness(0) invert(1); opacity: 0.95;">
+            <img src="{{ site.baseurl }}/src/logo-ikubert.abajo.svg" alt="IKUBERT" style="height: 42px !important; width: auto !important; filter: brightness(0) invert(1); opacity: 0.95;">
         </div>
+
         <div class="footer-col right" style="flex: 1; text-align: right;">
             <a href="mailto:contact@ikubert.com" style="color: #fff; text-decoration: none; font-size: 0.8rem; opacity: 0.9;">contact@ikubert.com</a>
             <div class="social-wrapper" style="margin-top: 4px;">
@@ -66,6 +68,8 @@
             .nav-links { justify-content: center !important; gap: 15px !important; width: 100%; }
             .nav-links a { font-size: 0.85rem !important; letter-spacing: 1px !important; }
             .footer-col { text-align: center !important; flex: none !important; width: 100%; }
+            /* Logo footer móvil aún más controlado */
+            .footer-col.center img { height: 32px !important; }
         }
     </style>
 </body>
