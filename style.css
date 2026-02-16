@@ -1,4 +1,4 @@
-/* style.css - IKUBERT */
+/* style.css - IKUBERT (Versión Final Blindada) */
 
 /* 1. RESET Y ESTRUCTURA BASE */
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,7 +25,7 @@ main { flex: 1 0 auto; width: 100%; }
     box-sizing: border-box !important;
 }
 
-/* 3. NAVEGACIÓN ESCRITORIO (No se toca) */
+/* 3. NAVEGACIÓN ESCRITORIO (Intacta) */
 .site-nav {
     padding-top: 22px;
     padding-bottom: 22px;
@@ -59,54 +59,39 @@ main { flex: 1 0 auto; width: 100%; }
 .footer-col { flex: 1; }
 .footer-col.center { text-align: center; }
 .footer-col.right { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
-
 .footer-logo-img { height: 55px !important; filter: brightness(0) invert(1); opacity: 0.95; }
 .footer-mail { color: #ffffff !important; text-decoration: none; font-size: 0.85rem; }
-
-.footer-social-icon { 
-    width: 18px !important; 
-    height: 18px !important; 
-    filter: brightness(0) invert(1) !important; 
-    opacity: 0.7 !important;
-    display: inline-block !important;
-}
-
+.footer-social-icon { width: 18px !important; height: 18px !important; filter: brightness(0) invert(1) !important; opacity: 0.7 !important; display: inline-block !important; }
 .loc { font-size: 0.65rem; color: #fff; opacity: 0.6; text-transform: uppercase; letter-spacing: 1px; }
 .copy { font-size: 0.55rem; color: #fff; opacity: 0.4; }
 
 /* 5. LANDING FRAMEWORK */
 .landing-container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
 .landing-container .hero-l h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.1; letter-spacing: -1px; }
-.landing-container .btn-main { background: #0055ff; color: #fff !important; padding: 20px 45px; text-decoration: none; font-weight: 700; text-transform: uppercase; display: inline-block; }
 
 /* ==========================================================================
-   6. SISTEMA RESPONSIVO (Móvil: Logo Izquierda | Hamburguesa Derecha)
+   6. SISTEMA RESPONSIVO (LOGO IZQUIERDA - HAMBURGUESA DERECHA)
    ========================================================================== */
 
 @media (max-width: 768px) {
-    /* Forzamos el comportamiento de fila única */
     .site-nav { 
         display: flex !important;
-        flex-direction: row !important; /* Asegura línea horizontal */
-        flex-wrap: nowrap !important; /* Prohíbe el salto de línea */
+        flex-flow: row nowrap !important; /* FUERZA FILA ÚNICA */
         justify-content: space-between !important;
         align-items: center !important;
         padding: 10px 5% !important; 
-        min-height: 70px !important;
+        height: 75px !important;
     }
 
-    /* Logo anclado a la izquierda */
+    /* Anclamos el logo a la izquierda */
     .site-logo {
+        display: flex !important;
+        align-items: center !important;
         flex: 0 0 auto !important;
-        margin: 0 !important;
     }
+    .site-nav .site-logo img { height: 42px !important; width: auto !important; }
 
-    .site-nav .site-logo img { 
-        height: 45px !important; 
-        width: auto !important; 
-    }
-
-    /* Botón Hamburguesa anclado a la derecha */
+    /* Anclamos la hamburguesa a la derecha */
     .nav-toggler {
         display: flex !important;
         flex-direction: column !important;
@@ -115,17 +100,11 @@ main { flex: 1 0 auto; width: 100%; }
         z-index: 3000 !important;
         cursor: pointer !important;
         flex: 0 0 auto !important;
-        margin: 0 !important;
     }
 
-    .nav-toggler span {
-        width: 25px;
-        height: 2px;
-        background-color: #1a1a1a;
-        transition: 0.3s;
-    }
+    .nav-toggler span { width: 25px; height: 2px; background-color: #1a1a1a; transition: 0.3s; }
 
-    /* Menú desplegable lateral (Sin espacio en el flujo) */
+    /* El menú desplegable (Se sale del flujo para no molestar) */
     .nav-links {
         position: fixed;
         top: 0;
@@ -140,12 +119,9 @@ main { flex: 1 0 auto; width: 100%; }
         transition: 0.4s ease-in-out !important;
         box-shadow: -10px 0 30px rgba(0,0,0,0.1);
         z-index: 2500;
-        display: flex !important;
     }
 
-    .nav-checkbox:checked ~ .nav-links { 
-        right: 0 !important; 
-    }
+    .nav-checkbox:checked ~ .nav-links { right: 0 !important; }
 
     /* Animación X */
     .nav-checkbox:checked ~ .nav-toggler span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
@@ -155,5 +131,4 @@ main { flex: 1 0 auto; width: 100%; }
     /* Footer Móvil */
     .footer-inner { flex-direction: column !important; gap: 20px !important; text-align: center !important; }
     .footer-col.right { align-items: center !important; text-align: center !important; }
-    .main-footer { padding: 30px 0 !important; }
 }
