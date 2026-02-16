@@ -138,11 +138,22 @@ title: Servicios | IKUBERT
 
     .btn-secondary {
         background: #fff;
-        color: #999;
+        color: #1a1a1a; /* Restaurado a color de marca */
         margin-top: 10px;
+        padding: 12px;
+        text-align: center;
+        text-decoration: none;
         font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
         border: 1px solid #eee;
-        cursor: default;
+        transition: 0.3s;
+    }
+
+    .btn-secondary:hover {
+        border-color: #1a1a1a;
+        background: #f9f9f9;
     }
 
     @media (max-width: 768px) {
@@ -151,6 +162,18 @@ title: Servicios | IKUBERT
         .hero-servicios h1 { font-size: 2.5rem !important; }
         .grid-servicios { gap: 40px !important; }
         .mobile-hide { display: none; }
+        
+        .cta-box-hero { 
+            padding: 25px 20px !important; 
+            width: 100% !important; 
+            box-sizing: border-box;
+        }
+        
+        .btn-hero { 
+            display: block !important; 
+            width: 100% !important; 
+            padding: 18px 10px !important; 
+        }
     }
 </style>
 
@@ -188,7 +211,7 @@ title: Servicios | IKUBERT
             </ul>
             
             <a href="{{ site.baseurl }}/contacto" class="btn-action">Solicitar Diagnóstico</a>
-            <a href="javascript:void(0)" class="btn-action btn-secondary">Ver detalles del método</a>
+            <a href="{{ site.baseurl }}/servicios/diagnostico-digital" class="btn-secondary">Ver detalles del método</a>
         </div>
 
         <div class="service-line-card">
@@ -208,7 +231,7 @@ title: Servicios | IKUBERT
             </ul>
 
             <a href="{{ site.baseurl }}/contacto" class="btn-action">Evaluar Optimización</a>
-            <a href="javascript:void(0)" class="btn-action btn-secondary">Ver metodología de procesos</a>
+            <a href="{{ site.baseurl }}/servicios/optimizacion-operativa" class="btn-secondary">Ver metodología de procesos</a>
         </div>
 
         <div class="service-line-card">
@@ -228,7 +251,7 @@ title: Servicios | IKUBERT
             </ul>
 
             <a href="{{ site.baseurl }}/contacto" class="btn-action">Solicitar Radiografía</a>
-            <a href="javascript:void(0)" class="btn-action btn-secondary">Ver alcance estratégico</a>
+            <a href="{{ site.baseurl }}/servicios/radiografia-empresarial" class="btn-secondary">Ver alcance estratégico</a>
         </div>
 
     </div>
