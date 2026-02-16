@@ -146,7 +146,6 @@ layout: null
 
     <div class="scene">
         <div class="card" id="card" onclick="this.classList.toggle('is-flipped')">
-            
             <div class="card-face card-front">
                 <img src="/src/logotipo-ikubert-lateral.svg" class="logo-frente">
                 <div class="hint">Tap para conectar</div>
@@ -177,7 +176,6 @@ layout: null
                     <a id="btn-ln" href="#" target="_blank" class="btn btn-ln" onclick="event.stopPropagation()">LinkedIn</a>
                 </div>
             </div>
-
         </div>
     </div>
 
@@ -220,12 +218,14 @@ layout: null
         function downloadVCard(event) {
             event.stopPropagation();
             
-            const fileName = personData.n.replace(/\s+/g, '_') || 'contacto';
+            // Nombre del archivo limpio
+            const fileName = (personData.n || 'contacto').replace(/\s+/g, '_');
 
-            // Formato VCF 3.0 con saltos de línea CRLF obligatorios para móviles
+            // Formato vCard 3.0 con saltos de línea CRLF (\r\n) para máxima compatibilidad
             const vCardData = [
                 'BEGIN:VCARD',
                 'VERSION:3.0',
+                'REV:' + new Date().toISOString(),
                 'FN:' + personData.n,
                 'N:;' + personData.n + ';;;',
                 'ORG:IKUBERT',
@@ -233,23 +233,21 @@ layout: null
                 'TEL;TYPE=CELL,VOICE:+' + personData.t,
                 'EMAIL;TYPE=PREF,INTERNET:' + personData.m,
                 'URL:https://ikubert.com',
-                'REV:' + new Date().toISOString(),
                 'END:VCARD'
             ].join('\r\n');
 
-            // Codificación para manejar caracteres especiales y compatibilidad total
-            const blob = new Blob([vCardData], { type: 'text/vcard;charset=utf-8' });
-            const url = window.URL.createObjectURL(blob);
-            
+            // Conversión a Base64 para saltar errores de E/S en navegadores móviles
+            const base64VCard = btoa(unescape(encodeURIComponent(vCardData)));
+            const dataUri = 'data:text/vcard;base64,' + base64VCard;
+
             const link = document.createElement('a');
-            link.href = url;
+            link.href = dataUri;
             link.setAttribute('download', fileName + '.vcf');
             
+            // Inyección temporal necesaria para iOS Safari
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-            
-            setTimeout(() => window.URL.revokeObjectURL(url), 100);
         }
     </script>
 </body>
