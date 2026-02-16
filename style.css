@@ -1,12 +1,12 @@
 /* style.css - IKUBERT */
 
-/* 1. BASE */
+/* 1. RESET Y ESTRUCTURA */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { height: 100%; overflow-x: hidden; }
 body { font-family: 'Inter', sans-serif; display: flex; flex-direction: column; min-height: 100vh; }
 main { flex: 1 0 auto; width: 100%; }
 
-/* 2. ALINEACIÓN MAESTRA (Sincronización al 5%) */
+/* 2. ALINEACIÓN MAESTRA (5%) */
 .site-nav, .footer-inner {
     padding-left: 5% !important;
     padding-right: 5% !important;
@@ -16,7 +16,7 @@ main { flex: 1 0 auto; width: 100%; }
     width: 100% !important;
 }
 
-/* 3. NAVEGACIÓN PC (NO TOCAR) */
+/* 3. NAVEGACIÓN PC (No se toca) */
 .site-nav {
     padding-top: 22px;
     padding-bottom: 22px;
@@ -31,11 +31,11 @@ main { flex: 1 0 auto; width: 100%; }
 .nav-links a { text-decoration: none; color: #1a1a1a; font-weight: 700; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 1.5px; }
 .nav-checkbox, .nav-toggler { display: none; }
 
-/* 4. FOOTER PC (NO TOCAR) */
+/* 4. FOOTER PC (No se toca) */
 .main-footer { background-color: #1a1a1a !important; padding: 15px 0 !important; width: 100%; }
 .footer-col { flex: 1; }
 .footer-col.center { text-align: center; }
-.footer-col.right { text-align: right; display: flex; flex-direction: column; align-items: flex-end; }
+.footer-col.right { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
 .footer-logo-img { height: 55px; filter: brightness(0) invert(1); opacity: 0.95; }
 .footer-mail { color: #ffffff !important; text-decoration: none !important; font-size: 0.85rem; opacity: 0.9; }
 .footer-social-icon { width: 18px !important; height: 18px !important; filter: brightness(0) invert(1) !important; opacity: 0.7 !important; display: inline-block !important; }
@@ -47,40 +47,59 @@ main { flex: 1 0 auto; width: 100%; }
 .landing-container .hero-l h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.1; letter-spacing: -1px; }
 
 /* ==========================================================================
-   6. SOLO TELÉFONO (@media) - NO AFECTA AL PC
+   6. MÓVIL: NAVBAR PRO Y FOOTER ESTRATÉGICO (SIN TOCAR PC)
    ========================================================================== */
 @media (max-width: 768px) {
-    /* NAVBAR MÓVIL: Logo Izq | Hamburguesa Der */
+    /* Navbar móvil */
     .site-nav { 
         flex-direction: row !important; 
-        flex-wrap: nowrap !important;
         justify-content: space-between !important; 
-        padding: 10px 5% !important; 
+        padding: 15px 5% !important; 
         height: 70px !important;
     }
     .nav-toggler { display: flex !important; flex-direction: column; gap: 5px; z-index: 3000; cursor: pointer; }
     .nav-toggler span { width: 25px; height: 2px; background-color: #1a1a1a; }
     .nav-links { position: fixed; top: 0; right: -100%; width: 75%; height: 100vh; background: #fff; flex-direction: column !important; justify-content: center !important; align-items: center !important; gap: 35px !important; transition: 0.4s ease-in-out; z-index: 2500; display: flex !important; }
     .nav-checkbox:checked ~ .nav-links { right: 0 !important; }
-    .site-nav .site-logo img { height: 38px !important; }
+    .site-nav .site-logo img { height: 40px !important; }
 
-    /* FOOTER MÓVIL: Santiago Izq | Logo Centro | Correo Der */
+    /* --- SOLUCIÓN FOOTER MÓVIL SOLICITADA --- */
     .footer-inner { 
-        flex-direction: row !important; 
-        flex-wrap: nowrap !important;
-        justify-content: space-between !important; 
-        align-items: center !important;
+        display: grid !important; /* Cambiamos a grilla para control total */
+        grid-template-columns: 1fr 1fr; /* Dos columnas arriba */
+        grid-template-areas: 
+            "logo contact"
+            "location location"; /* Santiago ocupa todo el ancho abajo */
+        gap: 20px 0;
+        padding: 20px 5% !important;
     }
-    .footer-col { flex: 1 !important; }
-    .footer-col.left { text-align: left !important; }
-    .footer-col.center { text-align: center !important; }
-    .footer-col.right { text-align: right !important; align-items: flex-end !important; display: flex !important; flex-direction: column !important; }
 
-    /* Achicamos todo para que quepa en una sola línea de celular */
-    .footer-logo-img { height: 26px !important; width: auto !important; }
-    .loc { font-size: 0.42rem !important; white-space: nowrap; }
-    .copy { display: none !important; } /* Ocultamos copyright en móvil para ganar espacio */
-    .footer-mail { font-size: 0.52rem !important; white-space: nowrap; }
-    .footer-social-icon { width: 12px !important; height: 12px !important; }
-    .main-footer { padding: 12px 0 !important; }
+    /* Logo Izquierda */
+    .footer-col.center { 
+        grid-area: logo; 
+        text-align: left !important; 
+    }
+    .footer-logo-img { height: 40px !important; margin: 0 !important; }
+
+    /* Correo y LinkedIn Derecha */
+    .footer-col.right { 
+        grid-area: contact; 
+        text-align: right !important; 
+        align-items: flex-end !important;
+        justify-content: center;
+    }
+    .footer-mail { font-size: 0.75rem !important; }
+    .footer-social-icon { width: 16px !important; height: 16px !important; }
+
+    /* Santiago Chile abajo y centrado */
+    .footer-col.left { 
+        grid-area: location; 
+        text-align: center !important; 
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-top: 15px;
+    }
+    .loc { font-size: 0.6rem !important; opacity: 0.8 !important; }
+    .copy { font-size: 0.5rem !important; margin-top: 5px; }
+
+    .main-footer { padding: 25px 0 !important; }
 }
