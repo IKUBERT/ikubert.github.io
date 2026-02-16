@@ -48,7 +48,7 @@ main { flex: 1 0 auto; width: 100%; }
    ========================================================================== */
 .landing-container { max-width: 1000px; margin: 0 auto; padding-top: 80px; padding-bottom: 80px; }
 
-/* Hero y Textos */
+/* Hero Section */
 .hero-l { margin-bottom: 80px; }
 .hero-l h1 { font-size: 3rem; font-weight: 800; line-height: 1.1; letter-spacing: -1.5px; margin: 25px 0; color: #1a1a1a; }
 .subtitle-hero { font-size: 1.25rem; color: #666; margin-bottom: 20px; font-weight: 500; }
@@ -62,17 +62,17 @@ main { flex: 1 0 auto; width: 100%; }
 .p-item h4 { margin-bottom: 12px; font-size: 1.2rem; font-weight: 700; }
 .p-item p { font-size: 0.95rem; color: #666; line-height: 1.5; }
 
-/* Metodología e Intervención (Nuevos ajustes de espaciado) */
+/* Metodología (CORRECCIÓN DE ESPACIADO) */
 .section-l { padding: 80px 0; border-top: 1px solid #eee; }
 .section-l h2 { font-size: 2rem; margin-bottom: 30px; font-weight: 800; }
 
 .quote-text { 
     font-style: italic; font-size: 1.3rem; color: #555; 
-    margin-bottom: 45px; padding: 20px 30px; background: #fcfcfc;
+    margin: 40px 0; padding: 20px 30px; background: #fcfcfc;
     border-left: 3px solid #0055ff; line-height: 1.4;
 }
 
-.method-list { list-style: none; padding: 0; }
+.method-list { list-style: none; padding: 0; margin: 40px 0; }
 .method-list li { margin-bottom: 35px; font-size: 1.1rem; line-height: 1.6; color: #444; }
 .method-list li strong { 
     display: block; font-size: 1.2rem; color: #1a1a1a; 
@@ -101,17 +101,17 @@ main { flex: 1 0 auto; width: 100%; }
 .complementary-box a { color: #0055ff; font-weight: 700; text-decoration: none; }
 
 /* ==========================================================================
-   6. SECCIÓN FINAL (CTA) - Corregido el "pegado"
+   6. SECCIÓN FINAL (CTA) - CORRECCIÓN DE AMONTONAMIENTO
    ========================================================================== */
 .final-cta { 
     text-align: center; 
-    padding: 100px 5% !important; 
+    padding: 120px 5% !important; /* Más espacio arriba y abajo */
     background: #fdfdfd; 
     border-top: 1px solid #eee;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px; /* Separación uniforme entre elementos */
+    gap: 35px; /* Espacio automático entre todos los elementos del bloque */
 }
 .final-cta h2 { font-size: 2.4rem !important; line-height: 1.2; color: #1a1a1a; max-width: 850px; margin: 0 !important; }
 .final-cta p { font-size: 1.15rem; color: #555; line-height: 1.6; max-width: 750px; margin: 0 !important; }
@@ -121,7 +121,7 @@ main { flex: 1 0 auto; width: 100%; }
     text-transform: uppercase; 
     color: #bbb; 
     letter-spacing: 2px; 
-    margin-top: 50px !important; /* Separa la marca del botón */
+    margin-top: 60px !important; /* Gran separación del botón */
     font-weight: 600;
 }
 
@@ -129,23 +129,21 @@ main { flex: 1 0 auto; width: 100%; }
    7. MÓVIL: NAVBAR PRO Y FOOTER (SIN TOCAR PC)
    ========================================================================== */
 @media (max-width: 768px) {
-    /* Navbar móvil */
-    .site-nav { flex-direction: row !important; justify-content: space-between !important; padding: 15px 5% !important; height: 70px !important; }
+    .site-nav { padding: 15px 5% !important; height: 70px !important; }
     .nav-toggler { display: flex !important; flex-direction: column; gap: 5px; z-index: 3000; cursor: pointer; }
     .nav-toggler span { width: 25px; height: 2px; background-color: #1a1a1a; }
     .nav-links { position: fixed; top: 0; right: -100%; width: 80%; height: 100vh; background: #fff; flex-direction: column !important; justify-content: center !important; align-items: center !important; gap: 35px !important; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 2500; display: flex !important; box-shadow: -10px 0 30px rgba(0,0,0,0.05); }
     .nav-checkbox:checked ~ .nav-links { right: 0 !important; }
     .site-nav .site-logo img { height: 45px !important; }
 
-    /* Landing móvil */
     .landing-container { padding: 40px 5%; }
     .hero-l h1 { font-size: 2.2rem; }
     .problem-box { grid-template-columns: 1fr; gap: 15px; }
     .btn-main { width: 100%; }
     
-    .final-cta { padding: 60px 5% !important; gap: 25px; }
-    .final-cta h2 { font-size: 1.8rem !important; }
-    .disclaimer { margin-top: 35px !important; }
+    .final-cta { padding: 80px 5% !important; gap: 25px; }
+    .final-cta h2 { font-size: 1.8rem; }
+    .disclaimer { margin-top: 40px !important; }
 
     /* Footer móvil grid */
     .footer-inner { 
