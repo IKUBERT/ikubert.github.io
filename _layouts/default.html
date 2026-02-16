@@ -3,39 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }}{% else %}IKUBERT{% endif %}</title>
     
-    <title>
-      {% if page.url == "/" %}
-        IKUBERT | Ingeniería y Gestión
-      {% elsif page.title %}
-        {{ page.title }} | IKUBERT
-      {% else %}
-        IKUBERT
-      {% endif %}
-    </title>
-
-    <meta name="description" content="IKUBERT: Consultoría estratégica que integra Ingeniería Industrial, Ciberseguridad y Gestión de Negocios.">
-
     <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/src/logo-ikubert.svg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ site.baseurl }}/style.css?v=18.0">
-    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    <link rel="stylesheet" href="{{ site.baseurl }}/style.css?v=28.0">
 </head>
 <body class="sticky-wrapper">
 
-    <nav class="site-nav">
-        <div class="site-logo">
-            <a href="{{ site.baseurl }}/">
-                <img src="{{ site.baseurl }}/src/logotipo-ikubert-lateral.svg" alt="IKUBERT">
-            </a>
-        </div>
-        <div class="nav-links">
-            <a href="{{ site.baseurl }}/">Home</a>
-            <a href="{{ site.baseurl }}/servicios">Servicios</a>
-            <a href="{{ site.baseurl }}/acerca">Acerca</a>
-            <a href="{{ site.baseurl }}/contacto">Contacto</a>
-        </div>
-    </nav>
+    {% include navbar.html %}
     
     <main class="content-wrapper">
         {{ content }}
@@ -47,7 +23,7 @@
                 <p class="loc">SANTIAGO, CHILE</p>
                 <p class="copy">&copy; 2026 IKUBERT</p>
             </div>
-            
+
             <div class="footer-col center">
                 <img src="{{ site.baseurl }}/src/logo-ikubert.abajo.svg" alt="IKUBERT" class="footer-logo-img">
             </div>
@@ -56,7 +32,7 @@
                 <a href="mailto:contact@ikubert.com" class="footer-mail">contact@ikubert.com</a>
                 <div class="social-wrapper">
                     <a href="https://www.linkedin.com/company/ikubert" target="_blank">
-                        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 18px; filter: brightness(0) invert(1); opacity: 0.7;">
+                        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="footer-social-icon">
                     </a>
                 </div>
             </div>
@@ -64,15 +40,12 @@
     </footer>
 
     <style>
-        .site-nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 8%; background-color: #ffffff; border-bottom: 1px solid #eee; }
-        .site-logo img { height: 62px !important; width: auto; display: block; }
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a { text-decoration: none; color: #1a1a1a; font-weight: 700; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 1.5px; }
-
-        @media (max-width: 768px) {
-            .site-nav { flex-direction: column; gap: 15px; padding: 20px 5%; }
-            .nav-links { gap: 15px; justify-content: center; }
-            .nav-links a { font-size: 0.85rem; }
+        /* Reglas esenciales para móviles */
+        @media (max-width: 600px) {
+            .site-nav { padding: 15px 5% !important; flex-direction: column !important; }
+            .nav-links { justify-content: center !important; margin-top: 15px; gap: 20px !important; }
+            .footer-inner { flex-direction: column !important; gap: 15px; text-align: center; }
+            .footer-col.left, .footer-col.right { text-align: center !important; }
         }
     </style>
 </body>
