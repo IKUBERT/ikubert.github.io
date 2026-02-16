@@ -4,7 +4,7 @@ title: Servicios | IKUBERT
 ---
 
 <style>
-    /* Estilos de Conversión Estratégica */
+    /* Estructura de Conversión Estratégica IKUBERT */
     .service-line-card {
         background: #fff;
         border: 1px solid #eee;
@@ -21,7 +21,7 @@ title: Servicios | IKUBERT
         box-shadow: 0 15px 40px rgba(0,0,0,0.08);
     }
 
-    /* Destaque para el Producto de Entrada */
+    /* Destaque para el Producto de Entrada (Riesgo) */
     .featured-card {
         border: 2px solid #1a1a1a;
         transform: scale(1.02);
@@ -54,10 +54,10 @@ title: Servicios | IKUBERT
         font-size: 0.95rem;
         line-height: 1.6;
         margin-bottom: 25px;
-        min-height: 60px;
+        min-height: 65px;
     }
 
-    /* Caja de Impacto - Servicio Estrella */
+    /* Cajas Metodológicas */
     .star-service-box {
         background: #f4f7ff;
         border-left: 4px solid #0055ff;
@@ -80,9 +80,9 @@ title: Servicios | IKUBERT
     }
 
     .method-proof {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         margin-top: 10px;
-        color: #555;
+        color: #666;
         line-height: 1.4;
         font-style: italic;
     }
@@ -95,7 +95,7 @@ title: Servicios | IKUBERT
 
     .benefit-item {
         font-size: 0.85rem;
-        color: #666;
+        color: #555;
         margin-bottom: 12px;
         display: flex;
         align-items: flex-start;
@@ -130,30 +130,19 @@ title: Servicios | IKUBERT
 
     .btn-secondary {
         background: #fff;
-        color: #1a1a1a;
+        color: #999; /* Color más suave para indicar "Próximamente/Deshabilitado" */
         margin-top: 10px;
         font-size: 0.7rem;
         border: 1px solid #eee;
+        cursor: default;
     }
 
     @media (max-width: 768px) {
         .featured-card { transform: scale(1); border: 1px solid #eee; }
         .hero-servicios { padding: 60px 15px !important; }
-        .hero-servicios h1 { font-size: 2.5rem !important; letter-spacing: 6px !important; }
-        
-        .cta-box-hero { 
-            padding: 25px 20px !important; 
-            width: 100% !important; 
-            box-sizing: border-box;
-        }
-        
-        .btn-hero { 
-            display: block !important; 
-            width: 100% !important; 
-            padding: 18px 10px !important; 
-        }
-
+        .hero-servicios h1 { font-size: 2.5rem !important; }
         .grid-servicios { gap: 40px !important; }
+        .mobile-hide { display: none; }
     }
 </style>
 
@@ -175,12 +164,12 @@ title: Servicios | IKUBERT
         <div class="service-line-card featured-card">
             <span class="priority-tag">Programa Inicial Recomendado</span>
             <h2 class="line-title">Seguridad Digital</h2>
-            <p class="line-desc">Identifique vulnerabilidades críticas antes de que generen pérdidas financieras.</p>
+            <p class="line-desc">Detectamos vulnerabilidades críticas antes de que generen pérdidas financieras o interrupciones operativas.</p>
             
             <div class="star-service-box">
-                <span class="star-name">Diagnóstico Inicial de Riesgo – 10 días</span>
-                <span class="star-promise">Incluye Plan de Acción priorizado a 30 días</span>
-                <p class="method-proof">Metodología estructurada con entrega ejecutiva y plan priorizado.</p>
+                <span class="star-name">Diagnóstico Inicial de Riesgo Digital – 10 días</span>
+                <span class="star-promise">Evaluación técnica priorizada</span>
+                <p class="method-proof">Entrega de informe ejecutivo con plan de acción a 30 días.</p>
             </div>
 
             <ul class="benefit-list">
@@ -190,17 +179,17 @@ title: Servicios | IKUBERT
             </ul>
             
             <a href="{{ site.baseurl }}/contacto" class="btn-action">Solicitar Diagnóstico</a>
-            <a href="#" class="btn-action btn-secondary">Ver detalles del método</a>
+            <a href="javascript:void(0)" class="btn-action btn-secondary">Ver detalles del método</a>
         </div>
 
         <div class="service-line-card">
             <div style="height: 29px;" class="mobile-hide"></div>
             <h2 class="line-title">Rentabilidad</h2>
-            <p class="line-desc">Eliminamos fugas operativas mediante la optimización de procesos y márgenes.</p>
+            <p class="line-desc">Identificamos y corregimos fugas operativas que impactan directamente el flujo de caja.</p>
             
             <div class="star-service-box">
                 <span class="star-name">Programa de Optimización Operativa – 30 días</span>
-                <span class="star-promise">Foco en eficiencia y recuperación de flujo</span>
+                <span class="star-promise">Eficiencia aplicada a ciclos reales</span>
             </div>
 
             <ul class="benefit-list">
@@ -210,13 +199,13 @@ title: Servicios | IKUBERT
             </ul>
 
             <a href="{{ site.baseurl }}/contacto" class="btn-action">Evaluar Optimización</a>
-            <a href="#" class="btn-action btn-secondary">Ver metodología de procesos</a>
+            <a href="javascript:void(0)" class="btn-action btn-secondary">Ver metodología de procesos</a>
         </div>
 
         <div class="service-line-card">
             <div style="height: 29px;" class="mobile-hide"></div>
             <h2 class="line-title">Estructura</h2>
-            <p class="line-desc">Análisis estructural para crecimiento sólido y blindaje patrimonial.</p>
+            <p class="line-desc">Análisis estructural para crecimiento sostenible y protección patrimonial.</p>
             
             <div class="star-service-box">
                 <span class="star-name">Radiografía Empresarial – 20 días</span>
@@ -230,7 +219,7 @@ title: Servicios | IKUBERT
             </ul>
 
             <a href="{{ site.baseurl }}/contacto" class="btn-action">Solicitar Radiografía</a>
-            <a href="#" class="btn-action btn-secondary">Ver alcance estratégico</a>
+            <a href="javascript:void(0)" class="btn-action btn-secondary">Ver alcance estratégico</a>
         </div>
 
     </div>
@@ -244,8 +233,9 @@ title: Servicios | IKUBERT
 
 <div style="background: #1a1a1a; padding: 100px 20px; text-align: center; color: #fff;">
     <h2 style="text-transform: uppercase; letter-spacing: 5px; font-size: 1.5rem; font-weight: 800; margin-bottom: 20px;">No deje su estructura al azar</h2>
-    <p style="color: #999; margin-bottom: 10px; font-weight: 300;">Hablemos sobre cómo blindar y potenciar su negocio.</p>
-    <p style="color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 40px;">Conversación inicial sin compromiso – 30 minutos</p>
+    <p style="color: #999; margin-bottom: 5px; font-weight: 300;">Hablemos sobre cómo blindar y potenciar su negocio.</p>
+    <p style="color: #666; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 30px;">Conversación inicial sin compromiso – 30 minutos</p>
+    <p style="color: #444; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 40px; font-weight: 700;">Enfoque diagnóstico, no comercial.</p>
     
     <a href="https://wa.me/56989374989" style="background: #22c55e; color: #fff; padding: 20px 50px; text-decoration: none; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; display: inline-block;">
         Hablar con un Consultor Ahora
