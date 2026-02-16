@@ -1,4 +1,4 @@
-/* style.css - IKUBERT O */
+/* style.css - IKUBERT */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html, body { height: 100%; }
@@ -27,7 +27,7 @@ main { flex: 1 0 auto; width: 100%; }
     box-sizing: border-box;
 }
 
-/* NAVEGACIÓN */
+/* NAVEGACIÓN ESCRITORIO */
 .site-nav {
     padding-top: 22px;
     padding-bottom: 22px;
@@ -44,7 +44,7 @@ main { flex: 1 0 auto; width: 100%; }
 
 .nav-links {
     display: flex;
-    gap: 35px;
+    gap: 30px;
 }
 
 .nav-links a {
@@ -54,9 +54,12 @@ main { flex: 1 0 auto; width: 100%; }
     font-size: 1.05rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
+    transition: opacity 0.2s;
 }
 
-/* FOOTER - ADELGAZADO Y ALINEADO */
+.nav-links a:hover { opacity: 0.7; }
+
+/* FOOTER ESCRITORIO */
 .main-footer { 
     background-color: #1a1a1a !important; 
     color: #ffffff !important; 
@@ -82,14 +85,53 @@ main { flex: 1 0 auto; width: 100%; }
 .loc { font-size: 0.65rem; color: #fff; opacity: 0.6; text-transform: uppercase; letter-spacing: 1px; }
 .copy { font-size: 0.55rem; color: #fff; opacity: 0.4; }
 
-/* LANDING FRAMEWORK */
-.landing-container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
-.landing-container .hero-l h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.1; letter-spacing: -1px; }
-.landing-container .check-item::before { content: "✓"; color: #0055ff; margin-right: 12px; font-weight: 800; }
-.landing-container .btn-main { background: #0055ff; color: #fff !important; padding: 20px 45px; text-decoration: none; font-weight: 700; text-transform: uppercase; display: inline-block; }
+/* ==========================================================================
+   SISTEMA RESPONSIVO (Móvil y Tablets)
+   ========================================================================== */
 
-/* RESPONSIVO */
+/* TABLETS (Menos de 1024px) */
+@media (max-width: 1024px) {
+    .nav-links { gap: 20px; }
+    .nav-links a { font-size: 0.9rem; }
+}
+
+/* SMARTPHONES (Menos de 768px) */
 @media (max-width: 768px) {
-    .footer-logo-img { height: 45px !important; }
-    .main-footer { padding: 20px 0 !important; }
+    /* Nav vertical para que no se amontone */
+    .site-nav {
+        flex-direction: column;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        gap: 15px;
+    }
+    
+    .site-nav .site-logo img { height: 50px !important; } /* Logo más pequeño en móvil */
+
+    .nav-links {
+        justify-content: center;
+        width: 100%;
+        gap: 15px;
+        flex-wrap: wrap; /* Si son muchos links, saltan de línea */
+    }
+
+    .nav-links a { font-size: 0.85rem; letter-spacing: 1px; }
+
+    /* Footer vertical */
+    .footer-inner {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+
+    .footer-col.right { align-items: center; text-align: center; }
+    
+    .footer-logo-img { height: 45px !important; } /* Logo footer más discreto en móvil */
+    .main-footer { padding: 30px 0 !important; } /* Más espacio para tocar con el dedo */
+}
+
+/* LANDING FRAMEWORK RESPONSIVO */
+.landing-container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+@media (max-width: 600px) {
+    .landing-container { padding: 40px 15px; }
+    .landing-container .hero-l h1 { font-size: 2.1rem; }
 }
