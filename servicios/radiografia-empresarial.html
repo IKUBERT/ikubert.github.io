@@ -2,164 +2,62 @@
 layout: default
 title: Radiografía Empresarial | IKUBERT
 ---
-
-<style>
-    .landing-container { max-width: 800px; margin: 0 auto; padding: 60px 20px; font-family: 'Inter', sans-serif; }
-    
-    /* Hero Landing */
-    .hero-l { text-align: left; padding: 40px 0 80px 0; border-bottom: 1px solid #eee; }
-    .hero-l h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.1; letter-spacing: -1px; color: #1a1a1a; margin-bottom: 25px; }
-    .hero-l p { font-size: 1.25rem; color: #444; line-height: 1.5; font-weight: 300; max-width: 650px; margin-bottom: 40px; }
-
-    /* Secciones Comunes */
-    .section-l { padding: 80px 0; border-bottom: 1px solid #f0f0f0; }
-    .section-l h2 { text-transform: uppercase; letter-spacing: 2px; font-size: 1.1rem; font-weight: 800; margin-bottom: 40px; color: #000; }
-
-    /* Bloque Problema */
-    .problem-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
-    .p-item { padding: 20px; background: #fff; border-left: 3px solid #1a1a1a; }
-    .p-item h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 10px; }
-    .p-item p { font-size: 0.85rem; color: #666; line-height: 1.4; }
-
-    /* Definición y Metodología */
-    .def-box { background: #f9f9f9; padding: 40px; margin-bottom: 40px; border-radius: 2px; }
-    .meta-data { display: flex; gap: 40px; margin-top: 25px; padding-top: 25px; border-top: 1px solid #ddd; }
-    .meta-item span { display: block; font-size: 0.7rem; text-transform: uppercase; color: #999; font-weight: 700; }
-    .meta-item strong { font-size: 1rem; color: #000; }
-
-    .step-grid { display: grid; gap: 20px; }
-    .step { display: flex; gap: 20px; align-items: flex-start; }
-    .step-num { background: #1a1a1a; color: #fff; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
-    .step-content h4 { font-size: 1rem; margin-bottom: 5px; }
-    .step-content p { font-size: 0.9rem; color: #666; }
-
-    /* Entregables */
-    .check-list { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-    .check-item { display: flex; align-items: center; font-size: 0.95rem; font-weight: 500; }
-    .check-item::before { content: "✓"; color: #0055ff; margin-right: 12px; font-weight: 800; }
-
-    /* Filtro */
-    .filter-box { background: #1a1a1a; color: #fff; padding: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-    .filter-box h3 { color: #fff; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
-    .filter-list { list-style: none; padding: 0; font-size: 0.85rem; opacity: 0.8; }
-    .filter-list li { margin-bottom: 10px; }
-
-    /* CTA */
-    .btn-main { background: #0055ff; color: #fff; text-decoration: none; padding: 20px 40px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; display: inline-block; transition: 0.3s; }
-    .btn-main:hover { background: #0044cc; transform: translateY(-2px); }
-
-    @media (max-width: 768px) {
-        .hero-l h1 { font-size: 2rem; }
-        .meta-data { flex-direction: column; gap: 20px; }
-        .check-list { grid-template-columns: 1fr; }
-        .filter-box { grid-template-columns: 1fr; gap: 30px; }
-    }
-</style>
-
 <div class="landing-container">
-    
     <section class="hero-l">
-        <h1>La estructura de su empresa determina su crecimiento y su protección patrimonial.</h1>
-        <p>Una arquitectura societaria y patrimonial mal diseñada puede limitar su expansión y generar riesgos innecesarios frente a contingencias operativas o legales.</p>
-        <a href="{{ site.baseurl }}/contacto?servicio=Radiografía Empresarial" class="btn-main">Solicitar Radiografía Empresarial</a>
+        <span class="auth-line">Arquitectura Estratégica Empresarial</span>
+        <span class="framework-tag">Framework IKU-Struct™</span>
+        <h1>La arquitectura empresarial correcta determina su capacidad de crecimiento y su blindaje patrimonial.</h1>
+        <p>Una arquitectura societaria mal diseñada limita su expansión y genera una exposición patrimonial innecesaria frente a contingencias.</p>
+        <span class="meta-hero"><strong>Duración estimada:</strong> 20 días | <strong>Enfoque:</strong> Protección y Escalabilidad</span>
+        <p style="font-size:0.75rem; color:#777; margin-top:10px;">El plazo puede ajustarse según cantidad de entidades y complejidad societaria.</p>
+        <a href="{{ site.baseurl }}/contacto" class="btn-main" style="margin-top:40px;">Solicitar Radiografía Empresarial</a>
     </section>
 
     <section class="section-l">
-        <h2>Arquitecturas Improvisadas</h2>
-        <p style="margin-bottom: 30px; color: #666;">Muchas empresas crecen operativamente con éxito, pero mantienen estructuras jurídicas y organizacionales que exponen el capital acumulado.</p>
+        <h2>Exposición Patrimonial Innecesaria</h2>
         <div class="problem-box">
-            <div class="p-item">
-                <h4>Vulnerabilidad Patrimonial</h4>
-                <p>Falta de separación clara entre activos operativos y patrimonio personal o de socios.</p>
-            </div>
-            <div class="p-item">
-                <h4>Inconsistencia Societaria</h4>
-                <p>Estructuras rígidas que dificultan la entrada de nuevos inversionistas o la diversificación de negocios.</p>
-            </div>
-            <div class="p-item">
-                <h4>Desalineación Estratégica</h4>
-                <p>Organigramas que responden a la inercia del día a día y no a un plan de escalabilidad sostenible.</p>
-            </div>
+            <div class="p-item"><h4>Falta de Separación</h4><p>Mezcla de activos operativos y personales que expone el capital acumulado.</p></div>
+            <div class="p-item"><h4>Rigidez Societaria</h4><p>Estructuras que dificultan la entrada de inversionistas o la diversificación.</p></div>
+            <div class="p-item"><h4>Inercia Organizacional</h4><p>Diseños que responden al pasado y no al plan de escalabilidad futuro.</p></div>
         </div>
     </section>
 
     <section class="section-l">
-        <h2>Sobre el Análisis</h2>
-        <div class="def-box">
-            <p>La <strong>Radiografía Empresarial</strong> es un análisis estructural de 20 días enfocado en evaluar la arquitectura societaria, organizacional y patrimonial de la organización bajo una visión de ingeniería estratégica.</p>
-            <p style="font-size: 0.8rem; color: #888; margin-top: 15px;">* Nota: Servicio de consultoría estratégica. No sustituye asesoría legal formal ni planificación tributaria de especialistas contables.</p>
-            
-            <div class="meta-data">
-                <div class="meta-item"><span>Duración</span><strong>20 Días</strong></div>
-                <div class="meta-item"><span>Enfoque</span><strong>Sostenibilidad y Blindaje</strong></div>
-            </div>
-        </div>
+        <h2>Metodología de Evaluación</h2>
+        <ul style="list-style:none; padding:0; line-height:2.2;">
+            <li><strong>1. Levantamiento Societario:</strong> Análisis de la configuración jurídica actual y mando real.</li>
+            <li><strong>2. Análisis de Exposición:</strong> Identificación de riesgos patrimoniales y cuellos de botella para expansión.</li>
+            <li><strong>3. Diseño de Arquitectura:</strong> Propuesta de arquitectura societaria estratégica y estructuración recomendada.</li>
+        </ul>
     </section>
 
     <section class="section-l">
-        <h2>Tres Etapas de Evaluación</h2>
-        <div class="step-grid">
-            <div class="step">
-                <div class="step-num">1</div>
-                <div class="step-content">
-                    <h4>Levantamiento Estructural</h4>
-                    <p>Revisión de la configuración societaria actual y análisis de la cadena de mando organizacional real.</p>
-                </div>
-            </div>
-            <div class="step">
-                <div class="step-num">2</div>
-                <div class="step-content">
-                    <h4>Evaluación de Escalabilidad</h4>
-                    <p>Identificación de cuellos de botella estructurales que impiden el crecimiento o exponen el patrimonio.</p>
-                </div>
-            </div>
-            <div class="step">
-                <div class="step-num">3</div>
-                <div class="step-content">
-                    <h4>Diseño de Arquitectura</h4>
-                    <p>Propuesta de mecanismos de protección patrimonial y esquemas de holding para una gestión eficiente.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-l">
-        <h2>Entregables del Programa</h2>
+        <h2>Entregables Estratégicos</h2>
         <div class="check-list">
-            <div class="check-item">Informe Estructural Ejecutivo</div>
-            <div class="check-item">Diagnóstico de Riesgos Patrimoniales</div>
-            <div class="check-item">Recomendaciones Societarias Estratégicas</div>
-            <div class="check-item">Esquema Organizacional Sugerido</div>
-            <div class="check-item">Reunión de Presentación a Dirección</div>
+            <div class="check-item">Informe de Arquitectura Societaria Actual</div>
+            <div class="check-item">Mapa de Exposición Patrimonial</div>
+            <div class="check-item">Propuesta de Estructura Recomendada</div>
+            <div class="check-item">Sesión Ejecutiva de Decisión Estratégica</div>
         </div>
     </section>
 
-    <section class="section-l" style="border: none;">
-        <div class="filter-box">
-            <div>
-                <h3>Es para usted si:</h3>
-                <ul class="filter-list">
-                    <li>• Empresas consolidadas con años de operación.</li>
-                    <li>• Negocios con múltiples unidades o socios.</li>
-                    <li>• Dueños buscando proteger su legado patrimonial.</li>
-                </ul>
-            </div>
-            <div>
-                <h3>No es para usted si:</h3>
-                <ul class="filter-list">
-                    <li>• Negocios unipersonales en etapa inicial.</li>
-                    <li>• Empresas sin formalización jurídica básica.</li>
-                    <li>• Proyectos sin visión de escalabilidad corporativa.</li>
-                </ul>
-            </div>
-        </div>
+    <div class="complementary-box">
+        <h3>Servicios Complementarios</h3>
+        <p style="font-size:0.85rem; color:#666; margin-bottom: 10px;">Para una visión 360° de su organización, complemente con:</p>
+        <ul>
+            <li>• <a href="{{ site.baseurl }}/servicios/diagnostico-digital">Diagnóstico de Riesgo Digital</a></li>
+            <li>• <a href="{{ site.baseurl }}/servicios/optimizacion-operativa">Programa de Optimización Operativa</a></li>
+        </ul>
+    </div>
+
+    <section class="section-l" style="border:none; padding-bottom:0;">
+        <h2 style="color:#888;">Qué no es esta Radiografía</h2>
+        <p style="color:#999; font-size:0.9rem; line-height:1.6;">No sustituye asesoría legal, pero entrega el marco estratégico para tomar decisiones informadas sobre su arquitectura empresarial y blindaje de activos.</p>
     </section>
 
     <section style="text-align: center; padding: 100px 0;">
-        <h2 style="font-size: 2rem; margin-bottom: 20px;">La estructura correcta no solo protege, también acelera el crecimiento.</h2>
-        <p style="color: #666; margin-bottom: 40px;">Conversemos durante 30 minutos y evaluemos si su arquitectura actual soporta sus metas de expansión.</p>
-        <a href="{{ site.baseurl }}/contacto?servicio=Radiografía Empresarial" class="btn-main">Agendar Radiografía Empresarial</a>
-        <p style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 20px; color: #999; font-weight: 700;">Enfoque estratégico patrimonial, no comercial.</p>
+        <h2 style="font-size: 2rem; margin-bottom: 20px;">La estructura correcta acelera el crecimiento.</h2>
+        <a href="{{ site.baseurl }}/contacto" class="btn-main">Agendar Sesión de Evaluación</a>
+        <p style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 30px; color: #aaa;">Servicios ejecutados bajo metodología propietaria IKUBERT™</p>
     </section>
-
 </div>
