@@ -1,4 +1,4 @@
-/* style.css - IKUBERT */
+/* style.css - IKUBERT FINAL DEFINITIVO */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html, body { height: 100%; }
@@ -42,37 +42,65 @@ main { flex: 1 0 auto; width: 100%; }
 
 header { padding: 120px 10%; background-size: cover !important; background-position: center !important; width: 100%; }
 
-/* FOOTER */
+/* FOOTER - AJUSTE PROFESIONAL DE LOGO */
 .main-footer { background-color: #1a1a1a !important; color: #ffffff !important; padding: 25px 0; width: 100%; flex-shrink: 0; }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 8%; }
 .footer-col { flex: 1; }
 .footer-col.left { text-align: left; }
 .footer-col.center { text-align: center; }
 .footer-col.right { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
-.footer-logo-img { height: 70px !important; width: auto; filter: brightness(0) invert(1); }
+
+.footer-logo-img { 
+    height: auto !important; 
+    width: 160px !important; /* Tamaño controlado para evitar exceso de dimensiones */
+    max-height: 40px !important; 
+    filter: brightness(0) invert(1); 
+    opacity: 0.9;
+    object-fit: contain;
+}
+
 .footer-mail { color: #ffffff !important; text-decoration: none !important; font-size: 0.85rem; font-weight: 300; }
 .loc { font-size: 0.7rem; opacity: 0.6; letter-spacing: 1.5px; text-transform: uppercase; margin: 0; }
 .copy { font-size: 0.6rem; opacity: 0.4; margin-top: 2px; }
 
 /* ==========================================================================
-   IKUBERT LANDING FRAMEWORK (Estilos para las 3 Landings)
+   IKUBERT LANDING FRAMEWORK (Contenido Estratégico)
    ========================================================================== */
 .landing-container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+
+/* Heros de Servicio */
 .landing-container .hero-l { text-align: left; padding: 40px 0 80px 0; border-bottom: 1px solid #eee; }
 .landing-container .hero-l h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.1; letter-spacing: -1px; color: #1a1a1a; margin-bottom: 25px; }
 .landing-container .hero-l p { font-size: 1.25rem; color: #444; line-height: 1.5; font-weight: 300; margin-bottom: 20px; }
+
+/* Tags de Autoridad */
 .landing-container .auth-line { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 5px; display: block; font-weight: 600; }
 .landing-container .framework-tag { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 15px; display: block; }
 .landing-container .meta-hero { font-size: 0.85rem; color: #1a1a1a; display: block; font-weight: 600; margin-top: 15px; }
+
+/* Secciones y Grillas */
 .landing-container .section-l { padding: 80px 0; border-bottom: 1px solid #f0f0f0; }
 .landing-container .section-l h2 { text-transform: uppercase; letter-spacing: 2px; font-size: 1.1rem; font-weight: 800; margin-bottom: 40px; color: #000; }
+
 .landing-container .problem-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
-.landing-container .p-item { padding: 25px; background: #fff; border-left: 3px solid #1a1a1a; border: 1px solid #eee; border-left: 3px solid #1a1a1a; }
-.landing-container .check-list { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.landing-container .p-item { padding: 25px; background: #fff; border: 1px solid #eee; border-left: 3px solid #1a1a1a; }
+
+/* Listas Limpias (Sin dobles bullets) */
+.landing-container ul { list-style: none !important; padding: 0; }
+
+.landing-container .check-list { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
 .landing-container .check-item { display: flex; align-items: center; font-size: 0.95rem; font-weight: 600; }
 .landing-container .check-item::before { content: "✓"; color: #0055ff; margin-right: 12px; font-weight: 800; }
+
+/* Cajas de Cierre */
 .landing-container .profile-box { background: #f9f9f9; padding: 40px; margin: 40px 0; border: 1px solid #eee; }
+
 .landing-container .complementary-box { background: #fff; border: 1px solid #1a1a1a; padding: 35px; margin: 40px 0; }
+.landing-container .complementary-box li { position: relative; padding-left: 20px; margin-bottom: 10px; }
+.landing-container .complementary-box li::before { content: "•"; position: absolute; left: 0; color: #0055ff; font-weight: bold; }
+.landing-container .complementary-box a { color: #0055ff; text-decoration: none; font-weight: 700; font-size: 0.9rem; }
+
+/* CTA Principal */
 .landing-container .btn-main { background: #0055ff; color: #fff !important; text-decoration: none; padding: 20px 45px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; display: inline-block; transition: 0.3s; border: none; }
 .landing-container .btn-main:hover { background: #000; transform: translateY(-2px); }
 
@@ -81,13 +109,11 @@ header { padding: 120px 10%; background-size: cover !important; background-posit
    ========================================================================== */
 
 @media (max-width: 768px) {
-    /* Tu código original */
     .grid { grid-template-columns: 1fr; padding: 0 5%; }
-    .footer-inner { flex-direction: column; text-align: center; gap: 25px; }
+    .footer-inner { flex-direction: column; text-align: center; gap: 20px; }
     .footer-col.left, .footer-col.right { text-align: center; align-items: center; }
-    .footer-logo-img { height: 60px !important; }
+    .footer-logo-img { width: 140px !important; }
 
-    /* Ajustes para Landings */
     .landing-container { padding: 40px 15px; }
     .landing-container .hero-l h1 { font-size: 2.2rem; }
     .landing-container .check-list { grid-template-columns: 1fr; }
@@ -95,7 +121,6 @@ header { padding: 120px 10%; background-size: cover !important; background-posit
 }
 
 @media (max-width: 600px) {
-    /* Tu código original */
     .site-nav { padding: 10px 15px !important; justify-content: center !important; gap: 10px; }
     .nav-links { justify-content: center !important; gap: 15px !important; width: 100%; margin-top: 10px; }
     .nav-links a { font-size: 0.7rem !important; }
