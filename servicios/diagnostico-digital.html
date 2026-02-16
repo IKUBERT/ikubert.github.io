@@ -2,163 +2,61 @@
 layout: default
 title: Diagnóstico Inicial de Riesgo Digital | IKUBERT
 ---
-
-<style>
-    .landing-container { max-width: 800px; margin: 0 auto; padding: 60px 20px; font-family: 'Inter', sans-serif; }
-    
-    /* Hero Landing */
-    .hero-l { text-align: left; padding: 40px 0 80px 0; border-bottom: 1px solid #eee; }
-    .hero-l h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.1; letter-spacing: -1px; color: #1a1a1a; margin-bottom: 25px; }
-    .hero-l p { font-size: 1.25rem; color: #444; line-height: 1.5; font-weight: 300; max-width: 650px; margin-bottom: 40px; }
-
-    /* Secciones Comunes */
-    .section-l { padding: 80px 0; border-bottom: 1px solid #f0f0f0; }
-    .section-l h2 { text-transform: uppercase; letter-spacing: 2px; font-size: 1.1rem; font-weight: 800; margin-bottom: 40px; color: #000; }
-
-    /* Bloque Problema */
-    .problem-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
-    .p-item { padding: 20px; background: #fff; border-left: 3px solid #ff4b4b; }
-    .p-item h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 10px; }
-    .p-item p { font-size: 0.85rem; color: #666; line-height: 1.4; }
-
-    /* Definición y Metodología */
-    .def-box { background: #f9f9f9; padding: 40px; margin-bottom: 40px; border-radius: 2px; }
-    .meta-data { display: flex; gap: 40px; margin-top: 25px; padding-top: 25px; border-top: 1px solid #ddd; }
-    .meta-item span { display: block; font-size: 0.7rem; text-transform: uppercase; color: #999; font-weight: 700; }
-    .meta-item strong { font-size: 1rem; color: #000; }
-
-    .step-grid { display: grid; gap: 20px; }
-    .step { display: flex; gap: 20px; align-items: flex-start; }
-    .step-num { background: #1a1a1a; color: #fff; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
-    .step-content h4 { font-size: 1rem; margin-bottom: 5px; }
-    .step-content p { font-size: 0.9rem; color: #666; }
-
-    /* Entregables */
-    .check-list { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-    .check-item { display: flex; align-items: center; font-size: 0.95rem; font-weight: 500; }
-    .check-item::before { content: "✓"; color: #0055ff; margin-right: 12px; font-weight: 800; }
-
-    /* Filtro */
-    .filter-box { background: #1a1a1a; color: #fff; padding: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-    .filter-box h3 { color: #fff; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
-    .filter-list { list-style: none; padding: 0; font-size: 0.85rem; opacity: 0.8; }
-    .filter-list li { margin-bottom: 10px; }
-
-    /* CTA */
-    .btn-main { background: #0055ff; color: #fff; text-decoration: none; padding: 20px 40px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; display: inline-block; transition: 0.3s; }
-    .btn-main:hover { background: #0044cc; transform: translateY(-2px); }
-
-    @media (max-width: 768px) {
-        .hero-l h1 { font-size: 2rem; }
-        .meta-data { flex-direction: column; gap: 20px; }
-        .check-list { grid-template-columns: 1fr; }
-        .filter-box { grid-template-columns: 1fr; gap: 30px; }
-    }
-</style>
-
 <div class="landing-container">
-    
     <section class="hero-l">
+        <span class="auth-line">Evaluación Estratégica de Riesgo Digital</span>
+        <span class="framework-tag" style="color: #0055ff;">Framework IKU-Risk™</span>
+        <p style="font-size:0.75rem; color:#888; margin-bottom:15px; font-weight:600;">Modelo de evaluación estructurada de superficie de exposición empresarial.</p>
         <h1>¿Está realmente protegida su empresa frente a un incidente digital?</h1>
-        <p>Un acceso mal gestionado o una exposición externa innecesaria puede comprometer su información crítica, reputación y continuidad operativa.</p>
-        <a href="{{ site.baseurl }}/contacto?servicio=Diagnóstico Inicial de Riesgo Digital" class="btn-main">Solicitar Evaluación Inicial</a>
+        <p>Un incidente digital puede interrumpir contratos, bloquear facturación y comprometer información crítica.</p>
+        <span class="meta-hero"><strong>Duración estimada:</strong> 10 días | <strong>Enfoque:</strong> Identificación y Priorización</span>
+        <p style="font-size:0.75rem; color:#777; margin-top:10px;">El plazo puede ajustarse según complejidad y alcance validado en sesión inicial.</p>
+        <a href="{{ site.baseurl }}/contacto" class="btn-main" style="margin-top:40px;">Solicitar Evaluación Inicial</a>
     </section>
 
     <section class="section-l">
-        <h2>El Escenario Real</h2>
-        <p style="margin-bottom: 30px; color: #666;">La mayoría de las organizaciones no detecta sus vulnerabilidades estructurales hasta que el incidente ya ha ocurrido.</p>
+        <h2>Superficie Actual de Riesgo</h2>
+        <p style="color:#666; font-style:italic; margin-bottom:30px;">La mayoría de las organizaciones medianas presentan exposición digital sin clasificación estratégica.</p>
         <div class="problem-box">
-            <div class="p-item">
-                <h4>Accesos sin control</h4>
-                <p>Identidades críticas manejadas de forma informal sin protocolos de revocación.</p>
-            </div>
-            <div class="p-item">
-                <h4>Servicios Expuestos</h4>
-                <p>Puertas digitales abiertas innecesariamente hacia la red pública.</p>
-            </div>
-            <div class="p-item">
-                <h4>Riesgos Invisibles</h4>
-                <p>Falta de una matriz técnica que priorice dónde invertir en seguridad.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-l">
-        <h2>Qué es el Diagnóstico</h2>
-        <div class="def-box">
-            <p>Es una <strong>evaluación técnica priorizada</strong> diseñada para identificar vulnerabilidades críticas y clasificarlas según su impacto real en la operación del negocio.</p>
-            <p style="font-size: 0.8rem; color: #888; margin-top: 15px;">* Nota: Evaluación táctica priorizada, no constituye una auditoría exhaustiva de certificación.</p>
-            
-            <div class="meta-data">
-                <div class="meta-item"><span>Duración</span><strong>10 Días</strong></div>
-                <div class="meta-item"><span>Enfoque</span><strong>Continuidad Operativa</strong></div>
-            </div>
+            <div class="p-item" style="border-left-color: #ff4b4b;"><h4>Accesos Críticos</h4><p>Identidades manejadas sin protocolos de revocación o auditoría formal.</p></div>
+            <div class="p-item" style="border-left-color: #ff4b4b;"><h4>Servicios Expuestos</h4><p>Puertas digitales abiertas innecesariamente hacia la red pública.</p></div>
+            <div class="p-item" style="border-left-color: #ff4b4b;"><h4>Falta de Priorización</h4><p>Ausencia de una matriz que defina qué proteger primero según impacto operativo.</p></div>
         </div>
     </section>
 
     <section class="section-l">
         <h2>Metodología de Intervención</h2>
-        <div class="step-grid">
-            <div class="step">
-                <div class="step-num">1</div>
-                <div class="step-content">
-                    <h4>Levantamiento Técnico</h4>
-                    <p>Revisión de accesos críticos e identificación de activos digitales principales de la organización.</p>
-                </div>
-            </div>
-            <div class="step">
-                <div class="step-num">2</div>
-                <div class="step-content">
-                    <h4>Evaluación y Clasificación</h4>
-                    <p>Análisis de exposición externa y construcción de la Matriz Priorizada de Riesgo Digital.</p>
-                </div>
-            </div>
-            <div class="step">
-                <div class="step-num">3</div>
-                <div class="step-content">
-                    <h4>Informe Ejecutivo</h4>
-                    <p>Entrega de resultados con plan de acción a 30 días y recomendaciones de remediación inmediata.</p>
-                </div>
-            </div>
-        </div>
+        <p style="margin-bottom:30px;">"Toda organización tiene una superficie de exposición. La diferencia está en si está identificada y priorizada."</p>
+        <ul style="list-style:none; padding:0; line-height:2.2;">
+            <li><strong>1. Levantamiento Técnico:</strong> Revisión de accesos, exposición de activos y configuraciones sensibles.</li>
+            <li><strong>2. Evaluación y Clasificación:</strong> Análisis de superficie externa y construcción de la Matriz Ejecutiva de Riesgo Digital Priorizado.</li>
+            <li><strong>3. Informe Ejecutivo:</strong> Entrega de plan de acción táctico para remediación inmediata.</li>
+        </ul>
     </section>
 
     <section class="section-l">
-        <h2>Entregables del Programa</h2>
+        <h2>Entregables Ejecutivos</h2>
         <div class="check-list">
-            <div class="check-item">Informe Ejecutivo de Hallazgos</div>
-            <div class="check-item">Matriz de Riesgos por Criticidad</div>
-            <div class="check-item">Plan de Acción Priorizado</div>
-            <div class="check-item">Reunión de Presentación a Dirección</div>
+            <div class="check-item">Informe Ejecutivo de Riesgo Digital</div>
+            <div class="check-item">Matriz Ejecutiva de Riesgo Digital Priorizado</div>
+            <div class="check-item">Plan de Acción Táctico a 30 días</div>
+            <div class="check-item">Sesión Ejecutiva de Resultados</div>
         </div>
     </section>
 
-    <section class="section-l" style="border: none;">
-        <div class="filter-box">
-            <div>
-                <h3>Es para usted si:</h3>
-                <ul class="filter-list">
-                    <li>• Empresa con 5+ colaboradores.</li>
-                    <li>• Maneja información sensible de clientes.</li>
-                    <li>• Su operación depende de la banca en línea.</li>
-                </ul>
-            </div>
-            <div>
-                <h3>No es para usted si:</h3>
-                <ul class="filter-list">
-                    <li>• Proyectos personales o blogs.</li>
-                    <li>• Busca solo una cotización rápida.</li>
-                    <li>• No posee infraestructura digital mínima.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    <div class="complementary-box">
+        <h3>Servicios Complementarios</h3>
+        <p style="font-size:0.85rem; color:#666; margin-bottom: 10px;">Si su organización requiere un análisis más amplio, puede combinar esta intervención con:</p>
+        <ul>
+            <li>• <a href="{{ site.baseurl }}/servicios/optimizacion-operativa">Programa de Optimización Operativa</a></li>
+            <li>• <a href="{{ site.baseurl }}/servicios/radiografia-empresarial">Radiografía Empresarial Estratégica</a></li>
+        </ul>
+    </div>
 
     <section style="text-align: center; padding: 100px 0;">
         <h2 style="font-size: 2rem; margin-bottom: 20px;">La prevención es más económica que la recuperación.</h2>
-        <p style="color: #666; margin-bottom: 40px;">Conversemos durante 30 minutos y evaluemos si este diagnóstico es adecuado para su organización.</p>
-        <a href="{{ site.baseurl }}/contacto?servicio=Diagnóstico Inicial de Riesgo Digital" class="btn-main">Agendar Evaluación Inicial</a>
-        <p style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 20px; color: #999; font-weight: 700;">Enfoque diagnóstico, no comercial.</p>
+        <p style="color: #666; margin-bottom: 40px;">Coordinemos una sesión ejecutiva de evaluación inicial.</p>
+        <a href="{{ site.baseurl }}/contacto" class="btn-main">Agendar Sesión Ejecutiva</a>
+        <p style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 30px; color: #aaa;">Servicios ejecutados bajo metodología propietaria IKUBERT™</p>
     </section>
-
 </div>
