@@ -1,0 +1,165 @@
+---
+layout: default
+title: Programa de Optimización Operativa | IKUBERT
+---
+
+<style>
+    .landing-container { max-width: 800px; margin: 0 auto; padding: 60px 20px; font-family: 'Inter', sans-serif; }
+    
+    /* Hero Landing */
+    .hero-l { text-align: left; padding: 40px 0 80px 0; border-bottom: 1px solid #eee; }
+    .hero-l h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.1; letter-spacing: -1px; color: #1a1a1a; margin-bottom: 25px; }
+    .hero-l p { font-size: 1.25rem; color: #444; line-height: 1.5; font-weight: 300; max-width: 650px; margin-bottom: 40px; }
+
+    /* Secciones Comunes */
+    .section-l { padding: 80px 0; border-bottom: 1px solid #f0f0f0; }
+    .section-l h2 { text-transform: uppercase; letter-spacing: 2px; font-size: 1.1rem; font-weight: 800; margin-bottom: 40px; color: #000; }
+
+    /* Bloque Problema */
+    .problem-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
+    .p-item { padding: 20px; background: #fff; border-left: 3px solid #ff9800; }
+    .p-item h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 10px; }
+    .p-item p { font-size: 0.85rem; color: #666; line-height: 1.4; }
+
+    /* Definición y Metodología */
+    .def-box { background: #f9f9f9; padding: 40px; margin-bottom: 40px; border-radius: 2px; }
+    .meta-data { display: flex; gap: 40px; margin-top: 25px; padding-top: 25px; border-top: 1px solid #ddd; }
+    .meta-item span { display: block; font-size: 0.7rem; text-transform: uppercase; color: #999; font-weight: 700; }
+    .meta-item strong { font-size: 1rem; color: #000; }
+
+    .step-grid { display: grid; gap: 20px; }
+    .step { display: flex; gap: 20px; align-items: flex-start; }
+    .step-num { background: #1a1a1a; color: #fff; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+    .step-content h4 { font-size: 1rem; margin-bottom: 5px; }
+    .step-content p { font-size: 0.9rem; color: #666; }
+
+    /* Entregables */
+    .check-list { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .check-item { display: flex; align-items: center; font-size: 0.95rem; font-weight: 500; }
+    .check-item::before { content: "✓"; color: #0055ff; margin-right: 12px; font-weight: 800; }
+
+    /* Filtro */
+    .filter-box { background: #1a1a1a; color: #fff; padding: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .filter-box h3 { color: #fff; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; }
+    .filter-list { list-style: none; padding: 0; font-size: 0.85rem; opacity: 0.8; }
+    .filter-list li { margin-bottom: 10px; }
+
+    /* CTA */
+    .btn-main { background: #0055ff; color: #fff; text-decoration: none; padding: 20px 40px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; display: inline-block; transition: 0.3s; }
+    .btn-main:hover { background: #0044cc; transform: translateY(-2px); }
+
+    @media (max-width: 768px) {
+        .hero-l h1 { font-size: 2rem; }
+        .meta-data { flex-direction: column; gap: 20px; }
+        .check-list { grid-template-columns: 1fr; }
+        .filter-box { grid-template-columns: 1fr; gap: 30px; }
+    }
+</style>
+
+<div class="landing-container">
+    
+    <section class="hero-l">
+        <h1>Su empresa puede estar perdiendo margen sin saberlo.</h1>
+        <p>Las fugas operativas y la falta de trazabilidad afectan directamente el flujo de caja y la rentabilidad real de su negocio.</p>
+        <a href="{{ site.baseurl }}/contacto" class="btn-main">Evaluar Optimización Operativa</a>
+    </section>
+
+    <section class="section-l">
+        <h2>Fugas Invisibles de Capital</h2>
+        <p style="margin-bottom: 30px; color: #666;">Muchas organizaciones aumentan sus ventas de forma sostenida, pero su utilidad neta se mantiene estancada debido a ineficiencias críticas.</p>
+        <div class="problem-box">
+            <div class="p-item">
+                <h4>Stock sin Trazabilidad</h4>
+                <p>Inventarios descontrolados que amarran capital de trabajo y generan mermas no detectadas.</p>
+            </div>
+            <div class="p-item">
+                <h4>Costos Mal Distribuidos</h4>
+                <p>Falta de claridad en los costos indirectos que "erosionan" el margen de cada producto o servicio.</p>
+            </div>
+            <div class="p-item">
+                <h4>Procesos Manuales</h4>
+                <p>Tareas redundantes que incrementan el costo operativo y limitan la escalabilidad del negocio.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-l">
+        <h2>Sobre el Programa</h2>
+        <div class="def-box">
+            <p>El <strong>Programa de Optimización Operativa</strong> es un proceso estructurado enfocado en identificar y corregir las fugas operativas que impactan directamente el margen bruto y el flujo de caja disponible.</p>
+            <p style="font-size: 0.8rem; color: #888; margin-top: 15px;">* Nota: Enfoque táctico-financiero, no constituye una implementación de ERP o software de gestión completa.</p>
+            
+            <div class="meta-data">
+                <div class="meta-item"><span>Duración</span><strong>30 Días</strong></div>
+                <div class="meta-item"><span>Impacto</span><strong>Flujo de Caja</strong></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-l">
+        <h2>Tres Fases de Intervención</h2>
+        <div class="step-grid">
+            <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                    <h4>Diagnóstico Operativo</h4>
+                    <p>Levantamiento de procesos clave e identificación de puntos críticos donde se pierde eficiencia.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                    <h4>Análisis de Márgenes</h4>
+                    <p>Revisión profunda de la estructura de costos y detección de costos ocultos o mal asignados.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                    <h4>Plan de Mejora Continua</h4>
+                    <p>Entrega de recomendaciones priorizadas con estimación de impacto financiero potencial.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-l">
+        <h2>Entregables del Programa</h2>
+        <div class="check-list">
+            <div class="check-item">Informe de Hallazgos Operativos</div>
+            <div class="check-item">Matriz de Costos y Márgenes Reales</div>
+            <div class="check-item">Plan de Trazabilidad de Inventarios</div>
+            <div class="check-item">Estimación de Ahorro Potencial</div>
+            <div class="check-item">Reunión Ejecutiva de Resultados</div>
+        </div>
+    </section>
+
+    <section class="section-l" style="border: none;">
+        <div class="filter-box">
+            <div>
+                <h3>Es para usted si:</h3>
+                <ul class="filter-list">
+                    <li>• Negocios con inventario o procesos productivos.</li>
+                    <li>• Empresas con ventas activas pero margen presionado.</li>
+                    <li>• Organizaciones en etapa de crecimiento acelerado.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>No es para usted si:</h3>
+                <ul class="filter-list">
+                    <li>• Emprendimientos en etapa inicial de idea.</li>
+                    <li>• Empresas sin una estructura mínima de ventas.</li>
+                    <li>• Negocios que no registran sus movimientos básicos.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section style="text-align: center; padding: 100px 0;">
+        <h2 style="font-size: 2rem; margin-bottom: 20px;">Cada punto de ineficiencia sostenido en el tiempo reduce su rentabilidad.</h2>
+        <p style="color: #666; margin-bottom: 40px;">Conversemos durante 30 minutos y evaluemos si su estructura operativa califica para esta optimización.</p>
+        <a href="https://wa.me/56989374989" class="btn-main">Solicitar Evaluación Operativa</a>
+        <p style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 20px; color: #999; font-weight: 700;">Enfoque en eficiencia, no comercial.</p>
+    </section>
+
+</div>
