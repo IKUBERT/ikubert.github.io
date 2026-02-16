@@ -16,7 +16,7 @@ main { flex: 1 0 auto; width: 100%; }
     width: 100% !important;
 }
 
-/* 3. NAVEGACIÓN PC (No se toca) */
+/* 3. NAVEGACIÓN PC */
 .site-nav {
     padding-top: 22px;
     padding-bottom: 22px;
@@ -31,7 +31,7 @@ main { flex: 1 0 auto; width: 100%; }
 .nav-links a { text-decoration: none; color: #1a1a1a; font-weight: 700; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 1.5px; }
 .nav-checkbox, .nav-toggler { display: none; }
 
-/* 4. FOOTER PC (No se toca) */
+/* 4. FOOTER PC */
 .main-footer { background-color: #1a1a1a !important; padding: 15px 0 !important; width: 100%; }
 .footer-col { flex: 1; }
 .footer-col.center { text-align: center; }
@@ -42,64 +42,93 @@ main { flex: 1 0 auto; width: 100%; }
 .loc { font-size: 0.65rem; color: #fff; opacity: 0.6; text-transform: uppercase; letter-spacing: 1px; }
 .copy { font-size: 0.55rem; color: #fff; opacity: 0.4; }
 
-/* 5. LANDING FRAMEWORK */
-.landing-container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
-.landing-container .hero-l h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.1; letter-spacing: -1px; }
+/* ==========================================================================
+   5. LANDING FRAMEWORK (RESTAURADO)
+   ========================================================================== */
+.landing-container { max-width: 850px; margin: 0 auto; padding: 80px 20px; }
+
+/* Hero Section */
+.hero-l { margin-bottom: 60px; }
+.hero-l h1 { 
+    font-size: 3rem; 
+    font-weight: 800; 
+    line-height: 1.1; 
+    letter-spacing: -1.5px; 
+    margin-bottom: 25px;
+    color: #1a1a1a;
+}
+.hero-l p { 
+    font-size: 1.25rem; 
+    color: #444; 
+    line-height: 1.6; 
+    margin-bottom: 35px;
+}
+
+/* Listas y Checks */
+.check-list { margin: 30px 0; }
+.check-item { 
+    display: flex; 
+    align-items: flex-start; 
+    margin-bottom: 18px; 
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.check-item::before { 
+    content: "✓"; 
+    color: #0055ff; 
+    margin-right: 15px; 
+    font-weight: 900; 
+}
+
+/* BOTÓN PRINCIPAL AZUL */
+.btn-main { 
+    display: inline-block;
+    background: #0055ff !important; 
+    color: #fff !important; 
+    padding: 20px 45px; 
+    text-decoration: none !important; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    font-size: 0.9rem;
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+.btn-main:hover { background: #0033bb !important; transform: translateY(-2px); }
+
+/* Secciones */
+.section-l { padding: 60px 0; border-top: 1px solid #eee; margin-top: 40px; }
+.section-l h2 { font-size: 1.8rem; margin-bottom: 20px; letter-spacing: -0.5px; }
 
 /* ==========================================================================
-   6. MÓVIL: NAVBAR PRO Y FOOTER ESTRATÉGICO (SIN TOCAR PC)
+   6. MÓVIL: NAVBAR PRO Y FOOTER ESTRATÉGICO
    ========================================================================== */
 @media (max-width: 768px) {
-    /* Navbar móvil */
-    .site-nav { 
-        flex-direction: row !important; 
-        justify-content: space-between !important; 
-        padding: 15px 5% !important; 
-        height: 70px !important;
-    }
+    .site-nav { flex-direction: row !important; justify-content: space-between !important; padding: 15px 5% !important; height: 70px !important; }
     .nav-toggler { display: flex !important; flex-direction: column; gap: 5px; z-index: 3000; cursor: pointer; }
     .nav-toggler span { width: 25px; height: 2px; background-color: #1a1a1a; }
     .nav-links { position: fixed; top: 0; right: -100%; width: 75%; height: 100vh; background: #fff; flex-direction: column !important; justify-content: center !important; align-items: center !important; gap: 35px !important; transition: 0.4s ease-in-out; z-index: 2500; display: flex !important; }
     .nav-checkbox:checked ~ .nav-links { right: 0 !important; }
     .site-nav .site-logo img { height: 40px !important; }
 
-    /* --- SOLUCIÓN FOOTER MÓVIL SOLICITADA --- */
+    /* Landing móvil */
+    .landing-container { padding: 40px 5%; }
+    .hero-l h1 { font-size: 2.2rem; }
+    .btn-main { width: 100%; text-align: center; }
+
+    /* Footer móvil grid */
     .footer-inner { 
-        display: grid !important; /* Cambiamos a grilla para control total */
-        grid-template-columns: 1fr 1fr; /* Dos columnas arriba */
-        grid-template-areas: 
-            "logo contact"
-            "location location"; /* Santiago ocupa todo el ancho abajo */
-        gap: 20px 0;
+        display: grid !important; 
+        grid-template-columns: 1fr 1fr; 
+        grid-template-areas: "logo contact" "location location"; 
+        gap: 20px 0; 
         padding: 20px 5% !important;
     }
-
-    /* Logo Izquierda */
-    .footer-col.center { 
-        grid-area: logo; 
-        text-align: left !important; 
-    }
+    .footer-col.center { grid-area: logo; text-align: left !important; }
     .footer-logo-img { height: 40px !important; margin: 0 !important; }
-
-    /* Correo y LinkedIn Derecha */
-    .footer-col.right { 
-        grid-area: contact; 
-        text-align: right !important; 
-        align-items: flex-end !important;
-        justify-content: center;
-    }
+    .footer-col.right { grid-area: contact; text-align: right !important; align-items: flex-end !important; }
     .footer-mail { font-size: 0.75rem !important; }
-    .footer-social-icon { width: 16px !important; height: 16px !important; }
-
-    /* Santiago Chile abajo y centrado */
-    .footer-col.left { 
-        grid-area: location; 
-        text-align: center !important; 
-        border-top: 1px solid rgba(255,255,255,0.1);
-        padding-top: 15px;
-    }
-    .loc { font-size: 0.6rem !important; opacity: 0.8 !important; }
-    .copy { font-size: 0.5rem !important; margin-top: 5px; }
-
+    .footer-col.left { grid-area: location; text-align: center !important; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; }
+    .loc { font-size: 0.6rem !important; }
     .main-footer { padding: 25px 0 !important; }
 }
