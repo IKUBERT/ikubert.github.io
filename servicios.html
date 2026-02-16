@@ -4,7 +4,7 @@ title: Servicios | IKUBERT
 ---
 
 <style>
-    /* Optimizaciones específicas para la página de servicios */
+    /* Estilos específicos para la página de servicios */
     .service-line-card {
         background: #fff;
         border: 1px solid #eee;
@@ -13,16 +13,18 @@ title: Servicios | IKUBERT
         display: flex;
         flex-direction: column;
         height: 100%;
+        border-radius: 2px; /* Consistente con el botón del Home */
     }
 
     .service-line-card:hover {
         border-color: #1a1a1a;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        transform: translateY(-5px);
     }
 
     .line-icon {
-        font-size: 2rem;
-        margin-bottom: 20px;
+        font-size: 2.2rem;
+        margin-bottom: 25px;
         display: block;
     }
 
@@ -32,63 +34,65 @@ title: Servicios | IKUBERT
         font-size: 1.1rem;
         margin-bottom: 15px;
         font-weight: 800;
-        border-left: 3px solid #1a1a1a;
+        border-left: 4px solid #1a1a1a;
         padding-left: 15px;
+        color: #1a1a1a;
     }
 
     .line-desc {
         color: #666;
         font-size: 0.9rem;
-        line-height: 1.6;
-        margin-bottom: 25px;
+        line-height: 1.7;
+        margin-bottom: 30px;
         font-weight: 300;
     }
 
     /* Caja de Servicio Estrella */
     .star-service {
         background: #f9f9f9;
-        padding: 20px;
+        padding: 22px;
         border-radius: 2px;
         margin-bottom: 25px;
-        border: 1px dashed #ccc;
+        border: 1px dashed #ddd;
     }
 
     .star-tag {
         font-size: 0.65rem;
-        font-weight: 700;
+        font-weight: 800;
         text-transform: uppercase;
-        letter-spacing: 1px;
+        letter-spacing: 1.5px;
         color: #1a1a1a;
         display: block;
-        margin-bottom: 5px;
+        margin-bottom: 8px;
     }
 
     .star-name {
-        font-size: 0.95rem;
+        font-size: 1rem;
         font-weight: 700;
         color: #000;
+        line-height: 1.3;
     }
 
     /* Servicios Complementarios */
     .comp-title {
         font-size: 0.75rem;
         text-transform: uppercase;
-        letter-spacing: 1px;
-        font-weight: 700;
-        margin-bottom: 15px;
+        letter-spacing: 1.5px;
+        font-weight: 800;
+        margin-bottom: 18px;
         color: #999;
     }
 
     .comp-list {
         list-style: none;
         padding: 0;
-        margin-top: auto;
+        margin-bottom: 30px;
     }
 
     .comp-item {
         font-size: 0.85rem;
-        color: #1a1a1a;
-        margin-bottom: 10px;
+        color: #444;
+        margin-bottom: 12px;
         display: flex;
         align-items: center;
         font-weight: 400;
@@ -96,85 +100,111 @@ title: Servicios | IKUBERT
 
     .comp-item::before {
         content: "→";
-        margin-right: 10px;
+        margin-right: 12px;
         font-weight: 800;
+        color: #1a1a1a;
+    }
+
+    /* Botón Detalle */
+    .btn-detail {
+        margin-top: auto;
+        padding: 12px 0;
+        border: 1px solid #1a1a1a;
+        color: #1a1a1a;
+        text-decoration: none;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: 0.3s;
+    }
+
+    .btn-detail:hover {
+        background: #1a1a1a;
+        color: #fff;
     }
 
     @media (max-width: 768px) {
-        .hero-servicios { padding: 80px 20px !important; min-height: 400px !important; }
-        .grid-servicios { padding: 40px 20px !important; gap: 30px !important; }
+        .hero-servicios { padding: 80px 20px !important; min-height: 350px !important; }
+        .grid-servicios { padding: 40px 20px !important; gap: 40px !important; }
     }
 </style>
 
-<header class="hero-servicios" style="position: relative; text-align: center; padding: 120px 20px; background: url('{{ site.baseurl }}/src/oficina-home-ikubert.webp') no-repeat center center/cover; color: #ffffff; min-height: 450px; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;">
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.75); z-index: 1;"></div>
-    <div style="position: relative; z-index: 2; max-width: 800px;">
-        <h1 style="font-size: 3rem; letter-spacing: 8px; margin-bottom: 20px; font-weight: 800; text-transform: uppercase;">Servicios</h1>
-        <p style="font-size: 1.2rem; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8;">Líneas Estratégicas para el Alto Desempeño</p>
-        <div style="width: 40px; height: 2px; background: #ffffff; margin: 25px auto;"></div>
+<header class="hero-servicios" style="position: relative; text-align: center; padding: 100px 20px; background: #0f1115; color: #ffffff; min-height: 400px; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;">
+    <div style="max-width: 800px; z-index: 2;">
+        <h1 style="font-size: 3.5rem; letter-spacing: 12px; margin-bottom: 15px; font-weight: 800; text-transform: uppercase;">Servicios</h1>
+        <p style="font-size: 1.1rem; font-weight: 300; letter-spacing: 4px; text-transform: uppercase; opacity: 0.7;">Soluciones de Ingeniería para PYMES</p>
+        <div style="width: 60px; height: 3px; background: #ffffff; margin: 30px auto;"></div>
     </div>
 </header>
 
-<main class="section-home" style="max-width: 1200px; margin: 0 auto; padding: 80px 20px;">
+<main class="section-home" style="max-width: 1200px; margin: 0 auto; padding: 100px 20px;">
     <div class="grid grid-servicios" style="margin-top: 0; padding: 0;">
         
         <div class="service-line-card">
             <span class="line-icon">🔐</span>
             <h2 class="line-title">Riesgo y Seguridad</h2>
-            <p class="line-desc">Protección de activos críticos y blindaje de la continuidad operativa.</p>
+            <p class="line-desc">Blindaje técnico y auditorías para garantizar la resiliencia de su infraestructura digital.</p>
             
             <div class="star-service">
-                <span class="star-tag">Servicio Destacado</span>
+                <span class="star-tag">Servicio Core</span>
                 <div class="star-name">Diagnóstico de Exposición Digital (7 días)</div>
             </div>
 
-            <h4 class="comp-title">Complementarios</h4>
+            <h4 class="comp-title">Especialidades</h4>
             <ul class="comp-list">
-                <li class="comp-item">Auditoría técnica específica</li>
-                <li class="comp-item">Capacitación en prevención</li>
+                <li class="comp-item">Auditoría de vulnerabilidades</li>
+                <li class="comp-item">Capacitación en Ingeniería Social</li>
             </ul>
+            
+            <a href="#" class="btn-detail">Ver Detalle Línea</a>
         </div>
 
         <div class="service-line-card">
             <span class="line-icon">📊</span>
             <h2 class="line-title">Optimización</h2>
-            <p class="line-desc">Eficiencia operativa orientada a la maximización de márgenes.</p>
+            <p class="line-desc">Reingeniería de procesos aplicada a la eficiencia y maximización de márgenes reales.</p>
             
             <div class="star-service">
-                <span class="star-tag">Servicio Destacado</span>
+                <span class="star-tag">Servicio Core</span>
                 <div class="star-name">Reducción de Costos Operativos (30 días)</div>
             </div>
 
-            <h4 class="comp-title">Complementarios</h4>
+            <h4 class="comp-title">Especialidades</h4>
             <ul class="comp-list">
                 <li class="comp-item">Digitalización de inventarios</li>
-                <li class="comp-item">Análisis de márgenes reales</li>
+                <li class="comp-item">Análisis de costos y márgenes</li>
             </ul>
+
+            <a href="#" class="btn-detail">Ver Detalle Línea</a>
         </div>
 
         <div class="service-line-card">
             <span class="line-icon">📈</span>
             <h2 class="line-title">Estrategia</h2>
-            <p class="line-desc">Arquitectura societaria y planificación de crecimiento escalable.</p>
+            <p class="line-desc">Cimentación de estructuras societarias y modelos de negocio de alto impacto.</p>
             
             <div class="star-service">
-                <span class="star-tag">Servicio Destacado</span>
+                <span class="star-tag">Servicio Core</span>
                 <div class="star-name">Radiografía Empresarial Integral (10 días)</div>
             </div>
 
-            <h4 class="comp-title">Complementarios</h4>
+            <h4 class="comp-title">Especialidades</h4>
             <ul class="comp-list">
                 <li class="comp-item">Asesoría estructura societaria</li>
                 <li class="comp-item">Planificación tributaria básica</li>
             </ul>
+
+            <a href="#" class="btn-detail">Ver Detalle Línea</a>
         </div>
 
     </div>
 </main>
 
-<div style="background: #f9f9f9; padding: 80px 20px; text-align: center; border-top: 1px solid #eee;">
-    <h2 style="text-transform: uppercase; letter-spacing: 3px; font-size: 1.5rem; font-weight: 800; margin-bottom: 30px;">¿Necesita una solución a medida?</h2>
-    <a href="{{ site.baseurl }}/contacto" style="background: #1a1a1a; color: #fff; padding: 18px 40px; text-decoration: none; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; display: inline-block;">
-        Consultar con un Ingeniero
+<div style="background: #1a1a1a; padding: 100px 20px; text-align: center; color: #fff;">
+    <h2 style="text-transform: uppercase; letter-spacing: 4px; font-size: 1.6rem; font-weight: 800; margin-bottom: 40px;">Evolución Estratégica</h2>
+    <a href="{{ site.baseurl }}/contacto" style="background: #fff; color: #1a1a1a; padding: 20px 50px; text-decoration: none; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; display: inline-block;">
+        Contactar un Consultor
     </a>
 </div>
