@@ -8,31 +8,30 @@ title: Servicios | IKUBERT
     .service-line-card {
         background: #fff;
         border: 1px solid #eee;
-        padding: 40px 30px;
+        padding: 50px 35px;
         transition: all 0.3s ease;
         display: flex;
         flex-direction: column;
         height: 100%;
-        border-radius: 2px; /* Consistente con el botón del Home */
+        border-radius: 0; /* Recto para máxima sobriedad */
     }
 
     .service-line-card:hover {
         border-color: #1a1a1a;
-        box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-        transform: translateY(-5px);
+        box-shadow: 0 10px 40px rgba(0,0,0,0.05);
     }
 
     .line-icon {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
         margin-bottom: 25px;
         display: block;
     }
 
     .line-title {
         text-transform: uppercase;
-        letter-spacing: 2px;
-        font-size: 1.1rem;
-        margin-bottom: 15px;
+        letter-spacing: 3px;
+        font-size: 1.2rem;
+        margin-bottom: 20px;
         font-weight: 800;
         border-left: 4px solid #1a1a1a;
         padding-left: 15px;
@@ -41,58 +40,56 @@ title: Servicios | IKUBERT
 
     .line-desc {
         color: #666;
-        font-size: 0.9rem;
-        line-height: 1.7;
-        margin-bottom: 30px;
+        font-size: 0.95rem;
+        line-height: 1.8;
+        margin-bottom: 35px;
         font-weight: 300;
     }
 
-    /* Caja de Servicio Estrella */
+    /* Caja de Servicio Estrella (Sutil) */
     .star-service {
-        background: #f9f9f9;
-        padding: 22px;
-        border-radius: 2px;
-        margin-bottom: 25px;
-        border: 1px dashed #ddd;
+        background: #fcfcfc;
+        padding: 20px;
+        margin-bottom: 30px;
+        border: 1px solid #f0f0f0;
     }
 
     .star-tag {
-        font-size: 0.65rem;
+        font-size: 0.6rem;
         font-weight: 800;
         text-transform: uppercase;
-        letter-spacing: 1.5px;
-        color: #1a1a1a;
+        letter-spacing: 2px;
+        color: #999;
         display: block;
-        margin-bottom: 8px;
+        margin-bottom: 10px;
     }
 
     .star-name {
-        font-size: 1rem;
+        font-size: 1.05rem;
         font-weight: 700;
         color: #000;
-        line-height: 1.3;
     }
 
     /* Servicios Complementarios */
     .comp-title {
         font-size: 0.75rem;
         text-transform: uppercase;
-        letter-spacing: 1.5px;
+        letter-spacing: 2px;
         font-weight: 800;
-        margin-bottom: 18px;
-        color: #999;
+        margin-bottom: 20px;
+        color: #ccc;
     }
 
     .comp-list {
         list-style: none;
         padding: 0;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
     }
 
     .comp-item {
-        font-size: 0.85rem;
-        color: #444;
-        margin-bottom: 12px;
+        font-size: 0.9rem;
+        color: #1a1a1a;
+        margin-bottom: 15px;
         display: flex;
         align-items: center;
         font-weight: 400;
@@ -108,15 +105,15 @@ title: Servicios | IKUBERT
     /* Botón Detalle */
     .btn-detail {
         margin-top: auto;
-        padding: 12px 0;
+        padding: 15px 0;
         border: 1px solid #1a1a1a;
         color: #1a1a1a;
         text-decoration: none;
-        font-size: 0.75rem;
+        font-size: 0.8rem;
         font-weight: 700;
         text-align: center;
         text-transform: uppercase;
-        letter-spacing: 2px;
+        letter-spacing: 3px;
         transition: 0.3s;
     }
 
@@ -126,16 +123,17 @@ title: Servicios | IKUBERT
     }
 
     @media (max-width: 768px) {
-        .hero-servicios { padding: 80px 20px !important; min-height: 350px !important; }
-        .grid-servicios { padding: 40px 20px !important; gap: 40px !important; }
+        .hero-servicios { padding: 60px 20px !important; min-height: 300px !important; }
+        .hero-servicios h1 { font-size: 2.5rem !important; }
+        .grid-servicios { padding: 40px 20px !important; }
     }
 </style>
 
-<header class="hero-servicios" style="position: relative; text-align: center; padding: 100px 20px; background: #0f1115; color: #ffffff; min-height: 400px; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;">
-    <div style="max-width: 800px; z-index: 2;">
-        <h1 style="font-size: 3.5rem; letter-spacing: 12px; margin-bottom: 15px; font-weight: 800; text-transform: uppercase;">Servicios</h1>
-        <p style="font-size: 1.1rem; font-weight: 300; letter-spacing: 4px; text-transform: uppercase; opacity: 0.7;">Soluciones de Ingeniería para PYMES</p>
-        <div style="width: 60px; height: 3px; background: #ffffff; margin: 30px auto;"></div>
+<header class="hero-servicios" style="text-align: center; padding: 120px 20px; background: #ffffff; color: #1a1a1a; border-bottom: 1px solid #eee; width: 100%;">
+    <div style="max-width: 900px; margin: 0 auto;">
+        <h1 style="font-size: 4rem; letter-spacing: 15px; margin-bottom: 20px; font-weight: 800; text-transform: uppercase; line-height: 1;">Servicios</h1>
+        <p style="font-size: 1.2rem; font-weight: 300; letter-spacing: 5px; text-transform: uppercase; color: #666;">Arquitectura Estratégica & Desempeño</p>
+        <div style="width: 50px; height: 4px; background: #1a1a1a; margin: 40px auto;"></div>
     </div>
 </header>
 
@@ -144,40 +142,40 @@ title: Servicios | IKUBERT
         
         <div class="service-line-card">
             <span class="line-icon">🔐</span>
-            <h2 class="line-title">Riesgo y Seguridad</h2>
-            <p class="line-desc">Blindaje técnico y auditorías para garantizar la resiliencia de su infraestructura digital.</p>
+            <h2 class="line-title">Riesgo & Seguridad</h2>
+            <p class="line-desc">Blindaje técnico y auditorías estructurales para garantizar la resiliencia de activos críticos.</p>
             
             <div class="star-service">
-                <span class="star-tag">Servicio Core</span>
-                <div class="star-name">Diagnóstico de Exposición Digital (7 días)</div>
+                <span class="star-tag">Core Service</span>
+                <div class="star-name">Diagnóstico de Exposición Digital</div>
             </div>
 
             <h4 class="comp-title">Especialidades</h4>
             <ul class="comp-list">
-                <li class="comp-item">Auditoría de vulnerabilidades</li>
-                <li class="comp-item">Capacitación en Ingeniería Social</li>
+                <li class="comp-item">Auditoría de Vulnerabilidades</li>
+                <li class="comp-item">Capacitación Ingeniería Social</li>
             </ul>
             
-            <a href="#" class="btn-detail">Ver Detalle Línea</a>
+            <a href="#" class="btn-detail">Explorar Línea</a>
         </div>
 
         <div class="service-line-card">
             <span class="line-icon">📊</span>
             <h2 class="line-title">Optimización</h2>
-            <p class="line-desc">Reingeniería de procesos aplicada a la eficiencia y maximización de márgenes reales.</p>
+            <p class="line-desc">Reingeniería de procesos orientada a la eficiencia operativa y maximización de rentabilidad.</p>
             
             <div class="star-service">
-                <span class="star-tag">Servicio Core</span>
-                <div class="star-name">Reducción de Costos Operativos (30 días)</div>
+                <span class="star-tag">Core Service</span>
+                <div class="star-name">Reducción de Costos Operativos</div>
             </div>
 
             <h4 class="comp-title">Especialidades</h4>
             <ul class="comp-list">
-                <li class="comp-item">Digitalización de inventarios</li>
-                <li class="comp-item">Análisis de costos y márgenes</li>
+                <li class="comp-item">Digitalización de Inventarios</li>
+                <li class="comp-item">Análisis de Márgenes Reales</li>
             </ul>
 
-            <a href="#" class="btn-detail">Ver Detalle Línea</a>
+            <a href="#" class="btn-detail">Explorar Línea</a>
         </div>
 
         <div class="service-line-card">
@@ -186,24 +184,24 @@ title: Servicios | IKUBERT
             <p class="line-desc">Cimentación de estructuras societarias y modelos de negocio de alto impacto.</p>
             
             <div class="star-service">
-                <span class="star-tag">Servicio Core</span>
-                <div class="star-name">Radiografía Empresarial Integral (10 días)</div>
+                <span class="star-tag">Core Service</span>
+                <div class="star-name">Radiografía Empresarial Integral</div>
             </div>
 
             <h4 class="comp-title">Especialidades</h4>
             <ul class="comp-list">
-                <li class="comp-item">Asesoría estructura societaria</li>
-                <li class="comp-item">Planificación tributaria básica</li>
+                <li class="comp-item">Estructura Societaria</li>
+                <li class="comp-item">Planificación Tributaria</li>
             </ul>
 
-            <a href="#" class="btn-detail">Ver Detalle Línea</a>
+            <a href="#" class="btn-detail">Explorar Línea</a>
         </div>
 
     </div>
 </main>
 
 <div style="background: #1a1a1a; padding: 100px 20px; text-align: center; color: #fff;">
-    <h2 style="text-transform: uppercase; letter-spacing: 4px; font-size: 1.6rem; font-weight: 800; margin-bottom: 40px;">Evolución Estratégica</h2>
+    <h2 style="text-transform: uppercase; letter-spacing: 5px; font-size: 1.8rem; font-weight: 800; margin-bottom: 40px;">Consolidación Estratégica</h2>
     <a href="{{ site.baseurl }}/contacto" style="background: #fff; color: #1a1a1a; padding: 20px 50px; text-decoration: none; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; display: inline-block;">
         Contactar un Consultor
     </a>
