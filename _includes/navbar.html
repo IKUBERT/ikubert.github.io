@@ -1,10 +1,17 @@
 <nav class="site-nav">
     <div class="site-logo">
         <a href="{{ site.baseurl }}/">
-            <img src="{{ site.baseurl }}/src/logotipo-ikubert-lateral.svg" 
-                 alt="IKUBERT - Ingeniería y Ciberseguridad">
+            <img src="{{ site.baseurl }}/src/logotipo-ikubert-lateral.svg" alt="IKUBERT">
         </a>
     </div>
+
+    <input type="checkbox" id="nav-check" style="display: none;">
+    
+    <label for="nav-check" class="nav-toggler">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
 
     <div class="nav-links">
         <a href="{{ site.baseurl }}/">Home</a>
