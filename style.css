@@ -1,4 +1,4 @@
-/* style.css - IKUBERT FINAL DEFINITIVO (Logo +15%) */
+/* style.css - IKUBERT (Logo Ajustado y Footer Delgado) */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html, body { height: 100%; }
@@ -42,17 +42,23 @@ main { flex: 1 0 auto; width: 100%; }
 
 header { padding: 120px 10%; background-size: cover !important; background-position: center !important; width: 100%; }
 
-/* FOOTER - AJUSTE DE LOGO ESTRATÉGICO */
-.main-footer { background-color: #1a1a1a !important; color: #ffffff !important; padding: 30px 0; width: 100%; flex-shrink: 0; }
+/* FOOTER - ADELGAZADO Y LOGO REFINADO */
+.main-footer { 
+    background-color: #1a1a1a !important; 
+    color: #ffffff !important; 
+    padding: 15px 0 !important; /* Padding reducido de 30px a 15px para adelgazarlo */
+    width: 100%; 
+    flex-shrink: 0; 
+}
 .footer-inner { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 8%; }
 .footer-col { flex: 1; }
 .footer-col.left { text-align: left; }
 .footer-col.center { text-align: center; }
 .footer-col.right { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
 
-/* Selector de Alta Especificidad: Altura subida a 75px (+15%) */
+/* Logo ajustado a 55px para una estética más sofisticada y menos invasiva */
 .main-footer .footer-col.center .footer-logo-img { 
-    height: 75px !important; 
+    height: 55px !important; 
     width: auto !important; 
     filter: brightness(0) invert(1) !important; 
     opacity: 0.95 !important;
@@ -115,8 +121,9 @@ header { padding: 120px 10%; background-size: cover !important; background-posit
     .footer-inner { flex-direction: column; text-align: center; gap: 20px; }
     .footer-col.left, .footer-col.right { text-align: center; align-items: center; }
     
-    /* Logo footer móvil (un poco más grande proporcionalmente) */
-    .main-footer .footer-logo-img { height: 55px !important; }
+    /* Logo footer móvil más discreto */
+    .main-footer .footer-logo-img { height: 40px !important; }
+    .main-footer { padding: 20px 0 !important; }
 
     .landing-container { padding: 40px 15px; }
     .landing-container .hero-l h1 { font-size: 2.2rem; }
