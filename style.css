@@ -1,4 +1,4 @@
-/* style.css - IKUBERT */
+/* style.css - IKUBERT (Versión Final Corregida) */
 
 /* 1. RESET Y ESTRUCTURA BASE */
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -63,11 +63,10 @@ main { flex: 1 0 auto; width: 100%; }
 .footer-logo-img { height: 55px !important; filter: brightness(0) invert(1); opacity: 0.95; }
 .footer-mail { color: #ffffff !important; text-decoration: none; font-size: 0.85rem; }
 
-/* REGLA CRÍTICA PARA EL ICONO DE LINKEDIN */
 .footer-social-icon { 
     width: 18px !important; 
     height: 18px !important; 
-    filter: brightness(0) invert(1) !important; /* Lo vuelve blanco */
+    filter: brightness(0) invert(1) !important; 
     opacity: 0.7 !important;
     display: inline-block !important;
 }
@@ -81,22 +80,26 @@ main { flex: 1 0 auto; width: 100%; }
 .landing-container .btn-main { background: #0055ff; color: #fff !important; padding: 20px 45px; text-decoration: none; font-weight: 700; text-transform: uppercase; display: inline-block; }
 
 /* ==========================================================================
-   6. SISTEMA RESPONSIVO (Ajuste Final Teléfono)
+   6. SISTEMA RESPONSIVO (Ajuste Logo Izq | Hamburguesa Der)
    ========================================================================== */
 
 @media (max-width: 768px) {
-    /* Forzamos fila horizontal: Logo Izq | Hamburguesa Der */
     .site-nav { 
         flex-direction: row !important; 
+        justify-content: space-between !important;
         padding: 15px 5% !important; 
-        height: 80px !important; /* Altura fija para evitar saltos */
+        height: auto !important;
+        min-height: 70px;
     }
 
+    /* Forzamos que la hamburguesa sea tratada como elemento único a la derecha */
     .nav-toggler {
         display: flex !important;
         flex-direction: column;
+        justify-content: center;
         gap: 5px;
         z-index: 3000;
+        cursor: pointer;
     }
 
     .nav-toggler span {
@@ -106,7 +109,7 @@ main { flex: 1 0 auto; width: 100%; }
         transition: 0.3s;
     }
 
-    /* Menú lateral */
+    /* El menú desplegable NO debe ocupar espacio en la barra superior */
     .nav-links {
         position: fixed;
         top: 0;
@@ -121,11 +124,18 @@ main { flex: 1 0 auto; width: 100%; }
         transition: 0.4s ease-in-out;
         box-shadow: -10px 0 30px rgba(0,0,0,0.1);
         z-index: 2500;
+        /* Esto evita que empuje al logo o hamburguesa */
+        display: flex !important; 
     }
 
     .nav-checkbox:checked ~ .nav-links { right: 0; }
 
-    .site-nav .site-logo img { height: 45px !important; }
+    /* Animación X */
+    .nav-checkbox:checked ~ .nav-toggler span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .nav-checkbox:checked ~ .nav-toggler span:nth-child(2) { opacity: 0; }
+    .nav-checkbox:checked ~ .nav-toggler span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    .site-nav .site-logo img { height: 45px !important; width: auto !important; }
 
     /* Footer Móvil */
     .footer-inner { flex-direction: column !important; gap: 20px; text-align: center; }
