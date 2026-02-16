@@ -1,4 +1,4 @@
-/* style.css - IKUBERT (Versión Final Corregida) */
+/* style.css - IKUBERT */
 
 /* 1. RESET Y ESTRUCTURA BASE */
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,7 +25,7 @@ main { flex: 1 0 auto; width: 100%; }
     box-sizing: border-box !important;
 }
 
-/* 3. NAVEGACIÓN ESCRITORIO */
+/* 3. NAVEGACIÓN ESCRITORIO (No se toca) */
 .site-nav {
     padding-top: 22px;
     padding-bottom: 22px;
@@ -54,7 +54,7 @@ main { flex: 1 0 auto; width: 100%; }
 
 .nav-checkbox, .nav-toggler { display: none; }
 
-/* 4. FOOTER (Solución Icono LinkedIn) */
+/* 4. FOOTER */
 .main-footer { background-color: #1a1a1a !important; padding: 15px 0 !important; width: 100%; }
 .footer-col { flex: 1; }
 .footer-col.center { text-align: center; }
@@ -80,26 +80,42 @@ main { flex: 1 0 auto; width: 100%; }
 .landing-container .btn-main { background: #0055ff; color: #fff !important; padding: 20px 45px; text-decoration: none; font-weight: 700; text-transform: uppercase; display: inline-block; }
 
 /* ==========================================================================
-   6. SISTEMA RESPONSIVO (Ajuste Logo Izq | Hamburguesa Der)
+   6. SISTEMA RESPONSIVO (Móvil: Logo Izquierda | Hamburguesa Derecha)
    ========================================================================== */
 
 @media (max-width: 768px) {
+    /* Forzamos el comportamiento de fila única */
     .site-nav { 
-        flex-direction: row !important; 
+        display: flex !important;
+        flex-direction: row !important; /* Asegura línea horizontal */
+        flex-wrap: nowrap !important; /* Prohíbe el salto de línea */
         justify-content: space-between !important;
-        padding: 15px 5% !important; 
-        height: auto !important;
-        min-height: 70px;
+        align-items: center !important;
+        padding: 10px 5% !important; 
+        min-height: 70px !important;
     }
 
-    /* Forzamos que la hamburguesa sea tratada como elemento único a la derecha */
+    /* Logo anclado a la izquierda */
+    .site-logo {
+        flex: 0 0 auto !important;
+        margin: 0 !important;
+    }
+
+    .site-nav .site-logo img { 
+        height: 45px !important; 
+        width: auto !important; 
+    }
+
+    /* Botón Hamburguesa anclado a la derecha */
     .nav-toggler {
         display: flex !important;
-        flex-direction: column;
-        justify-content: center;
-        gap: 5px;
-        z-index: 3000;
-        cursor: pointer;
+        flex-direction: column !important;
+        justify-content: center !important;
+        gap: 5px !important;
+        z-index: 3000 !important;
+        cursor: pointer !important;
+        flex: 0 0 auto !important;
+        margin: 0 !important;
     }
 
     .nav-toggler span {
@@ -109,36 +125,35 @@ main { flex: 1 0 auto; width: 100%; }
         transition: 0.3s;
     }
 
-    /* El menú desplegable NO debe ocupar espacio en la barra superior */
+    /* Menú desplegable lateral (Sin espacio en el flujo) */
     .nav-links {
         position: fixed;
         top: 0;
         right: -100%; 
-        width: 75%;
+        width: 80%;
         height: 100vh;
         background: #fff;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 35px;
-        transition: 0.4s ease-in-out;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 35px !important;
+        transition: 0.4s ease-in-out !important;
         box-shadow: -10px 0 30px rgba(0,0,0,0.1);
         z-index: 2500;
-        /* Esto evita que empuje al logo o hamburguesa */
-        display: flex !important; 
+        display: flex !important;
     }
 
-    .nav-checkbox:checked ~ .nav-links { right: 0; }
+    .nav-checkbox:checked ~ .nav-links { 
+        right: 0 !important; 
+    }
 
     /* Animación X */
     .nav-checkbox:checked ~ .nav-toggler span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
     .nav-checkbox:checked ~ .nav-toggler span:nth-child(2) { opacity: 0; }
     .nav-checkbox:checked ~ .nav-toggler span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-    .site-nav .site-logo img { height: 45px !important; width: auto !important; }
-
     /* Footer Móvil */
-    .footer-inner { flex-direction: column !important; gap: 20px; text-align: center; }
-    .footer-col.right { align-items: center; text-align: center; }
+    .footer-inner { flex-direction: column !important; gap: 20px !important; text-align: center !important; }
+    .footer-col.right { align-items: center !important; text-align: center !important; }
     .main-footer { padding: 30px 0 !important; }
 }
