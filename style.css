@@ -1,4 +1,4 @@
-/* style.css - IKUBERT FINAL */
+/* style.css - IKUBERT */
 
 /* 1. RESET Y ESTRUCTURA BASE */
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -18,11 +18,11 @@ main { flex: 1 0 auto; width: 100%; }
 .site-nav, .footer-inner {
     padding-left: 5% !important;
     padding-right: 5% !important;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    box-sizing: border-box;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 /* 3. NAVEGACIÓN ESCRITORIO */
@@ -33,14 +33,13 @@ main { flex: 1 0 auto; width: 100%; }
     border-bottom: 1px solid #eee;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 2000;
 }
 
 .site-nav .site-logo img {
     height: 62px !important;
     width: auto;
     display: block;
-    shape-rendering: geometricPrecision;
 }
 
 .nav-links { display: flex; gap: 30px; }
@@ -51,94 +50,85 @@ main { flex: 1 0 auto; width: 100%; }
     font-size: 1.05rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    transition: opacity 0.2s ease;
 }
-.nav-links a:hover { opacity: 0.7; }
 
-/* Control del Menú Hamburguesa (Oculto en PC) */
 .nav-checkbox, .nav-toggler { display: none; }
 
-/* 4. FOOTER ESCRITORIO */
-.main-footer { background-color: #1a1a1a !important; color: #ffffff !important; padding: 15px 0 !important; width: 100%; flex-shrink: 0; }
+/* 4. FOOTER (Solución Icono LinkedIn) */
+.main-footer { background-color: #1a1a1a !important; padding: 15px 0 !important; width: 100%; }
 .footer-col { flex: 1; }
 .footer-col.center { text-align: center; }
 .footer-col.right { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+
 .footer-logo-img { height: 55px !important; filter: brightness(0) invert(1); opacity: 0.95; }
 .footer-mail { color: #ffffff !important; text-decoration: none; font-size: 0.85rem; }
+
+/* REGLA CRÍTICA PARA EL ICONO DE LINKEDIN */
+.footer-social-icon { 
+    width: 18px !important; 
+    height: 18px !important; 
+    filter: brightness(0) invert(1) !important; /* Lo vuelve blanco */
+    opacity: 0.7 !important;
+    display: inline-block !important;
+}
+
 .loc { font-size: 0.65rem; color: #fff; opacity: 0.6; text-transform: uppercase; letter-spacing: 1px; }
 .copy { font-size: 0.55rem; color: #fff; opacity: 0.4; }
 
-/* 5. LANDING FRAMEWORK (IKUBERT) */
+/* 5. LANDING FRAMEWORK */
 .landing-container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
 .landing-container .hero-l h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.1; letter-spacing: -1px; }
-.landing-container .check-item::before { content: "✓"; color: #0055ff; margin-right: 12px; font-weight: 800; }
 .landing-container .btn-main { background: #0055ff; color: #fff !important; padding: 20px 45px; text-decoration: none; font-weight: 700; text-transform: uppercase; display: inline-block; }
 
 /* ==========================================================================
-   6. SISTEMA RESPONSIVO (Móvil: Logo Izq | Hamburguesa Der)
+   6. SISTEMA RESPONSIVO (Ajuste Final Teléfono)
    ========================================================================== */
 
 @media (max-width: 768px) {
-    /* Forzamos que el Nav sea un contenedor horizontal en móvil */
+    /* Forzamos fila horizontal: Logo Izq | Hamburguesa Der */
     .site-nav { 
+        flex-direction: row !important; 
         padding: 15px 5% !important; 
-        flex-direction: row !important; /* Mantiene logo e icono en la misma fila */
-        justify-content: space-between !important; /* Empuja logo a izq y hamburguesa a der */
-        align-items: center !important;
+        height: 80px !important; /* Altura fija para evitar saltos */
     }
 
-    /* Mostrar botón hamburguesa a la derecha */
     .nav-toggler {
         display: flex !important;
         flex-direction: column;
         gap: 5px;
-        cursor: pointer;
-        z-index: 1100;
-        order: 2; /* Lo posiciona después del logo */
+        z-index: 3000;
     }
 
     .nav-toggler span {
         width: 25px;
         height: 2px;
         background-color: #1a1a1a;
-        transition: 0.3s ease;
+        transition: 0.3s;
     }
 
-    /* Menú desplegable lateral */
+    /* Menú lateral */
     .nav-links {
         position: fixed;
         top: 0;
         right: -100%; 
         width: 75%;
         height: 100vh;
-        background-color: #ffffff;
+        background: #fff;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 35px;
-        transition: 0.4s cubic-bezier(0.77,0.2,0.05,1.0);
+        transition: 0.4s ease-in-out;
         box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-        z-index: 1050;
+        z-index: 2500;
     }
 
     .nav-checkbox:checked ~ .nav-links { right: 0; }
 
-    /* Animación hamburguesa a X */
-    .nav-checkbox:checked ~ .nav-toggler span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-    .nav-checkbox:checked ~ .nav-toggler span:nth-child(2) { opacity: 0; }
-    .nav-checkbox:checked ~ .nav-toggler span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-
-    /* Ajuste de elementos internos */
-    .site-nav .site-logo { order: 1; } /* Logo a la izquierda */
     .site-nav .site-logo img { height: 45px !important; }
-    .nav-links a { font-size: 1.2rem; }
 
-    /* Footer móvil */
-    .footer-inner { flex-direction: column; gap: 25px; text-align: center; }
+    /* Footer Móvil */
+    .footer-inner { flex-direction: column !important; gap: 20px; text-align: center; }
     .footer-col.right { align-items: center; text-align: center; }
     .main-footer { padding: 30px 0 !important; }
-
-    .landing-container { padding: 40px 15px; }
-    .landing-container .hero-l h1 { font-size: 2.1rem; }
-}
 }
