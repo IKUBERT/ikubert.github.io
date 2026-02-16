@@ -3,17 +3,13 @@
 /* 1. RESET Y ESTRUCTURA */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { height: 100%; overflow-x: hidden; }
-body { font-family: 'Inter', sans-serif; display: flex; flex-direction: column; min-height: 100vh; }
+body { font-family: 'Inter', sans-serif; display: flex; flex-direction: column; min-height: 100vh; line-height: 1.5; color: #1a1a1a; }
 main { flex: 1 0 auto; width: 100%; }
 
 /* 2. ALINEACIÓN MAESTRA (5%) */
-.site-nav, .footer-inner {
+.site-nav, .footer-inner, .landing-container {
     padding-left: 5% !important;
     padding-right: 5% !important;
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    width: 100% !important;
 }
 
 /* 3. NAVEGACIÓN PC (No se toca) */
@@ -25,6 +21,10 @@ main { flex: 1 0 auto; width: 100%; }
     position: sticky;
     top: 0;
     z-index: 2000;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
 }
 .site-nav .site-logo img { height: 62px; width: auto; display: block; }
 .nav-links { display: flex; gap: 30px; }
@@ -33,6 +33,7 @@ main { flex: 1 0 auto; width: 100%; }
 
 /* 4. FOOTER PC (No se toca) */
 .main-footer { background-color: #1a1a1a !important; padding: 15px 0 !important; width: 100%; }
+.footer-inner { display: flex !important; justify-content: space-between !important; align-items: center !important; width: 100% !important; }
 .footer-col { flex: 1; }
 .footer-col.center { text-align: center; }
 .footer-col.right { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
@@ -45,24 +46,42 @@ main { flex: 1 0 auto; width: 100%; }
 /* ==========================================================================
    5. LANDING FRAMEWORK (DISEÑO DE CONTENIDO)
    ========================================================================== */
-.landing-container { max-width: 900px; margin: 0 auto; padding: 80px 20px; }
+.landing-container { max-width: 1000px; margin: 0 auto; padding-top: 80px; padding-bottom: 80px; }
 
 /* Hero y Textos */
-.hero-l { margin-bottom: 60px; }
+.hero-l { margin-bottom: 80px; }
 .hero-l h1 { font-size: 3rem; font-weight: 800; line-height: 1.1; letter-spacing: -1.5px; margin: 25px 0; color: #1a1a1a; }
-.hero-l p { font-size: 1.25rem; color: #444; line-height: 1.6; margin-bottom: 30px; }
-.auth-line { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #888; display: block; }
-.meta-hero { display: block; background: #f9f9f9; padding: 20px; border-left: 4px solid #0055ff; margin: 30px 0; font-size: 1rem; line-height: 1.5; }
+.subtitle-hero { font-size: 1.25rem; color: #666; margin-bottom: 20px; font-weight: 500; }
+.hero-l p { font-size: 1.2rem; color: #444; line-height: 1.6; margin-bottom: 30px; }
+.auth-line { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #0055ff; display: block; }
+.meta-hero { display: block; background: #f9f9f9; padding: 25px; border-left: 4px solid #0055ff; margin: 35px 0; font-size: 1rem; }
 
-/* Cajas de Problemas (Problem Box) */
-.problem-box { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 40px 0; }
-.p-item { padding: 25px; background: #fdfdfd; border-left: 4px solid #ff4b4b; border-bottom: 1px solid #eee; }
-.p-item h4 { margin-bottom: 10px; font-size: 1.15rem; font-weight: 700; }
-.p-item p { font-size: 1rem; color: #666; line-height: 1.5; }
+/* Cajas de Problemas */
+.problem-box { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin: 50px 0; }
+.p-item { padding: 30px; background: #fff; border: 1px solid #eee; border-left: 4px solid #ff4b4b; }
+.p-item h4 { margin-bottom: 12px; font-size: 1.2rem; font-weight: 700; }
+.p-item p { font-size: 0.95rem; color: #666; line-height: 1.5; }
+
+/* Metodología e Intervención (Nuevos ajustes de espaciado) */
+.section-l { padding: 80px 0; border-top: 1px solid #eee; }
+.section-l h2 { font-size: 2rem; margin-bottom: 30px; font-weight: 800; }
+
+.quote-text { 
+    font-style: italic; font-size: 1.3rem; color: #555; 
+    margin-bottom: 45px; padding: 20px 30px; background: #fcfcfc;
+    border-left: 3px solid #0055ff; line-height: 1.4;
+}
+
+.method-list { list-style: none; padding: 0; }
+.method-list li { margin-bottom: 35px; font-size: 1.1rem; line-height: 1.6; color: #444; }
+.method-list li strong { 
+    display: block; font-size: 1.2rem; color: #1a1a1a; 
+    margin-bottom: 8px; font-weight: 700; 
+}
 
 /* Checks */
 .check-list { margin: 30px 0; }
-.check-item { display: flex; align-items: flex-start; margin-bottom: 18px; font-size: 1.1rem; font-weight: 500; line-height: 1.4; }
+.check-item { display: flex; align-items: flex-start; margin-bottom: 20px; font-size: 1.1rem; font-weight: 500; }
 .check-item::before { content: "✓"; color: #0055ff; margin-right: 15px; font-weight: 900; }
 
 /* Botones */
@@ -70,36 +89,63 @@ main { flex: 1 0 auto; width: 100%; }
     display: inline-block; background: #0055ff !important; color: #fff !important; 
     padding: 22px 50px; text-decoration: none !important; font-weight: 700; 
     text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; border-radius: 4px; 
-    transition: 0.3s ease; border: none; cursor: pointer;
+    transition: 0.3s ease; border: none; cursor: pointer; text-align: center;
 }
 .btn-main:hover { background: #0033bb !important; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,85,255,0.2); }
 
-/* Secciones y Complementos */
-.section-l { padding: 60px 0; border-top: 1px solid #eee; margin-top: 40px; }
-.section-l h2 { font-size: 1.85rem; margin-bottom: 25px; letter-spacing: -0.5px; }
-.complementary-box { background: #f4f7ff; padding: 40px; margin: 60px 0; border-radius: 8px; }
-.complementary-box h3 { margin-bottom: 20px; font-size: 1.5rem; }
-.complementary-box ul { list-style: disc; padding-left: 20px; line-height: 2; }
+/* Complementarios */
+.complementary-box { background: #f4f7ff; padding: 45px; margin: 60px 0; border-radius: 12px; }
+.complementary-box h3 { margin-bottom: 20px; font-size: 1.6rem; font-weight: 800; }
+.complementary-box ul { list-style: none; padding: 0; }
+.complementary-box li { margin-bottom: 15px; }
 .complementary-box a { color: #0055ff; font-weight: 700; text-decoration: none; }
 
 /* ==========================================================================
-   6. MÓVIL: NAVBAR PRO Y FOOTER ESTRATÉGICO (SIN TOCAR PC)
+   6. SECCIÓN FINAL (CTA) - Corregido el "pegado"
+   ========================================================================== */
+.final-cta { 
+    text-align: center; 
+    padding: 100px 5% !important; 
+    background: #fdfdfd; 
+    border-top: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* Separación uniforme entre elementos */
+}
+.final-cta h2 { font-size: 2.4rem !important; line-height: 1.2; color: #1a1a1a; max-width: 850px; margin: 0 !important; }
+.final-cta p { font-size: 1.15rem; color: #555; line-height: 1.6; max-width: 750px; margin: 0 !important; }
+
+.disclaimer { 
+    font-size: 0.7rem !important; 
+    text-transform: uppercase; 
+    color: #bbb; 
+    letter-spacing: 2px; 
+    margin-top: 50px !important; /* Separa la marca del botón */
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   7. MÓVIL: NAVBAR PRO Y FOOTER (SIN TOCAR PC)
    ========================================================================== */
 @media (max-width: 768px) {
     /* Navbar móvil */
     .site-nav { flex-direction: row !important; justify-content: space-between !important; padding: 15px 5% !important; height: 70px !important; }
     .nav-toggler { display: flex !important; flex-direction: column; gap: 5px; z-index: 3000; cursor: pointer; }
     .nav-toggler span { width: 25px; height: 2px; background-color: #1a1a1a; }
-    .nav-links { position: fixed; top: 0; right: -100%; width: 75%; height: 100vh; background: #fff; flex-direction: column !important; justify-content: center !important; align-items: center !important; gap: 35px !important; transition: 0.4s ease-in-out; z-index: 2500; display: flex !important; }
+    .nav-links { position: fixed; top: 0; right: -100%; width: 80%; height: 100vh; background: #fff; flex-direction: column !important; justify-content: center !important; align-items: center !important; gap: 35px !important; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 2500; display: flex !important; box-shadow: -10px 0 30px rgba(0,0,0,0.05); }
     .nav-checkbox:checked ~ .nav-links { right: 0 !important; }
-    .site-nav .site-logo img { height: 40px !important; }
+    .site-nav .site-logo img { height: 45px !important; }
 
     /* Landing móvil */
     .landing-container { padding: 40px 5%; }
     .hero-l h1 { font-size: 2.2rem; }
-    .btn-main { width: 100%; text-align: center; }
-    .problem-box { grid-template-columns: 1fr; } /* Cajas una debajo de otra en móvil */
-    .complementary-box { padding: 30px 20px; }
+    .problem-box { grid-template-columns: 1fr; gap: 15px; }
+    .btn-main { width: 100%; }
+    
+    .final-cta { padding: 60px 5% !important; gap: 25px; }
+    .final-cta h2 { font-size: 1.8rem !important; }
+    .disclaimer { margin-top: 35px !important; }
 
     /* Footer móvil grid */
     .footer-inner { 
@@ -116,45 +162,4 @@ main { flex: 1 0 auto; width: 100%; }
     .footer-col.left { grid-area: location; text-align: center !important; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; }
     .loc { font-size: 0.6rem !important; }
     .main-footer { padding: 25px 0 !important; }
-}
-
-/* ==========================================================================
-   7. SECCIÓN FINAL (CTA)
-   ========================================================================== */
-.final-cta { 
-    text-align: center; 
-    padding: 100px 5% !important; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px; /* Esto separa automáticamente párrafos, títulos y botones */
-}
-
-.final-cta h2 {
-    font-size: 2.2rem;
-    line-height: 1.2;
-    color: #1a1a1a;
-    max-width: 800px;
-}
-
-.final-cta p {
-    font-size: 1.1rem;
-    color: #555;
-    line-height: 1.6;
-    max-width: 700px;
-}
-
-/* El texto de metodología al final del todo */
-.disclaimer { 
-    font-size: 0.65rem !important; 
-    text-transform: uppercase; 
-    color: #aaa; 
-    letter-spacing: 1.5px;
-    margin-top: 40px !important; /* Espacio extra para que no se pegue al botón */
-}
-
-@media (max-width: 768px) {
-    .final-cta { padding: 60px 5% !important; gap: 20px; }
-    .final-cta h2 { font-size: 1.8rem; }
-    .disclaimer { margin-top: 30px !important; }
 }
