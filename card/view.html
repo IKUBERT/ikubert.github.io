@@ -82,7 +82,7 @@ layout: null
 
         .card-back {
             transform: rotateY(180deg);
-            padding: 30px 24px; /* Un poco menos de padding para que quepa el nuevo botón */
+            padding: 30px 24px;
         }
 
         .header { margin-bottom: 20px; border-left: 4px solid var(--accent); padding-left: 15px; }
@@ -112,7 +112,7 @@ layout: null
         }
 
         .btn-wsp { background: var(--wsp); color: white; }
-        .btn-save { background: var(--accent); color: white; } /* Botón Guardar */
+        .btn-save { background: var(--accent); color: white; }
         .btn-mail { background: #1e293b; color: white; }
         .btn-ln { background: #0077b5; color: white; }
 
@@ -220,27 +220,36 @@ layout: null
         function downloadVCard(event) {
             event.stopPropagation();
             
-            const vcard = `BEGIN:VCARD
-VERSION:3.0
-FN:${personData.n}
-ORG:IKUBERT
-TITLE:${personData.c}
-TEL;TYPE=CELL,VOICE:+${personData.t}
-EMAIL;TYPE=PREF,INTERNET:${personData.m}
-URL:https://ikubert.com
-REV:${new Date().toISOString()}
-END:VCARD`;
+            const fileName = personData.n.replace(/\s+/g, '_') || 'contacto';
 
-            const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+            // Formato VCF 3.0 con saltos de línea CRLF obligatorios para móviles
+            const vCardData = [
+                'BEGIN:VCARD',
+                'VERSION:3.0',
+                'FN:' + personData.n,
+                'N:;' + personData.n + ';;;',
+                'ORG:IKUBERT',
+                'TITLE:' + personData.c,
+                'TEL;TYPE=CELL,VOICE:+' + personData.t,
+                'EMAIL;TYPE=PREF,INTERNET:' + personData.m,
+                'URL:https://ikubert.com',
+                'REV:' + new Date().toISOString(),
+                'END:VCARD'
+            ].join('\r\n');
+
+            // Codificación para manejar caracteres especiales y compatibilidad total
+            const blob = new Blob([vCardData], { type: 'text/vcard;charset=utf-8' });
             const url = window.URL.createObjectURL(blob);
+            
             const link = document.createElement('a');
             link.href = url;
-            link.setAttribute('download', `${personData.n.replace(/\s+/g, '_')}.vcf`);
+            link.setAttribute('download', fileName + '.vcf');
             
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-            window.URL.revokeObjectURL(url);
+            
+            setTimeout(() => window.URL.revokeObjectURL(url), 100);
         }
     </script>
 </body>
