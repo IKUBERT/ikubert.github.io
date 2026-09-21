@@ -25,12 +25,3 @@ Formación en Ingeniería Civil Industrial, Ingeniería en Ciberseguridad e Inge
   <span class="chip">NIST CSF · ISO 27001</span>
   <span class="chip">Ingeniería Industrial</span>
 </div>
-
-<div class="chip-row">
-  <span class="chip">Hacking ético</span>
-  <span class="chip">RBVM</span>
-  <span class="chip">Cadenas de Markov</span>
-  <span class="chip">OSINT</span>
-  <span class="chip">NIST CSF · ISO 27001</span>
-  <span class="chip">Ingeniería Industrial</span>
-</div>
