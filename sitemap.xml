@@ -6,7 +6,7 @@ sitemap: false
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {%- assign paginas = site.html_pages | where_exp: "p", "p.sitemap != false" | where_exp: "p", "p.redirect_to == nil" -%}
 {%- for p in paginas %}
-  {%- unless p.url contains "404" %}
+  {%- unless p.url contains "404" or p.url contains "/card/" %}
   <url><loc>{{ p.url | replace: "index.html", "" | absolute_url }}</loc><lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod></url>
   {%- endunless %}
 {%- endfor %}
