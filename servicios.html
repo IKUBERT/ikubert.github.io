@@ -1,134 +1,39 @@
 ---
-layout: default
-title: Servicios | IKUBERT
+layout: base
+title: "Servicios IKUBERT | Ciberseguridad, Ingeniería Industrial y Arquitectura Empresarial"
+description: "Todos los frameworks de IKUBERT: IKU-Risk™ (ciberseguridad y hacking ético), IKU-Opt™ (optimización operativa con ingeniería industrial) e IKU-Struct™ (arquitectura empresarial y holdings)."
+permalink: /servicios/
 ---
-
-<header class="hero-servicios" style="text-align: center; padding: 120px 20px; background: #fff; border-bottom: 1px solid #eee; width: 100%; box-sizing: border-box;">
-    <div style="max-width: 900px; margin: 0 auto;">
-        <h1 style="font-size: 4rem; letter-spacing: 12px; font-weight: 800; text-transform: uppercase; line-height: 1.1; margin: 0;">Servicios</h1>
-        <p style="font-size: 1.15rem; color: #1a1a1a; letter-spacing: 2px; text-transform: uppercase; margin: 25px 0 45px; font-weight: 600;">Detectamos dónde tu empresa pierde dinero, eficiencia y control sin que lo notes</p>
-        
-        <div class="cta-box-hero" style="background: #f9f9f9; padding: 35px; display: inline-block; border: 1px solid #eee; max-width: 100%; box-sizing: border-box;">
-            <p style="font-size: 1rem; font-weight: 600; margin-bottom: 25px; color: #000; line-height: 1.5;">Analizamos tu operación, procesos y tecnología para identificar pérdidas ocultas, riesgos y oportunidades de mejora con impacto directo en la rentabilidad.</p>
-            <a href="{{ site.baseurl }}/contacto" class="btn-hero" style="background: #0055ff; color: #fff; padding: 18px 35px; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; display: inline-block; border-radius: 2px;">Evaluar mi empresa</a>
-        </div>
-    </div>
+{%- comment -%} Este archivo reemplaza al servicios.html antiguo. Cada servicio nuevo se agrega
+creando un archivo en _servicios/ y aparece aquí automáticamente. {%- endcomment -%}
+<header class="foro-hero">
+  <div class="foro-hero-inner">
+    <nav class="breadcrumbs" aria-label="Ruta"><a href="{{ '/' | relative_url }}">Inicio</a><span>/</span><span>Servicios</span></nav>
+    <span class="foro-label">// Frameworks de intervención</span>
+    <h1 class="foro-title">Servicios</h1>
+    <p class="foro-desc">Cada servicio está diseñado con metodología propia y entrega resultados concretos. Sin reportes genéricos. Sin recomendaciones que nadie ejecuta.</p>
+  </div>
 </header>
 
-<main class="section-home" style="max-width: 1200px; margin: 0 auto; padding: 80px 20px;">
-    <div class="grid grid-servicios" style="margin-top: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-        
-        <div class="service-line-card featured-card">
-            <span class="priority-tag">Programa Inicial Recomendado</span>
-            <span class="segment-filter" style="color: #0055ff; font-weight: 700; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 10px; display: block;">Framework IKU-Risk™</span>
-            <h2 class="line-title">Seguridad Digital</h2>
-            <p class="line-desc">Protegemos tu empresa de riesgos digitales que pueden generar pérdidas económicas, afectar tu reputación o detener tu operación.</p>
-            
-            <div class="star-service-box">
-                <span class="star-name">Detectamos riesgos críticos en tu empresa – 10 días</span>
-                <span class="star-promise">Priorización clara de vulnerabilidades críticas</span>
-            </div>
-
-            <ul class="benefit-list">
-                <li class="benefit-item">Evaluación de accesos críticos</li>
-                <li class="benefit-item">Revisión de exposición externa</li>
-                <li class="benefit-item">Matriz ejecutiva de riesgo</li>
-            </ul>
-            
-            <a href="{{ site.baseurl }}/contacto" class="btn-action">Evaluar mi empresa</a>
-            <a href="{{ site.baseurl }}/servicios/diagnostico-digital" class="btn-secondary">Ver detalles del método</a>
-        </div>
-
-        <div class="service-line-card">
-            <div style="height: 25px;" class="mobile-hide"></div>
-            <span class="segment-filter" style="color: #ff9800; font-weight: 700; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 10px; display: block;">Framework IKU-Opt™</span>
-            <h2 class="line-title">Rentabilidad</h2>
-            <p class="line-desc">Detectamos fugas operativas que están erosionando tu margen y las corregimos con impacto directo en resultados.</p>
-            
-            <div class="star-service-box" style="border-left-color: #ff9800;">
-                <span class="star-name">Mejoramos la eficiencia de tu operación – 30 días</span>
-                <span class="star-promise">Optimización aplicada a la realidad operativa</span>
-            </div>
-
-            <ul class="benefit-list">
-                <li class="benefit-item">Trazabilidad de inventarios</li>
-                <li class="benefit-item">Análisis de costos y márgenes</li>
-                <li class="benefit-item">Eliminación de ineficiencias</li>
-            </ul>
-
-            <a href="{{ site.baseurl }}/contacto" class="btn-action">Evaluar mi empresa</a>
-            <a href="{{ site.baseurl }}/servicios/optimizacion-operativa" class="btn-secondary">Ver metodología</a>
-        </div>
-
-        <div class="service-line-card">
-            <div style="height: 25px;" class="mobile-hide"></div>
-            <span class="segment-filter" style="color: #1a1a1a; font-weight: 700; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 10px; display: block;">Framework IKU-Struct™</span>
-            <h2 class="line-title">Estructura</h2>
-            <p class="line-desc">Diseñamos la arquitectura empresarial de tu compañía para que pueda crecer con control, eficiencia y menor exposición a riesgos.</p>
-            
-            <div class="star-service-box" style="border-left-color: #1a1a1a;">
-                <span class="star-name">Radiografía empresarial completa – 20 días</span>
-                <span class="star-promise">Diseño estructural orientado a escalabilidad</span>
-            </div>
-
-            <ul class="benefit-list">
-                <li class="benefit-item">Estructuras Holding y protección</li>
-                <li class="benefit-item">Evaluación de escalabilidad</li>
-                <li class="benefit-item">Mapa organizacional sugerido</li>
-            </ul>
-
-            <a href="{{ site.baseurl }}/contacto" class="btn-action">Evaluar mi empresa</a>
-            <a href="{{ site.baseurl }}/servicios/radiografia-empresarial" class="btn-secondary">Ver alcance estratégico</a>
-        </div>
-
+<section class="section">
+  <div class="container">
+    <div class="svc-index-grid">
+    {%- assign todos = site.servicios | sort: "orden" -%}
+    {%- for s in todos %}
+      <a class="svc-index-card {% if s.color == 'orange' %}orange{% elsif s.color == 'dark' %}dark{% endif %}" href="{{ s.url | relative_url }}">
+        <span class="framework-label {% if s.color == 'orange' %}fw-orange{% elsif s.color == 'dark' %}fw-dark{% else %}fw-blue{% endif %}" style="margin:0">Framework {{ s.framework }}</span>
+        <h2>{{ s.nombre_servicio }}</h2>
+        <p>{{ s.resumen }}</p>
+        <span class="go">Ver el framework completo →</span>
+      </a>
+    {%- endfor %}
     </div>
 
-    <div style="text-align: center; margin-top: 60px; padding: 20px; border-top: 1px solid #f0f0f0;">
-        <p style="font-size: 0.85rem; color: #999; text-transform: uppercase; letter-spacing: 2px; font-weight: 400;">
-            Enfoque interdisciplinario: <span style="color:#666; font-weight:600;">gestión, ingeniería y ciberseguridad</span> aplicadas a empresas de alto desempeño.
-        </p>
-        <p style="text-transform: uppercase; letter-spacing: 5px; font-size: 1.5rem; font-weight: 800; margin-top: 30px; margin-bottom: 20px;">
-    Agenda sin compromiso - Sin venta agresiva
-</p>
+    <div class="foro-cta" style="margin-top:48px">
+      <h3>¿No sabes cuál necesitas?</h3>
+      <p>En 30 minutos identificamos los principales riesgos o pérdidas de tu empresa y te decimos con claridad qué framework aplica. Gratis y sin compromiso.</p>
+      <a href="{{ '/' | relative_url }}#contacto" class="btn btn-blue">Agendar diagnóstico</a>
+      <a href="{% include wa-link.html msg='Hola IKUBERT, quiero saber qué servicio le conviene a mi empresa.' %}" target="_blank" rel="noopener" class="btn btn-outline" data-evento="servicios_indice">WhatsApp directo</a>
     </div>
-</main>
-
-<div style="background: #1a1a1a; padding: 100px 20px; text-align: center; color: #fff;">
-    <h2 style="text-transform: uppercase; letter-spacing: 5px; font-size: 1.5rem; font-weight: 800; margin-bottom: 20px;">Siempre hay puntos donde una empresa pierde rentabilidad.</h2>
-    <p style="color: #999; margin-bottom: 5px; font-weight: 300;">El primer paso es identificarlos. Agenda una evaluación inicial y detecta las principales oportunidades de mejora en tu empresa.</p>
-    <p style="color: #666; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 30px;">Sesión ejecutiva de evaluación inicial – 30 minutos</p>
-    <p style="color: #444; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 40px; font-weight: 700;">Enfoque práctico, directo y orientado a resultados.</p>
-    
-    <a href="https://wa.me/56989374989" style="background: #22c55e; color: #fff; padding: 20px 50px; text-decoration: none; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; display: inline-block;">
-        Solicitar evaluación inicial
-    </a>
-</div>
-
-<style>
-    /* Estilos locales mínimos para layout de tarjetas */
-    .service-line-card { background: #fff; border: 1px solid #eee; padding: 45px 30px; display: flex; flex-direction: column; height: 100%; transition: 0.3s; position: relative; }
-    .service-line-card:hover { border-color: #1a1a1a; box-shadow: 0 15px 40px rgba(0,0,0,0.08); }
-    .featured-card { border: 2px solid #1a1a1a; transform: scale(1.02); z-index: 2; }
-    .priority-tag { background: #1a1a1a; color: #fff; font-size: 0.6rem; padding: 5px 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; display: inline-block; margin-bottom: 15px; }
-    .line-title { text-transform: uppercase; letter-spacing: 2px; font-size: 1.2rem; font-weight: 800; margin-bottom: 15px; color: #000; }
-    .line-desc { color: #444; font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px; min-height: 65px; }
-    .star-service-box { background: #f4f7ff; border-left: 4px solid #0055ff; padding: 20px; margin-bottom: 25px; }
-    .star-name { font-size: 1rem; font-weight: 800; color: #000; display: block; margin-bottom: 5px; }
-    .star-promise { font-size: 0.85rem; color: #0055ff; font-weight: 600; }
-    .benefit-list { list-style: none; padding: 0; margin-bottom: 30px; }
-    .benefit-item { font-size: 0.85rem; color: #555; margin-bottom: 12px; display: flex; align-items: flex-start; }
-    .benefit-item::before { content: "•"; margin-right: 12px; color: #1a1a1a; font-weight: 900; }
-    .btn-action { background: #1a1a1a; color: #fff; text-decoration: none; padding: 16px; text-align: center; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; border: 1px solid #1a1a1a; }
-    .btn-action:hover { background: #fff; color: #1a1a1a; }
-    .btn-secondary { background: #fff; color: #1a1a1a; margin-top: 10px; padding: 12px; text-align: center; text-decoration: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; border: 1px solid #eee; transition: 0.3s; }
-    .btn-secondary:hover { border-color: #1a1a1a; background: #f9f9f9; }
-
-    @media (max-width: 768px) {
-        .featured-card { transform: scale(1); border: 1px solid #eee; }
-        .hero-servicios h1 { font-size: 2.5rem !important; }
-        .grid-servicios { gap: 40px !important; }
-        .mobile-hide { display: none; }
-        .cta-box-hero { padding: 25px 20px !important; width: 100% !important; }
-        .btn-hero { display: block !important; width: 100% !important; }
-    }
-</style>
+  </div>
+</section>

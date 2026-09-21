@@ -1,0 +1,68 @@
+---
+layout: base
+---
+{%- include cat-info.html id=page.categoria -%}
+{%- assign a = site.data.autores[page.autor] | default: site.data.autores.equipo -%}
+<article>
+<header class="article-hero">
+  <div class="article-hero-inner">
+    <nav class="breadcrumbs" aria-label="Ruta">
+      <a href="{{ '/' | relative_url }}">Inicio</a><span>/</span>
+      <a href="{{ '/foro/' | relative_url }}">Foro</a><span>/</span>
+      <a href="{{ '/foro/categoria/' | append: page.categoria | append: '/' | relative_url }}">{{ cat.nombre }}</a>
+    </nav>
+    <span class="post-cat-tag {% if cat.color != 'blue' %}{{ cat.color }}{% endif %}">{{ cat.etiqueta }}</span>
+    <h1 class="article-title">{{ page.title }}</h1>
+    {%- if page.resumen %}<p class="article-sub">{{ page.resumen }}</p>{% endif %}
+    <div class="byline">
+      <div class="author-avatar">{% if a.foto %}<img src="{{ a.foto | relative_url }}" alt="{{ a.nombre }}" width="44" height="44">{% else %}{{ a.iniciales }}{% endif %}</div>
+      <div>
+        <div class="byline-name">Por <a href="{{ a.url | relative_url }}" rel="author">{{ a.nombre }}</a></div>
+        <div class="byline-meta"><time datetime="{{ page.date | date_to_xmlschema }}">{% include fecha.html date=page.date %}</time>{% if page.lectura %} · Lectura {{ page.lectura }} min{% endif %}</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="article-body">
+{{ content }}
+</div>
+
+<div class="article-actions">
+  {%- if page.repositorio %}
+  <a href="{{ page.repositorio }}" target="_blank" rel="noopener" class="btn btn-gh">Ver código en GitHub</a>
+  {%- endif %}
+  {%- if page.linkedin and page.linkedin != "" %}
+  <a href="{{ page.linkedin }}" target="_blank" rel="noopener" class="btn btn-li">Ver publicación en LinkedIn</a>
+  {%- endif %}
+  <a href="{% include wa-link.html msg=page.wa_msg %}" target="_blank" rel="noopener" class="btn btn-green" data-evento="articulo">Conversemos por WhatsApp</a>
+</div>
+
+{%- if page.autor == "lukas" %}
+<aside class="author-box">
+  <div class="author-box-inner">
+    <img src="{{ a.foto | relative_url }}" alt="{{ a.nombre }}" loading="lazy" width="64" height="64">
+    <div>
+      <h4>{{ a.nombre }}</h4>
+      <p>{{ a.cargo }}. Especialista en ciberseguridad ofensiva, gestión de riesgo e ingeniería industrial aplicada.</p>
+      <a class="more" href="{{ a.url | relative_url }}">Ver perfil y publicaciones →</a>
+    </div>
+  </div>
+</aside>
+{%- endif %}
+</article>
+
+{%- assign relacionados = site.posts | where: "categoria", page.categoria | where_exp: "p", "p.url != page.url" -%}
+{%- if relacionados.size == 0 -%}{%- assign relacionados = site.posts | where_exp: "p", "p.url != page.url" -%}{%- endif -%}
+{%- if relacionados.size > 0 %}
+<section class="related">
+  <div class="container">
+    <h2 class="posts-grid-title">Sigue leyendo</h2>
+    <div class="posts-grid">
+    {%- for post in relacionados limit: 3 -%}
+      {% include post-card.html post=post %}
+    {%- endfor -%}
+    </div>
+  </div>
+</section>
+{%- endif %}

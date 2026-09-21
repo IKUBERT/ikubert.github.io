@@ -1,8 +1,75 @@
-title: IKUBERT
-description: "Consultoría estratégica en Santiago de Chile. Especialistas en Ingeniería Industrial, Gestión de Negocios y Ciberseguridad para la optimización de procesos y alto desempeño."
-theme: jekyll-theme-minimal
-baseurl: ""
-url: "https://www.ikubert.com" 
+# ═══════════════════════════════════════════════════════════════
+#  IKUBERT · Configuración central del sitio
+#  Todo dato de contacto vive AQUÍ. Cambiarlo acá lo cambia en
+#  todo el sitio (botones, footer, Schema para Google, etc.).
+# ═══════════════════════════════════════════════════════════════
 
+title: IKUBERT
+description: "Consultora boutique de Ingeniería Industrial y Ciberseguridad en Santiago de Chile. Protegemos tu operación, blindamos tu empresa y eliminamos pérdidas ocultas."
+lang: es-CL
+url: "https://ikubert.com"      # dominio canónico (coincide con el CNAME)
+baseurl: ""
+timezone: America/Santiago
+
+# ── Contacto (fuente única) ───────────────────────────────────
+contacto:
+  telefono_visible: "+56 9 4553 0560"
+  telefono_e164: "+56945530560"   # para enlaces tel: y Schema
+  whatsapp: "56945530560"         # para wa.me (sin + ni espacios)
+  email: "contact@ikubert.com"
+  ciudad: "Santiago"
+  region: "Región Metropolitana"
+  pais: "CL"
+  linkedin: "https://www.linkedin.com/company/ikubert"
+
+# Mensaje prellenado genérico de WhatsApp
+whatsapp_msg: "Hola IKUBERT, quisiera agendar una evaluación inicial."
+
+# Endpoint de Google Apps Script (formulario de contacto) — NO modificar
+form_endpoint: "https://script.google.com/macros/s/AKfycbwsnV8CnvjTeIEW4rKL1Y1oq2chwdP3-J7uNVDIiG7o7t8Vjv6sXXFYBs7FfWB1RLKI2w/exec"
+
+# Imagen por defecto al compartir enlaces (LinkedIn / WhatsApp)
+og_image: /assets/img/og-ikubert.jpg
+
+# Google Analytics 4 (opcional). Pega aquí tu ID "G-XXXXXXX" para activarlo.
+ga4_id: ""
+
+# ── Colecciones ───────────────────────────────────────────────
+# Servicios: cada archivo en _servicios/ es una página /servicios/<nombre>
+collections:
+  servicios:
+    output: true
+    permalink: /servicios/:name
+
+# Artículos del foro (_posts): URL limpia /foro/<titulo>/
+permalink: /foro/:title/
+
+defaults:
+  - scope: { path: "", type: posts }
+    values:
+      layout: post
+      autor: equipo
+  - scope: { path: "", type: servicios }
+    values:
+      layout: servicio
+
+# ── Plugins (todos soportados por GitHub Pages) ───────────────
 plugins:
-  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-redirect-from
+
+feed:
+  path: foro/feed.xml
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+exclude:
+  - LEEME-PUBLICAR.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .pages.yml

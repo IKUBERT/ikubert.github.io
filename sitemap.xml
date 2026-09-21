@@ -1,40 +1,19 @@
+---
+layout: null
+sitemap: false
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <url>
-    <loc>https://ikubert.com/</loc>
-    <lastmod>2026-02-16</lastmod>
-    <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://ikubert.com/servicios/diagnostico-digital</loc>
-    <lastmod>2026-02-16</lastmod>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://ikubert.com/servicios/optimizacion-operativa</loc>
-    <lastmod>2026-02-16</lastmod>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://ikubert.com/servicios/radiografia-empresarial</loc>
-    <lastmod>2026-02-16</lastmod>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://ikubert.com/contacto</loc>
-    <lastmod>2026-02-16</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://ikubert.com/acerca</loc>
-    <lastmod>2026-02-16</lastmod>
-    <priority>0.7</priority>
-  </url>
-
+{%- assign paginas = site.html_pages | where_exp: "p", "p.sitemap != false" | where_exp: "p", "p.redirect_to == nil" -%}
+{%- for p in paginas %}
+  {%- unless p.url contains "404" %}
+  <url><loc>{{ p.url | replace: "index.html", "" | absolute_url }}</loc><lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod></url>
+  {%- endunless %}
+{%- endfor %}
+{%- for s in site.servicios %}
+  <url><loc>{{ s.url | absolute_url }}</loc><lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod></url>
+{%- endfor %}
+{%- for post in site.posts %}
+  <url><loc>{{ post.url | absolute_url }}</loc><lastmod>{{ post.last_modified_at | default: post.date | date: "%Y-%m-%d" }}</lastmod></url>
+{%- endfor %}
 </urlset>

@@ -1,0 +1,32 @@
+# Categorías del foro. El "id" es lo que se escribe en cada artículo (categoria: iku-risk)
+# Para agregar una categoría: añade un bloque aquí y crea foro/categoria/<id>.html (copia uno existente).
+- id: iku-risk
+  nombre: "IKU-Risk™"
+  etiqueta: "Framework IKU-Risk™"
+  color: blue
+  descripcion: "Ciberseguridad, gestión de vulnerabilidades y priorización de riesgo digital."
+- id: iku-opt
+  nombre: "IKU-Opt™"
+  etiqueta: "Framework IKU-Opt™"
+  color: orange
+  descripcion: "Ingeniería industrial aplicada: procesos, inventarios y rentabilidad operativa."
+- id: iku-struct
+  nombre: "IKU-Struct™"
+  etiqueta: "Framework IKU-Struct™"
+  color: gray
+  descripcion: "Arquitectura empresarial, holdings y gobernanza."
+- id: hacking-etico
+  nombre: "Hacking Ético"
+  etiqueta: "Hacking Ético"
+  color: green
+  descripcion: "OSINT, reconocimiento y evaluación ofensiva explicada para la gerencia."
+- id: alertas
+  nombre: "Alertas y Avisos"
+  etiqueta: "Alerta de Seguridad"
+  color: red
+  descripcion: "Avisos preventivos sobre fraudes y amenazas activas, con acciones concretas."
+- id: guias
+  nombre: "Guías de Seguridad"
+  etiqueta: "Guía práctica"
+  color: purple
+  descripcion: "Configuraciones y hábitos concretos para proteger tus cuentas, tu teléfono y tu empresa."

@@ -1,0 +1,15 @@
+# Autores del foro. En cada artículo: autor: lukas  |  autor: equipo
+lukas:
+  nombre: "Lukas Ahubert Lennon"
+  cargo: "Fundador y Gerente General de IKUBERT"
+  iniciales: "LA"
+  url: /equipo/lukas-ahubert-lennon/
+  foto: "/src/Foto Lukas Ahubert.jpeg"
+  linkedin: "https://www.linkedin.com/in/lukas-ahubert/"
+  github: "https://github.com/DBlueKing"
+equipo:
+  nombre: "Equipo IKUBERT"
+  cargo: "Publicación corporativa"
+  iniciales: "IKU"
+  url: /
+  linkedin: "https://www.linkedin.com/company/ikubert"

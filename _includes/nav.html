@@ -1,0 +1,26 @@
+{%- if page.url == "/" -%}{%- assign p = "" -%}{%- else -%}{%- assign p = "/" | relative_url -%}{%- endif -%}
+<nav class="site-nav" id="site-nav" aria-label="Principal">
+  <div class="nav-logo">
+    <a href="{% if page.url == '/' %}#inicio{% else %}{{ '/' | relative_url }}{% endif %}">
+      <img src="{{ '/src/logotipo-ikubert-lateral.svg' | relative_url }}" alt="IKUBERT" width="160" height="48">
+    </a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links-desktop">
+    <a href="{{ p }}#nosotros" id="nav-nosotros">Nosotros</a>
+    <a href="{{ '/servicios/' | relative_url }}"{% if page.collection == "servicios" or page.url == "/servicios/" %} class="active"{% endif %} data-home-href="#servicios">Servicios</a>
+    <a href="{{ p }}#metodologia">Método</a>
+    <a href="{{ '/foro/' | relative_url }}"{% if page.url contains "/foro" %} class="active"{% endif %}>Foro</a>
+    <a href="{{ p }}#contacto" class="nav-cta-desktop">Hablar con un experto</a>
+  </div>
+</nav>
+<div class="nav-overlay" id="navOverlay"></div>
+<div class="nav-drawer" id="navDrawer">
+  <a href="{{ p }}#nosotros" id="drawer-nosotros">Nosotros</a>
+  <a href="{{ '/servicios/' | relative_url }}" data-home-href="#servicios">Servicios</a>
+  <a href="{{ p }}#metodologia">Método</a>
+  <a href="{{ '/foro/' | relative_url }}">Foro</a>
+  <a href="{{ p }}#contacto" class="drawer-cta">Hablar con un experto</a>
+</div>

@@ -1,0 +1,3 @@
+{%- comment -%} Uso: {% include wa-link.html msg="Hola..." %}  → devuelve la URL wa.me con el número de _config.yml {%- endcomment -%}
+{%- assign _m = include.msg | default: site.whatsapp_msg -%}
+https://wa.me/{{ site.contacto.whatsapp }}?text={{ _m | uri_escape | replace: '&', '%26' }}

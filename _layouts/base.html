@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+{% include head.html %}
+</head>
+<body{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
+{% include nav.html %}
+<main id="contenido">
+{{ content }}
+</main>
+{% include footer.html %}
+<script>window.IKU={form:"{{ site.form_endpoint }}",home:{% if page.url == "/" %}true{% else %}false{% endif %}};</script>
+<script src="{{ '/assets/js/main.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}" defer></script>
+</body>
+</html>

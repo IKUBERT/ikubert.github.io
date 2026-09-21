@@ -1,0 +1,37 @@
+---
+layout: base
+---
+{%- assign a = site.data.autores[page.autor_id] -%}
+<header class="profile-hero">
+  <div class="profile-inner">
+    <div class="profile-photo"><img src="{{ a.foto | relative_url }}" alt="{{ a.nombre }}" width="150" height="150"></div>
+    <div>
+      <nav class="breadcrumbs" aria-label="Ruta"><a href="{{ '/' | relative_url }}">Inicio</a><span>/</span><a href="{{ '/' | relative_url }}#equipo">Equipo</a></nav>
+      <h1 class="profile-name">{{ a.nombre }}</h1>
+      <p class="profile-role">{{ a.cargo }}</p>
+      <div class="profile-links">
+        <a href="{{ a.linkedin }}" target="_blank" rel="noopener me">LinkedIn</a>
+        {%- if a.github %}<a href="{{ a.github }}" target="_blank" rel="noopener me">GitHub</a>{% endif %}
+        <a href="mailto:{{ site.contacto.email }}">Contacto</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container article-body" style="max-width:900px;padding-top:0;padding-bottom:0">
+    {{ content }}
+  </div>
+</section>
+
+{%- assign mios = site.posts | where: "autor", page.autor_id -%}
+{%- if mios.size > 0 %}
+<section class="related">
+  <div class="container">
+    <h2 class="posts-grid-title">Publicaciones de {{ a.nombre }}</h2>
+    <div class="posts-grid">
+    {%- for post in mios -%}{% include post-card.html post=post %}{%- endfor -%}
+    </div>
+  </div>
+</section>
+{%- endif %}

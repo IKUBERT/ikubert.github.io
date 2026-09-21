@@ -1,0 +1,70 @@
+# Configuración de Pages CMS (https://app.pagescms.org)
+# Permite publicar en el foro desde el navegador, sin tocar código.
+media:
+  input: assets/img/foro
+  output: /assets/img/foro
+
+content:
+  - name: foro
+    label: Foro (artículos)
+    type: collection
+    path: _posts
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      primary: title
+      fields: [title, categoria, date]
+      sort: [date]
+    fields:
+      - name: title
+        label: Título
+        type: string
+        required: true
+      - name: titulo_corto
+        label: Título corto (opcional, para tarjetas de la portada)
+        type: string
+      - name: date
+        label: Fecha de publicación
+        type: date
+        required: true
+      - name: categoria
+        label: Categoría
+        type: select
+        required: true
+        options:
+          values:
+            - { name: iku-risk, label: "IKU-Risk™" }
+            - { name: iku-opt, label: "IKU-Opt™" }
+            - { name: iku-struct, label: "IKU-Struct™" }
+            - { name: hacking-etico, label: "Hacking Ético" }
+            - { name: alertas, label: "Alertas y Avisos" }
+            - { name: guias, label: "Guías de Seguridad" }
+      - name: autor
+        label: Autor
+        type: select
+        required: true
+        options:
+          values:
+            - { name: lukas, label: "Lukas Ahubert Lennon" }
+            - { name: equipo, label: "Equipo IKUBERT" }
+      - name: resumen
+        label: Resumen (aparece en tarjetas y en Google, ~150–200 caracteres)
+        type: text
+        required: true
+      - name: description
+        label: Descripción para Google (opcional; si se deja vacía se usa el resumen)
+        type: text
+      - name: image
+        label: Imagen para compartir (LinkedIn/WhatsApp, ideal 1200×630)
+        type: image
+      - name: linkedin
+        label: Enlace a la publicación en LinkedIn (opcional)
+        type: string
+      - name: destacado
+        label: ¿Destacado en portada y foro?
+        type: boolean
+      - name: lectura
+        label: Minutos de lectura (opcional)
+        type: number
+      - name: body
+        label: Contenido
+        type: rich-text

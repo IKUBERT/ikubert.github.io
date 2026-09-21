@@ -1,0 +1,18 @@
+{%- assign p = include.post -%}
+{%- include cat-info.html id=p.categoria -%}
+{%- assign a = site.data.autores[p.autor] | default: site.data.autores.equipo -%}
+    <article class="post-card {% if cat.color != 'blue' %}{{ cat.color }}{% endif %}" data-cat="{{ p.categoria }}">
+      <a href="{{ '/foro/categoria/' | append: p.categoria | append: '/' | relative_url }}" class="post-cat-tag {% if cat.color != 'blue' %}{{ cat.color }}{% endif %}">{{ cat.etiqueta | default: p.categoria }}</a>
+      <h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+      <p class="excerpt">{{ p.resumen | default: p.excerpt | strip_html | truncate: 220 }}</p>
+      <div class="post-foot">
+        <div class="post-author">
+          <div class="author-avatar">{{ a.iniciales }}</div>
+          <div>
+            <div class="author-name">{{ a.nombre }}</div>
+            <div class="post-date"><time datetime="{{ p.date | date_to_xmlschema }}">{% include fecha.html date=p.date %}</time>{% if p.lectura %} · {{ p.lectura }} min{% endif %}</div>
+          </div>
+        </div>
+        <a href="{{ p.url | relative_url }}" class="read-more">Leer →</a>
+      </div>
+    </article>

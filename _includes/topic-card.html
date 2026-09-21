@@ -1,0 +1,11 @@
+{%- assign p = include.post -%}
+{%- include cat-info.html id=p.categoria -%}
+      <article class="topic-card">
+        <span class="topic-cat {% if cat.color != 'blue' %}{{ cat.color }}{% endif %}">{{ cat.etiqueta | default: p.categoria }}</span>
+        <h3><a href="{{ p.url | relative_url }}">{{ p.titulo_corto | default: p.title }}</a></h3>
+        <p>{{ p.resumen | default: p.excerpt | strip_html | truncate: 170 }}</p>
+        <div class="topic-foot">
+          <span class="topic-date">{% include fecha.html date=p.date %}</span>
+          <a href="{{ p.url | relative_url }}" class="topic-join">Leer más →</a>
+        </div>
+      </article>

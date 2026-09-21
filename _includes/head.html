@@ -1,0 +1,50 @@
+{%- comment -%} Metadatos SEO + Open Graph + Schema. Se alimenta del front matter de cada página:
+  title, description, image, image_alt, noindex {%- endcomment -%}
+{%- assign t = page.title | default: site.title -%}
+{%- assign d = page.description | default: page.resumen | default: page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 -%}
+{%- assign img = page.image | default: site.og_image | absolute_url -%}
+{%- assign canon = page.url | replace: "index.html", "" | absolute_url -%}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ t }}</title>
+<meta name="description" content="{{ d | escape }}">
+<link rel="canonical" href="{{ canon }}">
+{%- if page.noindex %}<meta name="robots" content="noindex">{% endif %}
+<meta name="author" content="{% if page.autor and site.data.autores[page.autor] %}{{ site.data.autores[page.autor].nombre }}{% else %}IKUBERT{% endif %}">
+<meta name="theme-color" content="#1a1a1a">
+<link rel="icon" type="image/svg+xml" href="{{ '/src/logo-ikubert.svg' | relative_url }}">
+
+<!-- Open Graph / LinkedIn / WhatsApp -->
+<meta property="og:site_name" content="IKUBERT">
+<meta property="og:locale" content="es_CL">
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% elsif page.layout == 'autor' %}profile{% else %}website{% endif %}">
+<meta property="og:title" content="{{ page.og_title | default: t | escape }}">
+<meta property="og:description" content="{{ d | escape }}">
+<meta property="og:url" content="{{ canon }}">
+<meta property="og:image" content="{{ img }}">
+<meta property="og:image:alt" content="{{ page.image_alt | default: 'IKUBERT — Ingeniería y Ciberseguridad Empresarial' | escape }}">
+{%- if page.layout == 'post' %}
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+{%- if page.last_modified_at %}<meta property="article:modified_time" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
+{%- if page.autor and site.data.autores[page.autor].linkedin %}<meta property="article:author" content="{{ site.data.autores[page.autor].linkedin }}">{% endif %}
+{%- endif %}
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/atom+xml" title="Foro IKUBERT" href="{{ '/foro/feed.xml' | relative_url }}">
+
+<!-- Fuentes: una sola fuente variable (antes 7 archivos) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap" rel="stylesheet">
+{%- if page.css_propio %}
+<link rel="stylesheet" href="{{ page.css_propio | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}">
+{%- else %}
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}">
+{%- endif %}
+{%- if page.preload_img %}<link rel="preload" as="image" href="{{ page.preload_img | relative_url }}">{% endif %}
+
+{% include schema.html %}
+
+{%- if site.ga4_id != "" %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga4_id }}"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','{{ site.ga4_id }}');</script>
+{%- endif %}

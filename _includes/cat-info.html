@@ -1,0 +1,2 @@
+{%- comment -%} Busca la categoría del post en _data/categorias.yml → variable "cat" {%- endcomment -%}
+{%- assign cat = site.data.categorias | where: "id", include.id | first -%}

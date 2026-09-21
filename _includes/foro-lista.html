@@ -1,0 +1,77 @@
+{%- comment -%} Lista del foro. include.cat = id de categoría (vacío = todas) {%- endcomment -%}
+{%- if include.cat -%}{%- assign posts = site.posts | where: "categoria", include.cat -%}{%- else -%}{%- assign posts = site.posts -%}{%- endif -%}
+<header class="foro-hero">
+  <div class="foro-hero-inner">
+    <nav class="breadcrumbs" aria-label="Ruta"><a href="{{ '/' | relative_url }}">Inicio</a><span>/</span>{% if include.cat %}<a href="{{ '/foro/' | relative_url }}">Foro</a><span>/</span><span>{{ include.nombre }}</span>{% else %}<span>Foro</span>{% endif %}</nav>
+    <span class="foro-label">// Publicaciones del equipo IKUBERT</span>
+    <h1 class="foro-title">{% if include.cat %}{{ include.nombre }}{% else %}Foro Técnico{% endif %}</h1>
+    <p class="foro-desc">{% if include.cat %}{{ include.desc }}{% else %}Análisis, casos de estudio, avisos y perspectivas sobre ciberseguridad industrial, gestión de riesgos y optimización operativa. Sin relleno. Sin contenido genérico.{% endif %}</p>
+    <nav class="foro-cats" style="margin-top:4px" aria-label="Categorías">
+      <a class="cat-pill {% unless include.cat %}activa{% endunless %}" href="{{ '/foro/' | relative_url }}" style="border-color:#0055ff;color:{% if include.cat %}#0055ff{% else %}#fff{% endif %}">Todos</a>
+      {%- for c in site.data.categorias %}
+      <a class="cat-pill {% case c.color %}{% when 'blue' %}risk{% when 'orange' %}opt{% when 'gray' %}struct{% when 'green' %}cyber{% when 'red' %}alertas{% when 'purple' %}guias{% endcase %}{% if include.cat == c.id %} activa{% endif %}" href="{{ '/foro/categoria/' | append: c.id | append: '/' | relative_url }}">{{ c.nombre }}</a>
+      {%- endfor %}
+    </nav>
+  </div>
+</header>
+
+{%- assign destacado = posts | where: "destacado", true | first -%}
+{%- if destacado and include.cat == nil -%}
+{%- include cat-info.html id=destacado.categoria -%}
+{%- assign a = site.data.autores[destacado.autor] | default: site.data.autores.equipo -%}
+<div class="featured-post container">
+  <span class="featured-label">Artículo destacado</span>
+  <article class="featured-card">
+    <span class="post-cat-tag {% if cat.color != 'blue' %}{{ cat.color }}{% endif %}">{{ cat.etiqueta }}</span>
+    <h2><a href="{{ destacado.url | relative_url }}">{{ destacado.title }}</a></h2>
+    <p class="post-excerpt">{{ destacado.resumen | default: destacado.excerpt | strip_html }}</p>
+    <div class="post-foot">
+      <div class="post-author">
+        <div class="author-avatar">{{ a.iniciales }}</div>
+        <div>
+          <div class="author-name">{{ a.nombre }}</div>
+          <div class="post-date">{% include fecha.html date=destacado.date %}{% if destacado.lectura %} · Lectura {{ destacado.lectura }} min{% endif %}</div>
+        </div>
+      </div>
+      <a href="{{ destacado.url | relative_url }}" class="read-more">Leer artículo completo <span>→</span></a>
+    </div>
+  </article>
+</div>
+{%- endif %}
+
+<section class="posts-section container">
+  <h2 class="posts-grid-title">{% if include.cat %}Artículos en {{ include.nombre }}{% else %}Todos los artículos{% endif %}</h2>
+  <div class="posts-grid">
+  {%- for post in posts -%}
+    {%- if destacado and include.cat == nil and post.url == destacado.url -%}{%- continue -%}{%- endif -%}
+    {% include post-card.html post=post %}
+  {%- endfor -%}
+  </div>
+  {%- if posts.size == 0 %}<p class="empty-note">Aún no hay publicaciones en esta categoría.</p>{% endif %}
+</section>
+
+<div class="container" style="padding-bottom:60px">
+  <div class="foro-cta">
+    <h3>¿Tienes un caso específico que quieras discutir?</h3>
+    <p>Cada empresa es distinta. Si un artículo te generó dudas sobre tu propia operación, conversémoslo directamente. La primera sesión es gratuita y sin compromiso.</p>
+    <a href="{{ '/' | relative_url }}#contacto" class="btn btn-blue">Hablar con el equipo</a>
+    <a href="{% include wa-link.html msg='Hola IKUBERT, leí el foro y tengo una pregunta.' %}" target="_blank" rel="noopener" class="btn btn-outline" data-evento="foro_cta">WhatsApp directo</a>
+  </div>
+</div>
+
+<div class="subscribe-band">
+  <h3>Recibe los próximos análisis</h3>
+  <p style="color:#555">Sin spam. Solo contenido técnico cuando lo haya. Puedes darte de baja cuando quieras.</p>
+  <form class="subscribe-form" id="subscribe-form">
+    <input type="hidden" name="nombre" value="Suscripción al Foro">
+    <input type="hidden" name="mensaje" value="Solicitud de suscripción al foro IKUBERT">
+    <input type="email" name="email" placeholder="tu@empresa.cl" required aria-label="Correo electrónico">
+    <button type="submit" id="sub-btn">Suscribirme</button>
+    <label class="form-consent dark">
+      <input type="checkbox" name="consentimiento" value="Acepta tratamiento de datos (Ley 21.719)" required>
+      <span>Acepto que IKUBERT S.p.A. trate mis datos personales para enviarme estos análisis, conforme a la Ley N° 21.719 de Chile. Derechos: <a href="mailto:{{ site.contacto.email }}">{{ site.contacto.email }}</a></span>
+    </label>
+  </form>
+  <p class="subscribe-note" id="sub-msg" style="display:none;color:#22c55e">✓ Registrado correctamente.</p>
+  <p class="subscribe-note">También puedes seguirnos en <a href="{{ site.contacto.linkedin }}" target="_blank" rel="noopener" style="text-decoration:underline">LinkedIn</a>.</p>
+</div>
