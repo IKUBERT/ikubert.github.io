@@ -470,3 +470,22 @@ a.cat-pill{display:inline-block}
 .steps-box{border:1px solid #eee;border-left:3px solid #0055ff;background:#fafafa;padding:16px 20px;margin:0 0 22px}
 .steps-box ol,.steps-box ul{margin-bottom:0}
 .featured-post.container,.posts-section.container{padding-left:5%;padding-right:5%}
+/* ─── Portada en teléfono: hero completo en pantalla y sin choque con WhatsApp ─── */
+.hero{min-height:calc(100svh - 70px)}
+.wa-float{transition:transform .2s,box-shadow .2s,opacity .25s,visibility .25s}
+.wa-float.oculto{opacity:0;visibility:hidden;transform:scale(.8)}
+@media(max-width:767px){
+  .hero-badge{font-size:.52rem;letter-spacing:1.5px;padding:6px 10px;margin-bottom:18px}
+  .hero-title{margin-bottom:12px}
+  .hero-divider{margin:16px 0}
+  .hero-sub{margin-bottom:24px}
+  .hero-content{padding-bottom:32px}
+  .hero-actions .btn{padding:15px 20px}
+}
+
+/* Equipo: foto y nombre enlazan al perfil (sin botón extra) */
+.team-photo-link{display:block;border-radius:50%;transition:transform .25s}
+.team-photo-link:hover{transform:scale(1.04)}
+.team-photo-link:hover .team-photo{border-color:#0055ff}
+.team-name-link{border-bottom:1px dotted #999;transition:color .2s,border-color .2s}
+.team-name-link:hover{color:#0055ff;border-bottom-color:#0055ff}

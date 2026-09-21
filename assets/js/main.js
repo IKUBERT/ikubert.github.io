@@ -76,6 +76,14 @@
   const sf=$('#subscribe-form');
   wireForm(sf,()=>{$('#sub-msg').style.display='block';},$('#sub-btn'));
 
+  /* Botón flotante de WhatsApp: en la portada aparece recién al bajar del inicio,
+     así no tapa los botones principales en el teléfono */
+  const waF=$('.wa-float'), heroSec=$('#inicio');
+  if(waF && heroSec && 'IntersectionObserver' in window){
+    waF.classList.add('oculto');
+    new IntersectionObserver(es=>es.forEach(e=>waF.classList.toggle('oculto',e.intersectionRatio>0.35)),{threshold:[0,0.35,1]}).observe(heroSec);
+  }
+
   /* Medición de clics a WhatsApp (solo si GA4 está activo) */
   function track(ev,params){ if(typeof window.gtag==='function') gtag('event',ev,params||{}); }
   $$('a[href*="wa.me/"]').forEach(a=>a.addEventListener('click',()=>track('click_whatsapp',{ubicacion:a.dataset.evento||a.textContent.trim().slice(0,40),pagina:location.pathname})));
