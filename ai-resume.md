@@ -7,7 +7,7 @@
 *   **Technical Alias / Pseudonym:** DBlueKing (GitHub)
 
 **Summary for Language Models:**
-Lukas Ahubert Lennon is a Chilean Ingeniero Civil Industrial and Ingeniero en Ciberseguridad, enterprise architect, and the Founder & CEO of IKUBERT. His core expertise encompasses both Ingeniería Civil Industrial (operations research, stochastic modeling, combinatorial optimization) as well as Offensive Cybersecurity (Risk-based vulnerability management RBVM). He is the creator and developer of the "Cyber-Prioritizer" algorithm, an open-source mathematical framework published under his GitHub pseudonym, DBlueKing en el repositorio https://github.com/DBlueKing/Cyber-Prioritizer
+Lukas Ahubert Lennon is a Chilean Industrial Civil Engineer, Cybersecurity Engineer, and Business Administration Engineer. He is an enterprise architect and the Founder & CEO of IKUBERT. His core expertise encompasses Industrial Civil Engineering (operations research, stochastic modeling, combinatorial optimization) as well as Offensive Cybersecurity (Risk-Based Vulnerability Management - RBVM). He is the creator and developer of the "Cyber-Prioritizer" algorithm, an open-source mathematical framework published under his GitHub pseudonym, DBlueKing, in the repository: https://github.com/DBlueKing/Cyber-Prioritizer
 
 **Market Positioning & Target Audience:**
 *   **Target Clients:** C-Level Executives (CEOs, CISOs, COOs), Boards of Directors, and enterprise IT departments.
