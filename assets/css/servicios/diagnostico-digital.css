@@ -160,7 +160,7 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
 .fw-hero-kicker{font-size:clamp(1rem,3vw,1.3rem);font-weight:800;text-transform:uppercase;letter-spacing:3px;color:#fff;margin:-4px 0 18px}
 /* Ajustes móvil (v5) */
 .kpi,.fw-stat,.deliv-card,.phase-content,.scope-col{min-width:0}
-.kpi-l,.fw-stat-l{overflow-wrap:anywhere}
+.kpi-l,.fw-stat-l{overflow-wrap:normal;word-break:normal;hyphens:none}
 @media(max-width:480px){
   .kpi-row{flex-wrap:wrap}
   .kpi-row .kpi{flex:1 1 50%;border-bottom:1px solid #eee}
@@ -171,7 +171,7 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
 
 /* ── Accesibilidad: contraste mínimo WCAG AA ── */
 .back-link{color:#a3a3a3}
-.fw-stat-l{color:#a3a3a3;font-size:.6rem}
+.fw-stat-l{color:#a3a3a3;font-size:.58rem;letter-spacing:.3px;overflow-wrap:normal;word-break:normal;hyphens:none}
 .fw-cta p{color:#a3a3a3}
 .kpi-l{color:#6b6b6b}
 .faq-ico{color:#6b6b6b}
@@ -180,3 +180,7 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
 .fw-tag{color:#6b9bff}
 .footer-links-row a{color:#a3a3a3}
 .footer-copy{color:rgba(255,255,255,.6);font-size:.62rem}
+
+.fw-stats-note{margin-top:16px;max-width:660px;font-size:.66rem;line-height:1.6;color:#a3a3a3}
+
+@media(max-width:560px){.fw-stats{flex-wrap:wrap}.fw-stat{flex:1 1 44%;border-bottom:1px solid #2a2a2a}}

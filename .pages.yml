@@ -9,7 +9,7 @@ content:
     label: Foro (artículos)
     type: collection
     path: _posts
-    filename: "{year}-{month}-{day}-{primary}.md"
+    filename: "{fields.date}-{fields.slug}.md"
     view:
       primary: title
       fields: [title, categoria, date]
@@ -17,6 +17,10 @@ content:
     fields:
       - name: title
         label: Título
+        type: string
+        required: true
+      - name: slug
+        label: Nombre corto para el archivo y la dirección (minúsculas y guiones, sin tildes)
         type: string
         required: true
       - name: titulo_corto

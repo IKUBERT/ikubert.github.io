@@ -424,7 +424,7 @@ a.cat-pill{display:inline-block}
 .service-card,.post-card,.topic-card,.svc-index-card,.stat-tile,.contact-form-wrap{min-width:0}
 .service-card .btn{min-width:0;width:100%;padding-left:16px;padding-right:16px}
 .service-title,.section-title,.article-title,.foro-title,.profile-name{overflow-wrap:break-word;hyphens:auto}
-.kpi-l{overflow-wrap:anywhere}
+.kpi-l{overflow-wrap:normal;word-break:normal;hyphens:none}
 .article-body{overflow-wrap:break-word}
 .article-body pre{white-space:pre-wrap;word-break:break-word}
 .article-body table{display:block;overflow-x:auto}
@@ -516,7 +516,7 @@ a.cat-pill{display:inline-block}
 .topic-cat.gray{color:#a3a3a3}
 .cta-banner small{color:#9a9a9a}
 .team-role,.team-subtitle{color:#6b6b6b}
-.kpi-l{color:#6b6b6b}
+.kpi-l{color:#6b6b6b;letter-spacing:0;font-size:.52rem;overflow-wrap:normal;word-break:normal;hyphens:none}
 .fw-orange{color:#b45309}
 .service-box.orange span{color:#b45309}
 .post-cat-tag.orange{color:#b45309}
