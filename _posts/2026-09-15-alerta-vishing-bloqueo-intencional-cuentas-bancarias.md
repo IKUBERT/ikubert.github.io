@@ -1,7 +1,7 @@
 ---
 title: "Alerta: vishing con bloqueo intencional de cuentas bancarias"
 titulo_corto: "Alerta: te bloquean la cuenta del banco a propósito y luego te llaman"
-date: 2026-09-21 12:00:00 -0300
+date: 2026-09-15 10:00:00 -0300
 autor: equipo
 categoria: alertas
 lectura: 3

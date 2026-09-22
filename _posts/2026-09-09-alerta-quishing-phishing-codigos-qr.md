@@ -1,7 +1,7 @@
 ---
 title: "Alerta: aumentan los ataques de quishing (phishing mediante códigos QR)"
 titulo_corto: "Quishing: el código QR falso que roba tus credenciales"
-date: 2026-09-21 11:00:00 -0300
+date: 2026-09-09 10:00:00 -0300
 autor: equipo
 categoria: alertas
 lectura: 3

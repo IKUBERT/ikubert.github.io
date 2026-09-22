@@ -1,7 +1,7 @@
 ---
 title: "OSINT corporativo: lo que un atacante averigua de tu empresa en 10 minutos (sin tocar tus servidores)"
 titulo_corto: "OSINT: lo que un atacante averigua de tu empresa en 10 minutos"
-date: 2026-05-16 09:00:00 -0400
+date: 2026-05-18 10:00:00 -0400
 autor: equipo
 categoria: hacking-etico
 lectura: 8

@@ -1,7 +1,7 @@
 ---
 title: "Cyber-Prioritizer: priorización estocástica de vulnerabilidades con Cadenas de Markov (open source)"
 titulo_corto: "Cyber-Prioritizer: qué parchear primero cuando el backlog de críticas supera tu capacidad"
-date: 2026-09-21 09:00:00 -0300
+date: 2026-09-02 10:00:00 -0400
 autor: lukas
 categoria: iku-risk
 destacado: true
