@@ -487,5 +487,5 @@ a.cat-pill{display:inline-block}
 .team-photo-link{display:block;border-radius:50%;transition:transform .25s}
 .team-photo-link:hover{transform:scale(1.04)}
 .team-photo-link:hover .team-photo{border-color:#0055ff}
-.team-name-link{border-bottom:1px dotted #999;transition:color .2s,border-color .2s}
-.team-name-link:hover{color:#0055ff;border-bottom-color:#0055ff}
+.team-name-link{transition:color .2s}
+.team-name-link:hover{color:#0055ff}

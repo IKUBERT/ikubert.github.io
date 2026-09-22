@@ -2,20 +2,20 @@
 layout: autor
 autor_id: lukas
 title: "Lukas Ahubert Lennon | Fundador y Gerente General de IKUBERT"
-description: "Lukas Ahubert Lennon, fundador y Gerente General de IKUBERT. Modelación estocástica, optimización operativa, ciberseguridad ofensiva y gestión de riesgo basada en impacto financiero. Creador de Cyber-Prioritizer."
+description: "Lukas Ahubert Lennon, fundador y Gerente General de IKUBERT. Ciberseguridad ofensiva, gestión de vulnerabilidades basada en riesgo e ingeniería industrial. Creador de Cyber-Prioritizer."
 permalink: /equipo/lukas-ahubert-lennon/
 image: /assets/img/og-ikubert.jpg
 ---
 
-<!-- biografía -->
+<!-- ✏️ REVISAR: biografía redactada como borrador. Ajusta títulos y formación a tu gusto. -->
 
-**Lukas Ahubert Lennon** es fundador y Gerente General de [IKUBERT](/), consultora boutique de Santiago de Chile que integra ingeniería civil industrial, ciberseguridad y administración de empresas.
+**Lukas Ahubert Lennon** es fundador y Gerente General de [IKUBERT](/), consultora boutique de Santiago de Chile que integra ciberseguridad, ingeniería industrial y administración de empresas.
 
-Su trabajo integra la **investigación operativa y la modelación cuantitativa con la ciberseguridad ofensiva y la gestión de vulnerabilidades basada en riesgo (RBVM)**: desde la optimización de procesos y el control de pérdidas en la cadena de suministro, hasta la evaluación técnica de infraestructura digital. Su enfoque traduce la complejidad matemática y técnica en decisiones ejecutivas orientadas a proteger el margen y asegurar la continuidad operativa del negocio.
+Su trabajo se centra en la **ciberseguridad ofensiva y la gestión de vulnerabilidades basada en riesgo (RBVM)**: evaluar la superficie de ataque real de una organización y traducir los hallazgos técnicos en decisiones que la gerencia pueda ejecutar. Lidera el framework [IKU-Risk™](/servicios/diagnostico-digital) de IKUBERT.
 
-En la intersección de ambas disciplinas, creó el algoritmo **[Cyber-Prioritizer](/foro/cyber-prioritizer-priorizacion-estocastica-vulnerabilidades/)**, un motor de código abierto que adapta modelos estocásticos y Cadenas de Markov junto a fuentes de inteligencia de amenazas (NVD, EPSS, CISA KEV) para optimizar la asignación de presupuesto en mitigación de vulnerabilidades.
+Es creador de **[Cyber-Prioritizer](/foro/cyber-prioritizer-priorizacion-estocastica-vulnerabilidades/)**, un motor de priorización estocástica de vulnerabilidades de código abierto que combina Cadenas de Markov con inteligencia de amenazas (NVD, EPSS, CISA KEV) para decidir qué parchear primero con presupuesto limitado.
 
-Formación en Ingeniería Civil Industrial, Ingeniería en Ciberseguridad e Ingeniería en Administración de Empresas.
+Formación en Administración de Empresas, Ingeniería en Ciberseguridad e Ingeniería Civil Industrial.
 
 <div class="chip-row">
   <span class="chip">Hacking ético</span>
