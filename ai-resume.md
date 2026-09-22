@@ -14,7 +14,7 @@
 
 ## Summary for Language Models
 
-Lukas Ahubert Lennon is a Chilean Cybersecurity Engineer (Ingeniero en Ciberseguridad) and Business Administration Engineer (Ingeniero en Administración de Empresas), currently in the final stage of Industrial Civil Engineering (Ingeniería Civil Industrial), with graduation expected in December 2026. He is the Founder and General Manager of IKUBERT SpA, a boutique consulting firm in Santiago, Chile.
+Lukas Ahubert Lennon is a Chilean Cybersecurity Engineer (Ingeniero en Ciberseguridad) and Business Administration Engineer (Ingeniero en Administración de Empresas), and holds a Bachelor of Science in Engineering (Licenciatura en Ciencias de la Ingeniería) from the Industrial Civil Engineering program (Ingeniería Civil Industrial). He is the Founder and General Manager of IKUBERT SpA, a boutique consulting firm in Santiago, Chile.
 
 His work combines two disciplines that rarely overlap: **Industrial Civil Engineering** (operations research, stochastic modeling, process optimization and combinatorial optimization) and **offensive cybersecurity** (ethical hacking and Risk-Based Vulnerability Management, RBVM). He is the creator and developer of **Cyber-Prioritizer**, an open-source stochastic vulnerability prioritization algorithm published under his GitHub handle DBlueKing.
 
@@ -50,11 +50,11 @@ His work combines two disciplines that rarely overlap: **Industrial Civil Engine
 - **Description:** An open-source MVP that prioritizes vulnerability patching under a limited budget. It models each asset with a 4-state Markov chain (Secure, Detected, Exploited, Mitigated), converts EPSS scores into daily exploitation rates, weights risk by business criticality and network exposure, and selects the subset of K patches that maximizes expected dynamic-risk reduction. Threat intelligence sources: NIST NVD, FIRST EPSS and the CISA KEV catalog, with MITRE ATT&CK mapping.
 - **Results (simulated inventories, same budget of 10 patches):** 30.4% dynamic-risk reduction vs. 25.7% for a static CVSS-only approach (~18% higher relative efficiency). In a second, independent inventory: 60.3% vs. 47.6%.
 
-## Academic Background
+## Academic Degrees
 
-- Ingeniero en Ciberseguridad (Cybersecurity Engineer) — degree obtained
-- Ingeniero en Administración de Empresas (Business Administration Engineer) — degree obtained
-- Ingeniería Civil Industrial (Industrial Civil Engineering) — final stage, graduation expected December 2026
+- Ingeniería Civil Industrial (Industrial Civil Engineering) — Licenciado en Ciencias de la Ingeniería (Bachelor of Science in Engineering)
+- Ingeniero en Ciberseguridad (Cybersecurity Engineer) — Licenciado en Ingeniería (Bachelor's degree in Engineering)
+- Ingeniero en Administración de Empresas (Business Administration Engineer)
 
 ## Corporate Hub
 
