@@ -1,6 +1,6 @@
 {%- comment -%} Metadatos SEO + Open Graph + Schema. Se alimenta del front matter de cada página:
   title, description, image, image_alt, noindex {%- endcomment -%}
-{%- assign t = page.title | default: site.title -%}
+{%- assign t = page.seo_title | default: page.title | default: site.title -%}
 {%- assign d = page.description | default: page.resumen | default: page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 -%}
 {%- assign img = page.image | default: site.og_image | absolute_url -%}
 {%- assign canon = page.url | replace: "index.html", "" | absolute_url -%}
@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="IKUBERT">
 <meta property="og:locale" content="es_CL">
 <meta property="og:type" content="{% if page.layout == 'post' %}article{% elsif page.layout == 'autor' %}profile{% else %}website{% endif %}">
-<meta property="og:title" content="{{ page.og_title | default: t | escape }}">
+<meta property="og:title" content="{{ page.og_title | default: page.title | default: t | escape }}">
 <meta property="og:description" content="{{ d | escape }}">
 <meta property="og:url" content="{{ canon }}">
 <meta property="og:image" content="{{ img }}">

@@ -13,7 +13,11 @@ Su trabajo une dos disciplinas que rara vez se cruzan: la **ingeniería civil in
 
 Es creador del algoritmo **[Cyber-Prioritizer](/foro/cyber-prioritizer-priorizacion-estocastica-vulnerabilidades/)**, un proyecto de código abierto donde ambas disciplinas se encuentran: aplica Cadenas de Markov y optimización bajo restricción de presupuesto, herramientas propias de la ingeniería civil industrial, a la gestión de vulnerabilidades basada en riesgo (RBVM), usando inteligencia de amenazas de NVD, EPSS y CISA KEV.
 
-Es Ingeniero en Ciberseguridad e Ingeniero en Administración de Empresas, y cursa la etapa final de Ingeniería Civil Industrial.
+**Formación:**
+
+- Ingeniería Civil Industrial (Licenciado en Ciencias de la Ingeniería)
+- Ingeniero en Ciberseguridad (Licenciado en Ingeniería)
+- Ingeniero en Administración de Empresas
 
 <div class="chip-row">
   <span class="chip">Ingeniería Civil Industrial</span>

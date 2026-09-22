@@ -1,5 +1,6 @@
 ---
 title: "Ajustes esenciales de seguridad en tu celular: eSIM, pantalla de bloqueo y más"
+seo_title: "Ajustes de seguridad del celular: eSIM, bloqueo y más"
 titulo_corto: "Ajustes esenciales de seguridad en tu celular (y por qué pasarte a eSIM)"
 date: 2026-08-12 10:00:00 -0400
 autor: equipo

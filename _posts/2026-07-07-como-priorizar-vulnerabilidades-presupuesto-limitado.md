@@ -1,5 +1,6 @@
 ---
 title: "Cómo priorizar vulnerabilidades cuando el presupuesto de remediación es limitado"
+seo_title: "Cómo priorizar vulnerabilidades con presupuesto limitado"
 titulo_corto: "Cómo priorizar vulnerabilidades con presupuesto limitado"
 date: 2026-07-07 10:00:00 -0400
 autor: equipo

@@ -1,5 +1,6 @@
 ---
 title: "Caso real: cómo un pedido a domicilio expuso la dirección de un cliente, y cómo evitar el doxeo"
+seo_title: "Caso real: un pedido a domicilio y el doxeo de un cliente"
 titulo_corto: "Caso real: un pedido de gas, dos desconocidos y el nombre correcto en la conserjería"
 date: 2026-09-19 10:00:00 -0300
 autor: equipo

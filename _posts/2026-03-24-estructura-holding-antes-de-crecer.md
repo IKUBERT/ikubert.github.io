@@ -1,5 +1,6 @@
 ---
 title: "Por qué conviene evaluar una estructura holding antes de crecer"
+seo_title: "Por qué evaluar una estructura holding antes de crecer"
 titulo_corto: "Estructura holding: por qué evaluarla antes de crecer"
 date: 2026-03-24 10:00:00 -0300
 autor: equipo

@@ -7,7 +7,7 @@
     <h1 class="foro-title">{% if include.cat %}{{ include.nombre }}{% else %}Foro Técnico{% endif %}</h1>
     <p class="foro-desc">{% if include.cat %}{{ include.desc }}{% else %}Análisis, casos de estudio, avisos y perspectivas sobre ciberseguridad industrial, gestión de riesgos y optimización operativa. Sin relleno. Sin contenido genérico.{% endif %}</p>
     <nav class="foro-cats" style="margin-top:4px" aria-label="Categorías">
-      <a class="cat-pill {% unless include.cat %}activa{% endunless %}" href="{{ '/foro/' | relative_url }}" style="border-color:#0055ff;color:{% if include.cat %}#0055ff{% else %}#fff{% endif %}">Todos</a>
+      <a class="cat-pill {% unless include.cat %}activa{% endunless %}" href="{{ '/foro/' | relative_url }}" style="border-color:#0055ff;color:{% if include.cat %}#6b9bff{% else %}#fff{% endif %}">Todos</a>
       {%- for c in site.data.categorias %}
       <a class="cat-pill {% case c.color %}{% when 'blue' %}risk{% when 'orange' %}opt{% when 'gray' %}struct{% when 'green' %}cyber{% when 'red' %}alertas{% when 'purple' %}guias{% endcase %}{% if include.cat == c.id %} activa{% endif %}" href="{{ '/foro/categoria/' | append: c.id | append: '/' | relative_url }}">{{ c.nombre }}</a>
       {%- endfor %}
@@ -61,17 +61,18 @@
 
 <div class="subscribe-band">
   <h3>Recibe los próximos análisis</h3>
-  <p style="color:#555">Sin spam. Solo contenido técnico cuando lo haya. Puedes darte de baja cuando quieras.</p>
+  <p>Sin spam. Solo contenido técnico cuando lo haya. Puedes darte de baja cuando quieras.</p>
   <form class="subscribe-form" id="subscribe-form">
     <input type="hidden" name="nombre" value="Suscripción al Foro">
     <input type="hidden" name="mensaje" value="Solicitud de suscripción al foro IKUBERT">
     <input type="email" name="email" placeholder="tu@empresa.cl" required aria-label="Correo electrónico">
+    <div class="hp-field" aria-hidden="true"><label>No completar este campo <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
     <button type="submit" id="sub-btn">Suscribirme</button>
     <label class="form-consent dark">
       <input type="checkbox" name="consentimiento" value="Acepta tratamiento de datos (Ley 21.719)" required>
-      <span>Acepto que IKUBERT S.p.A. trate mis datos personales para enviarme estos análisis, conforme a la Ley N° 21.719 de Chile. Derechos: <a href="mailto:{{ site.contacto.email }}">{{ site.contacto.email }}</a></span>
+      <span>Acepto que IKUBERT SpA trate mis datos personales para enviarme estos análisis, según su <a href="{{ '/privacidad/' | relative_url }}">Política de Privacidad</a> y la Ley N° 21.719 de Chile. Puedo darme de baja cuando quiera.</span>
     </label>
   </form>
-  <p class="subscribe-note" id="sub-msg" style="display:none;color:#22c55e">✓ Registrado correctamente.</p>
+  <p class="subscribe-note" id="sub-msg" style="display:none;color:#4ade80">✓ Registrado correctamente.</p>
   <p class="subscribe-note">También puedes seguirnos en <a href="{{ site.contacto.linkedin }}" target="_blank" rel="noopener" style="text-decoration:underline">LinkedIn</a>.</p>
 </div>

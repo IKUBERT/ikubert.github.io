@@ -67,7 +67,7 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
 .phase:first-child{border-top:1px solid #eee}
 .phase:hover{background:#f9f9f9;border-color:#ccc}
 .phase-n{font-size:1.6rem;font-weight:900;color:#1a1a1a;line-height:1;flex-shrink:0;min-width:36px;padding-top:4px}
-.phase-content h4{font-size:.88rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.phase-content h3{font-size:.88rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
 .phase-content p{font-size:.92rem;color:#555;line-height:1.65}
 .phase-tag{display:inline-block;margin-top:10px;font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#555;background:#f4f4f4;border:1px solid #ddd;padding:3px 10px;border-radius:1px}
 
@@ -76,7 +76,7 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
 .br-item{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid #eee}
 .br-item:last-child{border-bottom:none}
 .br-check{width:20px;height:20px;flex-shrink:0;background:#1a1a1a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:900;margin-top:2px}
-.br-item h5{font-size:.88rem;font-weight:800;margin-bottom:4px;color:#1a1a1a}
+.br-item h3{font-size:.88rem;font-weight:800;margin-bottom:4px;color:#1a1a1a}
 .br-item p{font-size:.87rem;color:#666;line-height:1.6}
 
 /* DELIVERABLES */
@@ -84,7 +84,7 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
 .deliv-card{padding:24px;border:1px solid #eee;border-left:3px solid #1a1a1a;transition:box-shadow .2s,border-color .2s}
 .deliv-card:hover{box-shadow:0 8px 24px rgba(0,0,0,.07);border-left-color:#444}
 .deliv-icon{font-size:1.5rem;margin-bottom:12px}
-.deliv-card h4{font-size:.88rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.deliv-card h3{font-size:.88rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
 .deliv-card p{font-size:.87rem;color:#666;line-height:1.65}
 
 /* MARCOS */
@@ -119,9 +119,9 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
 .compare-col{padding:28px;border:1px solid #eee;border-radius:2px;border-top:3px solid #eee}
 .compare-col.before{border-top-color:#dc2626}
 .compare-col.after{border-top-color:#16a34a}
-.compare-col h4{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:2px;margin-bottom:16px}
-.compare-col.before h4{color:#dc2626}
-.compare-col.after h4{color:#16a34a}
+.compare-col h3{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:2px;margin-bottom:16px}
+.compare-col.before h3{color:#dc2626}
+.compare-col.after h3{color:#16a34a}
 .compare-item{display:flex;gap:10px;font-size:.88rem;color:#555;padding:8px 0;border-bottom:1px solid #f4f4f4;line-height:1.45}
 .compare-item:last-child{border-bottom:none}
 .ci-icon{flex-shrink:0;font-weight:900;margin-top:1px}
@@ -175,3 +175,15 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
   .scope-grid{grid-template-columns:1fr!important}
   .fw-cta a{display:block;max-width:100%}
 }
+
+/* ── Accesibilidad: contraste mínimo WCAG AA ── */
+.back-link{color:#a3a3a3}
+.fw-stat-l{color:#a3a3a3;font-size:.6rem}
+.fw-cta p{color:#a3a3a3}
+.kpi-l{color:#6b6b6b}
+.faq-ico{color:#6b6b6b}
+.btn-wa{background:#15803d}
+.btn-wa:hover{background:#166534}
+.compare-col.after h3{color:#15803d}
+.footer-links-row a{color:#a3a3a3}
+.footer-copy{color:rgba(255,255,255,.6);font-size:.62rem}

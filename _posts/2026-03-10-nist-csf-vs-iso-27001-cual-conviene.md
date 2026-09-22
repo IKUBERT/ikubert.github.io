@@ -1,5 +1,6 @@
 ---
 title: "NIST CSF vs ISO 27001: cuál marco de ciberseguridad conviene según el tamaño y el sector de tu empresa"
+seo_title: "NIST CSF vs ISO 27001: cuál conviene a tu empresa"
 titulo_corto: "NIST CSF vs ISO 27001: ¿cuál conviene a tu empresa?"
 date: 2026-03-10 10:00:00 -0300
 autor: equipo

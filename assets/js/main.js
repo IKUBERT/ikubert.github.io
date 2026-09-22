@@ -64,9 +64,16 @@
   /* Formularios → Google Apps Script (mismo endpoint de siempre) */
   function wireForm(form,onOk,btn,btnText){
     if(!form||!window.IKU)return;
+    const t0=Date.now();
     form.addEventListener('submit',e=>{
-      e.preventDefault(); if(btn){btn.disabled=true;btn.textContent='PROCESANDO...';}
-      fetch(IKU.form,{method:'POST',body:new FormData(form)})
+      e.preventDefault();
+      const fd=new FormData(form), trampa=fd.get('website');
+      fd.delete('website');
+      /* Anti-spam: los bots llenan el campo oculto o envían en menos de 3 segundos.
+         Se les muestra "enviado" pero no se manda nada a la planilla. */
+      if(trampa || Date.now()-t0<3000){onOk();form.reset();return;}
+      if(btn){btn.disabled=true;btn.textContent='PROCESANDO...';}
+      fetch(IKU.form,{method:'POST',body:fd})
         .then(()=>{onOk();form.reset();track('formulario_enviado',{formulario:form.id});})
         .catch(()=>{if(btn){btn.disabled=false;btn.textContent='ERROR - INTÉNTALO DE NUEVO';}});
     });

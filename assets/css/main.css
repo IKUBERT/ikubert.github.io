@@ -150,7 +150,7 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
 .method-step{display:flex;gap:20px;padding:28px 0;border-bottom:1px solid #eee}
 .method-step:first-child{border-top:1px solid #eee}
 .step-n{font-size:1.8rem;font-weight:900;color:#0055ff;line-height:1;flex-shrink:0;min-width:36px}
-.step-content h4{font-size:.9rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.step-content h3{font-size:.9rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
 .step-content p{font-size:.92rem;color:#555;line-height:1.65}
 .step-tag{display:inline-block;margin-top:10px;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#0055ff;background:#f0f4ff;border:1px solid #c7d6ff;padding:3px 10px;border-radius:1px}
 .quote-block{background:#f9f9f9;border-left:3px solid #0055ff;padding:24px 28px;margin:40px 0;font-style:italic;font-size:1.05rem;color:#444;line-height:1.6}
@@ -351,7 +351,7 @@ a.cat-pill{display:inline-block}
 .author-box{max-width:780px;margin:0 auto 56px;padding:0 5%}
 .author-box-inner{display:flex;gap:18px;align-items:flex-start;border:1px solid #eee;padding:24px;background:#fafafa}
 .author-box img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0}
-.author-box h4{font-size:.95rem;font-weight:800}
+.author-box .author-name{font-size:.95rem;font-weight:800}
 .author-box p{font-size:.86rem;color:#555;line-height:1.6;margin-top:4px}
 .author-box a.more{font-size:.72rem;font-weight:700;color:#0055ff;text-transform:uppercase;letter-spacing:1px;display:inline-block;margin-top:8px}
 .related{background:#f9f9f9;border-top:1px solid #eee;padding:56px 0}
@@ -489,3 +489,42 @@ a.cat-pill{display:inline-block}
 .team-photo-link:hover .team-photo{border-color:#0055ff}
 .team-name-link{transition:color .2s}
 .team-name-link:hover{color:#0055ff}
+
+/* Anti-spam: campo trampa invisible para personas */
+.hp-field{position:absolute!important;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+.footer-copy .footer-priv{color:inherit;text-decoration:underline;text-underline-offset:3px}
+
+/* ── Accesibilidad: contraste mínimo WCAG AA (4,5:1) ─────────────
+   Los colores de marca se mantienen en bordes, barras y fondos;
+   solo se ajusta el color de los textos. */
+.breadcrumbs,.breadcrumbs a,.breadcrumbs span{color:#a3a3a3}
+.footer-links-row a{color:#a3a3a3}
+.footer-copy{color:rgba(255,255,255,.6);font-size:.62rem}
+.byline-meta,.byline-meta time{color:#a8a8a8}
+.foro-desc{color:#b0b0b0}
+.foro-label{color:#6b9bff}
+.cat-pill.risk{color:#6b9bff}
+.cat-pill.guias{color:#a78bfa}
+.cat-pill.activa{background:#0055ff;border-color:#0055ff;color:#fff!important}
+.subscribe-band p{color:#a3a3a3}
+.subscribe-note,.subscribe-note a{color:#a3a3a3}
+.form-consent.dark{color:#a3a3a3}
+.topic-card p{color:#a3a3a3}
+.topic-date{color:#8f8f8f}
+.topic-cat,.topic-join{color:#6b9bff}
+.topic-cat.orange{color:#ff9800}
+.topic-cat.gray{color:#a3a3a3}
+.cta-banner small{color:#9a9a9a}
+.team-role,.team-subtitle{color:#6b6b6b}
+.kpi-l{color:#6b6b6b}
+.fw-orange{color:#b45309}
+.service-box.orange span{color:#b45309}
+.post-cat-tag.orange{color:#b45309}
+.post-cat-tag.green{color:#15803d}
+.post-cat-tag.red{color:#b91c1c}
+.post-date{color:#6b6b6b}
+.meta-label{color:#6b6b6b}
+.form-label{color:#6b6b6b}
+.article-body figcaption,figure figcaption{color:#666}
+.btn-green,.btn-wa{background:#15803d;border-color:#15803d}
+.btn-green:hover,.btn-wa:hover{background:#166534;border-color:#166534}

@@ -1,5 +1,6 @@
 ---
 title: "Alerta de seguridad: el fraude de red (MMI) que secuestra tus cuentas en segundos"
+seo_title: "Fraude MMI: el desvío de llamadas que secuestra cuentas"
 titulo_corto: "Alerta: el fraude MMI que desvía tus llamadas y secuestra tu WhatsApp"
 date: 2026-05-16 10:00:00 -0400
 autor: equipo

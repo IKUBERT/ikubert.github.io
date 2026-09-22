@@ -43,7 +43,7 @@ layout: base
   <div class="author-box-inner">
     <img src="{{ a.foto | relative_url }}" alt="{{ a.nombre }}" loading="lazy" width="64" height="64">
     <div>
-      <h4>{{ a.nombre }}</h4>
+      <p class="author-name">{{ a.nombre }}</p>
       <p>{{ a.cargo }}. Especialista en ciberseguridad ofensiva, gestión de riesgo e ingeniería civil industrial aplicada.</p>
       <a class="more" href="{{ a.url | relative_url }}">Ver perfil y publicaciones →</a>
     </div>

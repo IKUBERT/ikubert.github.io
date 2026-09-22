@@ -1,5 +1,6 @@
 ---
 title: "Cómo medir el ROI de un proyecto de optimización operativa desde los primeros 30 días"
+seo_title: "Cómo medir el ROI de la optimización operativa"
 titulo_corto: "Cómo medir el ROI de una mejora operativa desde el día 1"
 date: 2026-06-09 10:00:00 -0400
 autor: equipo

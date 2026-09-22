@@ -1,5 +1,6 @@
 ---
 title: "Los 5 procesos donde casi siempre hay fugas de rentabilidad en una PYME"
+seo_title: "5 procesos donde una PYME pierde rentabilidad"
 titulo_corto: "5 procesos donde una PYME pierde rentabilidad sin verlo"
 date: 2026-04-28 10:00:00 -0400
 autor: equipo

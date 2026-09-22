@@ -1,5 +1,6 @@
 ---
 title: "3 ajustes de WhatsApp para proteger tu cuenta del secuestro y las estafas"
+seo_title: "3 ajustes de WhatsApp para evitar el secuestro de tu cuenta"
 titulo_corto: "3 ajustes de WhatsApp que evitan el secuestro de tu cuenta"
 date: 2026-07-29 10:00:00 -0400
 autor: equipo

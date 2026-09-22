@@ -22,6 +22,9 @@ content:
       - name: titulo_corto
         label: Título corto (opcional, para tarjetas de la portada)
         type: string
+      - name: seo_title
+        label: Título para Google (opcional, máximo 60 caracteres)
+        type: string
       - name: date
         label: Fecha de publicación
         type: date

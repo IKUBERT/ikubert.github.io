@@ -54,20 +54,20 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
 .phase:first-child{border-top:1px solid #eee}
 .phase:hover{background:#fff8ee;border-color:#ffd494}
 .phase-n{font-size:1.6rem;font-weight:900;color:#ff9800;line-height:1;flex-shrink:0;min-width:36px;padding-top:4px}
-.phase-content h4{font-size:.88rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.phase-content h3{font-size:.88rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
 .phase-content p{font-size:.92rem;color:#555;line-height:1.65}
 .phase-tag{display:inline-block;margin-top:10px;font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#ff9800;background:#fff8ee;border:1px solid #ffd494;padding:3px 10px;border-radius:1px}
 .br-rows{display:flex;flex-direction:column;gap:0}
 .br-item{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid #eee}
 .br-item:last-child{border-bottom:none}
 .br-check{width:20px;height:20px;flex-shrink:0;background:#ff9800;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:900;margin-top:2px}
-.br-item h5{font-size:.88rem;font-weight:800;margin-bottom:4px;color:#1a1a1a}
+.br-item h3{font-size:.88rem;font-weight:800;margin-bottom:4px;color:#1a1a1a}
 .br-item p{font-size:.87rem;color:#666;line-height:1.6}
 .deliv-grid{display:grid;grid-template-columns:1fr;gap:16px;margin:28px 0}
 .deliv-card{padding:24px;border:1px solid #eee;border-left:3px solid #ff9800;transition:box-shadow .2s}
 .deliv-card:hover{box-shadow:0 8px 24px rgba(0,0,0,.06)}
 .deliv-icon{font-size:1.5rem;margin-bottom:12px}
-.deliv-card h4{font-size:.88rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.deliv-card h3{font-size:.88rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
 .deliv-card p{font-size:.87rem;color:#666;line-height:1.65}
 .marcos-grid{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}
 .marco-pill{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:8px 16px;border:1.5px solid #ff9800;color:#ff9800;border-radius:2px;background:#fff8ee}
@@ -125,3 +125,20 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
   .scope-grid{grid-template-columns:1fr!important}
   .fw-cta a{display:block;max-width:100%}
 }
+
+/* ── Accesibilidad: contraste mínimo WCAG AA ── */
+.back-link{color:#a3a3a3}
+.fw-stat-l{color:#a3a3a3;font-size:.6rem}
+.fw-cta p{color:#a3a3a3}
+.kpi-l{color:#6b6b6b}
+.faq-ico{color:#6b6b6b}
+.btn-wa{background:#15803d}
+.btn-wa:hover{background:#166534}
+
+.nav-links-desktop a:hover,.nav-links-desktop a.active,.nav-drawer a:hover{color:#b45309}
+.nav-cta-desktop{color:#1a1a1a!important}
+.drawer-cta{color:#1a1a1a!important}
+.btn-orange{color:#1a1a1a}
+.label-tag,.phase-n,.phase-tag,.marco-pill,.kpi-n{color:#b45309}
+.footer-links-row a{color:#a3a3a3}
+.footer-copy{color:rgba(255,255,255,.6);font-size:.62rem}

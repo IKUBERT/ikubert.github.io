@@ -1,5 +1,6 @@
 ---
 title: "Las 3 vulnerabilidades que más se repiten en una evaluación de infraestructura"
+seo_title: "Las 3 vulnerabilidades más comunes en infraestructura"
 titulo_corto: "3 vulnerabilidades que se repiten en casi toda infraestructura"
 date: 2026-04-14 10:00:00 -0400
 autor: equipo

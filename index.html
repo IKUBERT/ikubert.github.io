@@ -1,6 +1,7 @@
 ---
 layout: base
 title: "IKUBERT | Consultora de Ciberseguridad e Ingeniería Civil Industrial en Santiago, Chile"
+seo_title: "IKUBERT | Ciberseguridad e Ingeniería Civil Industrial"
 description: "Consultora boutique de Ingeniería Civil Industrial y Ciberseguridad en Santiago de Chile. Protegemos tu operación, blindamos tu empresa y eliminamos pérdidas ocultas."
 preload_img: /src/oficina-home-ikubert.webp
 ---
@@ -54,7 +55,7 @@ preload_img: /src/oficina-home-ikubert.webp
             <span class="pillar-ico">+</span>
           </div>
           <div class="pillar-content">
-            <p>Evaluamos tu infraestructura con herramientas y conocimiento. Encontramos las vulnerabilidades antes de que alguien más las explote y asi mantenemos la continuidad tu negocio.</p>
+            <p>Evaluamos tu infraestructura con herramientas y conocimiento. Encontramos las vulnerabilidades antes de que alguien más las explote y así mantenemos la continuidad de tu negocio.</p>
           </div>
         </div>
 
@@ -87,7 +88,7 @@ preload_img: /src/oficina-home-ikubert.webp
             <span class="pillar-ico">+</span>
           </div>
           <div class="pillar-content">
-            <p>Consolidarnos como la consultora boutique referente en Chile para la alta dirección</p>
+            <p>Consolidarnos como la consultora boutique referente en Chile para la alta dirección.</p>
           </div>
         </div>
       </div>
@@ -167,7 +168,7 @@ preload_img: /src/oficina-home-ikubert.webp
     </div>
     <a href="{{ '/servicios/' | relative_url }}" class="svc-more-link">Ver todos los servicios →</a>
     <div style="text-align:center;margin-top:40px;padding-top:32px;border-top:1px solid #eee">
-      <p style="font-size:.75rem;color:#aaa;text-transform:uppercase;letter-spacing:2px;font-weight:700">
+      <p style="font-size:.75rem;color:#6b6b6b;text-transform:uppercase;letter-spacing:2px;font-weight:700">
         Enfoque interdisciplinario: <span style="color:#666">gestión, ingeniería y ciberseguridad</span> aplicadas a empresas de alto desempeño.
       </p>
     </div>
@@ -184,7 +185,7 @@ preload_img: /src/oficina-home-ikubert.webp
       <div class="method-step">
         <span class="step-n">01</span>
         <div class="step-content">
-          <h4>Sesión de diagnóstico - 30 minutos</h4>
+          <h3>Sesión de diagnóstico - 30 minutos</h3>
           <p>Sin presentaciones corporativas, sin venta agresiva. Te escuchamos, identificamos los 3 principales riesgos o pérdidas de tu empresa, y te decimos con claridad si podemos ayudarte y cómo.</p>
           <span class="step-tag">Gratis · Sin compromiso</span>
         </div>
@@ -192,7 +193,7 @@ preload_img: /src/oficina-home-ikubert.webp
       <div class="method-step">
         <span class="step-n">02</span>
         <div class="step-content">
-          <h4>Evaluación técnica profunda</h4>
+          <h3>Evaluación técnica profunda</h3>
           <p>Desplegamos el framework correspondiente en campo o remoto, sin interrumpir tu operación. El proceso es transparente: recibes actualizaciones a lo largo del trabajo.</p>
           <span class="step-tag">10 a 30 días según el servicio y complejidad empresarial</span>
         </div>
@@ -200,7 +201,7 @@ preload_img: /src/oficina-home-ikubert.webp
       <div class="method-step">
         <span class="step-n">03</span>
         <div class="step-content">
-          <h4>Informe de criticidad priorizado</h4>
+          <h3>Informe de criticidad priorizado</h3>
           <p>No un documento genérico de 300 páginas. Un informe ejecutivo con hallazgos ordenados por impacto financiero y un plan de acción que tu gerencia puede ejecutar de inmediato.</p>
           <span class="step-tag">Entregable ejecutivo</span>
         </div>
@@ -208,7 +209,7 @@ preload_img: /src/oficina-home-ikubert.webp
       <div class="method-step">
         <span class="step-n">04</span>
         <div class="step-content">
-          <h4>Implementación y seguimiento</h4>
+          <h3>Implementación y seguimiento</h3>
           <p>Acompañamos la ejecución, medimos los resultados y ajustamos según cómo evoluciona la empresa. No desaparecemos después del informe.</p>
           <span class="step-tag">Seguimiento opcional</span>
         </div>
@@ -223,9 +224,9 @@ preload_img: /src/oficina-home-ikubert.webp
 <!-- FORO PREVIEW (se llena solo con los últimos artículos del foro) -->
 <section id="foro" class="section-dark">
   <div class="container">
-    <span class="label-tag" style="color:#444">// Últimas publicaciones</span>
+    <span class="label-tag" style="color:#8f8f8f">// Últimas publicaciones</span>
     <h2 class="section-title" style="color:#fff">Noticias y análisis <span>técnico.</span></h2>
-    <p class="section-lead" style="color:#555;max-width:600px">Artículos, casos de estudio y análisis sobre ciberseguridad industrial, gestión de riesgos y optimización operativa. Publicado por el equipo IKUBERT.</p>
+    <p class="section-lead" style="color:#b0b0b0;max-width:600px">Artículos, casos de estudio y análisis sobre ciberseguridad industrial, gestión de riesgos y optimización operativa. Publicado por el equipo IKUBERT.</p>
 
     <div class="foro-grid">
     {%- assign destacados = site.posts | where: "destacado", true -%}
@@ -320,9 +321,10 @@ preload_img: /src/oficina-home-ikubert.webp
             <label class="form-label" for="mensaje">¿En qué podemos ayudarte?</label>
             <textarea class="form-input" id="mensaje" name="mensaje" placeholder="Cuéntanos brevemente tu desafío o el riesgo que quieres abordar..." required></textarea>
           </div>
+          <div class="hp-field" aria-hidden="true"><label>No completar este campo <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
           <label class="form-consent">
             <input type="checkbox" name="consentimiento" value="Acepta tratamiento de datos (Ley 21.719)" required>
-            <span>Acepto que IKUBERT S.p.A. trate mis datos personales para responder mi consulta, conforme a la Ley N° 21.719 de Chile. Derechos: <a href="mailto:{{ site.contacto.email }}">{{ site.contacto.email }}</a></span>
+            <span>Acepto que IKUBERT SpA trate mis datos personales para responder mi consulta, según su <a href="{{ '/privacidad/' | relative_url }}">Política de Privacidad</a> y la Ley N° 21.719 de Chile.</span>
           </label>
           <button type="submit" class="form-submit" id="submit-btn">Enviar solicitud</button>
           <div class="form-success" id="response-msg">✓ Solicitud enviada. Nos contactaremos a la brevedad.</div>
