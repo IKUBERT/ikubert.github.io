@@ -9,7 +9,7 @@ resumen: "Una mejora de procesos que no se mide termina siendo una opinión. Có
 description: "Guía para medir el retorno (ROI) de un proyecto de optimización operativa: línea base, KPIs operacionales (tiempo de ciclo, rendimiento a la primera, costo unitario, OTIF) y cálculo del ROI. Framework IKU-Opt™."
 linkedin: ""
 wa_msg: "Hola IKUBERT, leí el artículo sobre ROI de optimización operativa y quiero medir las mejoras de mi empresa."
-keywords: [ROI, optimización operativa, KPIs operacionales, línea base, tiempo de ciclo, OTIF, ingeniería industrial, IKU-Opt, IKUBERT]
+keywords: [ROI, optimización operativa, KPIs operacionales, línea base, tiempo de ciclo, OTIF, ingeniería civil industrial, IKU-Opt, IKUBERT]
 ---
 
 Todo proyecto de mejora de procesos enfrenta tarde o temprano la misma pregunta de la gerencia: **"¿y cuánto ganamos con esto?"**. Si la respuesta es "la operación se siente más ordenada", el proyecto pierde apoyo. La mejora tiene que medirse, y la medición tiene que empezar **antes** de cambiar cualquier cosa.

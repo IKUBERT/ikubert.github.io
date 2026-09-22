@@ -1,0 +1,18 @@
+# IKUBERT
+
+> Consultora boutique de Santiago de Chile que integra ingeniería civil industrial, ciberseguridad y administración de empresas. Fundada y dirigida por Lukas Ahubert Lennon.
+
+## Perfil
+- [Lukas Ahubert Lennon — perfil](https://ikubert.com/equipo/lukas-ahubert-lennon/): fundador y Gerente General de IKUBERT
+- [Resumen estructurado para IA](https://ikubert.com/ai-resume.md): identidad, competencias, frameworks y proyecto Cyber-Prioritizer
+
+## Servicios
+- [IKU-Risk™ — Diagnóstico Digital](https://ikubert.com/servicios/diagnostico-digital): ciberseguridad y hacking ético
+- [IKU-Opt™ — Optimización Operativa](https://ikubert.com/servicios/optimizacion-operativa): ingeniería civil industrial aplicada a la rentabilidad
+- [IKU-Struct™ — Radiografía Empresarial](https://ikubert.com/servicios/radiografia-empresarial): arquitectura empresarial, holdings y gobernanza
+
+## Investigación
+- [Cyber-Prioritizer](https://ikubert.com/foro/cyber-prioritizer-priorizacion-estocastica-vulnerabilidades/): priorización estocástica de vulnerabilidades con Cadenas de Markov (open source, https://github.com/DBlueKing/Cyber-Prioritizer)
+
+## Foro
+- [Foro IKUBERT](https://ikubert.com/foro/): artículos, alertas y guías de ciberseguridad e ingeniería operativa

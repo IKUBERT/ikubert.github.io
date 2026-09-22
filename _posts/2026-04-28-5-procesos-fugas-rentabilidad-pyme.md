@@ -5,16 +5,16 @@ date: 2026-04-28 10:00:00 -0400
 autor: equipo
 categoria: iku-opt
 lectura: 7
-resumen: "Inventario fantasma, reprocesos sin registro, logística sin trazabilidad, costos indirectos sin asignar y decisiones sin datos. Cómo detectar cada fuga con herramientas de Ingeniería Industrial."
-description: "Las 5 fugas de rentabilidad más frecuentes en una PYME y cómo detectarlas con Ingeniería Industrial: inventarios (EOQ, punto de reorden), reprocesos, logística, costeo ABC y KPIs. Framework IKU-Opt™."
+resumen: "Inventario fantasma, reprocesos sin registro, logística sin trazabilidad, costos indirectos sin asignar y decisiones sin datos. Cómo detectar cada fuga con herramientas de Ingeniería Civil Industrial."
+description: "Las 5 fugas de rentabilidad más frecuentes en una PYME y cómo detectarlas con Ingeniería Civil Industrial: inventarios (EOQ, punto de reorden), reprocesos, logística, costeo ABC y KPIs. Framework IKU-Opt™."
 linkedin: ""
 wa_msg: "Hola IKUBERT, leí el artículo de fugas de rentabilidad y quiero un diagnóstico operativo."
-keywords: [rentabilidad PYME, fugas de rentabilidad, ingeniería industrial, inventario, EOQ, punto de reorden, costeo ABC, IKU-Opt, IKUBERT]
+keywords: [rentabilidad PYME, fugas de rentabilidad, ingeniería civil industrial, inventario, EOQ, punto de reorden, costeo ABC, IKU-Opt, IKUBERT]
 ---
 
 Las empresas rara vez pierden dinero por una sola gran decisión equivocada. Lo más común es que lo pierdan **de a poco, todos los días**, en procesos que nadie mide. Esas pérdidas no aparecen como una línea en el estado de resultados: se diluyen en "costos generales" y se aceptan como parte normal de la operación.
 
-Estos son los cinco puntos donde, desde la Ingeniería Industrial, encontramos fugas con más frecuencia, y cómo detectar cada uno.
+Estos son los cinco puntos donde, desde la Ingeniería Civil Industrial, encontramos fugas con más frecuencia, y cómo detectar cada uno.
 
 ## 1. Inventario fantasma y stock mal dimensionado
 
